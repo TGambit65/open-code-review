@@ -15,7 +15,7 @@
     "draft_pr": null,
     "draft_state": "ROOT_TO_CREATE_AFTER_REVIEW",
     "integration_root": "security-integration/",
-    "existing_custom_commits_preserved": 3,
+    "existing_post_release_commits_preserved": 3,
     "upstream_release_commit_is_not_publication_base": true
   },
   "roles": {
@@ -332,7 +332,7 @@
       "action": "AUTHOR_BASELINE",
       "target": "Exactly the six new security-integration/ artifacts listed here",
       "state": "ALLOWED",
-      "boundary": "Sole writer; additive inert subtree only; preserve every existing fork path and custom commit."
+      "boundary": "Sole writer; additive inert subtree only; preserve every existing fork path and commit."
     },
     {
       "action": "READ_APPROVED_BINARY_IDENTITY",

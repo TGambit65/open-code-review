@@ -34,8 +34,11 @@ writer/reviewer identities and assignment evidence are bound by
 custody, not published orchestration paths. Assignment alone is not review
 completion; a sanitized completed-review receipt is still pending.
 
-Root must preserve the fork's three custom commits after the installed release's
-source commit. The installed `v1.13.3` source
+Root must preserve the three existing post-release commits in the fork's base.
+The pinned base matches upstream main as observed on November 1, 2026; these
+are existing upstream commits, not fork-specific changes. The exact history is
+in the [pinned upstream comparison](https://github.com/alibaba/open-code-review/compare/375f64cd6f67a48a135da83cfcf59c52669a09cb...216dcf513593055a70165f793e96b52589d71b1b).
+The installed `v1.13.3` source
 `375f64cd6f67a48a135da83cfcf59c52669a09cb` is **not** the publication base and is
 not a claim about current upstream main. S00 does not propose an upstream fix,
 claim that an already-fixed upstream issue is novel, or authorize an upstream

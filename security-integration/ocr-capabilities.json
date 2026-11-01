@@ -46,7 +46,7 @@
   "publication_base_distinction": {
     "owned_fork_base_commit": "216dcf513593055a70165f793e96b52589d71b1b",
     "owned_fork_base_tree": "6b033bd81da09095f4dfc1865fe50a1652ca5859",
-    "note": "The installed v1.13.3 source pin is not owned main or current upstream main. Do not attribute installed-release behavior to current upstream, claim a novel upstream issue, or discard fork custom history."
+    "note": "The installed v1.13.3 source pin is not owned main or current upstream main. Do not attribute installed-release behavior to current upstream, claim a novel upstream issue, or discard existing fork history."
   },
   "integration_design": {
     "mechanism": "Owned explicit CLI/delegation wrapper planned; no executable wrapper in S00.",

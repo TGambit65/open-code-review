@@ -72,4 +72,4 @@ an absent/invalid approved binary and separate exact restoration authority.
 
 Never use rollback to weaken required review, restore an untrusted candidate
 policy, remove security controls, silently enable a fallback, change a
-scheduler/CI setting, erase custom fork history, or inspect protected source.
+scheduler/CI setting, erase existing fork history, or inspect protected source.

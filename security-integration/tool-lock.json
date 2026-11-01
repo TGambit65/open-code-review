@@ -57,7 +57,7 @@
     "base_commit": "216dcf513593055a70165f793e96b52589d71b1b",
     "base_tree": "6b033bd81da09095f4dfc1865fe50a1652ca5859",
     "upstream_release_commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
-    "preserve_custom_history": true
+    "preserve_existing_history": true
   },
   "components": [
     {

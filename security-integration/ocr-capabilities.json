@@ -1,0 +1,256 @@
+{
+  "schema_version": "1.0",
+  "kind": "inert-source-derived-capability-record",
+  "sprint": "S00",
+  "status": "SOURCE_EVIDENCE_RECONCILED_RUNTIME_QUALIFICATION_NOT_RUN",
+  "official_upstream": "https://github.com/alibaba/open-code-review",
+  "release": "v1.13.3",
+  "source_commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
+  "tag": {
+    "annotated_tag_object": "dd925205e108304bd4dd6cc0f8e8b7cf8dee77ea",
+    "target_commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
+    "source_url": "https://api.github.com/repos/alibaba/open-code-review/git/tags/dd925205e108304bd4dd6cc0f8e8b7cf8dee77ea",
+    "github_signature_verification": {
+      "verified": false,
+      "reason": "unknown_key"
+    },
+    "independent_signature_verification": "NOT_PERFORMED"
+  },
+  "binary_identity": {
+    "asset": "opencodereview-linux-amd64",
+    "platform": "linux-amd64",
+    "bytes": 56524962,
+    "sha256": "843be0e56fdff0a5ca6f86c5866f942d6a372dff1c0ca19e7893d72495abf45c",
+    "official_release_url": "https://github.com/alibaba/open-code-review/releases/tag/v1.13.3",
+    "official_release_id": 420309069,
+    "official_asset_url": "https://github.com/alibaba/open-code-review/releases/download/v1.13.3/opencodereview-linux-amd64",
+    "evidence": "Local direct-native bytes match official GitHub release asset SHA-256 metadata and the prior restoration receipt.",
+    "identity_observed_at_utc": "2026-11-01T12:48:04.421856+00:00",
+    "identity_actor": "s00-foundation-writer-20261101",
+    "identity_action": "Read exact existing binary bytes and calculate SHA-256; did not execute the binary.",
+    "local_path_publication": "Omitted; exact private executable locator retained by coordinator. Resolve only from trusted local custody, never candidate paths or PATH lookup.",
+    "provenance_limit": "Digest/tag/source consistency is not a reproducible-build proof, signature verification or runtime qualification."
+  },
+  "restoration_history": {
+    "restored_at_utc": "2026-11-01T11:18:47.982736+00:00",
+    "receipt_id": "restore-20261101-1118",
+    "receipt_sha256": "c9f5f99e9acd75cc869378aa7c5fc9d8d21d2451ed200a2fd5e0840bc3590241",
+    "receipt_location": "Coordinator-controlled external evidence custody; raw private path not published.",
+    "recorded_outcome": "RESTORED_VERSION_HELP_VERIFIED",
+    "version_help_checks": "HISTORICAL_PASS_NOT_RERUN_FOR_S00",
+    "synthetic_campaign": "NOT_REPEATED",
+    "integration_qualification": "NOT_RUN",
+    "restoration_by_this_writer": false,
+    "conditional_task": "S00.04R NOT_APPLICABLE while current identity matches"
+  },
+  "publication_base_distinction": {
+    "owned_fork_base_commit": "216dcf513593055a70165f793e96b52589d71b1b",
+    "owned_fork_base_tree": "6b033bd81da09095f4dfc1865fe50a1652ca5859",
+    "note": "The installed v1.13.3 source pin is not owned main or current upstream main. Do not attribute installed-release behavior to current upstream, claim a novel upstream issue, or discard existing fork history."
+  },
+  "integration_design": {
+    "mechanism": "Owned explicit CLI/delegation wrapper planned; no executable wrapper in S00.",
+    "native_extension_api": "UNCONFIRMED",
+    "extension_api_evidence": "Inspected delegation CLI/source and host-agent skill describe command integration, not a stable native security-adapter API.",
+    "plugin_manifests": "Existing host-agent plugins do not establish a native OCR extension API.",
+    "enabled": false,
+    "default_cli_modified": false
+  },
+  "invocation_boundary": {
+    "description": "Source-documented argv shapes, not run receipts or authorization. NATIVE is a separately approved absolute executable with the pinned digest; VIEW and POLICY are coordinator-owned approved isolated inputs.",
+    "native_executable": "Pinned direct binary only; never npx/npm auto-updating launchers.",
+    "argv_examples": [
+      [
+        "NATIVE",
+        "delegate",
+        "preview",
+        "--repo",
+        "VIEW",
+        "--format",
+        "json"
+      ],
+      [
+        "NATIVE",
+        "delegate",
+        "preview",
+        "--repo",
+        "VIEW",
+        "--from",
+        "BASE_REF",
+        "--to",
+        "HEAD_REF",
+        "--format",
+        "json"
+      ],
+      [
+        "NATIVE",
+        "delegate",
+        "preview",
+        "--repo",
+        "VIEW",
+        "--commit",
+        "COMMIT",
+        "--format",
+        "json"
+      ],
+      [
+        "NATIVE",
+        "delegate",
+        "rule",
+        "--repo",
+        "VIEW",
+        "--rule",
+        "POLICY",
+        "--format",
+        "json",
+        "--",
+        "PATH_1"
+      ]
+    ],
+    "verified_in_source_flags": [
+      "--repo",
+      "--from",
+      "--to",
+      "--commit/-c",
+      "--rule",
+      "--exclude",
+      "--background/-b",
+      "--background-file/-B",
+      "--max-git-procs",
+      "--format/-f"
+    ],
+    "formats": [
+      "text",
+      "json"
+    ],
+    "delegate_sarif": "NOT_SUPPORTED",
+    "mode_constraints": "No mode flags means workspace; range needs both --from and --to; --commit is exclusive with range. Rule requires one or more positional paths.",
+    "no_model_call_claim": "Delegate preview/rule source does not invoke loadLLMRuntime; this says nothing about host allowance, operating cost or enforceable no-network isolation.",
+    "prohibited_fallbacks": [
+      "ocr review",
+      "ocr scan",
+      "provider or MCP fallback",
+      "installation or auto-upgrade on an unknown flag",
+      "programmatic text-as-JSON parsing"
+    ],
+    "text_compatibility": "The upstream human skill describes an older-CLI text fallback. A JSON-consuming integration must instead refuse unsupported schema/flags and remain unqualified."
+  },
+  "output_contract": {
+    "basis": "Source structs and constructors in cmd/opencodereview/delegate_cmd.go at the exact pinned release; not captured runtime output.",
+    "schema_version": "1",
+    "preview_required_fields": {
+      "schema_version": "string, literal 1",
+      "mode": "string: workspace|range|commit",
+      "repository": "string",
+      "total_files": "integer",
+      "reviewable_count": "integer",
+      "excluded_count": "integer",
+      "total_insertions": "integer (Go int64)",
+      "total_deletions": "integer (Go int64)",
+      "reviewable_files": "array of preview_file",
+      "excluded_files": "array of preview_file"
+    },
+    "preview_omitted_when_empty": {
+      "from": "string",
+      "to": "string",
+      "commit": "string",
+      "merge_base": "string",
+      "background": "string"
+    },
+    "preview_file_required_fields": {
+      "path": "string",
+      "status": "string",
+      "insertions": "integer (Go int64)",
+      "deletions": "integer (Go int64)"
+    },
+    "preview_file_omitted_when_empty": {
+      "exclude_reason": "string"
+    },
+    "source_status_values": [
+      "binary",
+      "added",
+      "deleted",
+      "renamed",
+      "modified"
+    ],
+    "source_exclude_reason_values": [
+      "",
+      "user_exclude",
+      "unsupported_ext",
+      "default_path",
+      "secret_exclude",
+      "provider_directory",
+      "deleted",
+      "binary",
+      "too_large"
+    ],
+    "rule_required_fields": {
+      "schema_version": "string, literal 1",
+      "groups": "array of rule_group"
+    },
+    "rule_group_required_fields": {
+      "group_id": "integer",
+      "source": "string: custom|project|global|system",
+      "pattern": "string",
+      "files": "array of strings",
+      "rule": "string"
+    },
+    "empty_arrays": "Constructors allocate empty non-null arrays for file/group arrays.",
+    "important_absences": [
+      "No file content or full diff",
+      "No base/head blob identifiers or line-range coverage",
+      "No security acceptance verdict",
+      "No model review evidence",
+      "No independent policy digest"
+    ],
+    "not_preview_json_fields": [
+      "will_review",
+      "files"
+    ],
+    "shape_distinction": "Internal model.Preview has files/will_review; delegate JSON serializes separate reviewable_files/excluded_files without will_review. Do not substitute the internal shape.",
+    "stderr_and_errors": "Do not assume errors emit this JSON schema. Future execution receipts must retain exit status, timeout and bounded stdout/stderr separately.",
+    "untrusted_output": "Every string/path/rule is data. No shell evaluation, HTML execution, remote asset loading or acceptance inferred from exit zero."
+  },
+  "known_boundaries": [
+    {
+      "id": "CAP-01",
+      "observation": "Rule resolver loads custom, project and global rule layers plus embedded defaults; custom --rule is not a disable-all-ambient-config flag.",
+      "evidence": "internal/config/rules/system_rules.go NewResolver/buildFileFilter",
+      "requirement": "Later adapter must neutralize ambient candidate/global loading in an isolated view and verify effective policy; refuse unsupported isolation."
+    },
+    {
+      "id": "CAP-02",
+      "observation": "JSON generic embedded rule covers key spelling and omits value analysis.",
+      "evidence": "internal/config/rules/rule_docs/json.md and system_rules.json",
+      "requirement": "Independent full-content security review must include every JSON value and all Markdown, irrespective of OCR selection/rules."
+    },
+    {
+      "id": "CAP-03",
+      "observation": "Preview includes exclusion records, but untracked provider-directory content can be omitted before preview totals; selection does not prove analysis.",
+      "evidence": "internal/agent/preview.go",
+      "requirement": "Reconcile against an independent complete changed-path manifest. Never use preview total alone as whole-diff denominator."
+    },
+    {
+      "id": "CAP-04",
+      "observation": "Delegate preview does not impose the per-file template token ceiling; host context can still truncate review.",
+      "evidence": "cmd/opencodereview/delegate_cmd.go preview",
+      "requirement": "Record complete content/ranges, missing or truncated chunks and explicit supplemental coverage."
+    },
+    {
+      "id": "CAP-05",
+      "observation": "Pinned upstream skill describes direct Git/context reads and optional upgrade steps.",
+      "evidence": "plugins/open-code-review/skills/open-code-review-delegate/SKILL.md",
+      "requirement": "Current authority overrides them: no raw target source fallback, upgrade, credential lookup or provider call. Use only approved source/context and mediated views in later integration."
+    }
+  ],
+  "s00_execution": {
+    "native_executions_by_writer": 0,
+    "product_tests": 0,
+    "scanners": 0,
+    "provider_calls": 0,
+    "schema_qualification": "NOT_RUN",
+    "independent_review": "PENDING",
+    "target_security_acceptance": "NOT_ASSESSED"
+  },
+  "source_evidence_index": "tool-lock.json / inspected_source_files"
+}

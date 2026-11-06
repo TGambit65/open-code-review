@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "kind": "proposed-alternative-disposition",
+  "tool": "snyk_agent_scan",
+  "task_id": "S07.05",
+  "decision": "defer",
+  "implementation_selected": false,
+  "registration_enabled": false,
+  "qualification": "NOT_QUALIFIED",
+  "execution_authorized": false,
+  "reason": [
+    "No distinct adopted and qualified scope for this candidate is supplied.",
+    "The stated tool-specific licensing, privacy, execution and cost prerequisites remain unresolved."
+  ],
+  "prohibited_modes": [
+    "automatic_scan",
+    "service_contact",
+    "mcp_contact",
+    "stdio_command_execution",
+    "configuration_transmission",
+    "token_use"
+  ],
+  "reopen_conditions": [
+    "Configuration/signatures, tool descriptions and skill content can be transmitted.",
+    "Discovery may execute stdio commands and contact remote MCP servers.",
+    "Output is experimental; service terms, submitted-content rights, cost and retention remain unresolved for this scope.",
+    "Exact owner-approved scope, current artifact/license/source evidence and separate execution authority are required."
+  ],
+  "availability_state": "research_only_no_current_verified_asset_receipts_supplied_for_this_scope",
+  "asset_receipts": [],
+  "actual_measurements": [],
+  "evidence_sources": [
+    "security-integration/tool-lock.json#deferred_research_candidates",
+    "https://github.com/snyk/agent-scan/blob/a69e1c354ad0812c13da15dc64770e1c21786841/README.md",
+    "traceability.json#REC20"
+  ],
+  "adoption_authority": "none_supplied",
+  "maintenance": "Reassess on version/license/data/command/provider/network change; never auto-adopt.",
+  "research_provenance": {
+    "source_repository": "snyk/agent-scan",
+    "source_url": "https://github.com/snyk/agent-scan/blob/a69e1c354ad0812c13da15dc64770e1c21786841/README.md",
+    "research_commit": "a69e1c354ad0812c13da15dc64770e1c21786841",
+    "research_release": null,
+    "research_state": "RESEARCH_ONLY_DEFERRED_NO_ADOPTION",
+    "binary_sha256": null,
+    "qualification_limit": "Historical research identity only; not current asset verification, endorsement, entitlement or execution permission."
+  },
+  "license_observed": "Apache-2.0 CLI; separate unresolved service terms",
+  "license_limit": "Signup/token, pricing, retention and service content rights need separate approval; historical legacy Invariant wording is not current legal clearance.",
+  "explicit_controls": [
+    "Configuration/signatures, tool descriptions and skill content can be transmitted.",
+    "Discovery may execute stdio commands and contact remote MCP servers.",
+    "Output is experimental; service terms, submitted-content rights, cost and retention remain unresolved for this scope."
+  ],
+  "recommendation_id": "REC20"
+}

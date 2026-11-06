@@ -1,0 +1,1022 @@
+{
+  "kind": "S06-S07-combined-source-freeze",
+  "at_utc": "2026-11-06T01:54:39.589638+00:00",
+  "title": "Specialist dispositions and integration qualification",
+  "writer": "sole_product_writer",
+  "repository": "TGambit65/open-code-review",
+  "draft_pr": 2,
+  "source_base": "7208f7edbf5f153c58226bcc963ae0ee1c25c577",
+  "additive_scope": "security-integration/s06-s07",
+  "original_task_count": 42,
+  "required": 35,
+  "conditional": 7,
+  "current_task_ids": [
+    "S06.01",
+    "S06.02",
+    "S06.03",
+    "S06.04",
+    "S06.05",
+    "S06.06",
+    "S06.07",
+    "S06.A",
+    "S06.C",
+    "S06.F",
+    "S06.M",
+    "S06.P",
+    "S06.QA",
+    "S06.R",
+    "S06.RB",
+    "S06.U",
+    "S06.V01",
+    "S06.V02",
+    "S06.V03",
+    "S06.V04",
+    "S06.V05",
+    "S07.01",
+    "S07.02",
+    "S07.03",
+    "S07.04",
+    "S07.05",
+    "S07.06",
+    "S07.07",
+    "S07.08",
+    "S07.09",
+    "S07.10",
+    "S07.A",
+    "S07.C",
+    "S07.F",
+    "S07.M",
+    "S07.P",
+    "S07.R",
+    "S07.RB",
+    "S07.U",
+    "S07.V01",
+    "S07.V02",
+    "S07.V03"
+  ],
+  "original_contracts": [
+    {
+      "id": "S06.01",
+      "title": "Decide Betterleaks and write its comparison protocol",
+      "phase": "decision",
+      "source_plan_tasks": [
+        "S06.1",
+        "S06.4"
+      ],
+      "depends_on": [
+        "S05.A"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Decision record for stable v1.9.0 versus Gitleaks, exact permissions, metrics and reopen condition.",
+      "done_evidence": "Credential validation explicitly off; v2 migration/env/flag changes need separate qualification; comparison execution scheduled only after preservation.",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": true
+    },
+    {
+      "id": "S06.02",
+      "title": "Decide Trivy against a demonstrated coverage gap",
+      "phase": "decision",
+      "source_plan_tasks": [
+        "S06.2",
+        "S06.4"
+      ],
+      "depends_on": [
+        "S05.A"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Adopt/pilot/defer record for container/OS/IaC needs, provenance/digests and telemetry/version/DB/module/VEX/registry/egress controls.",
+      "done_evidence": "Incident-informed release trust and exact permissions are resolved before selection; do not duplicate baseline tools without useful gain.",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": true
+    },
+    {
+      "id": "S06.03",
+      "title": "Decide AgentShield on sanitized selected configuration",
+      "phase": "decision",
+      "source_plan_tasks": [
+        "S06.3",
+        "S06.4"
+      ],
+      "depends_on": [
+        "S05.A"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Local-only adopt/pilot/defer record with explicit file boundaries and maintenance/reopen conditions.",
+      "done_evidence": "No Opus/injection/deep/sandbox/repair/runtime hooks, online lookup, home discovery or raw-content model path; other modes require distinct authority/redesign.",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": true
+    },
+    {
+      "id": "S06.04",
+      "title": "Build the selected disabled Betterleaks challenger",
+      "phase": "implementation",
+      "source_plan_tasks": [
+        "S06.1"
+      ],
+      "depends_on": [
+        "S06.F",
+        "S06.01"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Pinned adapter and positive/negative/validation-off fixtures matching the comparison protocol.",
+      "done_evidence": "Only selected frozen authorized implementation is built; remains disabled; no comparison has run yet.",
+      "applicability": "conditional",
+      "condition": "Betterleaks implementation selected and authorized before S06 freeze",
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": true
+    },
+    {
+      "id": "S06.05",
+      "title": "Build the selected disabled Trivy adapter",
+      "phase": "implementation",
+      "source_plan_tasks": [
+        "S06.2"
+      ],
+      "depends_on": [
+        "S06.F",
+        "S06.02"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Gap-scoped adapter, exact offline/config controls and provenance/egress fixtures.",
+      "done_evidence": "Only selected frozen authorized implementation is built; no broad duplicated scans or implied adoption.",
+      "applicability": "conditional",
+      "condition": "Trivy implementation selected and authorized before S06 freeze",
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": true
+    },
+    {
+      "id": "S06.06",
+      "title": "Build the selected disabled AgentShield adapter",
+      "phase": "implementation",
+      "source_plan_tasks": [
+        "S06.3"
+      ],
+      "depends_on": [
+        "S06.F",
+        "S06.03"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Sanitized explicit-config adapter and restricted-mode fixtures.",
+      "done_evidence": "Only selected frozen authorized implementation is built; prohibited deep/provider/raw-source modes cannot be enabled implicitly.",
+      "applicability": "conditional",
+      "condition": "AgentShield implementation selected and authorized before S06 freeze",
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": true
+    },
+    {
+      "id": "S06.07",
+      "title": "Complete the optional decision ledger",
+      "phase": "decision",
+      "source_plan_tasks": [
+        "S06.4"
+      ],
+      "depends_on": [
+        "S06.01",
+        "S06.02",
+        "S06.03",
+        "S06.F"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "decisions/ links prerequisites, selected/deferred scope, current binary/rule/database availability and verification receipts or missing-asset status, metric collection plan, version/maintenance limits and reopen conditions for all three candidates.",
+      "done_evidence": "Decisions are evidence-backed without pretending benchmarks ran; deferred/unavailable evaluations remain NOT QUALIFIED and unchecked.",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": true
+    },
+    {
+      "id": "S06.A",
+      "title": "Accept the qualified sprint or retain an explicit hold",
+      "phase": "acceptance",
+      "source_plan_tasks": [],
+      "depends_on": [
+        "S06.U",
+        "S06.V01",
+        "S06.V05"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Independent sprint_qualification decision and five stage states; separate target acceptance.",
+      "done_evidence": "Complete only with actual current full review, verified preservation and all applicable checks passed; otherwise unchecked (C05). Explicitly deferred pilot boxes may stay unchecked without blocking the documented baseline disposition.",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": false,
+      "conditional_dependencies": [
+        {
+          "id": "S06.V02",
+          "when": "Betterleaks selected in frozen scope and this comparison execution separately authorized"
+        },
+        {
+          "id": "S06.V03",
+          "when": "Trivy selected in frozen scope and this qualification execution separately authorized"
+        },
+        {
+          "id": "S06.V04",
+          "when": "AgentShield selected in frozen scope and this qualification execution separately authorized"
+        }
+      ]
+    },
+    {
+      "id": "S06.C",
+      "title": "Resolve supported findings and seal review outcome",
+      "phase": "review",
+      "source_plan_tasks": [],
+      "depends_on": [
+        "S06.R"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Coherent corrections with independent re-review, or review-pending preservation receipt.",
+      "done_evidence": "Final hash and dispositions agree; incomplete review never becomes clean (C03).",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": false
+    },
+    {
+      "id": "S06.F",
+      "title": "Freeze the complete sprint scope",
+      "phase": "scope",
+      "source_plan_tasks": [],
+      "depends_on": [
+        "S04.A",
+        "S05.A",
+        "S06.01",
+        "S06.02",
+        "S06.03"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Frozen scope, owners, allowed actions, selected/deferred work and endpoint.",
+      "done_evidence": "Dependencies resolved and validation plan fixed before implementation; C01\u2013C02 apply.",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": true
+    },
+    {
+      "id": "S06.M",
+      "title": "Seal the full implementation endpoint",
+      "phase": "milestone",
+      "source_plan_tasks": [],
+      "depends_on": [
+        "S06.F",
+        "S06.01",
+        "S06.02",
+        "S06.03",
+        "S06.07",
+        "S06.RB"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Exact diff/file-hash freeze and implementation checklist.",
+      "done_evidence": "All required/selected implementation and fixture artifacts exist; no sprint tests/scans have run (C02).",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": false,
+      "conditional_dependencies": [
+        {
+          "id": "S06.04",
+          "when": "Betterleaks implementation selected and authorized before S06 freeze"
+        },
+        {
+          "id": "S06.05",
+          "when": "Trivy implementation selected and authorized before S06 freeze"
+        },
+        {
+          "id": "S06.06",
+          "when": "AgentShield implementation selected and authorized before S06 freeze"
+        }
+      ]
+    },
+    {
+      "id": "S06.P",
+      "title": "Preserve eligible source immediately in the same draft",
+      "phase": "preservation",
+      "source_plan_tasks": [],
+      "depends_on": [
+        "S06.C"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Root-verified remote repository/branch/commit/tree and same-draft PR receipt.",
+      "done_evidence": "Eligible source saved immediately, labelled untested/review-pending; held payloads stay separate (C03, C07).",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": false
+    },
+    {
+      "id": "S06.QA",
+      "title": "Reconcile and stage missing approved optional assets",
+      "phase": "acquisition",
+      "source_plan_tasks": [
+        "S06.1",
+        "S06.2",
+        "S06.3",
+        "S06.4"
+      ],
+      "depends_on": [
+        "S06.P",
+        "S06.07"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Tool-specific binary/rule/database/provenance/license/digest and freshness receipts matching the approved Betterleaks, Trivy or AgentShield pins, from a separate acquisition area.",
+      "done_evidence": "No scanner or target command executes during acquisition; existing verified assets need no refetch; missing permission/assets keep only the affected pilot unrun and disabled, never block code preservation or baseline deferral.",
+      "applicability": "conditional",
+      "condition": "A selected optional pilot needs an asset not already verified locally and that exact acquisition is separately authorized",
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": false
+    },
+    {
+      "id": "S06.R",
+      "title": "Record independent full-diff review",
+      "phase": "review",
+      "source_plan_tasks": [],
+      "depends_on": [
+        "S06.M"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Different-context OCR/security outcome and full coverage receipt.",
+      "done_evidence": "Exact input, missing/surface/unsupported content and actual result recorded; unavailable review stays pending (C03).",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": false
+    },
+    {
+      "id": "S06.RB",
+      "title": "Write the bounded rollback procedure",
+      "phase": "rollback",
+      "source_plan_tasks": [],
+      "depends_on": [
+        "S06.F"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Runbook: Disable/remove only the optional adapter registration; retain baseline coverage, evidence and platform controls.",
+      "done_evidence": "Exact reversible steps, retained evidence and resulting coverage state documented.",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": true
+    },
+    {
+      "id": "S06.U",
+      "title": "Preserve validation results and reviewed corrections",
+      "phase": "preservation",
+      "source_plan_tasks": [],
+      "depends_on": [
+        "S06.P"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Sanitized validation matrix and independently reviewed correction/evidence preservation receipts.",
+      "done_evidence": "Remote head/hashes match; failures, skips and unrun checks retained; changed scope has current review. Unavailable checks do not hold existing evidence (C02, C05).",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": false,
+      "outcome_receipt_dependencies": [
+        "S06.V01",
+        "S06.V02",
+        "S06.V03",
+        "S06.V04",
+        "S06.V05",
+        "S06.QA"
+      ],
+      "outcome_receipt_semantics": "Requires current outcomes, including exact blocked/skipped/unrun/deferred receipts, not successful completion of validation boxes."
+    },
+    {
+      "id": "S06.V01",
+      "title": "Verify optional dispositions without demanding a pilot",
+      "phase": "validation",
+      "source_plan_tasks": [
+        "S06.4"
+      ],
+      "depends_on": [
+        "S06.P"
+      ],
+      "input": "Full sprint endpoint and verified preservation receipt; exact permission for this check",
+      "output": "Independent review of all three decision records, frozen scope and disabled registrations.",
+      "done_evidence": "Each candidate is qualified under its controls or explicitly deferred; deferral needs no new execution permission and does not block S07.",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": false
+    },
+    {
+      "id": "S06.V02",
+      "title": "Run the selected authorized Betterleaks comparison",
+      "phase": "validation",
+      "source_plan_tasks": [
+        "S06.1",
+        "S06.4"
+      ],
+      "depends_on": [
+        "S06.P"
+      ],
+      "input": "Full sprint endpoint and verified preservation receipt; exact permission for this check; current verified applicable binary/rule/database identity, provenance, license and freshness receipts; no pilot may run with missing assets",
+      "output": "Post-preservation synthetic comparison measuring coverage gain, false positives, resources and disabled credential validation.",
+      "done_evidence": "Pinned v1.9.0 behavior and controls evidenced; no silent v2 migration; unavailable execution remains unchecked/NOT QUALIFIED.",
+      "applicability": "conditional",
+      "condition": "Betterleaks selected in frozen scope and this comparison execution separately authorized",
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": false,
+      "additional_required_inputs": [
+        "Current verified tool/rule/database asset receipts for Betterleaks"
+      ],
+      "conditional_dependencies": [
+        {
+          "id": "S06.QA",
+          "when": "Betterleaks needs an asset not already verified locally and its exact acquisition is separately authorized"
+        }
+      ]
+    },
+    {
+      "id": "S06.V03",
+      "title": "Run selected authorized Trivy qualification",
+      "phase": "validation",
+      "source_plan_tasks": [
+        "S06.2",
+        "S06.4"
+      ],
+      "depends_on": [
+        "S06.P"
+      ],
+      "input": "Full sprint endpoint and verified preservation receipt; exact permission for this check; current verified applicable binary/rule/database identity, provenance, license and freshness receipts; no pilot may run with missing assets",
+      "output": "Gap-specific positive/negative, release trust, egress/config and resource/coverage receipts.",
+      "done_evidence": "Additional useful coverage is measured; prohibited telemetry/lookup paths stay off; deferred execution remains unchecked.",
+      "applicability": "conditional",
+      "condition": "Trivy selected in frozen scope and this qualification execution separately authorized",
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": false,
+      "additional_required_inputs": [
+        "Current verified tool/rule/database asset receipts for Trivy"
+      ],
+      "conditional_dependencies": [
+        {
+          "id": "S06.QA",
+          "when": "Trivy needs an asset not already verified locally and its exact acquisition is separately authorized"
+        }
+      ]
+    },
+    {
+      "id": "S06.V04",
+      "title": "Run selected authorized AgentShield qualification",
+      "phase": "validation",
+      "source_plan_tasks": [
+        "S06.3",
+        "S06.4"
+      ],
+      "depends_on": [
+        "S06.P"
+      ],
+      "input": "Full sprint endpoint and verified preservation receipt; exact permission for this check; current verified applicable binary/rule/database identity, provenance, license and freshness receipts; no pilot may run with missing assets",
+      "output": "Selected sanitized-config cases, prohibited-mode, no-home-discovery and resource/coverage receipts.",
+      "done_evidence": "No raw/model/deep/runtime bypass; actual useful coverage and false positives measured; deferred execution remains unchecked.",
+      "applicability": "conditional",
+      "condition": "AgentShield selected in frozen scope and this qualification execution separately authorized",
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": false,
+      "additional_required_inputs": [
+        "Current verified tool/rule/database asset receipts for AgentShield"
+      ],
+      "conditional_dependencies": [
+        {
+          "id": "S06.QA",
+          "when": "AgentShield needs an asset not already verified locally and its exact acquisition is separately authorized"
+        }
+      ]
+    },
+    {
+      "id": "S06.V05",
+      "title": "Verify optional rollback and unchanged baseline",
+      "phase": "validation",
+      "source_plan_tasks": [
+        "S06.1",
+        "S06.2",
+        "S06.3",
+        "S06.4"
+      ],
+      "depends_on": [
+        "S06.P"
+      ],
+      "input": "Full sprint endpoint and verified preservation receipt; exact permission for this check",
+      "output": "Registration-disable checks for implemented optional adapters and baseline continuity.",
+      "done_evidence": "No optional component enables itself; unqualified selected runtime remains disabled, with explicit defer decision if permission is unavailable.",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": false
+    },
+    {
+      "id": "S07.01",
+      "title": "Record Semgrep CE as an alternative only",
+      "phase": "decision",
+      "source_plan_tasks": [
+        "S07.1"
+      ],
+      "depends_on": [
+        "S07.F"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Decision with workflow/rule justification, metrics/version controls and separate rule-license obligations.",
+      "done_evidence": "Do not run both SAST tools by default; any later adoption needs its own authorized qualified scope.",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": true
+    },
+    {
+      "id": "S07.02",
+      "title": "Record Bearer specialist prerequisites",
+      "phase": "decision",
+      "source_plan_tasks": [
+        "S07.2"
+      ],
+      "depends_on": [
+        "S07.F"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Privacy/data-flow disposition covering language fit, Elastic License restrictions and network/rule defaults.",
+      "done_evidence": "Unresolved terms/configuration remain a deferral with reopen condition, not permission to execute.",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": true
+    },
+    {
+      "id": "S07.03",
+      "title": "Record CodeQL entitlement and execution gates",
+      "phase": "decision",
+      "source_plan_tasks": [
+        "S07.2"
+      ],
+      "depends_on": [
+        "S07.F"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Decision distinguishes query license from engine/private-code entitlement, build/extractor rights, resources and separate upload approval.",
+      "done_evidence": "No private-code run or code-scanning upload is inferred from open query sources.",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": true
+    },
+    {
+      "id": "S07.04",
+      "title": "Record Anthropic review Action as opt in only",
+      "phase": "decision",
+      "source_plan_tasks": [
+        "S07.3"
+      ],
+      "depends_on": [
+        "S07.F"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Deferred/conditional decision covering provider/account/costs, data, filtering omissions and prompt-injection limitations.",
+      "done_evidence": "No activation/API use; host inference is not an asserted supported backend substitute.",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": true
+    },
+    {
+      "id": "S07.05",
+      "title": "Record Snyk Agent Scan as opt in only",
+      "phase": "decision",
+      "source_plan_tasks": [
+        "S07.3"
+      ],
+      "depends_on": [
+        "S07.F"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Decision covers service/account/costs, transmission, MCP contact/command execution and output stability.",
+      "done_evidence": "No automatic service contact or scan; exact prerequisites and reopen condition remain explicit.",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": true
+    },
+    {
+      "id": "S07.06",
+      "title": "Record Strix as a separate future pentest",
+      "phase": "decision",
+      "source_plan_tasks": [
+        "S07.4"
+      ],
+      "depends_on": [
+        "S07.F"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Disposable-target-only project disposition with license, target, mutation, outbound, provider/subscription/local-model cost and safeguards.",
+      "done_evidence": "No passive OCR-gate or production-test authority is implied; future execution requires exact authorization.",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": true
+    },
+    {
+      "id": "S07.07",
+      "title": "Record Shannon as a separate future pentest",
+      "phase": "decision",
+      "source_plan_tasks": [
+        "S07.4"
+      ],
+      "depends_on": [
+        "S07.F"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Independent candidate disposition with the same explicit target/state/network/cost/license safeguards.",
+      "done_evidence": "Local-model availability is not zero cost or execution authorization; no automatic active exploitation.",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": true
+    },
+    {
+      "id": "S07.08",
+      "title": "Finish disabled registration and operating documentation",
+      "phase": "implementation",
+      "source_plan_tasks": [
+        "S07.5"
+      ],
+      "depends_on": [
+        "S07.F",
+        "S06.07"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Runbook documents only actually implemented/adopted adapters, prerequisites, supported modes, safe invocation, evidence and rollback.",
+      "done_evidence": "Unqualified/deferred adapters stay disabled; documentation matches actual capabilities without native/production certification claims.",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": true
+    },
+    {
+      "id": "S07.09",
+      "title": "Close recommendation to execution traceability",
+      "phase": "implementation",
+      "source_plan_tasks": [
+        "S07.5"
+      ],
+      "depends_on": [
+        "S07.01",
+        "S07.02",
+        "S07.03",
+        "S07.04",
+        "S07.05",
+        "S07.06",
+        "S07.07",
+        "S07.08",
+        "S07.F"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Ledger maps every accepted recommendation and original task to implemented, conditional or deferred disposition and evidence location.",
+      "done_evidence": "No recommendation or task is orphaned; unavailable evidence remains explicit rather than counted as coverage.",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": true
+    },
+    {
+      "id": "S07.10",
+      "title": "Author full-path qualification scenarios",
+      "phase": "implementation",
+      "source_plan_tasks": [
+        "S07.5"
+      ],
+      "depends_on": [
+        "S07.09",
+        "S07.F"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Positive/negative, failure, coverage, privacy, policy, rollback and report-usability scenarios through the combined entry point.",
+      "done_evidence": "Expected outcomes and exact permissions are recorded; no runtime qualification occurs before complete implementation and preservation.",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": true
+    },
+    {
+      "id": "S07.A",
+      "title": "Accept the qualified sprint or retain an explicit hold",
+      "phase": "acceptance",
+      "source_plan_tasks": [
+        "S07.6"
+      ],
+      "depends_on": [
+        "S07.U",
+        "S07.V01",
+        "S07.V02",
+        "S07.V03"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Independent sprint_qualification decision and five stage states; separate target acceptance.",
+      "done_evidence": "Complete only with actual current full review, verified preservation and all applicable checks passed; otherwise unchecked (C05). Every recommendation has an evidenced disposition; no runtime, legal, native, application or production certification is claimed.",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": false,
+      "conditional_dependencies": []
+    },
+    {
+      "id": "S07.C",
+      "title": "Resolve supported findings and seal review outcome",
+      "phase": "review",
+      "source_plan_tasks": [],
+      "depends_on": [
+        "S07.R"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Coherent corrections with independent re-review, or review-pending preservation receipt.",
+      "done_evidence": "Final hash and dispositions agree; incomplete review never becomes clean (C03).",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": false
+    },
+    {
+      "id": "S07.F",
+      "title": "Freeze the complete sprint scope",
+      "phase": "scope",
+      "source_plan_tasks": [],
+      "depends_on": [
+        "S05.A",
+        "S06.07",
+        "S06.P"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Frozen scope, owners, allowed actions, selected/deferred work and endpoint.",
+      "done_evidence": "Dependencies resolved and validation plan fixed before implementation; C01\u2013C02 apply.",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": true
+    },
+    {
+      "id": "S07.M",
+      "title": "Seal the full implementation endpoint",
+      "phase": "milestone",
+      "source_plan_tasks": [],
+      "depends_on": [
+        "S07.F",
+        "S07.01",
+        "S07.02",
+        "S07.03",
+        "S07.04",
+        "S07.05",
+        "S07.06",
+        "S07.07",
+        "S07.08",
+        "S07.09",
+        "S07.10",
+        "S07.RB"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Exact diff/file-hash freeze and implementation checklist.",
+      "done_evidence": "All required/selected implementation and fixture artifacts exist; no sprint tests/scans have run (C02).",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": false,
+      "conditional_dependencies": []
+    },
+    {
+      "id": "S07.P",
+      "title": "Preserve eligible source immediately in the same draft",
+      "phase": "preservation",
+      "source_plan_tasks": [],
+      "depends_on": [
+        "S07.C"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Root-verified remote repository/branch/commit/tree and same-draft PR receipt.",
+      "done_evidence": "Eligible source saved immediately, labelled untested/review-pending; held payloads stay separate (C03, C07).",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": false
+    },
+    {
+      "id": "S07.R",
+      "title": "Record independent full-diff review",
+      "phase": "review",
+      "source_plan_tasks": [],
+      "depends_on": [
+        "S07.M"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Different-context OCR/security outcome and full coverage receipt.",
+      "done_evidence": "Exact input, missing/surface/unsupported content and actual result recorded; unavailable review stays pending (C03).",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": false
+    },
+    {
+      "id": "S07.RB",
+      "title": "Write the bounded rollback procedure",
+      "phase": "rollback",
+      "source_plan_tasks": [],
+      "depends_on": [
+        "S07.F"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Runbook: Disable the integration entry point; retain standard OCR with explicit missing-security-coverage notice and all source/evidence.",
+      "done_evidence": "Exact reversible steps, retained evidence and resulting coverage state documented.",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": true
+    },
+    {
+      "id": "S07.U",
+      "title": "Preserve validation results and reviewed corrections",
+      "phase": "preservation",
+      "source_plan_tasks": [],
+      "depends_on": [
+        "S07.P"
+      ],
+      "input": "Approved frozen scope, shared contract and named dependencies",
+      "output": "Sanitized validation matrix and independently reviewed correction/evidence preservation receipts.",
+      "done_evidence": "Remote head/hashes match; failures, skips and unrun checks retained; changed scope has current review. Unavailable checks do not hold existing evidence (C02, C05).",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": false,
+      "outcome_receipt_dependencies": [
+        "S07.V01",
+        "S07.V02",
+        "S07.V03"
+      ],
+      "outcome_receipt_semantics": "Requires current outcomes, including exact blocked/skipped/unrun/deferred receipts, not successful completion of validation boxes."
+    },
+    {
+      "id": "S07.V01",
+      "title": "Run authorized end-to-end synthetic qualification",
+      "phase": "validation",
+      "source_plan_tasks": [
+        "S07.5"
+      ],
+      "depends_on": [
+        "S07.P"
+      ],
+      "input": "Full sprint endpoint and verified preservation receipt; exact permission for this check",
+      "output": "Combined-entry seeded/safe/failure scenarios with complete file/range coverage, privacy and effective-policy receipts.",
+      "done_evidence": "Baseline coverage and false positives/resources are measured; optional tools remain scoped; target clearance is a separate decision.",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": false
+    },
+    {
+      "id": "S07.V02",
+      "title": "Verify final reporting, runbook and rollback",
+      "phase": "validation",
+      "source_plan_tasks": [
+        "S07.5"
+      ],
+      "depends_on": [
+        "S07.P"
+      ],
+      "input": "Full sprint endpoint and verified preservation receipt; exact permission for this check",
+      "output": "Exact final pins/scope, sanitized report parity/usability and entry-point-disable checks.",
+      "done_evidence": "Documentation matches behavior; standard OCR continues with a visible missing-security-coverage notice when disabled.",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": false
+    },
+    {
+      "id": "S07.V03",
+      "title": "Obtain final independent evidence review",
+      "phase": "validation",
+      "source_plan_tasks": [
+        "S07.6"
+      ],
+      "depends_on": [
+        "S07.P",
+        "S07.V01",
+        "S07.V02"
+      ],
+      "input": "Full sprint endpoint and verified preservation receipt; exact permission for this check",
+      "output": "Different-context review of combined integration diff, qualification receipts, all dispositions and outstanding limitations.",
+      "done_evidence": "Unsupported/unrun acceptance stays unchecked; reviewed scope and hashes are current and do not replace the CodeRabbit batch gate.",
+      "applicability": "required",
+      "condition": null,
+      "status": "not_started",
+      "completed": false,
+      "evidence": [],
+      "required_for_pre_test_implementation_endpoint": false
+    }
+  ],
+  "selected_optional_implementations": [],
+  "conditional_dispositions": {
+    "S06.04": "deferred_not_selected",
+    "S06.05": "deferred_not_selected",
+    "S06.06": "deferred_not_selected",
+    "S06.QA": "deferred_not_selected",
+    "S06.V02": "deferred_not_selected",
+    "S06.V03": "deferred_not_selected",
+    "S06.V04": "deferred_not_selected"
+  },
+  "source_sequence": "S06.01-.03 decisions precede this freeze; S06.07 ledger precedes dependent S07 code. Prior acceptance and S06.P remain held under approved source-only sequencing.",
+  "complete_endpoint": [
+    "All required specialist/alternative decision records and protocols.",
+    "Disabled registration, read-only evidence evaluation and truthful missing-security notice.",
+    "All-original-task/recommendation traceability, complete fixtures, runbook and both rollback deliverables."
+  ],
+  "deferred_validation": "No tests, checks, verification or review until the entire combined implementation is complete; then seal, independent full-diff review, root preservation and only admitted end checks.",
+  "boundaries": [
+    "No activation/native scans/install/providers/paid calls/settings/credentials/protected targets.",
+    "No live scheduler/AGENTS/CI/hook/protection changes.",
+    "Root alone publishes, requests external review or merges.",
+    "Every original task and qualification/acceptance hold retained."
+  ]
+}

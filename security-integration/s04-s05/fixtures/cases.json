@@ -1,0 +1,215 @@
+{
+  "kind": "authored-unrun-fixture-contracts",
+  "cases": [
+    {
+      "id": "mutable-update",
+      "task": "S04.V01",
+      "expected": "reject latest/mutable or missing verification",
+      "status": "unrun"
+    },
+    {
+      "id": "bytes-substitution",
+      "task": "S04.V01",
+      "expected": "refuse hash/length mismatch",
+      "status": "unrun"
+    },
+    {
+      "id": "stale-rollback",
+      "task": "S04.V01",
+      "expected": "prior set visible rollback/incomplete",
+      "status": "unrun"
+    },
+    {
+      "id": "absent-dataset",
+      "task": "S04.V01",
+      "expected": "absent or unsupported, never current",
+      "status": "unrun"
+    },
+    {
+      "id": "corroboration",
+      "task": "S04.V02",
+      "expected": "preserve two detector observations",
+      "status": "unrun"
+    },
+    {
+      "id": "conflict",
+      "task": "S04.V02",
+      "expected": "preserve differing claims/highest severity",
+      "status": "unrun"
+    },
+    {
+      "id": "expired-exception",
+      "task": "S04.V02",
+      "expected": "reject expired/wrong owner/scope/incomplete retained plus current observation IDs",
+      "status": "unrun"
+    },
+    {
+      "id": "candidate-values",
+      "task": "S04.V02",
+      "expected": "weakened candidate values do not alter policy",
+      "status": "unrun"
+    },
+    {
+      "id": "hostile-html",
+      "task": "S04.V03",
+      "expected": "no executable tags/handlers/links/assets",
+      "status": "unrun"
+    },
+    {
+      "id": "format-parity",
+      "task": "S04.V03",
+      "expected": "exact public JSON semantics in all formats",
+      "status": "unrun"
+    },
+    {
+      "id": "synthetic-secret",
+      "task": "S04.V03",
+      "expected": "only sanitized after content may publish",
+      "status": "unrun"
+    },
+    {
+      "id": "mobile-print",
+      "task": "S04.V03",
+      "expected": "actual authorized rendering required; unrun",
+      "status": "unrun"
+    },
+    {
+      "id": "positive-target",
+      "task": "S04.V04",
+      "expected": "detector qualification may pass, target blocked",
+      "status": "unrun"
+    },
+    {
+      "id": "zero-exit",
+      "task": "S04.V04",
+      "expected": "missing independent review/coverage stays incomplete",
+      "status": "unrun"
+    },
+    {
+      "id": "review-failure",
+      "task": "S05.V01",
+      "expected": "eligible source preservation continues with pending label",
+      "status": "unrun"
+    },
+    {
+      "id": "uncertain-send",
+      "task": "S05.V01",
+      "expected": "reconcile before repeat",
+      "status": "unrun"
+    },
+    {
+      "id": "denied-action",
+      "task": "S05.V01",
+      "expected": "one retry only for materially new relevant evidence after known nonexecution",
+      "status": "unrun"
+    },
+    {
+      "id": "whole-pr-paths",
+      "task": "S05.V02",
+      "expected": "distinct path counts, coherent cap, no padding",
+      "status": "unrun"
+    },
+    {
+      "id": "duplicate-review",
+      "task": "S05.V02",
+      "expected": "no second intentional review",
+      "status": "unrun"
+    },
+    {
+      "id": "current-head-conflict",
+      "task": "S05.V03",
+      "expected": "hold mandatory current-head review/check conflict",
+      "status": "unrun"
+    },
+    {
+      "id": "root-only",
+      "task": "S05.V03",
+      "expected": "wrappers execute nothing",
+      "status": "unrun"
+    },
+    {
+      "id": "rollback",
+      "task": "S05.V03",
+      "expected": "existing scheduler/protections unchanged",
+      "status": "unrun"
+    },
+    {
+      "id": "retained-high-omitted",
+      "task": "S04.V02",
+      "expected": "prior High remains blocking despite complete current negative evidence",
+      "status": "unrun"
+    },
+    {
+      "id": "retained-high-downgraded",
+      "task": "S04.V02",
+      "expected": "current Low or Info cannot clear retained High; full-ID current decision required",
+      "status": "unrun"
+    },
+    {
+      "id": "required-history-binding",
+      "task": "S04.V02",
+      "expected": "missing/substituted/re-scoped prior history cannot pass; prior history never supplies current coverage",
+      "status": "unrun"
+    },
+    {
+      "id": "swapped-sanitized-bundle",
+      "task": "S04.V03",
+      "expected": "same opaque ID from another valid bundle or snapshot cannot supply report locations/excerpts",
+      "status": "unrun"
+    },
+    {
+      "id": "changed-transformation",
+      "task": "S04.V03",
+      "expected": "altered private transformation or scanner input refuses before rendering",
+      "status": "unrun"
+    },
+    {
+      "id": "bound-no-evidence-report",
+      "task": "S04.V03",
+      "expected": "not-run report remains possible without invented successful evidence or unbound excerpts",
+      "status": "unrun"
+    },
+    {
+      "id": "paired-ocr-plans",
+      "task": "S04.V04",
+      "expected": "exact five operations; missing/duplicate/mixed OCR pair rejected; supported Gitleaks alternatives retained",
+      "status": "unrun"
+    },
+    {
+      "id": "truthful-projection-suffixes",
+      "task": "S04.V04",
+      "expected": "explicit approved Python projection can compose; TXT/MD exclusions stay incomplete",
+      "status": "unrun"
+    },
+    {
+      "id": "projection-authority-mismatch",
+      "task": "S04.V04",
+      "expected": "missing/incomplete/unsupported/mismatched approved suffix map cannot pass",
+      "status": "unrun"
+    },
+    {
+      "id": "rejected-payload-identity",
+      "task": "S04.V04",
+      "expected": "distinct bounded failed payload and expected scopes keep distinct digests without raw content",
+      "status": "unrun"
+    },
+    {
+      "id": "oversized-provenance",
+      "task": "S04.V04",
+      "expected": "over-16-MiB failed input states incomplete full identity and bounded prefix identity",
+      "status": "unrun"
+    },
+    {
+      "id": "negative-fixture-qualification",
+      "task": "S04.V04",
+      "expected": "negative no-finding qualification distinct from target clearance and unreliable observations",
+      "status": "unrun"
+    },
+    {
+      "id": "failed-publication",
+      "task": "S05.V01",
+      "expected": "reconcile failed publication; retry needs known nonexecution and new relevant unused authorization",
+      "status": "unrun"
+    }
+  ]
+}

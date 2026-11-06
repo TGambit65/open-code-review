@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0",
+  "kind": "combined-provisional-source-scope",
+  "title": "S02\u2013S03: Independent review and offline baseline adapters",
+  "task_ids": [
+    "S02.F",
+    "S02.01",
+    "S02.02",
+    "S02.03",
+    "S02.04",
+    "S02.05",
+    "S02.06",
+    "S02.07",
+    "S02.08",
+    "S02.RB",
+    "S02.M",
+    "S02.R",
+    "S02.C",
+    "S02.P",
+    "S02.V01",
+    "S02.V02",
+    "S02.V03",
+    "S02.U",
+    "S02.A",
+    "S03.F",
+    "S03.01",
+    "S03.01A",
+    "S03.02",
+    "S03.03",
+    "S03.04",
+    "S03.05",
+    "S03.06",
+    "S03.RB",
+    "S03.M",
+    "S03.R",
+    "S03.C",
+    "S03.P",
+    "S03.V01",
+    "S03.V02",
+    "S03.V03",
+    "S03.V04",
+    "S03.U",
+    "S03.A"
+  ],
+  "task_count": 38,
+  "required_task_count": 37,
+  "conditional_task_count": 1,
+  "source_repository": "TGambit65/open-code-review",
+  "draft_pr": 2,
+  "preservation_base_commit": "985b551f73b9b19d6ae540e2f6e2ee18ab510268",
+  "local_interface_source": "S01 correction-v1 complete 26-file endpoint plus unchanged S00 foundation",
+  "allowed_changes": [
+    "new security-integration/s02-s03 subtree"
+  ],
+  "sequencing_amendment": {
+    "authority": "Explicit owner approval of provisional disabled S02 coding before S01 acceptance and combination with the following sprint",
+    "applies_to": [
+      "S02.F source authoring entry",
+      "S03.F source authoring entry",
+      "whole combined implementation before all review and checks"
+    ],
+    "does_not_accept": [
+      "S01.A",
+      "S02.A",
+      "S03.A"
+    ],
+    "source_only_dependencies": {
+      "S02.F": [
+        "preserved S01 interfaces"
+      ],
+      "S03.F": [
+        "preserved S01 interfaces",
+        "co-developed S02 source interfaces"
+      ]
+    },
+    "runtime_and_acceptance_dependencies": {
+      "S02": [
+        "S01.A",
+        "current independent review",
+        "verified preservation",
+        "exact action authority",
+        "applicable qualification"
+      ],
+      "S03": [
+        "S01.A",
+        "S02.A",
+        "current independent review",
+        "verified preservation",
+        "exact binary/rule/database adoption",
+        "exact action authority",
+        "applicable qualification"
+      ]
+    }
+  },
+  "conditional_dispositions": {
+    "S03.01A": {
+      "disposition": "deferred",
+      "reason": "No exact acquisition authorization; no binary/rule/database assets may be fetched or installed",
+      "checked": false
+    }
+  },
+  "prohibited": [
+    "tests before complete combined implementation",
+    "checks or verification before complete combined implementation",
+    "review before complete combined implementation",
+    "scanner execution",
+    "provider calls",
+    "binary installation or download",
+    "security activation",
+    "credentials",
+    "protected target access",
+    "denial bypass",
+    "publication by writer"
+  ],
+  "runtime_default": "unconditionally disabled; no user/candidate configuration can enable execution",
+  "validation_state": "NOT_RUN",
+  "review_state": "NOT_STARTED",
+  "target_acceptance": "NOT_ASSESSED"
+}

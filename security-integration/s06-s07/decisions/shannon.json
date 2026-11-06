@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "kind": "proposed-alternative-disposition",
+  "tool": "shannon",
+  "task_id": "S07.07",
+  "decision": "future_project",
+  "implementation_selected": false,
+  "registration_enabled": false,
+  "qualification": "NOT_QUALIFIED",
+  "execution_authorized": false,
+  "reason": [
+    "No distinct adopted and qualified scope for this candidate is supplied.",
+    "The stated tool-specific licensing, privacy, execution and cost prerequisites remain unresolved."
+  ],
+  "prohibited_modes": [
+    "production_target",
+    "active_exploitation",
+    "unapproved_state_mutation",
+    "outbound_effects",
+    "provider_use",
+    "implicit_zero_cost_local_model"
+  ],
+  "reopen_conditions": [
+    "Separate candidate/project from Strix, with its own disposable target, exact mutation/network permissions and rollback.",
+    "Resolve provider/subscription/local-model costs; local availability is not free inference or execution authority.",
+    "Research was limited to README/provider/license descriptions, not full execution audit.",
+    "Exact owner-approved scope, current artifact/license/source evidence and separate execution authority are required."
+  ],
+  "availability_state": "research_only_no_current_verified_asset_receipts_supplied_for_this_scope",
+  "asset_receipts": [],
+  "actual_measurements": [],
+  "evidence_sources": [
+    "security-integration/tool-lock.json#deferred_research_candidates",
+    "https://github.com/KeygraphHQ/shannon/blob/b9744f6cecc5429333873b86a6762f1d70c54fc2/README.md",
+    "traceability.json#REC21"
+  ],
+  "adoption_authority": "none_supplied",
+  "maintenance": "Reassess on version/license/data/command/provider/network change; never auto-adopt.",
+  "research_provenance": {
+    "source_repository": "KeygraphHQ/shannon",
+    "source_url": "https://github.com/KeygraphHQ/shannon/blob/b9744f6cecc5429333873b86a6762f1d70c54fc2/README.md",
+    "research_commit": "b9744f6cecc5429333873b86a6762f1d70c54fc2",
+    "research_release": null,
+    "research_state": "RESEARCH_ONLY_DEFERRED_NO_ADOPTION",
+    "binary_sha256": null,
+    "qualification_limit": "Historical research identity only; not current asset verification, endorsement, entitlement or execution permission."
+  },
+  "license_observed": "AGPL-3.0",
+  "license_limit": "AGPL obligations and any network/service deployment implications require separate use-case review; no legal clearance asserted.",
+  "explicit_controls": [
+    "Separate candidate/project from Strix, with its own disposable target, exact mutation/network permissions and rollback.",
+    "Resolve provider/subscription/local-model costs; local availability is not free inference or execution authority.",
+    "Research was limited to README/provider/license descriptions, not full execution audit."
+  ],
+  "recommendation_id": "REC21"
+}

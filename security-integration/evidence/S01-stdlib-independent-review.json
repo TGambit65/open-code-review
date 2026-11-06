@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "kind": "S01-independent-partial-validation-evidence-review",
+  "at": "2026-11-01T20:08:55.975918+00:00",
+  "reviewer_role": "independent implementation reviewer",
+  "review_scope": "Fact review of the exact completed three-command stdlib attempt; no test rerun or native execution by reviewer",
+  "reviewed_matrix_sha256": "349de722bab2405c809af76475b35daaefdd6dd6dfcd7f00ed7f2f247eac7afe",
+  "private_outcomes_sha256": "77214686ebe6a0997502978a0dbb588133722cd7fd36299c1206bd80b7365523",
+  "preserved_source_head": "b25b7439fbfef1732425a11f1efe050708a12402",
+  "source_manifest_sha256": "17c92db68f2f537f186196034948898b4ecbe973a6e5bd2ada03e77e4461fe2a",
+  "source_and_runtime_policy_bindings_verified": true,
+  "source_unchanged": true,
+  "tests_passed": 32,
+  "command_test_counts": {
+    "test_snapshot_views": 8,
+    "test_results_policy": 22,
+    "test_rollback": 2
+  },
+  "mocked_bookkeeping_tests": 9,
+  "actual_native_runs_in_reviewed_attempt": 0,
+  "compiler_invocations_in_reviewed_attempt": 0,
+  "native_mock_boundary_verified_from_source": true,
+  "validation_disposition": {
+    "S01.V01": "UNRUN_NATIVE",
+    "S01.V02": "PARTIAL_STDLIB_PASSED_NATIVE_RECORDING_UNRUN",
+    "S01.V03": "PASSED_STDLIB_INDEPENDENT_EVIDENCE_CORROBORATED",
+    "S01.V04": "PASSED_STDLIB_INDEPENDENT_EVIDENCE_CORROBORATED"
+  },
+  "publication_recommendation": "Preserve exact sanitized matrix with this independent attestation under S01.U; pending-review labels in the matrix are historical preparation-time status. Keep private raw records private.",
+  "sanitized_matrix_publication_hygiene": "No private workspace/coordination paths, credentials, secret seed values or raw original-bearing output identified. System interpreter path is non-private.",
+  "applicable_validation": "partial",
+  "S01_A": "HELD",
+  "target_security_acceptance": "NOT_ASSESSED",
+  "authorizes_additional_execution": false,
+  "reviewer_product_changes": false
+}

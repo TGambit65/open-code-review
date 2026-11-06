@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Approved OCR body and pinned rule-file correspondence",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "enum": [
+        "1.0"
+      ]
+    },
+    "kind": {
+      "enum": [
+        "approved-ocr-rule-body"
+      ]
+    },
+    "adapter_policy_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "rules_asset_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "body_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "snapshot_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "model_bundle_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "projection_suffixes": {
+      "type": "object",
+      "maxProperties": 256,
+      "propertyNames": {
+        "pattern": "^item-[0-9]{4,}$"
+      },
+      "additionalProperties": {
+        "enum": [
+          "py",
+          "js",
+          "jsx",
+          "ts",
+          "tsx",
+          "go",
+          "rs",
+          "java",
+          "kt",
+          "c",
+          "h",
+          "cpp",
+          "cs",
+          "rb",
+          "php",
+          "json",
+          "yaml",
+          "yml",
+          "toml",
+          "xml",
+          "sh",
+          "md",
+          "txt",
+          "lock",
+          "sum",
+          "mod"
+        ]
+      },
+      "description": "Exact complete opaque-ID map for the same approved sanitized native projection. Truthful suffixes only; unsupported native selections remain gaps."
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "adapter_policy_sha256",
+    "rules_asset_sha256",
+    "body_sha256",
+    "snapshot_id",
+    "model_bundle_id",
+    "projection_suffixes"
+  ],
+  "$comment": "Documentation schema only. Runtime uses bounded local validators; no remote schema resolution or fetch."
+}

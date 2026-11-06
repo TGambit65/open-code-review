@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0",
+  "kind": "S01-sanitized-partial-validation-matrix",
+  "at": "2026-11-01T20:06:01.679981+00:00",
+  "state": "STDLIB_COMPLETE_NATIVE_UNRUN_INDEPENDENT_EVIDENCE_REVIEW_PENDING",
+  "repository": {
+    "name": "TGambit65/open-code-review",
+    "id": 1434220736
+  },
+  "preserved_head": "b25b7439fbfef1732425a11f1efe050708a12402",
+  "preserved_tree": "b4fcc9bbfab4bb4afc4a48679933d5e629b3ca60",
+  "source_manifest_sha256": "17c92db68f2f537f186196034948898b4ecbe973a6e5bd2ada03e77e4461fe2a",
+  "independent_source_review_sha256": "3a2e389e3ab09a6f8945d4c867ac88d0f3bb0cf9ba10136652ac23872b353b81",
+  "request_sha256": "2df79253fdf92669c6f4ddfce8fb9a6311f5084c08a3a5dd9a26f6f19117a9fc",
+  "admission_sha256": "39c845f92cad30db3caaba540af83338694fb59df74064f16d6ec1259b0afe33",
+  "python_ref": {
+    "path": "/usr/bin/python3.13",
+    "sha256": "889c603f0d17cb54060951bcf4c4f9b8c9ebd9e52b392c70209bbb9755d797d9"
+  },
+  "private_outcomes_sha256": "77214686ebe6a0997502978a0dbb588133722cd7fd36299c1206bd80b7365523",
+  "source_reverified_unchanged": true,
+  "commands": [
+    {
+      "id": "test_snapshot_views",
+      "tests": 8,
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_ms": 119,
+      "outcome_sha256": "cc3007a96a87ce060223639c70b96704d5fd2f22b559657d308982112722b137",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "1f5052387da8f1d760b62c283b33da72437cbf63043736b9edef71f280b32cc4"
+    },
+    {
+      "id": "test_results_policy",
+      "tests": 22,
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_ms": 477,
+      "outcome_sha256": "22113b5056d99bcb859f9c372a36de9298a6af08712dbc4d14df4013a63018b1",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "692712f0e0793e639b4703d6829174481262d55d760dfdc9598bd510a554533c"
+    },
+    {
+      "id": "test_rollback",
+      "tests": 2,
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_ms": 116,
+      "outcome_sha256": "dbcb07763d36206d723aedac542e8eb0a035053de85c8355eff4cc260adf3951",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "c253c0d5bcdd0456a3e259782fdfba01ef5ed8c140785a2f410c2a16acdaf5a9"
+    }
+  ],
+  "tests_passed": 32,
+  "commands_executed_once": 3,
+  "automatic_retries": 0,
+  "validation_ids": {
+    "S01.V01": {
+      "state": "UNRUN_NATIVE",
+      "reason": "Only mocked evidence/verdict assertions executed; compiler and exact native fixture authority not yet authorized."
+    },
+    "S01.V02": {
+      "state": "PARTIAL",
+      "passed": "Original/sanitized in-memory and surface mediation checks; all synthetic stdlib assertions passed.",
+      "unrun": "Actual sealed recording-stub original-byte delivery at8 and16 inputs."
+    },
+    "S01.V03": {
+      "state": "PASSED_STDLIB_PENDING_INDEPENDENT_EVIDENCE_REVIEW",
+      "scope": "Coverage/change identities, malformed/stale/partial/unknown semantics, UTC boundaries, external authority and refusal journaling mocks."
+    },
+    "S01.V04": {
+      "state": "PASSED_STDLIB_PENDING_INDEPENDENT_EVIDENCE_REVIEW",
+      "scope": "Disabled approved prior configuration and unsupported old schema retain failed-run evidence without unsafe fallback."
+    }
+  },
+  "five_stages": {
+    "implementation": "complete",
+    "independent_review": "complete_for_source",
+    "remote_preservation": "verified_for_source",
+    "applicable_validation": "partial",
+    "acceptance": "held"
+  },
+  "remaining": [
+    "Independent review of this evidence",
+    "Root preservation of reviewed sanitized evidence under S01.U",
+    "Separately authorized synthetic compilation and exact native fixtures for V01/native V02",
+    "Independent S01.A only after all applicable checks pass"
+  ],
+  "excluded_actions_actual_counts": {
+    "compiler_invocations": 0,
+    "native_sandbox_runs": 0,
+    "third_party_scanners": 0,
+    "model_provider_calls": 0,
+    "publication_actions_by_writer": 0
+  },
+  "target_security_acceptance": "NOT_ASSESSED",
+  "synthetic_limits": "Mocked authority/bookkeeping tests are not native runtime proof. Fixture temporaries are synthetic and cleaned by unittest; raw command logs and intent/outcomes are retained privately."
+}

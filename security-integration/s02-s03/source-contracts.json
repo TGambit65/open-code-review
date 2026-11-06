@@ -1,0 +1,167 @@
+{
+  "kind": "source-read-authoring-references-not-runtime-qualification",
+  "native_commands_executed": 0,
+  "records": [
+    {
+      "repository": "alibaba/open-code-review",
+      "commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
+      "path": "cmd/opencodereview/delegate_cmd.go",
+      "url": "https://github.com/alibaba/open-code-review/blob/375f64cd6f67a48a135da83cfcf59c52669a09cb/cmd/opencodereview/delegate_cmd.go"
+    },
+    {
+      "repository": "alibaba/open-code-review",
+      "commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
+      "path": "internal/config/rules/system_rules.go",
+      "url": "https://github.com/alibaba/open-code-review/blob/375f64cd6f67a48a135da83cfcf59c52669a09cb/internal/config/rules/system_rules.go"
+    },
+    {
+      "repository": "alibaba/open-code-review",
+      "commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
+      "path": "internal/config/rules/rule_docs/json.md",
+      "url": "https://github.com/alibaba/open-code-review/blob/375f64cd6f67a48a135da83cfcf59c52669a09cb/internal/config/rules/rule_docs/json.md"
+    },
+    {
+      "repository": "opengrep/opengrep",
+      "commit": "092c80faa0817840228349f93eff12a50fb9cf6b",
+      "path": "src/osemgrep/cli_scan/Scan_CLI.ml",
+      "url": "https://github.com/opengrep/opengrep/blob/092c80faa0817840228349f93eff12a50fb9cf6b/src/osemgrep/cli_scan/Scan_CLI.ml"
+    },
+    {
+      "repository": "opengrep/opengrep",
+      "commit": "092c80faa0817840228349f93eff12a50fb9cf6b",
+      "path": "src/osemgrep/reporting/Cli_json_output.ml",
+      "url": "https://github.com/opengrep/opengrep/blob/092c80faa0817840228349f93eff12a50fb9cf6b/src/osemgrep/reporting/Cli_json_output.ml"
+    },
+    {
+      "repository": "opengrep/opengrep",
+      "commit": "092c80faa0817840228349f93eff12a50fb9cf6b",
+      "path": "src/osemgrep/reporting/Output.ml",
+      "url": "https://github.com/opengrep/opengrep/blob/092c80faa0817840228349f93eff12a50fb9cf6b/src/osemgrep/reporting/Output.ml"
+    },
+    {
+      "repository": "opengrep/opengrep",
+      "commit": "092c80faa0817840228349f93eff12a50fb9cf6b",
+      "path": "src/osemgrep/core/Exit_code.ml",
+      "url": "https://github.com/opengrep/opengrep/blob/092c80faa0817840228349f93eff12a50fb9cf6b/src/osemgrep/core/Exit_code.ml"
+    },
+    {
+      "repository": "opengrep/semgrep-interfaces",
+      "commit": "5e705660dc7381d4c4c247fa83c4c5860e61d555",
+      "path": "semgrep_output_v1.atd",
+      "url": "https://github.com/opengrep/semgrep-interfaces/blob/5e705660dc7381d4c4c247fa83c4c5860e61d555/semgrep_output_v1.atd"
+    },
+    {
+      "repository": "gitleaks/gitleaks",
+      "commit": "83d9cd684c87d95d656c1458ef04895a7f1cbd8e",
+      "path": "cmd/root.go",
+      "url": "https://github.com/gitleaks/gitleaks/blob/83d9cd684c87d95d656c1458ef04895a7f1cbd8e/cmd/root.go"
+    },
+    {
+      "repository": "gitleaks/gitleaks",
+      "commit": "83d9cd684c87d95d656c1458ef04895a7f1cbd8e",
+      "path": "cmd/directory.go",
+      "url": "https://github.com/gitleaks/gitleaks/blob/83d9cd684c87d95d656c1458ef04895a7f1cbd8e/cmd/directory.go"
+    },
+    {
+      "repository": "gitleaks/gitleaks",
+      "commit": "83d9cd684c87d95d656c1458ef04895a7f1cbd8e",
+      "path": "cmd/stdin.go",
+      "url": "https://github.com/gitleaks/gitleaks/blob/83d9cd684c87d95d656c1458ef04895a7f1cbd8e/cmd/stdin.go"
+    },
+    {
+      "repository": "gitleaks/gitleaks",
+      "commit": "83d9cd684c87d95d656c1458ef04895a7f1cbd8e",
+      "path": "cmd/git.go",
+      "url": "https://github.com/gitleaks/gitleaks/blob/83d9cd684c87d95d656c1458ef04895a7f1cbd8e/cmd/git.go"
+    },
+    {
+      "repository": "gitleaks/gitleaks",
+      "commit": "83d9cd684c87d95d656c1458ef04895a7f1cbd8e",
+      "path": "sources/git.go",
+      "url": "https://github.com/gitleaks/gitleaks/blob/83d9cd684c87d95d656c1458ef04895a7f1cbd8e/sources/git.go"
+    },
+    {
+      "repository": "gitleaks/gitleaks",
+      "commit": "83d9cd684c87d95d656c1458ef04895a7f1cbd8e",
+      "path": "report/finding.go",
+      "url": "https://github.com/gitleaks/gitleaks/blob/83d9cd684c87d95d656c1458ef04895a7f1cbd8e/report/finding.go"
+    },
+    {
+      "repository": "gitleaks/gitleaks",
+      "commit": "83d9cd684c87d95d656c1458ef04895a7f1cbd8e",
+      "path": "report/json.go",
+      "url": "https://github.com/gitleaks/gitleaks/blob/83d9cd684c87d95d656c1458ef04895a7f1cbd8e/report/json.go"
+    },
+    {
+      "repository": "gitleaks/gitleaks",
+      "commit": "83d9cd684c87d95d656c1458ef04895a7f1cbd8e",
+      "path": "detect/utils.go",
+      "url": "https://github.com/gitleaks/gitleaks/blob/83d9cd684c87d95d656c1458ef04895a7f1cbd8e/detect/utils.go"
+    },
+    {
+      "repository": "google/osv-scanner",
+      "commit": "bfe2f84abd2f09fe0b83ba7f6dad40d296762f40",
+      "path": "cmd/osv-scanner/scan/source/command.go",
+      "url": "https://github.com/google/osv-scanner/blob/bfe2f84abd2f09fe0b83ba7f6dad40d296762f40/cmd/osv-scanner/scan/source/command.go"
+    },
+    {
+      "repository": "google/osv-scanner",
+      "commit": "bfe2f84abd2f09fe0b83ba7f6dad40d296762f40",
+      "path": "cmd/osv-scanner/internal/helper/flags.go",
+      "url": "https://github.com/google/osv-scanner/blob/bfe2f84abd2f09fe0b83ba7f6dad40d296762f40/cmd/osv-scanner/internal/helper/flags.go"
+    },
+    {
+      "repository": "google/osv-scanner",
+      "commit": "bfe2f84abd2f09fe0b83ba7f6dad40d296762f40",
+      "path": "cmd/osv-scanner/internal/helper/getters.go",
+      "url": "https://github.com/google/osv-scanner/blob/bfe2f84abd2f09fe0b83ba7f6dad40d296762f40/cmd/osv-scanner/internal/helper/getters.go"
+    },
+    {
+      "repository": "google/osv-scanner",
+      "commit": "bfe2f84abd2f09fe0b83ba7f6dad40d296762f40",
+      "path": "cmd/osv-scanner/internal/helper/callanalysis_parser.go",
+      "url": "https://github.com/google/osv-scanner/blob/bfe2f84abd2f09fe0b83ba7f6dad40d296762f40/cmd/osv-scanner/internal/helper/callanalysis_parser.go"
+    },
+    {
+      "repository": "google/osv-scanner",
+      "commit": "bfe2f84abd2f09fe0b83ba7f6dad40d296762f40",
+      "path": "pkg/osvscanner/internal/scanners/lockfile.go",
+      "url": "https://github.com/google/osv-scanner/blob/bfe2f84abd2f09fe0b83ba7f6dad40d296762f40/pkg/osvscanner/internal/scanners/lockfile.go"
+    },
+    {
+      "repository": "google/osv-scanner",
+      "commit": "bfe2f84abd2f09fe0b83ba7f6dad40d296762f40",
+      "path": "pkg/models/results.go",
+      "url": "https://github.com/google/osv-scanner/blob/bfe2f84abd2f09fe0b83ba7f6dad40d296762f40/pkg/models/results.go"
+    },
+    {
+      "repository": "google/osv-scanner",
+      "commit": "bfe2f84abd2f09fe0b83ba7f6dad40d296762f40",
+      "path": "internal/reporter/json_reporter.go",
+      "url": "https://github.com/google/osv-scanner/blob/bfe2f84abd2f09fe0b83ba7f6dad40d296762f40/internal/reporter/json_reporter.go"
+    },
+    {
+      "repository": "google/osv-scanner",
+      "commit": "bfe2f84abd2f09fe0b83ba7f6dad40d296762f40",
+      "path": "docs/configuration.md",
+      "url": "https://github.com/google/osv-scanner/blob/bfe2f84abd2f09fe0b83ba7f6dad40d296762f40/docs/configuration.md"
+    },
+    {
+      "repository": "google/osv-scanner",
+      "commit": "bfe2f84abd2f09fe0b83ba7f6dad40d296762f40",
+      "path": "docs/offline-mode.md",
+      "url": "https://github.com/google/osv-scanner/blob/bfe2f84abd2f09fe0b83ba7f6dad40d296762f40/docs/offline-mode.md"
+    },
+    {
+      "repository": "google/osv-scanner",
+      "commit": "bfe2f84abd2f09fe0b83ba7f6dad40d296762f40",
+      "path": "docs/scan-source.md",
+      "url": "https://github.com/google/osv-scanner/blob/bfe2f84abd2f09fe0b83ba7f6dad40d296762f40/docs/scan-source.md"
+    }
+  ],
+  "limits": [
+    "source identifiers are not binary provenance",
+    "flags/output shapes need actual future qualification",
+    "private retrieval receipts remain outside candidate"
+  ]
+}

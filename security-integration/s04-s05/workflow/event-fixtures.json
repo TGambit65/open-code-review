@@ -1,0 +1,38 @@
+{
+  "kind": "synthetic-coordinator-events",
+  "executed": false,
+  "cases": [
+    {
+      "name": "review-failure",
+      "expected": "eligible source preservation continues with pending label"
+    },
+    {
+      "name": "uncertain-send",
+      "expected": "reconcile before repeat"
+    },
+    {
+      "name": "denied-action",
+      "expected": "one retry only for materially new relevant evidence after known nonexecution"
+    },
+    {
+      "name": "whole-pr-paths",
+      "expected": "distinct path counts, coherent cap, no padding"
+    },
+    {
+      "name": "duplicate-review",
+      "expected": "no second intentional review"
+    },
+    {
+      "name": "current-head-conflict",
+      "expected": "hold mandatory current-head review/check conflict"
+    },
+    {
+      "name": "root-only",
+      "expected": "wrappers execute nothing"
+    },
+    {
+      "name": "rollback",
+      "expected": "existing scheduler/protections unchanged"
+    }
+  ]
+}

@@ -1,0 +1,514 @@
+{
+  "schema_version": "1.0",
+  "kind": "inert-provenance-lock-not-executable-configuration",
+  "sprint": "S00",
+  "lock_policy": {
+    "candidate_authority": false,
+    "mutable_latest_allowed": false,
+    "automatic_update": false,
+    "null_pin_semantics": "Unresolved prerequisite, never permission to resolve latest or execute.",
+    "identity_changes": "Require external owner-approved pin, independent review and current qualification; preserve old receipts.",
+    "baseline": {
+      "id": "ocr-security-local-harness-baseline-20261101-v2",
+      "kind": "external-trusted-baseline-reference-not-candidate-policy",
+      "version": "2026-11-01-v2",
+      "owner": "repository owner; coordinator is delegated technical adoption recorder",
+      "adopted_at_utc": "2026-11-01T12:57:45Z",
+      "adoption_record_sha256": "2a126b74f4789ef97c23ca4bb973503549d2e3c78243c170f5160659e0ea63ea",
+      "adoption_record_location": "Owner-controlled coordination custody outside the candidate; not in the public payload",
+      "sources": [
+        {
+          "artifact": "security-task-checklist.json",
+          "sha256": "0bb2e481c58955abf92924dd01f5052a95a934bd7be0045b58297dcca8791359"
+        },
+        {
+          "artifact": "security-integration-plan.json",
+          "sha256": "4e20a5ca664ae0e447f8dafc00f9168cc74c7b760c90ee12c4ca396623ef304f"
+        }
+      ],
+      "adopted_compact_context": {
+        "shared_controls_sha256": "7e874d9153177703637a4ee5ec9d78845df20be24ffead639e546f933ed41f84",
+        "s00_packet_sha256": "1bb602cf9356f136d876d274b51e8f2fa1c2df2f5c9e8ee313108430a46f3c0a",
+        "manifest_sha256": "a24b14f2087fd7f090785a1df5c8f3600ffa1f3ec772be58f066406058b949a3",
+        "independent_semantic_review_sha256": "2dbc89c117f6cc78e8b186ceb46f7a75c701d683c5271a04f8df9ebad5a63dbd",
+        "qualification_limit": "Navigation/semantic preservation only; not product/runtime qualification."
+      },
+      "adoption_process": [
+        "Coordinator resolves the separately approved external source and owner; obtains exact bytes independently of the candidate.",
+        "Compare the externally recorded version, source digest and independent review evidence before adopting a new baseline.",
+        "Record the specific action, scope, actor, time and exact new baseline hash outside the candidate; retain the prior baseline.",
+        "Require separate original authority for data access, credentials, spending, activation, scanning or publication; policy adoption does not grant it.",
+        "Candidate policy, rules, configs, ignore files and suppressions are inert review data. Candidate edits cannot adopt themselves or reduce coverage."
+      ],
+      "runtime_rules": {
+        "status": "NOT_SELECTED_NOT_INSTALLED",
+        "reason": "S00 records the baseline contract, not effective OCR/scanner configuration.",
+        "prerequisite": "Independent approval and exact content hashes plus isolated effective-configuration qualification in the relevant later sprint."
+      },
+      "runtime_ignores_and_suppressions": {
+        "status": "NONE_ADOPTED",
+        "candidate_authority": false
+      },
+      "unavailable_baseline_behavior": "Refuse dependent execution and acceptance; retain the candidate as untrusted source. Never substitute this candidate copy."
+    }
+  },
+  "owned_destination": {
+    "repository": "TGambit65/open-code-review",
+    "base_commit": "216dcf513593055a70165f793e96b52589d71b1b",
+    "base_tree": "6b033bd81da09095f4dfc1865fe50a1652ca5859",
+    "upstream_release_commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
+    "preserve_existing_history": true
+  },
+  "components": [
+    {
+      "id": "alibaba/open-code-review",
+      "kind": "preexisting-approved-native-baseline",
+      "state": "IDENTITY_RECONCILED_NOT_INTEGRATION_QUALIFIED",
+      "enabled_by_s00": false,
+      "release": "v1.13.3",
+      "source_commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
+      "binary_sha256": "843be0e56fdff0a5ca6f86c5866f942d6a372dff1c0ca19e7893d72495abf45c",
+      "binary_bytes": 56524962,
+      "platform": "linux-amd64",
+      "asset": "opencodereview-linux-amd64",
+      "provenance": "ocr-capabilities.json",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/alibaba/open-code-review/blob/375f64cd6f67a48a135da83cfcf59c52669a09cb/LICENSE",
+      "license_sha256": "1945665fdb6968a66ea29438ddee0aee23035365c862e5c4a75b62b303340acf",
+      "new_binary_redistributed": false,
+      "unresolved_prerequisites": [
+        "Post-preservation current capability qualification when expressly permitted",
+        "Independent full-content review",
+        "Later isolated-input/effective-policy qualification before adapter execution"
+      ]
+    },
+    {
+      "id": "trailofbits/skills",
+      "kind": "planned-procedure-source",
+      "state": "PROPOSED_NOT_ADOPTED_NOT_INSTALLED_NOT_QUALIFIED",
+      "enabled": false,
+      "source_commit": "2be6433b39e009cd2b6fd3be1895f6b1faa5af9a",
+      "release": null,
+      "source_url": "https://github.com/trailofbits/skills/tree/2be6433b39e009cd2b6fd3be1895f6b1faa5af9a",
+      "binary_sha256": null,
+      "rules_or_database_sha256": null,
+      "license_record": {
+        "observed_identifier": "CC-BY-SA-4.0",
+        "source_url": "https://github.com/trailofbits/skills/blob/2be6433b39e009cd2b6fd3be1895f6b1faa5af9a/LICENSE",
+        "limit": "Source record only; exact artifact/rule/data obligations must be resolved before copying, acquisition or execution.",
+        "text_sha256": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297"
+      },
+      "unresolved_prerequisites": [
+        "Select exact procedure files and hash their content before adapting",
+        "Retain source attribution, license and change record; resolve share-alike boundary for adapted material",
+        "No hook or bundled runtime adoption"
+      ]
+    },
+    {
+      "id": "OWASP/secure-agent-playbook",
+      "kind": "planned-procedure-source",
+      "state": "PROPOSED_NOT_ADOPTED_NOT_INSTALLED_NOT_QUALIFIED",
+      "enabled": false,
+      "source_commit": "65d4efd2cd0b081d52101e9708792b944e4ddebb",
+      "release": null,
+      "source_url": "https://github.com/OWASP/secure-agent-playbook/tree/65d4efd2cd0b081d52101e9708792b944e4ddebb",
+      "binary_sha256": null,
+      "rules_or_database_sha256": null,
+      "license_record": {
+        "observed_identifier": "CC-BY-4.0",
+        "source_url": "https://github.com/OWASP/secure-agent-playbook/blob/65d4efd2cd0b081d52101e9708792b944e4ddebb/LICENSE.md",
+        "limit": "Source record only; exact artifact/rule/data obligations must be resolved before copying, acquisition or execution.",
+        "text_sha256": "a6ef5f90d5f4d6df60f02545fd1b2c05f7108a690af0f914098ffa0f7025dca1"
+      },
+      "unresolved_prerequisites": [
+        "Select exact procedure/play files and content hashes",
+        "Retain attribution, license link and modification notice for adapted material",
+        "No procedure content or runtime copied in S00"
+      ]
+    },
+    {
+      "id": "opengrep/opengrep",
+      "kind": "planned-offline-sast-cli",
+      "state": "PROPOSED_NOT_ADOPTED_NOT_INSTALLED_NOT_QUALIFIED",
+      "enabled": false,
+      "source_commit": "092c80faa0817840228349f93eff12a50fb9cf6b",
+      "release": "v1.33.1",
+      "source_url": "https://github.com/opengrep/opengrep/tree/092c80faa0817840228349f93eff12a50fb9cf6b",
+      "binary_sha256": null,
+      "rules_or_database_sha256": null,
+      "license_record": {
+        "observed_identifier": "LGPL-2.1",
+        "source_url": "https://github.com/opengrep/opengrep/blob/092c80faa0817840228349f93eff12a50fb9cf6b/LICENSE",
+        "limit": "Source record only; exact artifact/rule/data obligations must be resolved before copying, acquisition or execution.",
+        "text_sha256": "20c17d8b8c48a600800dfd14f95d5cb9ff47066a9641ddeab48dc54aec96e331"
+      },
+      "unresolved_prerequisites": [
+        "Binary asset/digest and provenance approval",
+        "Separately owned/approved local rules with license and hashes",
+        "No auto/registry rules or rule download",
+        "Execution consent and enforced isolation/effective configuration qualification"
+      ]
+    },
+    {
+      "id": "gitleaks/gitleaks",
+      "kind": "planned-offline-secret-cli",
+      "state": "PROPOSED_NOT_ADOPTED_NOT_INSTALLED_NOT_QUALIFIED",
+      "enabled": false,
+      "source_commit": "83d9cd684c87d95d656c1458ef04895a7f1cbd8e",
+      "release": "v8.30.1",
+      "source_url": "https://github.com/gitleaks/gitleaks/tree/83d9cd684c87d95d656c1458ef04895a7f1cbd8e",
+      "binary_sha256": null,
+      "rules_or_database_sha256": null,
+      "license_record": {
+        "observed_identifier": "MIT",
+        "source_url": "https://github.com/gitleaks/gitleaks/blob/83d9cd684c87d95d656c1458ef04895a7f1cbd8e/LICENSE",
+        "limit": "Source record only; exact artifact/rule/data obligations must be resolved before copying, acquisition or execution.",
+        "text_sha256": "e3884b252b3bfc045e55be43a34d1e80da070bc6f804ac95bf4660e97d62ebc6"
+      },
+      "unresolved_prerequisites": [
+        "Binary asset/digest and provenance approval",
+        "Exact rule/config pin and license scope",
+        "Explicit full redaction with protected raw evidence",
+        "No gitleaks-action adoption or credential validation",
+        "Execution consent and enforced isolation qualification"
+      ]
+    },
+    {
+      "id": "google/osv-scanner",
+      "kind": "planned-offline-dependency-cli",
+      "state": "PROPOSED_NOT_ADOPTED_NOT_INSTALLED_NOT_QUALIFIED",
+      "enabled": false,
+      "source_commit": "bfe2f84abd2f09fe0b83ba7f6dad40d296762f40",
+      "release": "v2.7.0",
+      "source_url": "https://github.com/google/osv-scanner/tree/bfe2f84abd2f09fe0b83ba7f6dad40d296762f40",
+      "binary_sha256": null,
+      "rules_or_database_sha256": null,
+      "license_record": {
+        "observed_identifier": "Apache-2.0",
+        "source_url": "https://github.com/google/osv-scanner/blob/bfe2f84abd2f09fe0b83ba7f6dad40d296762f40/LICENSE",
+        "limit": "Source record only; exact artifact/rule/data obligations must be resolved before copying, acquisition or execution.",
+        "text_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      "unresolved_prerequisites": [
+        "Binary asset/digest and provenance approval",
+        "Approved offline vulnerability database snapshots, hashes, timestamps and data licenses",
+        "Freshness/coverage policy; no auto-fix or online dependency metadata query",
+        "Execution consent and enforced offline qualification"
+      ]
+    }
+  ],
+  "deferred_research_candidates": [
+    {
+      "id": "betterleaks/betterleaks",
+      "research_release": "v1.9.0",
+      "research_commit": "81aff7a638638aae3a659845d089043e1d8fe9ac",
+      "source_url": "https://github.com/betterleaks/betterleaks/commit/81aff7a638638aae3a659845d089043e1d8fe9ac",
+      "state": "RESEARCH_ONLY_DEFERRED_NO_ADOPTION",
+      "enabled": false,
+      "binary_sha256": null,
+      "reopen_prerequisites": "Relevant future decision sprint; current exact release provenance, license/entitlement, rule/data terms, target scope, isolated execution and separate activation authority."
+    },
+    {
+      "id": "aquasecurity/trivy",
+      "research_release": "v0.76.1",
+      "research_commit": "e713f67f7d54decdcd9b3132c9751833dcced698",
+      "source_url": "https://github.com/aquasecurity/trivy/commit/e713f67f7d54decdcd9b3132c9751833dcced698",
+      "state": "RESEARCH_ONLY_DEFERRED_NO_ADOPTION",
+      "enabled": false,
+      "binary_sha256": null,
+      "reopen_prerequisites": "Relevant future decision sprint; current exact release provenance, license/entitlement, rule/data terms, target scope, isolated execution and separate activation authority."
+    },
+    {
+      "id": "semgrep/semgrep",
+      "research_release": "v1.183.0",
+      "research_commit": "4fe07d805dd2a4b64fed486e95136923f08648d0",
+      "source_url": "https://github.com/semgrep/semgrep/commit/4fe07d805dd2a4b64fed486e95136923f08648d0",
+      "state": "RESEARCH_ONLY_DEFERRED_NO_ADOPTION",
+      "enabled": false,
+      "binary_sha256": null,
+      "reopen_prerequisites": "Relevant future decision sprint; current exact release provenance, license/entitlement, rule/data terms, target scope, isolated execution and separate activation authority."
+    },
+    {
+      "id": "Bearer/bearer",
+      "research_release": "v2.1.3",
+      "research_commit": "668f5df05042088125d83d197252b5a8e78422df",
+      "source_url": "https://github.com/Bearer/bearer/commit/668f5df05042088125d83d197252b5a8e78422df",
+      "state": "RESEARCH_ONLY_DEFERRED_NO_ADOPTION",
+      "enabled": false,
+      "binary_sha256": null,
+      "reopen_prerequisites": "Relevant future decision sprint; current exact release provenance, license/entitlement, rule/data terms, target scope, isolated execution and separate activation authority."
+    },
+    {
+      "id": "github/codeql-cli-binaries",
+      "research_release": "v2.27.3",
+      "research_commit": "b8920d6194a72a8c567808f64943929acbd9a3d9",
+      "source_url": "https://github.com/github/codeql-cli-binaries/commit/b8920d6194a72a8c567808f64943929acbd9a3d9",
+      "state": "RESEARCH_ONLY_DEFERRED_NO_ADOPTION",
+      "enabled": false,
+      "binary_sha256": null,
+      "reopen_prerequisites": "Relevant future decision sprint; current exact release provenance, license/entitlement, rule/data terms, target scope, isolated execution and separate activation authority."
+    },
+    {
+      "id": "affaan-m/agentshield",
+      "research_commit": "b0891303bdcd6037376a94263d45cfd2ff3dfb98",
+      "source_url": "https://github.com/affaan-m/agentshield/blob/b0891303bdcd6037376a94263d45cfd2ff3dfb98/README.md",
+      "state": "RESEARCH_ONLY_DEFERRED_NO_ADOPTION",
+      "enabled": false,
+      "binary_sha256": null,
+      "reopen_prerequisites": "Relevant future decision sprint; exact selected source and licenses, provider/service/data/target consent, account/spending authority where applicable, and no activation by adapter existence."
+    },
+    {
+      "id": "anthropics/claude-code-security-review",
+      "research_commit": "0c6a49f1fa56a1d472575da86a94dbc1edb78eda",
+      "source_url": "https://github.com/anthropics/claude-code-security-review/blob/0c6a49f1fa56a1d472575da86a94dbc1edb78eda/README.md",
+      "state": "RESEARCH_ONLY_DEFERRED_NO_ADOPTION",
+      "enabled": false,
+      "binary_sha256": null,
+      "reopen_prerequisites": "Relevant future decision sprint; exact selected source and licenses, provider/service/data/target consent, account/spending authority where applicable, and no activation by adapter existence."
+    },
+    {
+      "id": "snyk/agent-scan",
+      "research_commit": "a69e1c354ad0812c13da15dc64770e1c21786841",
+      "source_url": "https://github.com/snyk/agent-scan/blob/a69e1c354ad0812c13da15dc64770e1c21786841/README.md",
+      "state": "RESEARCH_ONLY_DEFERRED_NO_ADOPTION",
+      "enabled": false,
+      "binary_sha256": null,
+      "reopen_prerequisites": "Relevant future decision sprint; exact selected source and licenses, provider/service/data/target consent, account/spending authority where applicable, and no activation by adapter existence."
+    },
+    {
+      "id": "usestrix/strix",
+      "research_commit": "6b7ae2ebe4d47037a927aade23265ff4e4f27e84",
+      "source_url": "https://github.com/usestrix/strix/blob/6b7ae2ebe4d47037a927aade23265ff4e4f27e84/README.md",
+      "state": "RESEARCH_ONLY_DEFERRED_NO_ADOPTION",
+      "enabled": false,
+      "binary_sha256": null,
+      "reopen_prerequisites": "Relevant future decision sprint; exact selected source and licenses, provider/service/data/target consent, account/spending authority where applicable, and no activation by adapter existence."
+    },
+    {
+      "id": "KeygraphHQ/shannon",
+      "research_commit": "b9744f6cecc5429333873b86a6762f1d70c54fc2",
+      "source_url": "https://github.com/KeygraphHQ/shannon/blob/b9744f6cecc5429333873b86a6762f1d70c54fc2/README.md",
+      "state": "RESEARCH_ONLY_DEFERRED_NO_ADOPTION",
+      "enabled": false,
+      "binary_sha256": null,
+      "reopen_prerequisites": "Relevant future decision sprint; exact selected source and licenses, provider/service/data/target consent, account/spending authority where applicable, and no activation by adapter existence."
+    }
+  ],
+  "deferred_pin_limit": "Prior research pins are retained for traceability only. No future decision/adapter/pilot task is completed by listing them; no unverified binary digest, licensing clearance or current maintenance claim is implied.",
+  "copied_material": {
+    "runtime_binaries": [],
+    "third_party_procedures": [],
+    "scanner_rules": [],
+    "databases": [],
+    "report_templates": [],
+    "source_derived_records": [
+      "OCR CLI/schema descriptions and provenance references, attributed in THIRD-PARTY-NOTICES.md"
+    ],
+    "upstream_existing_license": "../LICENSE",
+    "existing_dependency_tree": "Unchanged; no package installation or dependency modification."
+  },
+  "inspected_source_files": [
+    {
+      "repository": "alibaba/open-code-review",
+      "commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
+      "path": "cmd/opencodereview/delegate_cmd.go",
+      "bytes": 10041,
+      "git_blob_sha1": "f47a3ba4774d76d62862e7fb7cb7af0062b9cc77",
+      "sha256": "5870a1f04badb041f1d211ee3d35cc1221ceaa0852ed974121b8a8f8031c6545",
+      "url": "https://github.com/alibaba/open-code-review/blob/375f64cd6f67a48a135da83cfcf59c52669a09cb/cmd/opencodereview/delegate_cmd.go",
+      "same_blob_in_owned_base": true
+    },
+    {
+      "repository": "alibaba/open-code-review",
+      "commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
+      "path": "cmd/opencodereview/shared.go",
+      "bytes": 32537,
+      "git_blob_sha1": "c002b585ff89df816c02adb370b1d3e2c644acd1",
+      "sha256": "39becd778604df102106bd0bc223a90b361a66ac4f071d1fa4c8f5143047635f",
+      "url": "https://github.com/alibaba/open-code-review/blob/375f64cd6f67a48a135da83cfcf59c52669a09cb/cmd/opencodereview/shared.go",
+      "same_blob_in_owned_base": true
+    },
+    {
+      "repository": "alibaba/open-code-review",
+      "commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
+      "path": "cmd/opencodereview/shared_flags.go",
+      "bytes": 12150,
+      "git_blob_sha1": "134fcc20f9af412c2a4df069a180032a3efcab80",
+      "sha256": "e4121b021ea2988189684e5276e644a9ce3654f4e840bcfa5925719e7214a83d",
+      "url": "https://github.com/alibaba/open-code-review/blob/375f64cd6f67a48a135da83cfcf59c52669a09cb/cmd/opencodereview/shared_flags.go",
+      "same_blob_in_owned_base": true
+    },
+    {
+      "repository": "alibaba/open-code-review",
+      "commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
+      "path": "extensions/frontend/package.json",
+      "bytes": 631,
+      "git_blob_sha1": "82507390b0cfc715a4c51b99cbb391fd3b9c920f",
+      "sha256": "feb6786be9f5d64b68cce2a567427ed2a762471fccf44d1349cbb1015b52b132",
+      "url": "https://github.com/alibaba/open-code-review/blob/375f64cd6f67a48a135da83cfcf59c52669a09cb/extensions/frontend/package.json",
+      "same_blob_in_owned_base": true
+    },
+    {
+      "repository": "alibaba/open-code-review",
+      "commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
+      "path": "extensions/idea/build.gradle.kts",
+      "bytes": 7173,
+      "git_blob_sha1": "c24fb732a189fd5c575d7e3cfeef56e75ec216cb",
+      "sha256": "87a9802a22bb9158cc8b76378d3aa24282f692b18c1cfe058b38d9a00b9c6376",
+      "url": "https://github.com/alibaba/open-code-review/blob/375f64cd6f67a48a135da83cfcf59c52669a09cb/extensions/idea/build.gradle.kts",
+      "same_blob_in_owned_base": true
+    },
+    {
+      "repository": "alibaba/open-code-review",
+      "commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
+      "path": "extensions/vscode/package.json",
+      "bytes": 3508,
+      "git_blob_sha1": "9462e22665264bd0b8f26d032830a4a61831200f",
+      "sha256": "d09dcef0bdaa350086806e1952cba91502b2ad19ef30c928cd55c6aaebf7c249",
+      "url": "https://github.com/alibaba/open-code-review/blob/375f64cd6f67a48a135da83cfcf59c52669a09cb/extensions/vscode/package.json",
+      "same_blob_in_owned_base": true
+    },
+    {
+      "repository": "alibaba/open-code-review",
+      "commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
+      "path": "internal/agent/preview.go",
+      "bytes": 5166,
+      "git_blob_sha1": "2873ed7e4a542261115ea19791c7976e11a6e686",
+      "sha256": "2e9ad46d7b72eaa631420876646d53007a9cab6ec133cefc0a5c2d2cc99950bf",
+      "url": "https://github.com/alibaba/open-code-review/blob/375f64cd6f67a48a135da83cfcf59c52669a09cb/internal/agent/preview.go",
+      "same_blob_in_owned_base": true
+    },
+    {
+      "repository": "alibaba/open-code-review",
+      "commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
+      "path": "internal/config/rules/rule_docs/json.md",
+      "bytes": 86,
+      "git_blob_sha1": "80db656f4931a67faeb36dd481d9c6ffdfd3e055",
+      "sha256": "5ec3f0fea279f3b63d417621ece604de89f40a3a5946fdd8e5e07aad8d64d410",
+      "url": "https://github.com/alibaba/open-code-review/blob/375f64cd6f67a48a135da83cfcf59c52669a09cb/internal/config/rules/rule_docs/json.md",
+      "same_blob_in_owned_base": true
+    },
+    {
+      "repository": "alibaba/open-code-review",
+      "commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
+      "path": "internal/config/rules/system_rules.go",
+      "bytes": 21446,
+      "git_blob_sha1": "403c46a56e2d5b6fed40dfb00826ce3174aec0dd",
+      "sha256": "e0e5e751a8e250b9796a3be3e173955d555b78da685d7523313730973a7e9852",
+      "url": "https://github.com/alibaba/open-code-review/blob/375f64cd6f67a48a135da83cfcf59c52669a09cb/internal/config/rules/system_rules.go",
+      "same_blob_in_owned_base": true
+    },
+    {
+      "repository": "alibaba/open-code-review",
+      "commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
+      "path": "internal/config/rules/system_rules.json",
+      "bytes": 2067,
+      "git_blob_sha1": "399978d6d6e6987b2a02a42f3bd55674e90bd631",
+      "sha256": "cd44fdb842fae436646609187fd1acf7c14903077c93ede7b8bc1e14baf12b7d",
+      "url": "https://github.com/alibaba/open-code-review/blob/375f64cd6f67a48a135da83cfcf59c52669a09cb/internal/config/rules/system_rules.json",
+      "same_blob_in_owned_base": true
+    },
+    {
+      "repository": "alibaba/open-code-review",
+      "commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
+      "path": "internal/delegate/format.go",
+      "bytes": 646,
+      "git_blob_sha1": "0e10502384f3c708642f6d4068da555168a3e2e9",
+      "sha256": "27ecdf717e39936b2ee4c95d8afb85764024edea56069eaceb2ba1195e09c973",
+      "url": "https://github.com/alibaba/open-code-review/blob/375f64cd6f67a48a135da83cfcf59c52669a09cb/internal/delegate/format.go",
+      "same_blob_in_owned_base": true
+    },
+    {
+      "repository": "alibaba/open-code-review",
+      "commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
+      "path": "internal/delegate/rulegroup.go",
+      "bytes": 1910,
+      "git_blob_sha1": "3e7d8ba80ec4f455e95dc91d6e2df4cad6bc8daf",
+      "sha256": "7f58b3d38c312517dd12ee179ce96185081d21e3af682c8133012ad51d4f0a38",
+      "url": "https://github.com/alibaba/open-code-review/blob/375f64cd6f67a48a135da83cfcf59c52669a09cb/internal/delegate/rulegroup.go",
+      "same_blob_in_owned_base": true
+    },
+    {
+      "repository": "alibaba/open-code-review",
+      "commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
+      "path": "internal/model/preview.go",
+      "bytes": 2013,
+      "git_blob_sha1": "7d3ed22b80c0cf437338331e6c0291b65d56352a",
+      "sha256": "56d78a8eeb93b73c7ce2ba580fa072c5cbd0db5a9ea2f5b796bcccf773aa0958",
+      "url": "https://github.com/alibaba/open-code-review/blob/375f64cd6f67a48a135da83cfcf59c52669a09cb/internal/model/preview.go",
+      "same_blob_in_owned_base": true
+    },
+    {
+      "repository": "alibaba/open-code-review",
+      "commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
+      "path": "pages/package.json",
+      "bytes": 1897,
+      "git_blob_sha1": "f920b2c2f9e69bac9a378ca4d7ba5b895e583622",
+      "sha256": "176a18994593279a70da9fcdf048ba27cb50f72ed77b5423fb77ef152ccb81ea",
+      "url": "https://github.com/alibaba/open-code-review/blob/375f64cd6f67a48a135da83cfcf59c52669a09cb/pages/package.json",
+      "same_blob_in_owned_base": true
+    },
+    {
+      "repository": "alibaba/open-code-review",
+      "commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
+      "path": "pages/src/content/docs/en/integrations/delegate.md",
+      "bytes": 6250,
+      "git_blob_sha1": "1c67fb5110f2f30cecf3db787a063fd5134498ee",
+      "sha256": "ebe8003a78c5c058517374af6c5e73bcfb7170ad6b42e2925617e0c6f2a597de",
+      "url": "https://github.com/alibaba/open-code-review/blob/375f64cd6f67a48a135da83cfcf59c52669a09cb/pages/src/content/docs/en/integrations/delegate.md",
+      "same_blob_in_owned_base": true
+    },
+    {
+      "repository": "TGambit65/open-code-review",
+      "commit": "216dcf513593055a70165f793e96b52589d71b1b",
+      "path": "AGENTS.md",
+      "bytes": 5992,
+      "git_blob_sha1": "305943432417d5c2d89b208042d57c6b0312a800",
+      "sha256": "08458995736ef51bdd32f2a02bb45660e8019724238064c2ac17abc93749d727",
+      "url": "https://github.com/TGambit65/open-code-review/blob/216dcf513593055a70165f793e96b52589d71b1b/AGENTS.md"
+    },
+    {
+      "repository": "TGambit65/open-code-review",
+      "commit": "216dcf513593055a70165f793e96b52589d71b1b",
+      "path": "LICENSE",
+      "bytes": 11356,
+      "git_blob_sha1": "5db038258492ce47a5f3d27d78562c90d3f78331",
+      "sha256": "1945665fdb6968a66ea29438ddee0aee23035365c862e5c4a75b62b303340acf",
+      "url": "https://github.com/TGambit65/open-code-review/blob/216dcf513593055a70165f793e96b52589d71b1b/LICENSE"
+    },
+    {
+      "repository": "TGambit65/open-code-review",
+      "commit": "216dcf513593055a70165f793e96b52589d71b1b",
+      "path": "go.mod",
+      "bytes": 4577,
+      "git_blob_sha1": "e95827cdc9b824568289a8f6fa58a8f7f4d27e6f",
+      "sha256": "d532a777a3aafb72c5e8cdc64504bcb5c634a12bf3538b98d10327e25babfac5",
+      "url": "https://github.com/TGambit65/open-code-review/blob/216dcf513593055a70165f793e96b52589d71b1b/go.mod"
+    },
+    {
+      "repository": "TGambit65/open-code-review",
+      "commit": "216dcf513593055a70165f793e96b52589d71b1b",
+      "path": "package.json",
+      "bytes": 1664,
+      "git_blob_sha1": "d7de649002086c1ab2aaa2b85c2937b79d548ef2",
+      "sha256": "3cea8942c62b6036774987a4d3ceadfe78a40c6481f027b807547a0f34bad881",
+      "url": "https://github.com/TGambit65/open-code-review/blob/216dcf513593055a70165f793e96b52589d71b1b/package.json"
+    },
+    {
+      "repository": "TGambit65/open-code-review",
+      "commit": "216dcf513593055a70165f793e96b52589d71b1b",
+      "path": "plugins/open-code-review/skills/open-code-review-delegate/SKILL.md",
+      "bytes": 9345,
+      "git_blob_sha1": "7648afd6563a27b662cbe2166c3c3a654ec26064",
+      "sha256": "26b5badb00381839f0b25e6cdb5bad4a44dbb10b58fd49ebafd697fda461628f",
+      "url": "https://github.com/TGambit65/open-code-review/blob/216dcf513593055a70165f793e96b52589d71b1b/plugins/open-code-review/skills/open-code-review-delegate/SKILL.md"
+    }
+  ],
+  "custody_limits": {
+    "full_repository_clone": false,
+    "source_inventory": "Only listed exact context files plus complete base tree metadata.",
+    "source_read_scope": "Relevant capability/schema/rule-loading/manifests and license text; not a full audit of those components.",
+    "raw_evidence": "Controlled external custody, never wholesale inclusion in this public subtree."
+  },
+  "current_security_coverage": "NONE_ADDED_BY_S00"
+}

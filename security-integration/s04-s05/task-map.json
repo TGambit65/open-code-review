@@ -1,0 +1,665 @@
+{
+  "kind": "S04-S05-original-task-map",
+  "original_task_count": 40,
+  "source_authoring_amendment": "SEQUENCING-AMENDMENT.md",
+  "qualification_and_activation": "held",
+  "tasks": [
+    {
+      "id": "S04.01",
+      "title": "Stage acquisition separately from analysis",
+      "original_dependencies": [
+        "S04.F",
+        "S03.01"
+      ],
+      "applicability": "required",
+      "state": "provisional_source_authored_not_qualified",
+      "source_artifacts": [
+        "ocr_security_gate/updates.py",
+        "schemas/update-manifest.schema.json",
+        "update-manifest.json"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S04.02",
+      "title": "Define dataset freshness and failure semantics",
+      "original_dependencies": [
+        "S04.01",
+        "S04.F"
+      ],
+      "applicability": "required",
+      "state": "provisional_source_authored_not_qualified",
+      "source_artifacts": [
+        "ocr_security_gate/updates.py"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S04.03",
+      "title": "Automate the already-qualified offline profile",
+      "original_dependencies": [
+        "S04.F",
+        "S01.A"
+      ],
+      "applicability": "required",
+      "state": "provisional_source_authored_not_qualified",
+      "source_artifacts": [
+        "ocr_security_gate/orchestrator.py"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S04.04",
+      "title": "Deduplicate without deleting independent evidence",
+      "original_dependencies": [
+        "S03.05",
+        "S04.F"
+      ],
+      "applicability": "required",
+      "state": "provisional_source_authored_not_qualified",
+      "source_artifacts": [
+        "ocr_security_gate/observations.py"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S04.05",
+      "title": "Implement owned expiring suppressions and exceptions",
+      "original_dependencies": [
+        "S04.04",
+        "S00.02",
+        "S01.09",
+        "S04.F"
+      ],
+      "applicability": "required",
+      "state": "provisional_source_authored_not_qualified",
+      "source_artifacts": [
+        "ocr_security_gate/exceptions.py",
+        "schemas/finding-decision.schema.json"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S04.06",
+      "title": "Parse scanner output as bounded untrusted data",
+      "original_dependencies": [
+        "S03.05",
+        "S04.F"
+      ],
+      "applicability": "required",
+      "state": "provisional_source_authored_not_qualified",
+      "source_artifacts": [
+        "ocr_security_gate/evidence.py",
+        "ocr_security_gate/contracts.py"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S04.07",
+      "title": "Render inert secret-safe reports",
+      "original_dependencies": [
+        "S04.06",
+        "S01.06",
+        "S04.F"
+      ],
+      "applicability": "required",
+      "state": "provisional_source_authored_not_qualified",
+      "source_artifacts": [
+        "ocr_security_gate/reports.py"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S04.08",
+      "title": "Emit the combined evidence reports",
+      "original_dependencies": [
+        "S04.07",
+        "S04.05",
+        "S04.F"
+      ],
+      "applicability": "required",
+      "state": "provisional_source_authored_not_qualified",
+      "source_artifacts": [
+        "ocr_security_gate/entrypoint.py",
+        "ocr_security_gate/reports.py"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S04.08S",
+      "title": "Implement optional supported SARIF interchange",
+      "original_dependencies": [
+        "S04.08",
+        "S04.F"
+      ],
+      "applicability": "conditional",
+      "state": "deferred_not_selected",
+      "source_artifacts": [
+        "README.md",
+        "ocr_security_gate/reports.py"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S04.09",
+      "title": "Implement fail-closed target acceptance",
+      "original_dependencies": [
+        "S04.02",
+        "S04.05",
+        "S04.08",
+        "S04.F"
+      ],
+      "applicability": "required",
+      "state": "provisional_source_authored_not_qualified",
+      "source_artifacts": [
+        "ocr_security_gate/gate.py",
+        "schemas/run-attestation.schema.json"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S04.10",
+      "title": "Implement distinct harness qualification and regressions",
+      "original_dependencies": [
+        "S04.09",
+        "S04.F"
+      ],
+      "applicability": "required",
+      "state": "provisional_source_authored_not_qualified",
+      "source_artifacts": [
+        "ocr_security_gate/qualification.py",
+        "fixtures/cases.json",
+        "tests/test_gate_qualification.py"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S04.A",
+      "title": "Accept the qualified sprint or retain an explicit hold",
+      "original_dependencies": [
+        "S04.U",
+        "S04.V01",
+        "S04.V02",
+        "S04.V03",
+        "S04.V04"
+      ],
+      "applicability": "required",
+      "state": "unrun_or_held",
+      "source_artifacts": [],
+      "completion_evidence": []
+    },
+    {
+      "id": "S04.C",
+      "title": "Resolve supported findings and seal review outcome",
+      "original_dependencies": [
+        "S04.R"
+      ],
+      "applicability": "required",
+      "state": "unrun_or_held",
+      "source_artifacts": [],
+      "completion_evidence": []
+    },
+    {
+      "id": "S04.F",
+      "title": "Freeze the complete sprint scope",
+      "original_dependencies": [
+        "S03.A"
+      ],
+      "applicability": "required",
+      "state": "source_scope_frozen",
+      "source_artifacts": [
+        "scope.json",
+        "SEQUENCING-AMENDMENT.md"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S04.M",
+      "title": "Seal the full implementation endpoint",
+      "original_dependencies": [
+        "S04.F",
+        "S04.01",
+        "S04.02",
+        "S04.03",
+        "S04.04",
+        "S04.05",
+        "S04.06",
+        "S04.07",
+        "S04.08",
+        "S04.09",
+        "S04.10",
+        "S04.RB"
+      ],
+      "applicability": "required",
+      "state": "unrun_or_held",
+      "source_artifacts": [],
+      "completion_evidence": []
+    },
+    {
+      "id": "S04.P",
+      "title": "Preserve eligible source immediately in the same draft",
+      "original_dependencies": [
+        "S04.C"
+      ],
+      "applicability": "required",
+      "state": "unrun_or_held",
+      "source_artifacts": [],
+      "completion_evidence": []
+    },
+    {
+      "id": "S04.R",
+      "title": "Record independent full-diff review",
+      "original_dependencies": [
+        "S04.M"
+      ],
+      "applicability": "required",
+      "state": "unrun_or_held",
+      "source_artifacts": [],
+      "completion_evidence": []
+    },
+    {
+      "id": "S04.RB",
+      "title": "Write the bounded rollback procedure",
+      "original_dependencies": [
+        "S04.F"
+      ],
+      "applicability": "required",
+      "state": "source_authored_not_validated",
+      "source_artifacts": [
+        "ROLLBACK.md"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S04.U",
+      "title": "Preserve validation results and reviewed corrections",
+      "original_dependencies": [
+        "S04.P"
+      ],
+      "applicability": "required",
+      "state": "unrun_or_held",
+      "source_artifacts": [],
+      "completion_evidence": []
+    },
+    {
+      "id": "S04.V01",
+      "title": "Verify controlled updates and truthful stale rollback",
+      "original_dependencies": [
+        "S04.P"
+      ],
+      "applicability": "required",
+      "state": "unrun_or_held",
+      "source_artifacts": [
+        "VALIDATION.md",
+        "fixtures/cases.json",
+        "tests/"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S04.V02",
+      "title": "Verify deduplication and suppression authority",
+      "original_dependencies": [
+        "S04.P"
+      ],
+      "applicability": "required",
+      "state": "unrun_or_held",
+      "source_artifacts": [
+        "VALIDATION.md",
+        "fixtures/cases.json",
+        "tests/"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S04.V03",
+      "title": "Verify hostile reports stay inert and usable",
+      "original_dependencies": [
+        "S04.P"
+      ],
+      "applicability": "required",
+      "state": "unrun_or_held",
+      "source_artifacts": [
+        "VALIDATION.md",
+        "fixtures/cases.json",
+        "tests/"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S04.V04",
+      "title": "Verify qualification cannot clear a vulnerable target",
+      "original_dependencies": [
+        "S04.P"
+      ],
+      "applicability": "required",
+      "state": "unrun_or_held",
+      "source_artifacts": [
+        "VALIDATION.md",
+        "fixtures/cases.json",
+        "tests/"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S05.01",
+      "title": "Write the full-sprint operator workflow",
+      "original_dependencies": [
+        "S05.F"
+      ],
+      "applicability": "required",
+      "state": "provisional_source_authored_not_qualified",
+      "source_artifacts": [
+        "WORKFLOW.md",
+        "workflow/AGENTS-INTEGRATION-PROPOSAL.md"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S05.02",
+      "title": "Implement preservation and acceptance as separate outcomes",
+      "original_dependencies": [
+        "S05.01",
+        "S05.F"
+      ],
+      "applicability": "required",
+      "state": "provisional_source_authored_not_qualified",
+      "source_artifacts": [
+        "ocr_security_gate/workflow.py"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S05.03",
+      "title": "Track whole-PR distinct paths and dependent batches",
+      "original_dependencies": [
+        "S05.01",
+        "S05.F"
+      ],
+      "applicability": "required",
+      "state": "provisional_source_authored_not_qualified",
+      "source_artifacts": [
+        "ocr_security_gate/batching.py"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S05.04",
+      "title": "Track one consolidated CodeRabbit review",
+      "original_dependencies": [
+        "S05.01",
+        "S05.F"
+      ],
+      "applicability": "required",
+      "state": "provisional_source_authored_not_qualified",
+      "source_artifacts": [
+        "ocr_security_gate/review_gate.py"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S05.05",
+      "title": "Represent merge conflicts and exact action gates",
+      "original_dependencies": [
+        "S05.04",
+        "S05.F"
+      ],
+      "applicability": "required",
+      "state": "provisional_source_authored_not_qualified",
+      "source_artifacts": [
+        "ocr_security_gate/review_gate.py"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S05.06",
+      "title": "Author coordinator event fixtures",
+      "original_dependencies": [
+        "S05.02",
+        "S05.03",
+        "S05.05",
+        "S05.F"
+      ],
+      "applicability": "required",
+      "state": "provisional_source_authored_not_qualified",
+      "source_artifacts": [
+        "workflow/event-fixtures.json",
+        "tests/test_workflow_batching.py",
+        "tests/test_review_actions.py"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S05.A",
+      "title": "Accept the qualified sprint or retain an explicit hold",
+      "original_dependencies": [
+        "S05.U",
+        "S05.V01",
+        "S05.V02",
+        "S05.V03"
+      ],
+      "applicability": "required",
+      "state": "unrun_or_held",
+      "source_artifacts": [],
+      "completion_evidence": []
+    },
+    {
+      "id": "S05.C",
+      "title": "Resolve supported findings and seal review outcome",
+      "original_dependencies": [
+        "S05.R"
+      ],
+      "applicability": "required",
+      "state": "unrun_or_held",
+      "source_artifacts": [],
+      "completion_evidence": []
+    },
+    {
+      "id": "S05.F",
+      "title": "Freeze the complete sprint scope",
+      "original_dependencies": [
+        "S04.A"
+      ],
+      "applicability": "required",
+      "state": "source_scope_frozen",
+      "source_artifacts": [
+        "scope.json",
+        "SEQUENCING-AMENDMENT.md"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S05.M",
+      "title": "Seal the full implementation endpoint",
+      "original_dependencies": [
+        "S05.F",
+        "S05.01",
+        "S05.02",
+        "S05.03",
+        "S05.04",
+        "S05.05",
+        "S05.06",
+        "S05.RB"
+      ],
+      "applicability": "required",
+      "state": "unrun_or_held",
+      "source_artifacts": [],
+      "completion_evidence": []
+    },
+    {
+      "id": "S05.P",
+      "title": "Preserve eligible source immediately in the same draft",
+      "original_dependencies": [
+        "S05.C"
+      ],
+      "applicability": "required",
+      "state": "unrun_or_held",
+      "source_artifacts": [],
+      "completion_evidence": []
+    },
+    {
+      "id": "S05.R",
+      "title": "Record independent full-diff review",
+      "original_dependencies": [
+        "S05.M"
+      ],
+      "applicability": "required",
+      "state": "unrun_or_held",
+      "source_artifacts": [],
+      "completion_evidence": []
+    },
+    {
+      "id": "S05.RB",
+      "title": "Write the bounded rollback procedure",
+      "original_dependencies": [
+        "S05.F"
+      ],
+      "applicability": "required",
+      "state": "source_authored_not_validated",
+      "source_artifacts": [
+        "ROLLBACK.md"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S05.U",
+      "title": "Preserve validation results and reviewed corrections",
+      "original_dependencies": [
+        "S05.P"
+      ],
+      "applicability": "required",
+      "state": "unrun_or_held",
+      "source_artifacts": [],
+      "completion_evidence": []
+    },
+    {
+      "id": "S05.V01",
+      "title": "Verify failure and uncertain-publication transitions",
+      "original_dependencies": [
+        "S05.P"
+      ],
+      "applicability": "required",
+      "state": "unrun_or_held",
+      "source_artifacts": [
+        "VALIDATION.md",
+        "fixtures/cases.json",
+        "tests/"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S05.V02",
+      "title": "Verify batching and single-review transitions",
+      "original_dependencies": [
+        "S05.P"
+      ],
+      "applicability": "required",
+      "state": "unrun_or_held",
+      "source_artifacts": [
+        "VALIDATION.md",
+        "fixtures/cases.json",
+        "tests/"
+      ],
+      "completion_evidence": []
+    },
+    {
+      "id": "S05.V03",
+      "title": "Verify authority preservation and reversible workflow",
+      "original_dependencies": [
+        "S05.P"
+      ],
+      "applicability": "required",
+      "state": "unrun_or_held",
+      "source_artifacts": [
+        "VALIDATION.md",
+        "fixtures/cases.json",
+        "tests/"
+      ],
+      "completion_evidence": []
+    }
+  ],
+  "correction_cycle1": {
+    "state": "source_corrections_authored_independent_recheck_pending",
+    "changes_do_not_complete_qualification": true,
+    "findings": [
+      {
+        "id": "S45-01",
+        "tasks": [
+          "S04.04",
+          "S04.05",
+          "S04.09",
+          "S04.V02",
+          "S04.V04"
+        ],
+        "source": [
+          "ocr_security_gate/contracts.py",
+          "ocr_security_gate/observations.py",
+          "ocr_security_gate/exceptions.py",
+          "ocr_security_gate/gate.py",
+          "ocr_security_gate/reports.py"
+        ],
+        "change": "Required prior history, retained severity and all-observation decision scope."
+      },
+      {
+        "id": "S45-02",
+        "tasks": [
+          "S04.03",
+          "S04.V04"
+        ],
+        "source": [
+          "ocr_security_gate/orchestrator.py"
+        ],
+        "change": "Five operation roles with one consistently bound OCR preview/rule pair."
+      },
+      {
+        "id": "S45-03",
+        "tasks": [
+          "S04.06",
+          "S04.V04"
+        ],
+        "source": [
+          "ocr_security_gate/evidence.py",
+          "schemas/ocr-rule-body.schema.json"
+        ],
+        "change": "Explicit externally approved projection suffix map with truthful unsupported gaps."
+      },
+      {
+        "id": "S45-04",
+        "tasks": [
+          "S04.07",
+          "S04.08",
+          "S04.V03"
+        ],
+        "source": [
+          "ocr_security_gate/reports.py",
+          "ocr_security_gate/entrypoint.py"
+        ],
+        "change": "Exact full Views, snapshot, evidence and transformation binding before projection."
+      },
+      {
+        "id": "S45-05",
+        "tasks": [
+          "S05.02",
+          "S05.06",
+          "S05.V01"
+        ],
+        "source": [
+          "ocr_security_gate/workflow.py"
+        ],
+        "change": "Failed publication reconciles before the separate known-nonexecution/new-authority retry path."
+      },
+      {
+        "id": "S45-06",
+        "tasks": [
+          "S04.06",
+          "S04.08",
+          "S04.V04"
+        ],
+        "source": [
+          "ocr_security_gate/evidence.py"
+        ],
+        "change": "Bounded rejected-input identities and expected scope; no raw failed payload."
+      }
+    ]
+  }
+}

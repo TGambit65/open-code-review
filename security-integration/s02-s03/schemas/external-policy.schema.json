@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "kind",
+    "owner",
+    "snapshot_policy_sha256",
+    "review_checklist_sha256",
+    "required_review_topics",
+    "adapter_asset_documents",
+    "candidate_controls",
+    "ambient_config",
+    "network",
+    "max_output_bytes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "kind": {
+      "const": "s02-s03-external-policy"
+    },
+    "owner": {
+      "type": "string",
+      "minLength": 1
+    },
+    "snapshot_policy_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "review_checklist_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "required_review_topics": {
+      "type": "array",
+      "maxItems": 32,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "adapter_asset_documents": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ocr",
+        "opengrep",
+        "gitleaks",
+        "osv"
+      ],
+      "properties": {
+        "ocr": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "opengrep": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "gitleaks": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "osv": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "candidate_controls": {
+      "const": "inert"
+    },
+    "ambient_config": {
+      "const": "absent"
+    },
+    "network": {
+      "const": "denied"
+    },
+    "max_output_bytes": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1048576
+    }
+  },
+  "$comment": "This schema and any candidate example are inert. Actual exact policy must be independently adopted outside candidate custody."
+}

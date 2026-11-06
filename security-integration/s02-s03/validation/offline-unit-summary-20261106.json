@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "kind": "S02-S03-offline-unit-validation-reviewed-summary",
+  "source": {
+    "repository": "TGambit65/open-code-review",
+    "pr": "https://github.com/TGambit65/open-code-review/pull/2",
+    "preserved_commit": "0fad5085da68c4e68c137f37caf4823c7512fe17",
+    "manifest_sha256": "6a54cc95fa61830a05c5bd55f520446896ff6ac7eaf42f56126cd3cfed75f9cb",
+    "payload_files": 57
+  },
+  "recorded_execution": {
+    "started_at": "2026-11-06T00:09:37.684256+00:00",
+    "finished_at": "2026-11-06T00:09:37.875991+00:00",
+    "python_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "interpreter_flags": [
+      "-I",
+      "-B"
+    ],
+    "unittest_arguments": [
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "tests_run": 53,
+    "result": "PASS",
+    "stderr_sha256": "d8e02f153460242f9abcaa6183bc7d723e5229b912f75714bb67c8516e050163",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "independent_evidence_review": {
+    "distinct_named_cases": 53,
+    "all_reported_ok": true,
+    "test_source_membership_exact": true,
+    "summary_and_output_hashes_agree": true,
+    "source_files_with_unchanged_before_after_hashes": 90,
+    "payload_remote_blob_readback_matches": 57,
+    "validation_rerun_by_reviewer": false
+  },
+  "module_counts": {
+    "test_adapter_bindings": 6,
+    "test_baseline_adapters": 11,
+    "test_boundary_and_policy": 8,
+    "test_layout_and_history": 5,
+    "test_review_and_ocr": 12,
+    "test_review_binding_regressions": 8,
+    "test_semantic_fixtures": 3
+  },
+  "scope": "Standard-library unit tests and fictional fixture/data contracts only.",
+  "limitations": [
+    "Independent review confirms the supplied log, source and custody consistency, not an independently rerun execution.",
+    "Before/after equality establishes unchanged recorded contents, not absence of transient writes or kernel containment.",
+    "Trusted external reads are mocked and synthetic receipts/fixed fixture time do not establish production custody or current asset freshness.",
+    "No actual native detector behavior, model reviewer performance, egress or filesystem containment was qualified."
+  ],
+  "stage_states": {
+    "implementation": "provisional_disabled_source_complete",
+    "independent_source_review": "clean_cycle_2",
+    "source_preservation": "verified_at_recorded_commit",
+    "validation": "53_unit_tests_pass_recorded; native_qualification_unrun",
+    "acceptance": "HELD"
+  },
+  "holds": [
+    "S01 qualification and containment remain held.",
+    "S02 and S03 acceptance remain held.",
+    "Scanner/provider activation remains disabled.",
+    "S03.01A acquisition remains deferred.",
+    "Target security acceptance remains NOT_ASSESSED."
+  ]
+}

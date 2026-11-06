@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Owned exact expiring finding decision",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "enum": [
+        "1.0"
+      ]
+    },
+    "kind": {
+      "enum": [
+        "s04-finding-exception",
+        "s04-finding-resolution"
+      ]
+    },
+    "policy_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "subject_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "fingerprint": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "observation_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      },
+      "maxItems": 256,
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "owner": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1024
+    },
+    "issued_at": {
+      "type": "string",
+      "format": "date-time",
+      "maxLength": 64
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time",
+      "maxLength": 64
+    },
+    "scope": {
+      "enum": [
+        "exact_finding_observations"
+      ]
+    },
+    "waives_controls": {
+      "enum": [
+        false
+      ]
+    },
+    "authorization_receipt_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "evidence_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "state": {
+      "enum": [
+        "exception_approved",
+        "independently_resolved"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "policy_sha256",
+    "subject_sha256",
+    "fingerprint",
+    "observation_ids",
+    "owner",
+    "reason",
+    "issued_at",
+    "expires_at",
+    "scope",
+    "waives_controls",
+    "authorization_receipt_sha256",
+    "evidence_sha256",
+    "state"
+  ],
+  "$comment": "Documentation schema only. Runtime uses bounded local validators; no remote schema resolution or fetch."
+}

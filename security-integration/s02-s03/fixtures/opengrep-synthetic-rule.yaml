@@ -1,0 +1,8 @@
+# SPDX-License-Identifier: Apache-2.0
+# Synthetic qualification asset only. Not adopted or executed.
+rules:
+  - id: fixture-rule
+    languages: [python]
+    message: Synthetic direct untrusted-input evaluation
+    severity: ERROR
+    pattern: eval(input(...))

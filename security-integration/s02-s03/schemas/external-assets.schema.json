@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "External approved adapter asset declaration; never an execution grant",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "kind",
+    "adapter",
+    "release",
+    "source_commit",
+    "assets",
+    "allowed_rule_ids",
+    "supported_ecosystems",
+    "cli_contract_sha256",
+    "adoption_receipt_sha256"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "kind": {
+      "const": "approved-adapter-assets"
+    },
+    "adapter": {
+      "enum": [
+        "ocr",
+        "opengrep",
+        "gitleaks",
+        "osv"
+      ]
+    },
+    "release": {
+      "type": "string"
+    },
+    "source_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "assets": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 256,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "kind",
+          "sha256",
+          "license",
+          "license_receipt_sha256",
+          "provenance_receipt_sha256",
+          "source_commit",
+          "ecosystem",
+          "created_at",
+          "expires_at"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "kind": {
+            "enum": [
+              "binary",
+              "rules",
+              "policy",
+              "database"
+            ]
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "license": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "license_receipt_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "provenance_receipt_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "source_commit": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "ecosystem": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "created_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "expires_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "allowed_rule_ids": {
+      "type": "array",
+      "maxItems": 4096,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "supported_ecosystems": {
+      "type": "array",
+      "maxItems": 256,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "cli_contract_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "adoption_receipt_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "$comment": "Python loaders additionally enforce exact release/source pins, asset roles, uniqueness and database windows. No schema-only acceptance."
+}

@@ -1,0 +1,84 @@
+{
+  "kind": "source-only-asset-prerequisites",
+  "acquisition_authorized": false,
+  "execution_enabled": false,
+  "conditional_task": "S03.01A deferred",
+  "components": [
+    {
+      "adapter": "ocr",
+      "repository": "alibaba/open-code-review",
+      "release": "v1.13.3",
+      "source_commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
+      "source_url": "https://github.com/alibaba/open-code-review/tree/375f64cd6f67a48a135da83cfcf59c52669a09cb",
+      "binary_sha256": "843be0e56fdff0a5ca6f86c5866f942d6a372dff1c0ca19e7893d72495abf45c",
+      "source_pin_is_not_binary_equivalence": true,
+      "rules_or_database_pins": null,
+      "adoption": "NOT_ADOPTED_FOR_THIS_ADAPTER",
+      "remaining": [
+        "exact acquisition permission if missing",
+        "binary/provenance/asset-license receipts",
+        "exact owned local rules or ecosystem database/config pins",
+        "independent external policy/checklist adoption",
+        "qualified isolated runner and runtime closure",
+        "actual current native behavior/coverage qualification"
+      ]
+    },
+    {
+      "adapter": "opengrep",
+      "repository": "opengrep/opengrep",
+      "release": "v1.33.1",
+      "source_commit": "092c80faa0817840228349f93eff12a50fb9cf6b",
+      "source_url": "https://github.com/opengrep/opengrep/tree/092c80faa0817840228349f93eff12a50fb9cf6b",
+      "binary_sha256": null,
+      "source_pin_is_not_binary_equivalence": true,
+      "rules_or_database_pins": null,
+      "adoption": "NOT_ADOPTED_FOR_THIS_ADAPTER",
+      "remaining": [
+        "exact acquisition permission if missing",
+        "binary/provenance/asset-license receipts",
+        "exact owned local rules or ecosystem database/config pins",
+        "independent external policy/checklist adoption",
+        "qualified isolated runner and runtime closure",
+        "actual current native behavior/coverage qualification"
+      ]
+    },
+    {
+      "adapter": "gitleaks",
+      "repository": "gitleaks/gitleaks",
+      "release": "v8.30.1",
+      "source_commit": "83d9cd684c87d95d656c1458ef04895a7f1cbd8e",
+      "source_url": "https://github.com/gitleaks/gitleaks/tree/83d9cd684c87d95d656c1458ef04895a7f1cbd8e",
+      "binary_sha256": null,
+      "source_pin_is_not_binary_equivalence": true,
+      "rules_or_database_pins": null,
+      "adoption": "NOT_ADOPTED_FOR_THIS_ADAPTER",
+      "remaining": [
+        "exact acquisition permission if missing",
+        "binary/provenance/asset-license receipts",
+        "exact owned local rules or ecosystem database/config pins",
+        "independent external policy/checklist adoption",
+        "qualified isolated runner and runtime closure",
+        "actual current native behavior/coverage qualification"
+      ]
+    },
+    {
+      "adapter": "osv",
+      "repository": "google/osv-scanner",
+      "release": "v2.7.0",
+      "source_commit": "bfe2f84abd2f09fe0b83ba7f6dad40d296762f40",
+      "source_url": "https://github.com/google/osv-scanner/tree/bfe2f84abd2f09fe0b83ba7f6dad40d296762f40",
+      "binary_sha256": null,
+      "source_pin_is_not_binary_equivalence": true,
+      "rules_or_database_pins": null,
+      "adoption": "NOT_ADOPTED_FOR_THIS_ADAPTER",
+      "remaining": [
+        "exact acquisition permission if missing",
+        "binary/provenance/asset-license receipts",
+        "exact owned local rules or ecosystem database/config pins",
+        "independent external policy/checklist adoption",
+        "qualified isolated runner and runtime closure",
+        "actual current native behavior/coverage qualification"
+      ]
+    }
+  ]
+}

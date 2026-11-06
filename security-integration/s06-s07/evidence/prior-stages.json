@@ -1,0 +1,36 @@
+{
+  "kind": "historical-evidence-index-not-runtime-authority",
+  "s00": {
+    "state": "historical_contract_and_provenance_context",
+    "source": "security-integration/tool-lock.json",
+    "current_qualification": "not_asserted_here"
+  },
+  "s01": {
+    "state": "source_preserved_qualification_held",
+    "source": "security-integration/s01/",
+    "qualification": "HELD",
+    "limit": "Native host/build/containment prerequisites are unresolved; no new attempt is authorized by this record."
+  },
+  "s02_s03": {
+    "state": "preserved_source_with_bounded_offline_tests",
+    "head": "0fad5085da68c4e68c137f37caf4823c7512fe17",
+    "source_manifest_sha256": "6a54cc95fa61830a05c5bd55f520446896ff6ac7eaf42f56126cd3cfed75f9cb",
+    "offline_tests_passed": 53,
+    "result_sha256": "ca5ee6b4a9c3a96bf986776bbf8d63a75a146d783cacfa7c55e128002d33ca59",
+    "qualification": "HELD"
+  },
+  "s04_s05": {
+    "state": "reviewed_preserved_source_with_bounded_offline_tests",
+    "head": "7208f7edbf5f153c58226bcc963ae0ee1c25c577",
+    "source_manifest_sha256": "d5573cdbca607bcc278451f7f8121b9d098b0bf573f6fb12ff253e46dc653a6b",
+    "offline_tests_passed": 66,
+    "result_sha256": "056d48ad91c3d175e8692fd94f6cb2e3cf6bbc611ba33b3603527ee62d3aeac3",
+    "independent_review": "cycle2_clean_all_six_findings_closed_in_source",
+    "qualification": "HELD"
+  },
+  "limits": [
+    "These are historical evidence pointers, not native/per-run receipts or current approval.",
+    "External independent receipts and exact execution scope must be supplied by the authorized host.",
+    "Original source context is not replacement publication payload."
+  ]
+}

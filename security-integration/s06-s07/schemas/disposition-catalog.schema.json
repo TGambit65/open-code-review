@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Proposed disabled disposition catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "kind": {
+      "const": "proposed-disabled-disposition-catalog"
+    },
+    "adoption_authority": {
+      "const": false
+    },
+    "execution_enabled": {
+      "const": false
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "tool": {
+            "enum": [
+              "betterleaks",
+              "trivy",
+              "agentshield",
+              "semgrep",
+              "bearer",
+              "codeql",
+              "anthropic_review",
+              "snyk_agent_scan",
+              "strix",
+              "shannon"
+            ]
+          },
+          "task_id": {
+            "enum": [
+              "S06.01",
+              "S06.02",
+              "S06.03",
+              "S07.01",
+              "S07.02",
+              "S07.03",
+              "S07.04",
+              "S07.05",
+              "S07.06",
+              "S07.07"
+            ]
+          },
+          "decision": {
+            "enum": [
+              "defer",
+              "alternative_only",
+              "future_project"
+            ]
+          },
+          "implementation_selected": {
+            "const": false
+          },
+          "registration_enabled": {
+            "const": false
+          },
+          "qualification": {
+            "const": "NOT_QUALIFIED"
+          },
+          "source_repository": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "research_commit": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{40}$"
+          },
+          "research_release": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_url": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "license_observed": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "license_limit": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "reason": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            },
+            "minItems": 1,
+            "maxItems": 64,
+            "uniqueItems": true
+          },
+          "prohibited_modes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            },
+            "minItems": 1,
+            "maxItems": 64,
+            "uniqueItems": true
+          },
+          "reopen_conditions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            },
+            "minItems": 1,
+            "maxItems": 64,
+            "uniqueItems": true
+          },
+          "record": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "protocol": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "availability": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "evidence_basis": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          }
+        },
+        "required": [
+          "tool",
+          "task_id",
+          "decision",
+          "implementation_selected",
+          "registration_enabled",
+          "qualification",
+          "source_repository",
+          "research_commit",
+          "research_release",
+          "source_url",
+          "license_observed",
+          "license_limit",
+          "reason",
+          "prohibited_modes",
+          "reopen_conditions",
+          "record",
+          "protocol",
+          "availability",
+          "evidence_basis"
+        ]
+      },
+      "minItems": 10,
+      "maxItems": 10
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "adoption_authority",
+    "execution_enabled",
+    "decisions"
+  ],
+  "$comment": "Local descriptive schema only. Runtime bounded validators do not fetch schemas, adopt policy or grant authority."
+}

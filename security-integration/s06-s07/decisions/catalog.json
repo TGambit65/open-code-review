@@ -1,0 +1,374 @@
+{
+  "schema_version": "1.0",
+  "kind": "proposed-disabled-disposition-catalog",
+  "adoption_authority": false,
+  "execution_enabled": false,
+  "decisions": [
+    {
+      "tool": "betterleaks",
+      "task_id": "S06.01",
+      "decision": "defer",
+      "implementation_selected": false,
+      "registration_enabled": false,
+      "qualification": "NOT_QUALIFIED",
+      "source_repository": "betterleaks/betterleaks",
+      "research_commit": "81aff7a638638aae3a659845d089043e1d8fe9ac",
+      "research_release": "v1.9.0",
+      "source_url": "https://github.com/betterleaks/betterleaks/commit/81aff7a638638aae3a659845d089043e1d8fe9ac",
+      "license_observed": "MIT",
+      "license_limit": "MIT code does not authorize live credential validation, remote enumeration or account changes.",
+      "reason": [
+        "No demonstrated measured coverage gain over the preserved Gitleaks baseline.",
+        "No exact authorized comparison execution or current v1.9.0 asset receipt supplied for this scope."
+      ],
+      "prohibited_modes": [
+        "credential_validation",
+        "network",
+        "provider_calls",
+        "credential_testing",
+        "implicit_v2_migration",
+        "analysis",
+        "revocation",
+        "remote_account_enumeration"
+      ],
+      "reopen_conditions": [
+        "Current verified v1.9.0 binary/rule/license/provenance receipts.",
+        "Approved synthetic comparison scope and exact execution authority after preservation.",
+        "Identical frozen inputs, independent seeded expectations, baseline Gitleaks pins and measured coverage/false-positive/resource tradeoff.",
+        "Separate qualification for any v2 version/environment/flag migration."
+      ],
+      "record": "decisions/betterleaks.json",
+      "protocol": "protocols/betterleaks.json",
+      "availability": "no_current_verified_asset_receipts_supplied_for_this_scope",
+      "evidence_basis": "Previously pinned source research and frozen non-adoption record; no new execution or current asset qualification."
+    },
+    {
+      "tool": "trivy",
+      "task_id": "S06.02",
+      "decision": "defer",
+      "implementation_selected": false,
+      "registration_enabled": false,
+      "qualification": "NOT_QUALIFIED",
+      "source_repository": "aquasecurity/trivy",
+      "research_commit": "e713f67f7d54decdcd9b3132c9751833dcced698",
+      "research_release": "v0.76.1",
+      "source_url": "https://github.com/aquasecurity/trivy/commit/e713f67f7d54decdcd9b3132c9751833dcced698",
+      "license_observed": "Apache-2.0",
+      "license_limit": "Exact binary, rules, database and third-party data obligations still require artifact-specific review.",
+      "reason": [
+        "No bounded target-specific gap is demonstrated in the supplied implementation scope.",
+        "Incident-informed release trust, exact pins and separately authorized offline controls are unresolved."
+      ],
+      "prohibited_modes": [
+        "telemetry",
+        "version_check",
+        "database_download",
+        "module_download",
+        "vex_download",
+        "registry_contact",
+        "unapproved_egress",
+        "duplicate_broad_scan",
+        "maven_lookup",
+        "terraform_module_fetch"
+      ],
+      "reopen_conditions": [
+        "Evidence of useful uncovered container/OS/IaC coverage.",
+        "Incident-informed verified release provenance, binary/rule/database/license digests and freshness receipts.",
+        "Explicit offline telemetry/version/database/module/VEX/registry/egress controls and resource limits.",
+        "Exact selected synthetic targets and execution authority after preservation."
+      ],
+      "record": "decisions/trivy.json",
+      "protocol": "protocols/trivy.json",
+      "availability": "no_current_verified_asset_receipts_supplied_for_this_scope",
+      "evidence_basis": "Previously pinned source research and frozen non-adoption record; no new execution or current asset qualification."
+    },
+    {
+      "tool": "agentshield",
+      "task_id": "S06.03",
+      "decision": "defer",
+      "implementation_selected": false,
+      "registration_enabled": false,
+      "qualification": "NOT_QUALIFIED",
+      "source_repository": "affaan-m/agentshield",
+      "research_commit": "b0891303bdcd6037376a94263d45cfd2ff3dfb98",
+      "research_release": null,
+      "source_url": "https://github.com/affaan-m/agentshield/blob/b0891303bdcd6037376a94263d45cfd2ff3dfb98/README.md",
+      "license_observed": "MIT",
+      "license_limit": "No stable executable/license/profile adoption is established by source research.",
+      "reason": [
+        "No exact selected sanitized configuration inventory or verified local-only tool profile supplied.",
+        "No measured benefit/false positives or maintained version/license qualification for this scope."
+      ],
+      "prohibited_modes": [
+        "opus",
+        "injection",
+        "deep",
+        "sandbox",
+        "repair",
+        "runtime_hooks",
+        "online_lookup",
+        "home_discovery",
+        "raw_content_model_path",
+        "provider_calls",
+        "fix"
+      ],
+      "reopen_conditions": [
+        "Explicit sanitized configuration file/range inventory and transformation evidence.",
+        "Verified maintained version, license, source/assets and strictly local static profile.",
+        "Evidence that no prohibited mode or home discovery is reachable.",
+        "Separately authorized post-preservation synthetic qualification and measured useful coverage."
+      ],
+      "record": "decisions/agentshield.json",
+      "protocol": "protocols/agentshield.json",
+      "availability": "no_current_verified_asset_receipts_supplied_for_this_scope",
+      "evidence_basis": "Previously pinned source research and frozen non-adoption record; no new execution or current asset qualification."
+    },
+    {
+      "tool": "semgrep",
+      "task_id": "S07.01",
+      "decision": "alternative_only",
+      "implementation_selected": false,
+      "registration_enabled": false,
+      "qualification": "NOT_QUALIFIED",
+      "source_repository": "semgrep/semgrep",
+      "research_commit": "4fe07d805dd2a4b64fed486e95136923f08648d0",
+      "research_release": "v1.183.0",
+      "source_url": "https://github.com/semgrep/semgrep/commit/4fe07d805dd2a4b64fed486e95136923f08648d0",
+      "license_observed": "LGPL-2.1 engine; Semgrep Rules License v1.0 separately",
+      "license_limit": "Engine and rule licenses are separate; CE does not inherit Pro capabilities or entitlements.",
+      "reason": [
+        "No distinct adopted and qualified scope for this candidate is supplied.",
+        "The stated tool-specific licensing, privacy, execution and cost prerequisites remain unresolved."
+      ],
+      "prohibited_modes": [
+        "default_parallel_sast",
+        "cloud_ci",
+        "login",
+        "remote_rules"
+      ],
+      "reopen_conditions": [
+        "Alternative only when an existing workflow/rule requirement justifies replacement rather than duplicate default SAST.",
+        "Use independently approved local rules with --metrics=off and --disable-version-check in any later qualified profile.",
+        "No login/cloud CI or Pro capability assumption.",
+        "Exact owner-approved scope, current artifact/license/source evidence and separate execution authority are required."
+      ],
+      "record": "decisions/semgrep.json",
+      "protocol": null,
+      "availability": "research_only_no_current_verified_asset_receipts_supplied_for_this_scope",
+      "evidence_basis": "Previously pinned source research and frozen non-adoption record; no new execution or current asset qualification."
+    },
+    {
+      "tool": "bearer",
+      "task_id": "S07.02",
+      "decision": "defer",
+      "implementation_selected": false,
+      "registration_enabled": false,
+      "qualification": "NOT_QUALIFIED",
+      "source_repository": "Bearer/bearer",
+      "research_commit": "668f5df05042088125d83d197252b5a8e78422df",
+      "research_release": "v2.1.3",
+      "source_url": "https://github.com/Bearer/bearer/commit/668f5df05042088125d83d197252b5a8e78422df",
+      "license_observed": "Elastic License 2.0",
+      "license_limit": "CLI/default rules are source-available; hosted/managed substantial functionality is restricted. Resolve use-case terms before selection.",
+      "reason": [
+        "No distinct adopted and qualified scope for this candidate is supplied.",
+        "The stated tool-specific licensing, privacy, execution and cost prerequisites remain unresolved."
+      ],
+      "prohibited_modes": [
+        "default_rule_download",
+        "version_metadata",
+        "git_base_fetch",
+        "unapproved_hosted_service"
+      ],
+      "reopen_conditions": [
+        "Demonstrate supported-language privacy/data-flow coverage beyond baseline.",
+        "Documented API bypass needs both --disable-version-check and --disable-default-rules, with --external-rule-dir.",
+        "Default api.cycode.com metadata, rule downloads and differential Git-base fetch require separate controls.",
+        "Exact owner-approved scope, current artifact/license/source evidence and separate execution authority are required."
+      ],
+      "record": "decisions/bearer.json",
+      "protocol": null,
+      "availability": "research_only_no_current_verified_asset_receipts_supplied_for_this_scope",
+      "evidence_basis": "Previously pinned source research and frozen non-adoption record; no new execution or current asset qualification."
+    },
+    {
+      "tool": "codeql",
+      "task_id": "S07.03",
+      "decision": "defer",
+      "implementation_selected": false,
+      "registration_enabled": false,
+      "qualification": "NOT_QUALIFIED",
+      "source_repository": "github/codeql-cli-binaries",
+      "research_commit": "b8920d6194a72a8c567808f64943929acbd9a3d9",
+      "research_release": "v2.27.3",
+      "source_url": "https://github.com/github/codeql-cli-binaries/commit/b8920d6194a72a8c567808f64943929acbd9a3d9",
+      "license_observed": "MIT query/library sources; separate engine/private-code terms",
+      "license_limit": "Open query/library code does not grant CodeQL engine/private organization code entitlement.",
+      "reason": [
+        "No distinct adopted and qualified scope for this candidate is supplied.",
+        "The stated tool-specific licensing, privacy, execution and cost prerequisites remain unresolved."
+      ],
+      "prohibited_modes": [
+        "unlicensed_private_code_execution",
+        "unapproved_build",
+        "code_scanning_upload",
+        "implicit_offline_claim"
+      ],
+      "reopen_conditions": [
+        "Resolve private repository/organization entitlement, engine terms, build/extractor execution rights and resource limits.",
+        "Treat source databases and results as potentially sensitive local artifacts.",
+        "Local SARIF generation and code-scanning upload are separate actions; no verified zero-telemetry/offline behavior is asserted.",
+        "Exact owner-approved scope, current artifact/license/source evidence and separate execution authority are required."
+      ],
+      "record": "decisions/codeql.json",
+      "protocol": null,
+      "availability": "research_only_no_current_verified_asset_receipts_supplied_for_this_scope",
+      "evidence_basis": "Previously pinned source research and frozen non-adoption record; no new execution or current asset qualification."
+    },
+    {
+      "tool": "anthropic_review",
+      "task_id": "S07.04",
+      "decision": "defer",
+      "implementation_selected": false,
+      "registration_enabled": false,
+      "qualification": "NOT_QUALIFIED",
+      "source_repository": "anthropics/claude-code-security-review",
+      "research_commit": "0c6a49f1fa56a1d472575da86a94dbc1edb78eda",
+      "research_release": null,
+      "source_url": "https://github.com/anthropics/claude-code-security-review/blob/0c6a49f1fa56a1d472575da86a94dbc1edb78eda/README.md",
+      "license_observed": "MIT source; separate provider/service/account terms",
+      "license_limit": "Open Action source does not grant provider accounts, paid use, API-key transmission, PR comments or artifact sharing.",
+      "reason": [
+        "No distinct adopted and qualified scope for this candidate is supplied.",
+        "The stated tool-specific licensing, privacy, execution and cost prerequisites remain unresolved."
+      ],
+      "prohibited_modes": [
+        "activation",
+        "provider_calls",
+        "api_key_use",
+        "installation",
+        "pr_comments",
+        "artifact_upload",
+        "host_backend_substitution"
+      ],
+      "reopen_conditions": [
+        "Future opt-in only; documented direct Anthropic SDK/API key and Claude Code installation are not host inference.",
+        "Resolve account, model, data recipients/retention, costs, exact filtering and independent prompt-injection limitations.",
+        "Documented filters omit DoS, rate limiting, open redirects, stored credentials, old dependencies, GitHub Actions sanitization and overbroad Rust memory-safety classes; omissions are not full coverage.",
+        "Exact owner-approved scope, current artifact/license/source evidence and separate execution authority are required."
+      ],
+      "record": "decisions/anthropic_review.json",
+      "protocol": null,
+      "availability": "research_only_no_current_verified_asset_receipts_supplied_for_this_scope",
+      "evidence_basis": "Previously pinned source research and frozen non-adoption record; no new execution or current asset qualification."
+    },
+    {
+      "tool": "snyk_agent_scan",
+      "task_id": "S07.05",
+      "decision": "defer",
+      "implementation_selected": false,
+      "registration_enabled": false,
+      "qualification": "NOT_QUALIFIED",
+      "source_repository": "snyk/agent-scan",
+      "research_commit": "a69e1c354ad0812c13da15dc64770e1c21786841",
+      "research_release": null,
+      "source_url": "https://github.com/snyk/agent-scan/blob/a69e1c354ad0812c13da15dc64770e1c21786841/README.md",
+      "license_observed": "Apache-2.0 CLI; separate unresolved service terms",
+      "license_limit": "Signup/token, pricing, retention and service content rights need separate approval; historical legacy Invariant wording is not current legal clearance.",
+      "reason": [
+        "No distinct adopted and qualified scope for this candidate is supplied.",
+        "The stated tool-specific licensing, privacy, execution and cost prerequisites remain unresolved."
+      ],
+      "prohibited_modes": [
+        "automatic_scan",
+        "service_contact",
+        "mcp_contact",
+        "stdio_command_execution",
+        "configuration_transmission",
+        "token_use"
+      ],
+      "reopen_conditions": [
+        "Configuration/signatures, tool descriptions and skill content can be transmitted.",
+        "Discovery may execute stdio commands and contact remote MCP servers.",
+        "Output is experimental; service terms, submitted-content rights, cost and retention remain unresolved for this scope.",
+        "Exact owner-approved scope, current artifact/license/source evidence and separate execution authority are required."
+      ],
+      "record": "decisions/snyk_agent_scan.json",
+      "protocol": null,
+      "availability": "research_only_no_current_verified_asset_receipts_supplied_for_this_scope",
+      "evidence_basis": "Previously pinned source research and frozen non-adoption record; no new execution or current asset qualification."
+    },
+    {
+      "tool": "strix",
+      "task_id": "S07.06",
+      "decision": "future_project",
+      "implementation_selected": false,
+      "registration_enabled": false,
+      "qualification": "NOT_QUALIFIED",
+      "source_repository": "usestrix/strix",
+      "research_commit": "6b7ae2ebe4d47037a927aade23265ff4e4f27e84",
+      "research_release": null,
+      "source_url": "https://github.com/usestrix/strix/blob/6b7ae2ebe4d47037a927aade23265ff4e4f27e84/README.md",
+      "license_observed": "Apache-2.0",
+      "license_limit": "Tool license does not authorize target testing, third-party effects or provider/local-model spending.",
+      "reason": [
+        "No distinct adopted and qualified scope for this candidate is supplied.",
+        "The stated tool-specific licensing, privacy, execution and cost prerequisites remain unresolved."
+      ],
+      "prohibited_modes": [
+        "production_target",
+        "active_exploitation",
+        "unapproved_state_mutation",
+        "outbound_effects",
+        "provider_use",
+        "implicit_zero_cost_local_model"
+      ],
+      "reopen_conditions": [
+        "Separate future disposable-target project, never a passive OCR gate adapter.",
+        "Bind exact target ownership/scope, state mutation, outbound effects, provider/subscription/local-model resource cost and stop/cleanup safeguards.",
+        "Research was limited to README/provider/license descriptions, not full execution audit.",
+        "Exact owner-approved scope, current artifact/license/source evidence and separate execution authority are required."
+      ],
+      "record": "decisions/strix.json",
+      "protocol": null,
+      "availability": "research_only_no_current_verified_asset_receipts_supplied_for_this_scope",
+      "evidence_basis": "Previously pinned source research and frozen non-adoption record; no new execution or current asset qualification."
+    },
+    {
+      "tool": "shannon",
+      "task_id": "S07.07",
+      "decision": "future_project",
+      "implementation_selected": false,
+      "registration_enabled": false,
+      "qualification": "NOT_QUALIFIED",
+      "source_repository": "KeygraphHQ/shannon",
+      "research_commit": "b9744f6cecc5429333873b86a6762f1d70c54fc2",
+      "research_release": null,
+      "source_url": "https://github.com/KeygraphHQ/shannon/blob/b9744f6cecc5429333873b86a6762f1d70c54fc2/README.md",
+      "license_observed": "AGPL-3.0",
+      "license_limit": "AGPL obligations and any network/service deployment implications require separate use-case review; no legal clearance asserted.",
+      "reason": [
+        "No distinct adopted and qualified scope for this candidate is supplied.",
+        "The stated tool-specific licensing, privacy, execution and cost prerequisites remain unresolved."
+      ],
+      "prohibited_modes": [
+        "production_target",
+        "active_exploitation",
+        "unapproved_state_mutation",
+        "outbound_effects",
+        "provider_use",
+        "implicit_zero_cost_local_model"
+      ],
+      "reopen_conditions": [
+        "Separate candidate/project from Strix, with its own disposable target, exact mutation/network permissions and rollback.",
+        "Resolve provider/subscription/local-model costs; local availability is not free inference or execution authority.",
+        "Research was limited to README/provider/license descriptions, not full execution audit.",
+        "Exact owner-approved scope, current artifact/license/source evidence and separate execution authority are required."
+      ],
+      "record": "decisions/shannon.json",
+      "protocol": null,
+      "availability": "research_only_no_current_verified_asset_receipts_supplied_for_this_scope",
+      "evidence_basis": "Previously pinned source research and frozen non-adoption record; no new execution or current asset qualification."
+    }
+  ]
+}

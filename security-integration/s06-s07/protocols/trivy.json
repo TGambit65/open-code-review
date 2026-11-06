@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "kind": "deferred-specialist-qualification-protocol",
+  "tool": "trivy",
+  "task_id": "S06.02",
+  "state": "NOT_RUN",
+  "selected": false,
+  "execute": false,
+  "after_preservation": true,
+  "proposed_version": null,
+  "scope": "Consider only a demonstrated container, OS-package or IaC coverage gap beyond the baseline.",
+  "prerequisites": [
+    "Evidence of useful uncovered container/OS/IaC coverage.",
+    "Incident-informed verified release provenance, binary/rule/database/license digests and freshness receipts.",
+    "Explicit offline telemetry/version/database/module/VEX/registry/egress controls and resource limits.",
+    "Exact selected synthetic targets and execution authority after preservation."
+  ],
+  "prohibited_modes": [
+    "telemetry",
+    "version_check",
+    "database_download",
+    "module_download",
+    "vex_download",
+    "registry_contact",
+    "unapproved_egress",
+    "duplicate_broad_scan",
+    "maven_lookup",
+    "terraform_module_fetch"
+  ],
+  "inputs": [
+    "Exact approved repository/base/head/frozen-diff identity.",
+    "Positive and negative fictional seeds with expected detector/rule outcomes.",
+    "Same approved file/change/blob/range denominator and limits for baseline and challenger.",
+    "Sanitized selected configuration only for AgentShield; approved scanner originals remain isolated from models."
+  ],
+  "metrics": [
+    "Unique independently confirmed findings beyond baseline.",
+    "False positives and missed seeded positives against independently fixed expectations.",
+    "Complete/partial/skipped file and original range coverage.",
+    "Wall and CPU seconds, peak resident bytes, bounded output bytes and timeout/exit status."
+  ],
+  "acceptance": "Additional useful coverage and acceptable false-positive/resource cost must be evidenced; no threshold or benchmark outcome is invented here. Target clearance remains separate.",
+  "receipts": [
+    "Exact source/tool/rule/database/policy/transformation digests and independent authority.",
+    "Actual command/environment/profile identity and result/time/actor/artifact location.",
+    "Native egress/credential/mode controls, complete denominator accounting and independent findings disposition."
+  ],
+  "current_results": [],
+  "unavailable_result": "NOT_QUALIFIED; keep deferred and baseline unchanged.",
+  "documented_version_controls": [
+    "Research pin v0.76.1 is not current release trust or a verified executable.",
+    "Prior research records malicious v0.69.4, DockerHub 0.69.5/0.69.6 and Action-tag incidents; do not infer that every later release is compromised.",
+    "--offline-scan alone is insufficient; documented --disable-telemetry and --skip-version-check address check.trivy.dev.",
+    "Independently qualify local vulnerability/Java/check databases, updates, Maven/Terraform modules, VEX, registries and denied egress."
+  ],
+  "research_source": {
+    "source_repository": "aquasecurity/trivy",
+    "source_url": "https://github.com/aquasecurity/trivy/commit/e713f67f7d54decdcd9b3132c9751833dcced698",
+    "research_commit": "e713f67f7d54decdcd9b3132c9751833dcced698",
+    "research_release": "v0.76.1",
+    "research_state": "RESEARCH_ONLY_DEFERRED_NO_ADOPTION",
+    "binary_sha256": null,
+    "qualification_limit": "Historical research identity only; not current asset verification, endorsement, entitlement or execution permission."
+  },
+  "thresholds": "Independent owner-approved thresholds fixed before any comparison; none adopted here."
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "kind": "proposed-alternative-disposition",
+  "tool": "codeql",
+  "task_id": "S07.03",
+  "decision": "defer",
+  "implementation_selected": false,
+  "registration_enabled": false,
+  "qualification": "NOT_QUALIFIED",
+  "execution_authorized": false,
+  "reason": [
+    "No distinct adopted and qualified scope for this candidate is supplied.",
+    "The stated tool-specific licensing, privacy, execution and cost prerequisites remain unresolved."
+  ],
+  "prohibited_modes": [
+    "unlicensed_private_code_execution",
+    "unapproved_build",
+    "code_scanning_upload",
+    "implicit_offline_claim"
+  ],
+  "reopen_conditions": [
+    "Resolve private repository/organization entitlement, engine terms, build/extractor execution rights and resource limits.",
+    "Treat source databases and results as potentially sensitive local artifacts.",
+    "Local SARIF generation and code-scanning upload are separate actions; no verified zero-telemetry/offline behavior is asserted.",
+    "Exact owner-approved scope, current artifact/license/source evidence and separate execution authority are required."
+  ],
+  "availability_state": "research_only_no_current_verified_asset_receipts_supplied_for_this_scope",
+  "asset_receipts": [],
+  "actual_measurements": [],
+  "evidence_sources": [
+    "security-integration/tool-lock.json#deferred_research_candidates",
+    "https://github.com/github/codeql-cli-binaries/commit/b8920d6194a72a8c567808f64943929acbd9a3d9",
+    "traceability.json#REC18"
+  ],
+  "adoption_authority": "none_supplied",
+  "maintenance": "Reassess on version/license/data/command/provider/network change; never auto-adopt.",
+  "research_provenance": {
+    "source_repository": "github/codeql-cli-binaries",
+    "source_url": "https://github.com/github/codeql-cli-binaries/commit/b8920d6194a72a8c567808f64943929acbd9a3d9",
+    "research_commit": "b8920d6194a72a8c567808f64943929acbd9a3d9",
+    "research_release": "v2.27.3",
+    "research_state": "RESEARCH_ONLY_DEFERRED_NO_ADOPTION",
+    "binary_sha256": null,
+    "qualification_limit": "Historical research identity only; not current asset verification, endorsement, entitlement or execution permission."
+  },
+  "license_observed": "MIT query/library sources; separate engine/private-code terms",
+  "license_limit": "Open query/library code does not grant CodeQL engine/private organization code entitlement.",
+  "explicit_controls": [
+    "Resolve private repository/organization entitlement, engine terms, build/extractor execution rights and resource limits.",
+    "Treat source databases and results as potentially sensitive local artifacts.",
+    "Local SARIF generation and code-scanning upload are separate actions; no verified zero-telemetry/offline behavior is asserted."
+  ],
+  "recommendation_id": "REC18"
+}

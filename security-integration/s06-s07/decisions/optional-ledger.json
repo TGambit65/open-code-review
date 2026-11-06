@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "kind": "proposed-optional-decision-ledger",
+  "qualification": "NOT_QUALIFIED",
+  "baseline_unchanged": true,
+  "decisions": [
+    {
+      "tool": "betterleaks",
+      "task_id": "S06.01",
+      "decision": "defer",
+      "record": "decisions/betterleaks.json",
+      "protocol": "protocols/betterleaks.json",
+      "implementation_selected": false,
+      "registration_enabled": false,
+      "asset_receipts": [],
+      "benchmark_results": [],
+      "reopen_conditions": [
+        "Current verified v1.9.0 binary/rule/license/provenance receipts.",
+        "Approved synthetic comparison scope and exact execution authority after preservation.",
+        "Identical frozen inputs, independent seeded expectations, baseline Gitleaks pins and measured coverage/false-positive/resource tradeoff.",
+        "Separate qualification for any v2 version/environment/flag migration."
+      ]
+    },
+    {
+      "tool": "trivy",
+      "task_id": "S06.02",
+      "decision": "defer",
+      "record": "decisions/trivy.json",
+      "protocol": "protocols/trivy.json",
+      "implementation_selected": false,
+      "registration_enabled": false,
+      "asset_receipts": [],
+      "benchmark_results": [],
+      "reopen_conditions": [
+        "Evidence of useful uncovered container/OS/IaC coverage.",
+        "Incident-informed verified release provenance, binary/rule/database/license digests and freshness receipts.",
+        "Explicit offline telemetry/version/database/module/VEX/registry/egress controls and resource limits.",
+        "Exact selected synthetic targets and execution authority after preservation."
+      ]
+    },
+    {
+      "tool": "agentshield",
+      "task_id": "S06.03",
+      "decision": "defer",
+      "record": "decisions/agentshield.json",
+      "protocol": "protocols/agentshield.json",
+      "implementation_selected": false,
+      "registration_enabled": false,
+      "asset_receipts": [],
+      "benchmark_results": [],
+      "reopen_conditions": [
+        "Explicit sanitized configuration file/range inventory and transformation evidence.",
+        "Verified maintained version, license, source/assets and strictly local static profile.",
+        "Evidence that no prohibited mode or home discovery is reachable.",
+        "Separately authorized post-preservation synthetic qualification and measured useful coverage."
+      ]
+    }
+  ],
+  "conditional_task_ids": [
+    "S06.04",
+    "S06.05",
+    "S06.06",
+    "S06.QA",
+    "S06.V02",
+    "S06.V03",
+    "S06.V04"
+  ],
+  "conditions_preserved": true,
+  "adoption_or_execution_authority": false,
+  "source_catalog": "decisions/catalog.json",
+  "research_pin_limit": "Original tool-lock research records have null binary digests and no adoption. No global absence of assets is inferred."
+}

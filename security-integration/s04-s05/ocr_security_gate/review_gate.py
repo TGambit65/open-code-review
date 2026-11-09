@@ -25,7 +25,7 @@ def reconcile_reviews(entries,head,final_freeze):
     elif current:decision="current_head_coverage_present"
     elif prior:decision="hold_review_history_or_current_head_conflict"
     else:decision="root_may_consider_single_included_review"
-    return {"kind":"consolidated-review-decision","head":head,"decision":decision,"current_head_covered":current and not pending and manual<=1,
+    return {"kind":"consolidated-review-decision","head":head,"decision":decision,"current_head_covered":decision=="current_head_coverage_present",
             "intentional_requests":manual,"additional_request_permitted":False,"requires_root":True,"request_sent":False,
             "review_ledger_sha256":digest(canonical(rows))}
 

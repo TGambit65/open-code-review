@@ -38,3 +38,13 @@ class ReviewActionTests(unittest.TestCase):
         value=review_gate.merge_handoff('a'*40,review,checks,['unit'],True,None,['exact-hold'],'held')
         self.assertEqual(value['status'],'held');self.assertIn('required_check_unsatisfied',value['blockers'])
         self.assertIn('integration_qualification_held',value['blockers']);self.assertFalse(value['extra_review_requested'])
+    def test_prefreeze_current_head_coverage_cannot_ready_merge(self):
+        for origin in ('automatic','root_intentional'):
+            with self.subTest(origin=origin):
+                review=review_gate.reconcile_reviews([self.event(origin=origin)],'a'*40,False)
+                self.assertEqual(review['decision'],'defer_lookup_until_final_freeze')
+                self.assertFalse(review['current_head_covered'])
+                checks=[{'name':'unit','head':'a'*40,'status':'passed','receipt_sha256':'b'*64}]
+                value=review_gate.merge_handoff('a'*40,review,checks,['unit'],False,'c'*64,[],'qualified')
+                self.assertEqual(value['status'],'held')
+                self.assertIn('current_head_review_missing',value['blockers'])

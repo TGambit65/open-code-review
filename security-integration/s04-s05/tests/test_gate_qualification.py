@@ -22,7 +22,8 @@ class GateTests(unittest.TestCase):
         extra=dict(npm,id='db-pypi',dataset='PyPI',sha256=digest(b'other-db'))
         from ocr_security_gate.updates import UpdateSet
         raw=canonical(dict(current.value(),assets=[npm,extra]));both=UpdateSet(digest(raw),raw)
-        for required,scanned in ((['npm'],[npm]),(['npm','PyPI'],[npm]),(['npm'],[npm,extra])):
+        for required,scanned,expected in ((['npm'],[npm],False),(['npm','PyPI'],[npm],True),
+                                          (['npm'],[npm,extra],True),(['npm'],[extra],True)):
             pol=support.policy(required_datasets=required)
             items=list(support.all_evidence(snap))
             osv=items[-1].value()
@@ -31,7 +32,7 @@ class GateTests(unittest.TestCase):
             from ocr_security_gate.evidence import Evidence
             raw=canonical(osv);items[-1]=Evidence('osv',digest(raw),raw)
             result=gate.evaluate(support.target(snap),pol,tuple(items),snap,both,None,support.NOW)
-            self.assertEqual('database_evidence_mismatch' in result['gaps'],len(required)!=len(scanned))
+            self.assertEqual('database_evidence_mismatch' in result['gaps'],expected)
 
     def test_no_evidence_is_not_run(self):
         self.assertEqual(self.evaluate(items=(),attest=False)["status"],"not-run")

@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from ocr_security.common import Refusal, canonical, digest, fields, sha, integer, utc, parse_json
 from ocr_security.results import parse_result
 from ocr_security.coverage import assess_coverage
-from ocr_security_adapters.data import bounded_json, choice, sequence
+from ocr_security_adapters.data import bounded_json, bounded_ocr_evidence, choice, sequence
 from ocr_security_adapters import reviewer, projection, ocr
 from .contracts import ADAPTERS, pinned
 
@@ -18,12 +18,16 @@ class Evidence:
     def value(self):
         if self.adapter not in ADAPTERS or digest(self.private_document)!=sha(self.sha256):
             raise Refusal("evidence_identity_mismatch")
-        return bounded_json(self.private_document)
+        return (bounded_ocr_evidence(self.private_document) if self.adapter == "ocr"
+                else bounded_json(self.private_document))
 
 
 def _evidence(adapter,value):
     raw=canonical(value)
-    return Evidence(adapter,digest(raw),raw)
+    item=Evidence(adapter,digest(raw),raw)
+    # Never emit a successful envelope that its consumer cannot read.
+    item.value()
+    return item
 
 
 def _failed_input_identity(raw):

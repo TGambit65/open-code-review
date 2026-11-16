@@ -134,14 +134,37 @@ class OCRCompositionTests(unittest.TestCase):
         self.assertEqual(self.fixture(private_padding=8388608).value()['process_status'],'parser_error')
 
     def test_materialized_mapping_envelope_reaches_review_composition(self):
-        result=self.fixture(materialized_files=3)
-        value=parse_json(result.private_document,8388608)
-        self.assertEqual(value['process_status'],'success')
-        self.assertEqual(value['completeness'],'complete')
-        self.assertEqual(sum(len(chunk['line_map']) for chunk in value['chunks']),12288)
-        # The separate generic output-envelope consumer is not enlarged by this fix.
+        for files in (3,4):
+            result=self.fixture(materialized_files=files)
+            value=result.value()
+            self.assertEqual(value['process_status'],'success')
+            self.assertEqual(value['completeness'],'complete')
+            self.assertEqual(sum(len(chunk['line_map']) for chunk in value['chunks']),files*4096)
+            self.assertIs(evidence.index((result,))['ocr'],result)
+
+    def test_ocr_reader_budgets_are_scoped_and_producer_enforces_them(self):
+        from ocr_security_adapters.data import bounded_json,bounded_ocr_evidence
+        # Root + 8 lists + 32760 scalars = 32769 nodes: generic limit remains.
+        value=[[0]*4095 for _ in range(8)]
+        raw=canonical(value)
         with self.assertRaisesRegex(Refusal,'document_structure_limit'):
-            result.value()
+            bounded_json(raw)
+        self.assertEqual(bounded_ocr_evidence(raw),value)
+        scanner=evidence.Evidence('osv',digest(raw),raw)
+        with self.assertRaisesRegex(Refusal,'document_structure_limit'):
+            scanner.value()
+        # Exact OCR node boundary, then one extra scalar. Other limits unchanged.
+        at_limit=[[0]*4095 for _ in range(63)]+[[0]*4094]
+        self.assertEqual(bounded_ocr_evidence(canonical(at_limit)),at_limit)
+        too_many=[row[:] for row in at_limit];too_many[-1].append(0)
+        with self.assertRaisesRegex(Refusal,'document_structure_limit'):
+            evidence._evidence('ocr',too_many)
+        for invalid in ([0]*4097,{'text':'x'*65537}):
+            with self.assertRaises(Refusal):
+                bounded_ocr_evidence(canonical(invalid))
+        self.assertEqual(bounded_ocr_evidence(b'{}'+b' '*(8388608-2)),{})
+        with self.assertRaises(Refusal):
+            bounded_ocr_evidence(b'{}'+b' '*(8388608-1))
 
     def test_native_preview_and_separate_semantic_accounting_combine(self):
         value=self.fixture().value();self.assertEqual(value['completeness'],'complete')

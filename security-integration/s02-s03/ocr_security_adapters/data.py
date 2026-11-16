@@ -6,12 +6,21 @@ from ocr_security.common import Refusal, parse_json, text, integer, sha, fields
 
 
 def bounded_json(raw, maximum=1048576):
+    return _bounded_document(raw, maximum, 32768)
+
+
+def bounded_ocr_evidence(raw):
+    """OCR composition only: bounded line maps need more nodes than native reports."""
+    return _bounded_document(raw, 8388608, 262144)
+
+
+def _bounded_document(raw, maximum, node_limit):
     value = parse_json(raw, maximum)
     pending, count = [(value, 0)], 0
     while pending:
         item, depth = pending.pop()
         count += 1
-        if depth > 32 or count > 32768:
+        if depth > 32 or count > node_limit:
             raise Refusal("document_structure_limit")
         if type(item) is dict:
             if len(item) > 4096:

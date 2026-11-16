@@ -70,7 +70,7 @@ class GateTests(unittest.TestCase):
                         {'process_status':'partial'},{'coverage_complete':False}):
             with self.subTest(changed=changed):
                 self.assertEqual(qualification.fixture_outcome(expectation,dict(observed,**changed),
-                                 {'status':'incomplete'})['qualification'],'failed')
+                                 {'status':'pass'})['qualification'],'failed')
         positive=dict(expectation,case_id='fictional-positive',polarity='positive',expected_rule_hashes=['b'*64])
         self.assertEqual(qualification.fixture_outcome(positive,observed,{'status':'with-findings'})['qualification'],'failed')
 

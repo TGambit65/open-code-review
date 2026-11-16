@@ -56,9 +56,17 @@ class QualificationTests(unittest.TestCase):
             documents[path]=canonical(row)
             with self.subTest(mode=mode),self.assertRaises(Refusal):self.call(documents)
     def test_validation_cannot_precede_preservation(self):
-        documents=self.documents();path='/fixture-offline_fixtures';row=json.loads(documents[path])
+        documents=self.documents()
+        self.assertEqual(self.call(documents)['stages']['offline_fixtures']['result'],'passed')
+        path='/fixture-offline_fixtures';row=json.loads(documents[path])
         row['issued_at']='2026-11-05T23:00:00Z';documents[path]=canonical(row)
-        with self.assertRaises(Refusal):self.call(documents)
+        final_path='/fixture-independent_evidence_review';final=json.loads(documents[final_path])
+        final['input_receipts']['offline_fixtures']=digest(documents[path])
+        documents[final_path]=canonical(final)
+        self.assertEqual(row['input_receipts']['remote_preservation'],
+                         digest(documents['/fixture-remote_preservation']))
+        with self.assertRaisesRegex(Refusal,'stale_stage_input_receipt'):
+            self.call(documents)
     def test_real_blocked_receipt_is_retained_without_pretending_success(self):
         documents=self.documents();row=json.loads(documents['/fixture-implementation'])
         row['result']='blocked';row['input_receipts']={}

@@ -19,7 +19,11 @@ class Tags(HTMLParser):
 class ReportTests(unittest.TestCase):
     def make(self):
         raw=b'<script>alert("fictional")</script>\n![image](https://example.invalid/track)\n[REDACTED]\n'
-        snap,views=support.snapshot(raw);items=support.all_evidence(snap,(support.finding(snap),))
+        snap,views=support.snapshot(raw)
+        finding=support.finding(snap)
+        finding['preconditions']=['fictional only','private:DO_NOT_PUBLISH']
+        items=support.all_evidence(snap,(finding,))
+        self.assertTrue(any(b'private:DO_NOT_PUBLISH' in item.private_document for item in items))
         decision=gate.evaluate(support.target(snap),support.policy(),items,snap,support.update(),None,support.NOW)
         report=reports.project(decision,items,views,snap,(('item-0000','primary',1,3),))
         return snap,views,items,report

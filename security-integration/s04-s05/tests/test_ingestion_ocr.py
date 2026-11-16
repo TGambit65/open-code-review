@@ -3,7 +3,7 @@ import unittest
 from dataclasses import replace
 from unittest.mock import patch
 import support
-from ocr_security.common import Refusal,canonical,digest
+from ocr_security.common import Refusal,canonical,digest,parse_json
 from ocr_security.policy import TrustedRef
 from ocr_security_adapters import projection,reviewer
 from ocr_security_adapters.assets import Asset,Inventory,SOURCES
@@ -68,9 +68,35 @@ class IngestionTests(unittest.TestCase):
         self.assertNotEqual(item.sha256,changed.sha256)
 
 class OCRCompositionTests(unittest.TestCase):
-    def fixture(self,excluded=False,missing_review=False,suffix='py',authority_changes=None,missing_suffixes=False):
+    def fixture(self,excluded=False,missing_review=False,suffix='py',authority_changes=None,missing_suffixes=False,private_padding=0,materialized_files=0):
         content={'py':b'print("public fixture")\n','txt':b'Fictional plain text.\n','md':b'# Fictional Markdown\n'}[suffix]
+        if materialized_files:
+            content=b'x\n'*4096
         snap,views=support.snapshot(content,path='private-path.'+suffix);pol=support.adapter_policy(snap)
+        if materialized_files:
+            from ocr_security.views import materialize_views
+            manifest=parse_json(snap.manifest)
+            template=manifest['selection']['entries'][0]
+            rows=[dict(template,path='mapped-%d.py'%i,source='fixture-%d'%i) for i in range(materialized_files)]
+            entries=tuple(replace(snap.entries[0],ordinal=i,path=row['path'],source=row['source'])
+                          for i,row in enumerate(rows))
+            manifest['selection']['entries']=rows
+            raw=canonical(manifest)
+            snap=replace(snap,snapshot_id=digest(raw),entries=entries,manifest=raw)
+            release={'schema_version':'1.0','kind':'approved-line-release','snapshot_id':snap.snapshot_id,
+                     'entries':[{'opaque_id':entry.opaque_id,'original_sha256':entry.sha256,'ranges':[[1,4096]]}
+                                for entry in snap.selected]}
+            ref=TrustedRef('/synthetic-line-release',digest(canonical(release)))
+            with patch('ocr_security.views.resolve_document',return_value=release):
+                views=materialize_views(snap,None,ref)
+            self.assertEqual(sum(len(item.line_map) for item in views.model.items),materialized_files*4096)
+            self.assertTrue(all(not item.gaps for item in views.model.items))
+            self.assertLess(len(views.private_evidence),8388608)
+            from ocr_security_adapters.data import bounded_json
+            with self.assertRaisesRegex(Refusal,'document_structure_limit'):
+                bounded_json(views.private_evidence,8388608)
+        if private_padding:
+            views=replace(views,private_evidence=views.private_evidence+b' '*private_padding)
         suffixes={item.opaque_id:suffix for item in views.model.items}
         view=projection.sanitized_projection(views.model,suffixes)
         excluded=excluded or suffix in ('txt','md')
@@ -101,6 +127,22 @@ class OCRCompositionTests(unittest.TestCase):
         with patch('ocr_security_gate.contracts.read_ref',return_value=authority):
             return evidence.independent_review(preview_raw,rules_raw,events,snap,views,pol,inv,rule,[] if missing_review else records,
                         'fixture-writer','fixture-reviewer',TrustedRef('/fictional-rule-authority',digest(authority)))
+    def test_private_transformation_bound_matches_other_consumers(self):
+        value=self.fixture(private_padding=1048576).value()
+        self.assertEqual(value['process_status'],'success')
+        self.assertEqual(value['completeness'],'complete')
+        self.assertEqual(self.fixture(private_padding=8388608).value()['process_status'],'parser_error')
+
+    def test_materialized_mapping_envelope_reaches_review_composition(self):
+        result=self.fixture(materialized_files=3)
+        value=parse_json(result.private_document,8388608)
+        self.assertEqual(value['process_status'],'success')
+        self.assertEqual(value['completeness'],'complete')
+        self.assertEqual(sum(len(chunk['line_map']) for chunk in value['chunks']),12288)
+        # The separate generic output-envelope consumer is not enlarged by this fix.
+        with self.assertRaisesRegex(Refusal,'document_structure_limit'):
+            result.value()
+
     def test_native_preview_and_separate_semantic_accounting_combine(self):
         value=self.fixture().value();self.assertEqual(value['completeness'],'complete')
         self.assertFalse(value['independent_identity_attested_externally'])

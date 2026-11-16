@@ -35,11 +35,11 @@ def subject(value):
     return dict(value)
 
 
-def pinned(ref, context, kind):
+def pinned(ref, context, kind, *, parser=bounded_json):
     if not isinstance(ref, TrustedRef):
         raise Refusal("trusted_external_reference_required")
     raw = read_ref(ref, context)
-    value = bounded_json(raw)
+    value = parser(raw)
     if type(value) is not dict or value.get("schema_version") != "1.0" or value.get("kind") != kind:
         raise Refusal("unsupported_document")
     return value, digest(raw)

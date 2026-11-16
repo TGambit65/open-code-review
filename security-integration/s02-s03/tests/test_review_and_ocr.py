@@ -16,6 +16,22 @@ class ReviewOCRTests(unittest.TestCase):
         return {"handoff_id":packet["handoff_id"],"chunk_id":chunk["chunk_id"],"reviewer_context_id":"reviewer",
                 "depth":"deep","topics":list(reviewer.TOPICS),"findings":[],"uncertainties":[],"truncated":False}
 
+    def test_generated_chunks_fit_assessment_bound_or_refuse(self):
+        from dataclasses import replace
+        from ocr_security.common import ModelBundle, digest
+        _, views = support.sample(b'x\n' * reviewer.MAX_REVIEW_CHUNKS)
+        packet = reviewer.handoff(views.model, support.policy(), 'writer', 'reviewer', maximum_lines=1)
+        self.assertEqual(len(packet['chunks']), reviewer.MAX_REVIEW_CHUNKS)
+        records = [dict(self.record(packet), chunk_id=part['chunk_id']) for part in packet['chunks']]
+        self.assertEqual(reviewer.assess_review(packet, records, 'reviewer')['completeness'], 'complete')
+        second = replace(views.model.items[0], opaque_id='item-0001')
+        items = views.model.items + (second,)
+        serial = [{'id': x.opaque_id, 'surfaces': x.surfaces, 'content': x.content,
+                   'line_map': x.line_map, 'gaps': x.gaps} for x in items]
+        oversized = ModelBundle(digest(canonical(serial)), items)
+        with self.assertRaisesRegex(Refusal, 'review_chunk_limit'):
+            reviewer.handoff(oversized, support.policy(), 'writer', 'reviewer', maximum_lines=1)
+
     def test_independent_context_required(self):
         _,views=support.sample()
         with self.assertRaises(Refusal): reviewer.handoff(views.model,support.policy(),"same","same")

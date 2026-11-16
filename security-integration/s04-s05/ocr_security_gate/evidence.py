@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: Apache-2.0
 """Private bounded ingestion. Evidence does not become public by parsing it."""
 from dataclasses import dataclass
-from ocr_security.common import Refusal, canonical, digest, fields, sha, integer, utc
+from ocr_security.common import Refusal, canonical, digest, fields, sha, integer, utc, parse_json
 from ocr_security.results import parse_result
 from ocr_security.coverage import assess_coverage
 from ocr_security_adapters.data import bounded_json, choice, sequence
@@ -100,7 +100,7 @@ def independent_review(preview_raw,rules_raw,events,snapshot,views,adapter_polic
             or authority["rules_asset_sha256"]!=inventory.one("rules").sha256 or authority["adapter_policy_sha256"]!=adapter_policy.sha256
             or authority["snapshot_id"]!=snapshot.snapshot_id or authority["model_bundle_id"]!=views.model.bundle_id):
             raise Refusal("unbound_review_rules")
-        transformation=bounded_json(views.private_evidence)
+        transformation=parse_json(views.private_evidence, 8388608)
         if (transformation.get("snapshot_id")!=snapshot.snapshot_id or transformation.get("model_bundle_id")!=views.model.bundle_id
             or tuple(views.scanner_inputs)!=tuple((x.opaque_id,x.content) for x in snapshot.selected)
             or {x.opaque_id for x in views.model.items}!={x.opaque_id for x in snapshot.selected}):

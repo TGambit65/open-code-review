@@ -22,23 +22,45 @@ class WorkflowTests(unittest.TestCase):
         self.assertEqual(self.handoff(state='denied')['next_action'],'retain_exact_hold')
     def test_failed_action_requires_known_nonexecution_and_unused_authorization(self):
         record=workflow.begin_attempt(workflow.ActionRecord('a'*64,'b'*64,'publish'),'c'*64)
-        uncertain=workflow.record_outcome(record,'failed','d'*64)
+        uncertain=workflow.record_outcome(record,'failed','d'*64,authorization_sha256='c'*64)
         self.assertEqual(workflow.action_handoff(uncertain,'e'*64)['action'],'reconcile_exact_outcome')
         with self.assertRaises(Refusal):workflow.begin_attempt(uncertain,'e'*64)
-        failed=workflow.record_outcome(record,'failed','d'*64,known_not_executed=True)
+        failed=workflow.record_outcome(record,'failed','d'*64,known_not_executed=True,authorization_sha256='c'*64)
         for authorization in (None,'c'*64,'d'*64):
             self.assertEqual(workflow.action_handoff(failed,authorization)['action'],'retain_exact_hold')
         self.assertEqual(workflow.action_handoff(failed,'e'*64)['action'],'root_consider_one_supported_retry')
     def test_denial_retry_needs_new_evidence_once(self):
         record=workflow.ActionRecord('a'*64,'b'*64,'publish')
         record=workflow.begin_attempt(record,'c'*64)
-        record=workflow.record_outcome(record,'denied','d'*64,known_not_executed=True)
+        record=workflow.record_outcome(record,'denied','d'*64,known_not_executed=True,authorization_sha256='c'*64)
         self.assertEqual(workflow.action_handoff(record)['action'],'retain_exact_hold')
         self.assertEqual(workflow.action_handoff(record,'c'*64)['action'],'retain_exact_hold')
         self.assertEqual(workflow.action_handoff(record,'e'*64)['action'],'root_consider_one_supported_retry')
         record=workflow.begin_attempt(record,'e'*64)
-        record=workflow.record_outcome(record,'denied','f'*64,known_not_executed=True)
+        record=workflow.record_outcome(record,'denied','f'*64,known_not_executed=True,authorization_sha256='e'*64)
         self.assertEqual(workflow.action_handoff(record,'e'*64)['action'],'retain_exact_hold')
+    def test_delayed_outcome_cannot_replace_new_attempt(self):
+        first=workflow.begin_attempt(workflow.ActionRecord('a'*64,'b'*64,'publish'),'c'*64)
+        failed=workflow.record_outcome(first,'failed','d'*64,known_not_executed=True,authorization_sha256='c'*64)
+        second=workflow.begin_attempt(failed,'e'*64)
+        for outcome in ('failed','denied','cancelled','uncertain','succeeded'):
+            with self.subTest(outcome=outcome),self.assertRaisesRegex(Refusal,'outcome_attempt_mismatch'):
+                workflow.record_outcome(second,outcome,'f'*64,authorization_sha256='c'*64)
+        self.assertEqual(second.outcome,'in_flight')
+        self.assertEqual(workflow.action_handoff(second,'f'*64)['action'],'reconcile_exact_outcome')
+        uncertain=workflow.record_outcome(second,'uncertain','f'*64,authorization_sha256='e'*64)
+        with self.assertRaisesRegex(Refusal,'outcome_attempt_mismatch'):
+            workflow.record_outcome(uncertain,'failed','d'*64,True,authorization_sha256='c'*64)
+        resolved=workflow.record_outcome(uncertain,'succeeded','1'*64,authorization_sha256='e'*64)
+        self.assertEqual(resolved.outcome,'succeeded')
+        with self.assertRaises(Refusal):
+            workflow.record_outcome(resolved,'failed','2'*64,authorization_sha256='e'*64)
+        with self.assertRaises(TypeError):
+            workflow.record_outcome(second,'failed','d'*64)
+        with self.assertRaisesRegex(Refusal,'outcome_attempt_mismatch'):
+            workflow.record_outcome(workflow.ActionRecord('a'*64,'b'*64,'publish'),'failed','d'*64,
+                                    authorization_sha256='e'*64)
+
     def test_uncertain_action_requires_reconciliation_even_with_new_evidence(self):
         record=workflow.ActionRecord('a'*64,'b'*64,'merge',outcome='uncertain',attempts=1)
         self.assertEqual(workflow.action_handoff(record,'c'*64)['action'],'reconcile_exact_outcome')

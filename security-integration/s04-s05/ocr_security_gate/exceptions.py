@@ -1,7 +1,24 @@
 # SPDX-License-Identifier: Apache-2.0
 """Only explicit externally pinned, owned, exact-scope decisions may affect findings."""
-from ocr_security.common import Refusal, canonical, digest, fields, sha, text, utc
+from ocr_security.common import Refusal, canonical, digest, fields, sha, text, utc, parse_json
+from ocr_security_adapters.data import bounded_json
 from .contracts import pinned, bind_policy, timestamp, sequence, unique
+
+# A group can retain 4096 prior and 4096 current observation identities.
+MAX_DECISION_OBSERVATIONS = 8192
+
+
+def decision_document(raw):
+    value = parse_json(raw, 1048576)
+    if type(value) is not dict or "observation_ids" not in value:
+        raise Refusal("invalid_finding_decision")
+    ids = unique(value["observation_ids"], MAX_DECISION_OBSERVATIONS)
+    for identity in ids:
+        sha(identity)
+    remaining = dict(value)
+    del remaining["observation_ids"]
+    bounded_json(canonical(remaining))
+    return value
 
 
 def decisions(refs,context,policy,target,groups,now,kind="finding-exception"):
@@ -11,13 +28,13 @@ def decisions(refs,context,policy,target,groups,now,kind="finding-exception"):
     current={g["fingerprint"]:set(g["required_observation_ids"]) for g in groups}
     result={}
     for ref in refs:
-        value,pin=pinned(ref,context,"s04-"+kind)
+        value,pin=pinned(ref,context,"s04-"+kind,parser=decision_document)
         fields(value,("schema_version","kind","policy_sha256","subject_sha256","fingerprint","observation_ids","owner","reason",
                       "issued_at","expires_at","scope","waives_controls","authorization_receipt_sha256","evidence_sha256","state"))
         fp=sha(value["fingerprint"])
         if value["policy_sha256"]!=policy.sha256 or value["subject_sha256"]!=digest(canonical(target)):
             raise Refusal("stale_finding_decision")
-        ids={sha(x) for x in unique(value["observation_ids"],256)}
+        ids={sha(x) for x in unique(value["observation_ids"],MAX_DECISION_OBSERVATIONS)}
         if fp not in current or ids!=current[fp] or fp in result:raise Refusal("wrong_finding_scope")
         if value["owner"] not in approved["exception_owners"]:raise Refusal("unauthorized_finding_owner")
         text(value["owner"]);text(value["reason"],1024)

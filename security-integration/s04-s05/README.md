@@ -29,3 +29,22 @@ Gate comparisons are conservative. Native finding/nonzero exits retained as erro
 Complete all selected source and rollback → seal → independent full-diff review/coherent fixes → root preserves the exact eligible source in the same draft → admitted end checks → preserve reviewed outcomes → independent acceptance or explicit hold. No tests, imports, compilation, lint, rendering or review were performed while this endpoint was being authored. See VALIDATION.md for deferred checks and WORKFLOW.md for operator steps.
 
 S06–S07 is the next approved source batch, not part of this endpoint. All 82 remaining original IDs are retained in the sequencing overlay. The original C01–C08 authority, root-only actions, B01–B07 review/merge controls and exact denials remain effective.
+
+## Database-set and outcome binding
+
+The gate requires exact equality between the approved `required_datasets` set
+and the OSV scan's lockfile ecosystem database set. It compares the digest of the
+complete sorted ecosystem, artifact, creation and expiry tuples. Extra required
+datasets without scanned lockfiles, extra scanned ecosystems, or changed metadata
+are rejected as `database_evidence_mismatch`; absent/expired required data also
+remains `dataset_not_current`. This is deliberate conservative refusal, not a
+reason to weaken either dataset set to obtain a pass. Mixed source/lockfile
+snapshots separately remain `incomplete_osv` under the full-input coverage rule.
+
+Outcome callers must supply `authorization_sha256` naming the exact attempt
+covered by the receipt. It must match the record's latest used authorization;
+missing or stale attempt identity refuses before any state transition, including
+reconciliation of uncertain outcomes. The host still verifies the receipt's
+authenticity, target and payload. Matching an input digest does not authenticate
+a receipt or authorize publication. Native and external action entrypoints remain
+disabled.

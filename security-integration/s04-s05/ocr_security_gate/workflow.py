@@ -54,9 +54,11 @@ class ActionRecord:
     used_authorizations: tuple=()
 
 
-def record_outcome(record,outcome,receipt_sha256,known_not_executed=False):
+def record_outcome(record,outcome,receipt_sha256,known_not_executed=False,*,authorization_sha256):
     if not isinstance(record,ActionRecord):raise Refusal("action_record_required")
-    sha(record.target_sha256);sha(record.payload_sha256);sha(receipt_sha256)
+    sha(record.target_sha256);sha(record.payload_sha256);sha(receipt_sha256);sha(authorization_sha256)
+    if not record.used_authorizations or authorization_sha256!=record.used_authorizations[-1]:
+        raise Refusal("outcome_attempt_mismatch")
     choice(record.action,("publish","request_review","merge"));choice(outcome,OUTCOMES)
     if type(known_not_executed) is not bool:raise Refusal("invalid_execution_knowledge")
     if outcome in ("uncertain","in_flight","succeeded") and known_not_executed:raise Refusal("contradictory_outcome")

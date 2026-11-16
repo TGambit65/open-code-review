@@ -33,6 +33,56 @@ class ObservationTests(unittest.TestCase):
     def test_correlation_cannot_silently_waive_a_finding(self):
         _,_,_,records=self.setup_records()
         with self.assertRaises(Refusal):observations.group(records,{"0"*64:"1"*64})
+    def test_decision_covers_complete_retained_and_current_set(self):
+        from pathlib import Path
+        import json
+        snap,pol,target,records=self.setup_records()
+        template=records[0]
+        history=[dict(template,observation_id=digest(('old-%d'%i).encode())) for i in range(256)]
+        current=[dict(template,observation_id=digest(b'current'))]
+        prior=[{'fingerprint':template['fingerprint'],'first_seen':template['observed_at'],'observations':history}]
+        actual=observations.group(current,previous=prior)[0]
+        self.assertEqual(len(actual['required_observation_ids']),257)
+        for count in (257,4096,4097,8192,8193):
+            ids=actual['required_observation_ids'] if count==257 else [digest(str(i).encode()) for i in range(count)]
+            groups=[dict(actual,required_observation_ids=ids)]
+            value={'schema_version':'1.0','kind':'s04-finding-exception','policy_sha256':pol.sha256,
+                   'subject_sha256':digest(canonical(target)),'fingerprint':actual['fingerprint'],
+                   'observation_ids':ids,'owner':'fixture-owner','reason':'synthetic exact set',
+                   'issued_at':'2026-11-06T00:00:00Z','expires_at':'2026-11-07T00:00:00Z',
+                   'scope':'exact_finding_observations','waives_controls':False,'authorization_receipt_sha256':'a'*64,
+                   'evidence_sha256':'b'*64,'state':'exception_approved'}
+            def call(doc):
+                raw=canonical(doc);ref=TrustedRef('/synthetic-exception',digest(raw))
+                with patch('ocr_security_gate.contracts.read_ref',return_value=raw):
+                    return exceptions.decisions((ref,),None,pol,target,groups,support.NOW,
+                                                'finding-resolution' if doc['kind']=='s04-finding-resolution' else 'finding-exception')
+            if count>exceptions.MAX_DECISION_OBSERVATIONS:
+                with self.assertRaises(Refusal):call(value)
+            else:
+                self.assertIn(actual['fingerprint'],call(value))
+                self.assertIn(actual['fingerprint'],call(dict(value,kind='s04-finding-resolution',state='independently_resolved')))
+                with self.assertRaises(Refusal):call(dict(value,observation_ids=ids[:-1]))
+                with self.assertRaises(Refusal):call(dict(value,observation_ids=ids[:-1]+['f'*64]))
+                with self.assertRaises(Refusal):call(dict(value,observation_ids=ids+[ids[0]]))
+        schema=json.loads((Path(__file__).parents[1]/'schemas/finding-decision.schema.json').read_text())
+        self.assertEqual(schema['properties']['observation_ids']['maxItems'],exceptions.MAX_DECISION_OBSERVATIONS)
+
+    def test_decision_parser_does_not_relax_other_document_limits(self):
+        from ocr_security_adapters.data import bounded_json
+        from ocr_security_gate.contracts import pinned
+        ids=[digest(str(i).encode()) for i in range(4097)]
+        raw=canonical({'observation_ids':ids})
+        self.assertEqual(exceptions.decision_document(raw)['observation_ids'],ids)
+        with self.assertRaises(Refusal):bounded_json(raw)
+        ref=TrustedRef('/synthetic-generic',digest(raw))
+        with patch('ocr_security_gate.contracts.read_ref',return_value=raw):
+            with self.assertRaises(Refusal):pinned(ref,None,'other')
+        for extra in ({'other':[0]*4097},{'other':'x'*65537}):
+            with self.assertRaises(Refusal):exceptions.decision_document(canonical(dict(extra,observation_ids=ids)))
+        with self.assertRaises(Refusal):exceptions.decision_document(raw+b' '*1048576)
+        with self.assertRaises(Refusal):exceptions.decision_document(canonical({'observation_ids':['bad']}))
+
     def test_owned_expiring_exact_observation_exceptions(self):
         snap,pol,target,records=self.setup_records();groups=observations.group(records);group=groups[0]
         value={"schema_version":"1.0","kind":"s04-finding-exception","policy_sha256":pol.sha256,

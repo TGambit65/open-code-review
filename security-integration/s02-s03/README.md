@@ -55,3 +55,14 @@ The seven findings from the first full independent source review have writer-own
 - A semantic source/sink reference may be a local line number or an object with chunk_id and line, referencing any released line in the same handoff. Cross-file and cross-160-line flows are representable; foreign or unreleased references refuse. The full chunk/depth denominator remains mandatory.
 - Exact approved OCR rules may contain ordinary newlines, carriage returns and tabs, but other control characters refuse. Candidate rule text still cannot alter approved-body equality or custom-source requirements.
 - Paired baseline/head JSON with unchanged keys and weakened authorization values, plus actually selected candidate ignore/policy contents, are authored fixtures. Data-contract assertions do not claim a model reasoned about them or that native detection succeeded.
+
+## Mixed-snapshot coverage contract
+
+The approved full selected-input denominator is retained for every adapter. OSV
+only analyzes explicitly selected supported lockfiles; it does not classify other
+selected inputs as implicitly safe or not applicable. A mixed source/lockfile
+snapshot therefore remains incomplete, with
+`selected_inputs_outside_osv_lockfiles` in the adapter result and `incomplete_osv`
+at the gate. A lockfile-only snapshot still requires genuine complete independent
+coverage and all other native qualification prerequisites. Changing applicability
+requires a separately reviewed policy/schema change, not a smaller denominator.

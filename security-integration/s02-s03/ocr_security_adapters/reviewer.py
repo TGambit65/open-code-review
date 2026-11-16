@@ -11,6 +11,7 @@ from .data import choice, sequence, token
 from .effective_policy import Policy
 
 TOPICS = ("authorization", "trust_boundaries", "secrets", "dependencies", "business_logic", "json_values", "policy_content")
+MAX_REVIEW_CHUNKS = 4096
 DEPTHS = ("deep", "surface", "unsupported", "skipped", "insufficient_context")
 
 
@@ -59,6 +60,8 @@ def handoff(bundle, policy, writer_context_id, reviewer_context_id, maximum_line
             continue
         count = len(item.content.splitlines(keepends=True))
         for start in range(1, max(count, 1) + 1, maximum_lines):
+            if len(chunks) >= MAX_REVIEW_CHUNKS:
+                raise Refusal("review_chunk_limit")
             end = min(count, start + maximum_lines - 1)
             data = broker.read(surface, item.opaque_id, start, end)
             if data["status"] not in ("success", "partial"):
@@ -93,7 +96,7 @@ def assess_review(packet, records, reviewer_context_id):
         raise Refusal("reviewer_not_independent")
     expected = {x["chunk_id"]: x for x in packet["chunks"]}
     seen, gaps, findings = set(), list(packet["gaps"]), []
-    for record in sequence(records, 4096):
+    for record in sequence(records, MAX_REVIEW_CHUNKS):
         fields(record, ("handoff_id", "chunk_id", "reviewer_context_id", "depth", "topics", "findings", "uncertainties", "truncated"))
         chunk_id = sha(record["chunk_id"])
         if record["handoff_id"] != packet_id or record["reviewer_context_id"] != reviewer_context_id:

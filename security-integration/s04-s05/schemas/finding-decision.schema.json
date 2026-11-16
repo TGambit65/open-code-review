@@ -33,7 +33,7 @@
         "type": "string",
         "pattern": "^[0-9a-f]{64}$"
       },
-      "maxItems": 256,
+      "maxItems": 8192,
       "minItems": 1,
       "uniqueItems": true
     },

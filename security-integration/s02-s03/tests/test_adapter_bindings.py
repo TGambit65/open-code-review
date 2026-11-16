@@ -108,6 +108,22 @@ class AdapterBindingTests(unittest.TestCase):
                                       stdin_evidence, coverage_ref=ref, mode="stdin", stdin_item="item-0000")
         self.assertEqual(value["process_status"], "parser_error")
 
+    def test_osv_preserves_full_denominator_for_mixed_selection(self):
+        for mixed in (False, True):
+            snap, views = pair() if mixed else support.sample()
+            selection = (osv.Lockfile('item-0000', 'npm'),)
+            raw = canonical({'results': [{'source': {'path': '/input/item-0000/package-lock.json',
+                             'type': 'lockfile'}, 'packages': []}], 'experimental_config': {}})
+            event = support.evidence(raw, snap, 'osv', selection=selection)
+            raw_receipt = canonical(receipt(event, snap, [x.opaque_id for x in snap.selected]))
+            ref = TrustedRef('/synthetic-coverage.json', digest(raw_receipt))
+            with patch('ocr_security_adapters.normalization.read_ref', return_value=raw_receipt):
+                value = osv.normalize(raw, snap, views, support.policy(), support.inventory('osv'),
+                                      event, selection, coverage_ref=ref)
+            self.assertEqual(value['completeness'], 'incomplete' if mixed else 'complete')
+            self.assertEqual(len(value['result']['coverage']), len(snap.selected))
+            self.assertEqual('selected_inputs_outside_osv_lockfiles' in value['gaps'], mixed)
+
     def test_osv_source_type_and_selection_bound(self):
         snap, views = support.sample(b'{"lockfileVersion":3}\n', "json")
         selection = (osv.Lockfile("item-0000", "npm"),)

@@ -16,6 +16,23 @@ class GateTests(unittest.TestCase):
         raw=canonical(receipt);ref=TrustedRef('/synthetic-run-attestation',digest(raw)) if attest else None
         with patch('ocr_security_gate.contracts.read_ref',return_value=raw):
             return gate.evaluate(support.target(snap),pol,items,snap,current,None,support.NOW,attestation_ref=ref)
+    def test_exact_required_and_scanned_database_set_is_mandatory(self):
+        snap,_=support.snapshot();current=support.update()
+        npm=current.value()['assets'][0]
+        extra=dict(npm,id='db-pypi',dataset='PyPI',sha256=digest(b'other-db'))
+        from ocr_security_gate.updates import UpdateSet
+        raw=canonical(dict(current.value(),assets=[npm,extra]));both=UpdateSet(digest(raw),raw)
+        for required,scanned in ((['npm'],[npm]),(['npm','PyPI'],[npm]),(['npm'],[npm,extra])):
+            pol=support.policy(required_datasets=required)
+            items=list(support.all_evidence(snap))
+            osv=items[-1].value()
+            osv['pins']['database_pin']=digest(canonical([[x['dataset'],x['sha256'],x['created_at'],x['expires_at']]
+                                                          for x in sorted(scanned,key=lambda x:x['dataset'])]))
+            from ocr_security_gate.evidence import Evidence
+            raw=canonical(osv);items[-1]=Evidence('osv',digest(raw),raw)
+            result=gate.evaluate(support.target(snap),pol,tuple(items),snap,both,None,support.NOW)
+            self.assertEqual('database_evidence_mismatch' in result['gaps'],len(required)!=len(scanned))
+
     def test_no_evidence_is_not_run(self):
         self.assertEqual(self.evaluate(items=(),attest=False)["status"],"not-run")
     def test_exit_zero_without_independent_receipt_is_incomplete(self):

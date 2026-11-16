@@ -107,6 +107,8 @@ def normalize(raw, snapshot, views, policy, inventory, evidence, selection, cont
         complete = coverage_attestation(coverage_ref, context, evidence, inventory, snapshot, inputs)
         complete = complete & {by_path[path][1].opaque_id for path in sources}
         gaps = []
+        if {item.opaque_id for item in inputs} != {item.opaque_id for _, _, item in mapped}:
+            gaps.append("selected_inputs_outside_osv_lockfiles")
         if not complete:
             gaps.append("native_report_has_no_coverage_ledger")
         if sources != set(by_path):

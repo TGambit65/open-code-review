@@ -66,3 +66,29 @@ snapshot therefore remains incomplete, with
 at the gate. A lockfile-only snapshot still requires genuine complete independent
 coverage and all other native qualification prerequisites. Changing applicability
 requires a separately reviewed policy/schema change, not a smaller denominator.
+
+## Path-sensitive Gitleaks input contract
+
+Private scanner aliases preserve tf/hcl and p12/pfx suffixes. A basename ending in
+case-insensitive nuget.config (matching the pinned rule suffix) receives the fixed type marker
+`item-####.nuget.config`; no original directory or candidate basename is
+forwarded. Other config names retain the generic txt alias. The selected
+original bytes and identities are unchanged, and synthetic history uses the
+same aliases. These private type markers are not model filenames.
+
+The pinned default path detectors are now addressable in directory/history
+plans; this is source compatibility, not scanner execution or an adoption of
+the default rules. Native configuration, skips and redaction remain unqualified.
+PKCS12 filename-only synthetic reports accept empty/redacted Secret and exact
+integer zero coordinates only on p12/pfx inputs, producing no fabricated line
+ranges and explicitly unverified container contents. Such a filename is not
+proof that a private key exists. Raw Match and other report text are discarded.
+All other detectors retain mandatory REDACTED Secret and positive line bounds.
+
+Stdin does not supply a native filename. If the inventory includes any of the
+five pinned path-sensitive rule IDs, its plan and normalized result carry
+`stdin_path_sensitive_rules_unqualified` even with an external coverage claim.
+Filename-only PKCS12 reports on stdin are rejected. Additional future/custom
+path rules still require accurate independently qualified coverage attestations;
+this fixed set is not generic native config introspection. No native execution,
+policy adoption, full-coverage assertion or security acceptance follows.

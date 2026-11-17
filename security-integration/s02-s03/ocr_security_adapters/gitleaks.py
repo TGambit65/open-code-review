@@ -9,6 +9,11 @@ from .inputs import scanner_inputs
 from .private_history import original_history
 from .normalization import coverage_attestation, finding, result, parser_failure
 
+# Default v8.30.1 path-sensitive detector IDs. Stdin has no filename
+# binding supplied to the native detector, so these cannot be attested there.
+PATH_RULES = frozenset(("freemius-secret-key", "hashicorp-tf-password",
+                        "kubernetes-secret-yaml", "nuget-config-password", "pkcs12-file"))
+
 COMMON = ("--config", "/policy/gitleaks.toml", "--redact=100", "--report-format=json", "--report-path=/output/report.json",
           "--no-banner", "--no-color", "--log-level=error", "--ignore-gitleaks-allow", "--gitleaks-ignore-path=/policy/empty.gitleaksignore",
           "--max-archive-depth=0", "--max-decode-depth=0", "--timeout=5", "--exit-code=10")
@@ -31,6 +36,8 @@ def plan(snapshot, policy, inventory, mode="files", stdin_item=None):
         if stdin_item not in {x.opaque_id for x in inputs}:
             raise Refusal("unbound_stdin")
         argv = ("/tool/gitleaks", "stdin") + COMMON
+        if PATH_RULES.intersection(inventory.allowed_rule_ids):
+            blockers.append("stdin_path_sensitive_rules_unqualified")
     elif mode == "history":
         if stdin_item is not None:
             raise Refusal("unexpected_stdin")
@@ -61,8 +68,6 @@ def normalize(raw, snapshot, views, policy, inventory, evidence, context=None, c
         for ordinal, native in enumerate(native_results):
             if type(native) is not dict or not {"RuleID", "StartLine", "EndLine", "File", "Secret", "Match"} <= set(native):
                 raise Refusal("invalid_gitleaks_schema")
-            if native["Secret"] != "REDACTED":
-                raise Refusal("native_report_not_redacted")
             if native["RuleID"] not in inventory.allowed_rule_ids:
                 raise Refusal("unapproved_rule")
             path = native["File"]
@@ -77,13 +82,29 @@ def normalize(raw, snapshot, views, policy, inventory, evidence, context=None, c
                 raise Refusal("unbound_native_finding")
             # Deliberately discard Match, Description, Fragment, Git metadata,
             # Tags, Fingerprint, Entropy and all other untrusted strings.
-            record = finding("gitleaks", item, snapshot, inventory, raw, native["RuleID"], "High", native["StartLine"], native["EndLine"], ordinal)
+            if native["RuleID"] == "pkcs12-file":
+                # Upstream filename-only findings have empty Secret and zero
+                # coordinates. Never invent a line or claim decrypted content.
+                if (mode == "stdin" or not item.mount_path.endswith((".p12", ".pfx"))
+                        or native["Secret"] not in ("", "REDACTED")
+                        or type(native["StartLine"]) is not int or native["StartLine"] != 0
+                        or type(native["EndLine"]) is not int or native["EndLine"] != 0):
+                    raise Refusal("invalid_filename_only_finding")
+                record = finding("gitleaks", item, snapshot, inventory, raw,
+                                 "pkcs12-file", "High", ordinal=ordinal)
+                record["preconditions"] = ["Filename indicates a possible PKCS12 container; contents and private-key presence are unverified."]
+            else:
+                if native["Secret"] != "REDACTED":
+                    raise Refusal("native_report_not_redacted")
+                record = finding("gitleaks", item, snapshot, inventory, raw, native["RuleID"], "High", native["StartLine"], native["EndLine"], ordinal)
             if record["id"] not in seen:
                 seen.add(record["id"])
                 findings.append(record)
         operation_inputs = (by_id[stdin_item],) if mode == "stdin" else inputs
         complete = coverage_attestation(coverage_ref, context, evidence, inventory, snapshot, operation_inputs)
         gaps = () if complete else ("native_report_has_no_coverage_ledger",)
+        if mode == "stdin" and PATH_RULES.intersection(inventory.allowed_rule_ids):
+            gaps += ("stdin_path_sensitive_rules_unqualified",)
         if evidence["exit_code"] == 10:
             gaps += ("findings_exit_requires_detector_qualification",)
         return result("gitleaks", raw, snapshot, views, policy, inventory, evidence, inputs, findings,

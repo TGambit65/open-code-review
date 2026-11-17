@@ -11,6 +11,8 @@ from ocr_security.common import Refusal, canonical, digest
 from ocr_security.snapshot import validate_snapshot
 
 ALLOWED_SUFFIXES = frozenset(("py", "js", "jsx", "ts", "tsx", "go", "rs", "java", "kt", "c", "h", "cpp", "cs", "rb", "php", "json", "yaml", "yml", "toml", "xml", "sh", "md", "txt", "lock", "sum", "mod"))
+# Scanner-only suffixes must not broaden the model projection alias contract.
+SCANNER_SUFFIXES = ALLOWED_SUFFIXES | frozenset(("tf", "hcl", "p12", "pfx"))
 
 
 @dataclass(frozen=True)
@@ -28,10 +30,15 @@ def scanner_inputs(snapshot):
     validate_snapshot(snapshot)
     output = []
     for entry in snapshot.selected:
-        suffix = entry.identity[0].rsplit(".", 1)[-1].lower()
-        suffix = suffix if suffix in ALLOWED_SUFFIXES else "txt"
+        basename = entry.identity[0].rsplit("/", 1)[-1].lower()
+        suffix = basename.rsplit(".", 1)[-1]
+        suffix = suffix if suffix in SCANNER_SUFFIXES else "txt"
         if re.fullmatch(r"[a-zA-Z0-9_-]{1,32}", entry.opaque_id) is None:
             raise Refusal("invalid_opaque_id")
+        # A fixed type marker, never the candidate basename, preserves the
+        # trusted NuGet detector's filename semantics without revealing paths.
+        if basename.endswith("nuget.config"):
+            suffix = "nuget.config"
         output.append(Input(entry.opaque_id, "/input/" + entry.opaque_id + "." + suffix,
                             entry.content, entry.sha256, entry.identity, entry.required_ranges, entry.lines))
     if len({item.mount_path for item in output}) != len(output):

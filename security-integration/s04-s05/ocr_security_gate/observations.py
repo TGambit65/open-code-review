@@ -3,6 +3,24 @@
 from ocr_security.common import Refusal, canonical, digest, fields, sha, utc
 from .contracts import pinned, timestamp, sequence, choice, SEVERITIES
 from .evidence import index
+from ocr_security_adapters.data import bounded_json
+
+MAX_GROUPS = 1024
+MAX_TIMELINE = 4096
+CAPACITY_ERROR = "aggregate_capacity_exceeded"
+
+
+def within_capacity(groups):
+    """Composition budget, not permission to drop retained observations."""
+    try:
+        sequence(groups, MAX_GROUPS)
+        for row in groups:
+            sequence(row["observations"], MAX_TIMELINE)
+        bounded_json(canonical(groups))
+        return True
+    except (Refusal, KeyError, TypeError, ValueError):
+        return False
+
 
 
 def collect(evidence,snapshot,now):
@@ -116,10 +134,15 @@ def group(observations,correlations=None,previous=None):
 def history_document(groups,policy,target,now):
     """A proposed private retention document. Saving/adopting it is a separate action."""
     timestamp(now)
-    return {"schema_version":"1.0","kind":"private-finding-history","policy_sha256":policy.sha256,
+    if not within_capacity(groups):raise Refusal(CAPACITY_ERROR)
+    value = {"schema_version":"1.0","kind":"private-finding-history","policy_sha256":policy.sha256,
             "history_scope_sha256":policy.value()["history_scope_sha256"],
             "repository_id":target["repository_id"],"source_sha256":target["source_sha256"],"at":now.isoformat(),
             "groups":[{"fingerprint":g["fingerprint"],"first_seen":g["first_seen"],"observations":g["observations"]} for g in groups]}
+    # Validate the exact serialized envelope, not only its component budgets.
+    value = bounded_json(canonical(value))
+    _history_rows(value, now)
+    return value
 
 
 def load_history(ref,context,policy,target,now):
@@ -132,10 +155,16 @@ def load_history(ref,context,policy,target,now):
     # Historical source and policy are retained, not confused with the new run.
     sha(value["policy_sha256"]);sha(value["source_sha256"])
     if utc(value["at"])>timestamp(now):raise Refusal("future_history")
-    for row in sequence(value["groups"],1024):
+    _history_rows(value, now)
+    return value["groups"],pin
+
+
+def _history_rows(value, now):
+    """Shared producer/consumer row validation; no lossy repair."""
+    for row in sequence(value["groups"],MAX_GROUPS):
         fields(row,("fingerprint","first_seen","observations"));sha(row["fingerprint"])
         if utc(row["first_seen"])>now:raise Refusal("future_observation")
-        for item in sequence(row["observations"],4096):
+        for item in sequence(row["observations"],MAX_TIMELINE):
             fields(item,("adapter","fingerprint","severity","confidence","location","rule_sha256","claimed_resolution","provenance",
                          "evidence_sha256","snapshot_id","observed_at","observation_id"))
             choice(item["adapter"],("ocr","opengrep","gitleaks","osv"));choice(item["severity"],SEVERITIES)
@@ -143,4 +172,3 @@ def load_history(ref,context,policy,target,now):
             choice(item["claimed_resolution"],("open","claimed_resolved","exception_requested","contested","needs_context","claimed_false_positive"))
             for key in ("fingerprint","rule_sha256","evidence_sha256","snapshot_id","observation_id"):sha(item[key])
             if utc(item["observed_at"])>now:raise Refusal("future_observation")
-    return value["groups"],pin

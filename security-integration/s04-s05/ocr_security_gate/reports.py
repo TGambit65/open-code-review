@@ -10,6 +10,7 @@ from ocr_security.snapshot import Snapshot, validate_snapshot
 from ocr_security_adapters.reviewer import validate_bundle
 from .contracts import ADAPTERS, SEVERITIES, choice, sequence, token
 from .evidence import index
+from .observations import within_capacity, CAPACITY_ERROR
 
 
 @dataclass(frozen=True)
@@ -75,8 +76,11 @@ def project(decision,evidence,views,snapshot,excerpt_ranges=()):
         summaries.append({"adapter":name,"evidence_sha256":item.sha256,"process_status":choice(value["process_status"],
             ("success","unknown","timeout","partial","skipped","stale","parser_error","error","unsupported")),
             "completeness":choice(value["completeness"],("complete","incomplete","unknown")),"pins":pins})
+    overflow = not within_capacity(decision["groups"])
+    if overflow and (decision["status"] != "error" or CAPACITY_ERROR not in decision["errors"]):
+        raise Refusal("unmarked_aggregate_overflow")
     findings=[]
-    for group in sequence(decision["groups"],1024):
+    for group in (() if overflow else decision["groups"]):
         confirmations=[]
         for observation in sequence(group["observations"],4096):
             # No path, rule body, reason, actor, original text or native message is copied.
@@ -137,9 +141,34 @@ def project(decision,evidence,views,snapshot,excerpt_ranges=()):
                            "Excerpts come only from the approved sanitized broker.",
                            "Evaluation is not execution authority or production certification.",
                            "SARIF not selected; no upload or remote assets."]}
+    if overflow:
+        public = _overflow_summary(public, decision)
     raw=canonical(public)
-    if len(raw)>1048576:raise Refusal("report_output_limit")
-    return PublicReport(raw,digest(raw))
+    report=PublicReport(raw,digest(raw))
+    try:
+        report.value()  # A producer must never return an unreadable report.
+    except Refusal:
+        public=_overflow_summary(public, decision)
+        raw=canonical(public);report=PublicReport(raw,digest(raw))
+        report.value()
+    return report
+
+
+def _overflow_summary(public, decision):
+    """Explicit incomplete projection, never an empty/clean finding claim.
+
+    Complete groups remain in the caller's private decision; evidence hashes
+    and history custody are unchanged. This function writes/deletes nothing.
+    """
+    public["decision"]["status"]="error"
+    public["decision"]["errors"]=sorted(set(public["decision"]["errors"]+[CAPACITY_ERROR]))
+    public["findings"]=[];public["excerpts"]=[]
+    public["limitations"] += [
+        "FINDINGS NOT PROJECTED: aggregate capacity exceeded; empty display is not absence of findings.",
+        "Retain the full private decision and original evidence; do not replace or reset prior history.",
+        "Private group count: " + str(len(decision["groups"])),
+        "Private groups SHA256: " + digest(canonical(decision["groups"]))]
+    return public
 
 
 def render(report,format):

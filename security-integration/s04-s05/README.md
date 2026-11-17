@@ -48,3 +48,23 @@ reconciliation of uncertain outcomes. The host still verifies the receipt's
 authenticity, target and payload. Matching an input digest does not authenticate
 a receipt or authorize publication. Native and external action entrypoints remain
 disabled.
+
+### Aggregate capacity and retained evidence
+
+The group/report/history boundary has a shared ceiling of 1024 groups and
+4096 observations per retained group, plus the existing bounded JSON byte/node
+limits. Composition never truncates evidence to fit. The gate retains its full
+private groups and original evidence references, but marks excess composition
+`error` with `aggregate_capacity_exceeded`. Public projection returns an explicit
+bounded error summary with retained group count/digest and original evidence
+references, not an empty-clean finding claim. Full findings and excerpts are not
+projected in this overflow summary. Retain the complete private decision and
+input evidence; the summary is not a replacement history artifact.
+
+History export validates the complete serialized envelope and shared row checks
+before returning a proposed document. Overflow or malformed history refuses;
+callers must retain the existing history and failed composition, never silently
+reset history or adopt a partial replacement. Output remains data-only and does
+not enable native execution, publication or policy changes. Capacity regressions
+are authored in `tests/test_aggregate_capacity.py`; no new execution is claimed
+by this documentation.

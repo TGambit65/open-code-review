@@ -4,7 +4,7 @@ from ocr_security.common import Refusal, canonical, digest, fields, sha, text, u
 from .contracts import ADAPTERS, subject, bind_policy, pinned, timestamp
 from .evidence import index
 from .updates import freshness
-from .observations import collect, group, load_correlations, load_history
+from .observations import collect, group, load_correlations, load_history, within_capacity, CAPACITY_ERROR
 from .exceptions import decisions
 
 
@@ -104,7 +104,9 @@ def evaluate(target,policy,evidence,snapshot,current_set,previous_set,now,contex
         if fp in resolutions:item["resolution"]="independently_resolved"
         elif fp in exception_decisions:item["resolution"]="exception_approved"
         elif item["effective_severity"] in approved["blocking_severities"]:blocking.append(fp)
-    status="not-run" if not indexed else "error" if errors else "incomplete" if gaps else "with-findings" if blocking else "pass"
+    # Resolution labels are part of serialized capacity; inspect final groups.
+    if not within_capacity(groups):errors.append(CAPACITY_ERROR)
+    status="error" if CAPACITY_ERROR in errors else "not-run" if not indexed else "error" if errors else "incomplete" if gaps else "with-findings" if blocking else "pass"
     value={"schema_version":"1.0","kind":"target-security-decision","subject_sha256":digest(canonical(target)),
            "snapshot_id":target["snapshot_id"],"source_sha256":target["source_sha256"],"policy_sha256":policy.sha256,
            "model_bundle_id":model_bundle_id,

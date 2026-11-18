@@ -14,3 +14,7 @@ Action records persist exact target/payload/action identity, actual outcome, att
 
 
 November 17, 2026 owner amendment: the whole-PR ceiling is 280 distinct paths, superseding the original 300-path limit. Count overlapping paths once. Exactly 280 is within the ceiling; 281 is not. Existing over-cap batches remain held, and a coherent successor crossing the ceiling needs a dependent-draft plan. This amendment does not reset the one-review-per-PR lifetime limit, permit filler, change original contract hashes, authorize execution or confer acceptance. Kelly retains merge authority for this PR.
+
+November 18, 2026 ActionRecord shape clarification: all handoff and transition helpers validate restored record field types, digest shapes, immutable unique authorization history (maximum 4096 retained digests), and contradictory execution knowledge before using them. History is never truncated; starting an attempt at capacity is refused. This local input bound is not an allowance for retries. Receipt authenticity, authority, historical completeness and cross-process durability are not established by shape validation. Existing partial terminal records can still be displayed as uncertain or succeeded without inventing missing history; neither permits replay. No new scheduler, permission, acceptance or external action is enabled.
+
+Known used authorization digests remain fenced even on restored not_attempted records. A genuinely new digest may produce an initial-action consideration without claiming restored historical completeness; it never grants permission.

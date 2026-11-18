@@ -54,8 +54,40 @@ class ActionRecord:
     used_authorizations: tuple=()
 
 
+
+# An input bound, not permission to retry this many times. Never truncate history.
+MAX_ACTION_HISTORY = 4096
+
+
+def _validate_record(record):
+    """Validate inert restored data, not receipt authenticity or historical authority."""
+    from .contracts import integer
+    if type(record) is not ActionRecord:
+        raise Refusal("action_record_required")
+    sha(record.target_sha256); sha(record.payload_sha256)
+    choice(record.action, ("publish", "request_review", "merge"))
+    choice(record.outcome, OUTCOMES)
+    integer(record.attempts, 0)
+    if type(record.known_not_executed) is not bool:
+        raise Refusal("invalid_execution_knowledge")
+    if record.last_evidence_sha256 is not None:
+        sha(record.last_evidence_sha256)
+    history = record.used_authorizations
+    if type(history) is not tuple or len(history) > MAX_ACTION_HISTORY:
+        raise Refusal("invalid_authorization_history")
+    for authorization in history:
+        sha(authorization)
+    if len(set(history)) != len(history):
+        raise Refusal("duplicate_authorization_history")
+    if record.outcome in ("uncertain", "in_flight", "succeeded") and record.known_not_executed:
+        raise Refusal("contradictory_outcome")
+    # Legacy display-only terminal records may lack full historical receipts.
+    # This shape check neither invents that history nor establishes its provenance.
+    return record
+
+
 def record_outcome(record,outcome,receipt_sha256,known_not_executed=False,*,authorization_sha256):
-    if not isinstance(record,ActionRecord):raise Refusal("action_record_required")
+    _validate_record(record)
     sha(record.target_sha256);sha(record.payload_sha256);sha(receipt_sha256);sha(authorization_sha256)
     if not record.used_authorizations or authorization_sha256!=record.used_authorizations[-1]:
         raise Refusal("outcome_attempt_mismatch")
@@ -68,7 +100,7 @@ def record_outcome(record,outcome,receipt_sha256,known_not_executed=False,*,auth
 
 
 def action_handoff(record,new_authorization_sha256=None):
-    if not isinstance(record,ActionRecord):raise Refusal("action_record_required")
+    _validate_record(record)
     sha(record.target_sha256);sha(record.payload_sha256);choice(record.action,("publish","request_review","merge"))
     choice(record.outcome,OUTCOMES)
     if record.outcome in ("uncertain","in_flight"):action="reconcile_exact_outcome"
@@ -79,6 +111,8 @@ def action_handoff(record,new_authorization_sha256=None):
             action="retain_exact_hold"
         else:
             sha(new_authorization_sha256);action="root_consider_one_supported_retry"
+    elif new_authorization_sha256 is not None and new_authorization_sha256 in record.used_authorizations:
+        action="retain_exact_hold"
     else:action="root_consider_initial_action"
     return {"action":action,"target_sha256":record.target_sha256,"payload_sha256":record.payload_sha256,
             "operation":record.action,"new_evidence_sha256":new_authorization_sha256,
@@ -87,7 +121,10 @@ def action_handoff(record,new_authorization_sha256=None):
 
 def begin_attempt(record,authorization_sha256):
     from dataclasses import replace
+    _validate_record(record)
     sha(authorization_sha256)
+    if len(record.used_authorizations) >= MAX_ACTION_HISTORY or record.attempts >= 2**63 - 1:
+        raise Refusal("action_history_capacity")
     handoff=action_handoff(record,authorization_sha256)
     if handoff["action"] not in ("root_consider_initial_action","root_consider_one_supported_retry"):
         raise Refusal("action_not_retryable")

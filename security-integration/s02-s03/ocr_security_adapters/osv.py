@@ -32,7 +32,8 @@ def lock_inputs(snapshot, selection):
         raise Refusal("invalid_lockfile_selection")
     mapped, seen = [], set()
     for lock in selection:
-        if not isinstance(lock, Lockfile) or lock.opaque_id not in inputs or lock.opaque_id in seen or lock.format not in LOCKFILES:
+        if (not isinstance(lock, Lockfile) or type(lock.opaque_id) is not str or type(lock.format) is not str
+                or lock.opaque_id not in inputs or lock.opaque_id in seen or lock.format not in LOCKFILES):
             raise Refusal("unsupported_lockfile")
         seen.add(lock.opaque_id)
         basename, ecosystem = LOCKFILES[lock.format]

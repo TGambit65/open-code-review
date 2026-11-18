@@ -86,8 +86,42 @@ class BatchingTests(unittest.TestCase):
     def test_coherent_over_cap_and_existing_over_cap(self):
         self.assertEqual(batching.batch_decision(self.paths(250),['next-%d.py'%i for i in range(60)],True)['decision'],
                          'preserve_current_then_dependent_draft')
-        self.assertEqual(batching.batch_decision(self.paths(301),[],False)['decision'],'hold_over_cap_existing_batch')
+        self.assertEqual(batching.batch_decision(self.paths(281),[],False)['decision'],'hold_over_cap_existing_batch')
     def test_final_dependency_boundaries_do_not_add_filler(self):
         for reason in ('final_scope','dependency_hold','no_eligible_work'):
             value=batching.batch_decision(self.paths(94),[],False,reason)
             self.assertEqual(value['decision'],'document_smaller_boundary');self.assertFalse(value['padding_allowed'])
+
+
+
+    def test_exact_owner_ceiling_and_metadata(self):
+        for count in (279, 280, 281, 300, 301):
+            with self.subTest(count=count):
+                value=batching.batch_decision(self.paths(count),[],False)
+                self.assertEqual(value['maximum_paths'],280)
+                self.assertEqual(value['decision'],'hold_over_cap_existing_batch' if count>280 else 'freeze_current_batch')
+                self.assertFalse(value['new_draft_created'])
+                self.assertFalse(value['padding_allowed'])
+                self.assertFalse(value['preservation_delayed'])
+                self.assertTrue(value['requires_root'])
+
+    def test_coherent_union_crosses_ceiling_without_splitting(self):
+        for extra,expected in ((0,'freeze_current_batch'),(1,'freeze_current_batch'),
+                               (2,'preserve_current_then_dependent_draft')):
+            with self.subTest(extra=extra):
+                existing=self.paths(279)
+                upcoming=existing+['next-%d.py'%i for i in range(extra)]
+                value=batching.batch_decision(existing,upcoming,True)
+                self.assertEqual(value['current_distinct_paths'],279)
+                self.assertEqual(value['next_new_paths'],extra)
+                self.assertEqual(value['projected_distinct_paths'],279+extra)
+                self.assertEqual(value['decision'],expected)
+
+    def test_duplicates_and_final_boundary_cannot_bypass_ceiling(self):
+        for reason in (None,'final_scope','dependency_hold','no_eligible_work'):
+            with self.subTest(reason=reason):
+                within=batching.batch_decision(self.paths(280)*2,self.paths(280)*2,False,reason)
+                self.assertEqual(within['projected_distinct_paths'],280)
+                self.assertEqual(within['decision'],'freeze_current_batch')
+                over=batching.batch_decision(self.paths(281),[],False,reason)
+                self.assertEqual(over['decision'],'hold_over_cap_existing_batch')

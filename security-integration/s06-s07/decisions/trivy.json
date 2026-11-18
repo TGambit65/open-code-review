@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "kind": "proposed-specialist-disposition",
+  "decision": "defer",
+  "implementation_selected": false,
+  "registration_enabled": false,
+  "qualification": "NOT_QUALIFIED",
+  "execution_authorized": false,
+  "adoption_authority": "none_supplied",
+  "availability_state": "no_current_verified_asset_receipts_supplied_for_this_scope",
+  "asset_receipts": [],
+  "actual_measurements": [],
+  "upstream_acceptance": "held",
+  "scope_note": "Source disposition only. Historical availability elsewhere is not current qualification. No installation or scan selected.",
+  "tool": "trivy",
+  "task_id": "S06.02",
+  "proposed_version": null,
+  "allowed_future_scope": "Consider only a demonstrated container, OS-package or IaC coverage gap beyond the baseline.",
+  "reason": [
+    "No bounded target-specific gap is demonstrated in the supplied implementation scope.",
+    "Incident-informed release trust, exact pins and separately authorized offline controls are unresolved."
+  ],
+  "prohibited_modes": [
+    "telemetry",
+    "version_check",
+    "database_download",
+    "module_download",
+    "vex_download",
+    "registry_contact",
+    "unapproved_egress",
+    "duplicate_broad_scan",
+    "maven_lookup",
+    "terraform_module_fetch"
+  ],
+  "reopen_conditions": [
+    "Evidence of useful uncovered container/OS/IaC coverage.",
+    "Incident-informed verified release provenance, binary/rule/database/license digests and freshness receipts.",
+    "Explicit offline telemetry/version/database/module/VEX/registry/egress controls and resource limits.",
+    "Exact selected synthetic targets and execution authority after preservation."
+  ],
+  "evidence_sources": [
+    "security-integration/tool-lock.json#deferred_research_candidates",
+    "https://github.com/aquasecurity/trivy/commit/e713f67f7d54decdcd9b3132c9751833dcced698",
+    "traceability.json#REC14"
+  ],
+  "comparison_protocol": "protocols/trivy.json",
+  "maintenance": "Reassess on material version, license, data-flow, network, rule or environment change; no automatic update.",
+  "research_provenance": {
+    "source_repository": "aquasecurity/trivy",
+    "source_url": "https://github.com/aquasecurity/trivy/commit/e713f67f7d54decdcd9b3132c9751833dcced698",
+    "research_commit": "e713f67f7d54decdcd9b3132c9751833dcced698",
+    "research_release": "v0.76.1",
+    "research_state": "RESEARCH_ONLY_DEFERRED_NO_ADOPTION",
+    "binary_sha256": null,
+    "qualification_limit": "Historical research identity only; not current asset verification, endorsement, entitlement or execution permission."
+  },
+  "license_observed": "Apache-2.0",
+  "license_limit": "Exact binary, rules, database and third-party data obligations still require artifact-specific review.",
+  "explicit_controls": [
+    "Research pin v0.76.1 is not current release trust or a verified executable.",
+    "Prior research records malicious v0.69.4, DockerHub 0.69.5/0.69.6 and Action-tag incidents; do not infer that every later release is compromised.",
+    "--offline-scan alone is insufficient; documented --disable-telemetry and --skip-version-check address check.trivy.dev.",
+    "Independently qualify local vulnerability/Java/check databases, updates, Maven/Terraform modules, VEX, registries and denied egress."
+  ],
+  "recommendation_id": "REC14"
+}

@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Independent qualified run attestation",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "enum": [
+        "1.0"
+      ]
+    },
+    "kind": {
+      "enum": [
+        "independent-qualified-run-attestation"
+      ]
+    },
+    "subject_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "gate_policy_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "evidence_sha256": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ocr": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "opengrep": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "gitleaks": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "osv": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "ocr",
+        "opengrep",
+        "gitleaks",
+        "osv"
+      ]
+    },
+    "freshness_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "selected_identity_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "coverage_receipts": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ocr": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "opengrep": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "gitleaks": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "osv": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "ocr",
+        "opengrep",
+        "gitleaks",
+        "osv"
+      ]
+    },
+    "qualification_receipts": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "S01": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "S02": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "S03": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "S01",
+        "S02",
+        "S03"
+      ]
+    },
+    "independent_context_receipt_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "implementation_actor": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "reviewer_actor": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "issued_at": {
+      "type": "string",
+      "format": "date-time",
+      "maxLength": 64
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time",
+      "maxLength": 64
+    },
+    "state": {
+      "enum": [
+        "complete"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "subject_sha256",
+    "gate_policy_sha256",
+    "evidence_sha256",
+    "freshness_sha256",
+    "selected_identity_sha256",
+    "coverage_receipts",
+    "qualification_receipts",
+    "independent_context_receipt_sha256",
+    "implementation_actor",
+    "reviewer_actor",
+    "issued_at",
+    "expires_at",
+    "state"
+  ],
+  "$comment": "Documentation schema only. Runtime uses bounded local validators; no remote schema resolution or fetch."
+}

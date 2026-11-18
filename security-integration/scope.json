@@ -1,0 +1,526 @@
+{
+  "schema_version": "1.0",
+  "kind": "inert-s00-scope-record",
+  "sprint": "S00",
+  "endpoint": "Reproducible authority, capability and scope baseline; no installed security coverage.",
+  "repository": {
+    "full_name": "TGambit65/open-code-review",
+    "id": 1434220736,
+    "visibility": "public",
+    "base_ref": "main",
+    "base_commit": "216dcf513593055a70165f793e96b52589d71b1b",
+    "base_tree": "6b033bd81da09095f4dfc1865fe50a1652ca5859",
+    "proposed_branch": "security/integration-sprints-20261101",
+    "branch_state": "PLANNED_NOT_CREATED_BY_WRITER",
+    "draft_pr": null,
+    "draft_state": "ROOT_TO_CREATE_AFTER_REVIEW",
+    "integration_root": "security-integration/",
+    "existing_post_release_commits_preserved": 3,
+    "upstream_release_commit_is_not_publication_base": true
+  },
+  "roles": {
+    "writer": "s00-foundation-writer-20261101",
+    "writer_requested_model": "gpt-6-astra",
+    "writer_requested_effort": "xhigh",
+    "runtime_identity": "unexposed",
+    "independent_reviewer": "s00-independent-reviewer-20261101",
+    "reviewer_state": "ASSIGNED_REVIEW_PENDING",
+    "reviewer_requested_model": "gpt-6-astra",
+    "reviewer_requested_effort": "xhigh",
+    "reviewer_runtime_identity": "unexposed",
+    "publisher_requester_merger": "root-coordinator",
+    "identity_mapping": "Exact admitted agent identities are held in the private owner-controlled role-assignment record.",
+    "assignment_record_sha256": "9972c8e89e4293d702505d96706d1b611ebd2d09b33ae17e6b665e1b314eb69e"
+  },
+  "selected_task_ids": [
+    "S00.F",
+    "S00.01",
+    "S00.02",
+    "S00.03",
+    "S00.04",
+    "S00.05",
+    "S00.06",
+    "S00.07",
+    "S00.08",
+    "S00.RB",
+    "S00.M",
+    "S00.R",
+    "S00.C",
+    "S00.P",
+    "S00.V01",
+    "S00.V02",
+    "S00.U",
+    "S00.A"
+  ],
+  "conditional_deferred": [
+    {
+      "task": "S00.04R",
+      "status": "NOT_APPLICABLE_NOT_COMPLETED",
+      "reason": "Approved binary exists and matches its official release digest.",
+      "reopen_condition": "Absent/invalid exact approved binary plus separate restoration authority."
+    }
+  ],
+  "allowed_changed_paths": [
+    {
+      "path": "security-integration/authority-and-scope.md",
+      "change_kind": "added",
+      "base_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": "security-integration/ocr-capabilities.json",
+      "change_kind": "added",
+      "base_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": "security-integration/scope.json",
+      "change_kind": "added",
+      "base_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": "security-integration/THIRD-PARTY-NOTICES.md",
+      "change_kind": "added",
+      "base_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": "security-integration/tool-lock.json",
+      "change_kind": "added",
+      "base_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": "security-integration/rollback.md",
+      "change_kind": "added",
+      "base_blob": null,
+      "mode": "100644"
+    }
+  ],
+  "change_accounting": {
+    "allowed_path_count": 6,
+    "any_other_changed_path": "OUT_OF_SCOPE_REQUIRES_RECONCILIATION",
+    "head_hash_binding": "The external S00.M freeze binds exact complete file SHA-256/Git blob identities and full additive diff; no self-referential candidate hash is trusted.",
+    "path_policy": "No symlinks, executable modes, submodules, path traversal or reads outside the explicit context inventory.",
+    "coverage_unit": "Each path/change-kind plus base/head blob and complete content ranges; exclusions and omissions remain separate from reviewed coverage."
+  },
+  "source_custody": {
+    "base_tree_entries": 1311,
+    "base_regular_blobs": 1125,
+    "base_tree_truncated": false,
+    "base_tree_observation_sha256": "a482d225f0321ffe5b764bd7a19237efce2455154a10438d0ceac734f47bfb84",
+    "base_symlink_paths": [],
+    "base_submodules": [],
+    "full_repository_source_materialized": false,
+    "full_codebase_review_performed": false,
+    "custody_limit": "Complete tree metadata plus the exact bounded context files in tool-lock.json, not a clone or reconstruction of existing source.",
+    "allowed_context_inventory": "tool-lock.json / inspected_source_files; all bytes pinned, read-only, no scripts executed",
+    "external_identity_evidence": "Official release/tag observations and restoration receipt remain in controlled evidence custody; sanitized identities are in ocr-capabilities.json."
+  },
+  "language_inventory": {
+    "basis": "Suffix counts over all 1125 base regular blob paths, not parsing or language support claims.",
+    "suffix_counts": {
+      ".bat": 1,
+      ".cjs": 3,
+      ".css": 6,
+      ".example": 1,
+      ".go": 506,
+      ".html": 7,
+      ".in": 1,
+      ".jar": 1,
+      ".jpg": 1,
+      ".js": 28,
+      ".json": 41,
+      ".kt": 51,
+      ".kts": 2,
+      ".lock": 1,
+      ".md": 214,
+      ".mjs": 1,
+      ".mod": 3,
+      ".png": 13,
+      ".properties": 4,
+      ".ps1": 1,
+      ".py": 9,
+      ".sh": 7,
+      ".sum": 2,
+      ".svg": 52,
+      ".tiktoken": 1,
+      ".ts": 66,
+      ".tsx": 53,
+      ".txt": 3,
+      ".xml": 2,
+      ".yaml": 1,
+      ".yml": 25,
+      "[no suffix]": 18
+    },
+    "s00_artifact_languages": [
+      "Markdown",
+      "JSON"
+    ],
+    "frameworks_observed_in_pinned_manifests": [
+      {
+        "scope": "Core CLI",
+        "stack": [
+          "Go module github.com/alibaba/open-code-review",
+          "Cobra CLI"
+        ],
+        "source": "go.mod at owned base; Go directive 1.26.10 is not the installed binary build version."
+      },
+      {
+        "scope": "Documentation site",
+        "stack": [
+          "React",
+          "TypeScript",
+          "Webpack",
+          "Tailwind CSS"
+        ],
+        "source": "pages/package.json; manifest ranges are inventory only, not dependency resolution."
+      },
+      {
+        "scope": "Shared extension frontend",
+        "stack": [
+          "Preact",
+          "TypeScript",
+          "Webpack"
+        ],
+        "source": "extensions/frontend/package.json"
+      },
+      {
+        "scope": "VS Code extension",
+        "stack": [
+          "VS Code API",
+          "TypeScript"
+        ],
+        "source": "extensions/vscode/package.json"
+      },
+      {
+        "scope": "IntelliJ extension",
+        "stack": [
+          "Kotlin",
+          "Gradle IntelliJ Platform plugin"
+        ],
+        "source": "extensions/idea/build.gradle.kts"
+      }
+    ]
+  },
+  "security_sensitive_path_inventory": [
+    {
+      "paths": [
+        "security-integration/**"
+      ],
+      "risk": "Authority, input, coverage, lock and acceptance records; candidate cannot self-authorize."
+    },
+    {
+      "paths": [
+        "cmd/opencodereview/**",
+        "internal/config/**",
+        ".opencodereview/**"
+      ],
+      "risk": "CLI invocation, ambient configuration, rule resolution, includes/excludes and credential-bearing configuration."
+    },
+    {
+      "paths": [
+        "internal/llm/**",
+        "internal/tool/**",
+        "internal/gitcmd/**",
+        "internal/session/**",
+        "internal/telemetry/**"
+      ],
+      "risk": "Provider/data egress, tool execution, Git behavior, persistence and telemetry; metadata inventory is not an audit."
+    },
+    {
+      "paths": [
+        ".github/**",
+        "action.yml",
+        "install.sh",
+        "install.ps1",
+        "scripts/**",
+        "bin/**",
+        "npm/**"
+      ],
+      "risk": "Installation, release, workflow, publication and supply-chain entry points; unchanged and not executed."
+    },
+    {
+      "paths": [
+        "plugins/**",
+        "skills/**",
+        ".agents/**",
+        ".claude/**",
+        ".claude-plugin/**",
+        ".kimi-plugin/**"
+      ],
+      "risk": "Agent instructions and integration loading; no installation, hook registration or instruction execution."
+    },
+    {
+      "paths": [
+        "acp/**",
+        "extensions/**",
+        "pages/**"
+      ],
+      "risk": "Agent transport, editor/browser boundaries and rendering; only selected pinned manifests consulted."
+    }
+  ],
+  "exclusions": [
+    {
+      "target": "All existing repository files except the exact read-only context inventory",
+      "reason": "Not part of the S00 change or full-content review",
+      "coverage_state": "NOT_ASSESSED"
+    },
+    {
+      "target": "Protected/private/unrelated context, secrets, credential stores and session data",
+      "reason": "No access authority",
+      "coverage_state": "NOT_ACCESSED"
+    },
+    {
+      "target": "Binary/image/archive content and unmaterialized base source",
+      "reason": "Metadata only; no full codebase custody",
+      "coverage_state": "NOT_ANALYZED"
+    },
+    {
+      "target": "Any OCR-excluded or surface-reviewed candidate path/content",
+      "reason": "OCR selection is not full security coverage",
+      "coverage_state": "REQUIRES_INDEPENDENT_FULL_CONTENT_SUPPLEMENT"
+    },
+    {
+      "target": "Runtime behavior, network isolation and scanner findings",
+      "reason": "No implementation or execution of adapters in S00",
+      "coverage_state": "NOT_RUN_NOT_QUALIFIED"
+    }
+  ],
+  "trust_boundaries": [
+    {
+      "boundary": "External policy -> candidate",
+      "requirement": "Only owner-approved external immutable controls are authoritative; candidate copies/changes are inert.",
+      "enforcement_in_s00": "Not implemented; recorded design boundary only."
+    },
+    {
+      "boundary": "Original approved input -> offline scanner",
+      "requirement": "Require explicit target consent, read-only isolation, denied egress, resource/output limits and no inherited credentials/sockets before execution.",
+      "enforcement_in_s00": "No scanner input or scanner execution."
+    },
+    {
+      "boundary": "Original input -> model view",
+      "requirement": "Only a mapped/hash-bound sanitized bundle may reach model review; no raw Git/source fallback.",
+      "enforcement_in_s00": "No target-code bundle or transformation pipeline; S00 authored public records and approved public context only."
+    },
+    {
+      "boundary": "OCR/scanner output -> reports",
+      "requirement": "Treat paths, findings, rules and report content as untrusted data; partial/excluded/surface states are not success.",
+      "enforcement_in_s00": "Schema and limitations documented, no parser/report runtime."
+    },
+    {
+      "boundary": "Local candidate -> public draft",
+      "requirement": "Root alone publishes exact reviewed eligible subtree; private coordination and held payloads stay outside.",
+      "enforcement_in_s00": "No writer remote mutation."
+    }
+  ],
+  "permissions": [
+    {
+      "action": "ACQUIRE_PUBLIC_SOURCE",
+      "target": "Pinned public fork/upstream files listed in tool-lock.json",
+      "state": "ALLOWED",
+      "boundary": "Read-only connected GitHub acquisition for S00 identity and capability evidence; no build, download installation or execution."
+    },
+    {
+      "action": "READ_BASE_TREE_METADATA",
+      "target": "TGambit65/open-code-review at 6b033bd81da09095f4dfc1865fe50a1652ca5859",
+      "state": "ALLOWED",
+      "boundary": "Whole-tree path/mode/blob inventory only; this is not full source custody or source review."
+    },
+    {
+      "action": "AUTHOR_BASELINE",
+      "target": "Exactly the six new security-integration/ artifacts listed here",
+      "state": "ALLOWED",
+      "boundary": "Sole writer; additive inert subtree only; preserve every existing fork path and commit."
+    },
+    {
+      "action": "READ_APPROVED_BINARY_IDENTITY",
+      "target": "Existing approved v1.13.3 native Linux-amd64 binary only",
+      "state": "ALLOWED",
+      "boundary": "Read bytes/stat for source provenance; no native execution or restoration by this writer."
+    },
+    {
+      "action": "INDEPENDENT_SOURCE_REVIEW",
+      "target": "Frozen complete six-file S00 candidate and explicitly approved pinned context",
+      "state": "ALLOWED",
+      "boundary": "Root assigned a different reviewer context; deterministic OCR delegation requires its own authorized review execution and full-content supplement. Assignment is not a completed review."
+    },
+    {
+      "action": "RUN_PRODUCT_TESTS",
+      "target": "S00 candidate",
+      "state": "PENDING",
+      "boundary": "Only after full implementation, independent review/corrections and root-verified draft preservation; exact check authorization is still required."
+    },
+    {
+      "action": "RUN_NATIVE_VERSION_HELP_SCHEMA",
+      "target": "Pinned native OCR binary",
+      "state": "PENDING",
+      "boundary": "S00.V01 is not executed by the writer. Root must authorize exact post-preservation checks; historical help/version is not current qualification."
+    },
+    {
+      "action": "RESTORE_OCR",
+      "target": "Approved v1.13.3 binary only",
+      "state": "NOT_APPLICABLE",
+      "boundary": "S00.04R is deferred because the current binary identity matches. Reopen only if absent/invalid and exact restoration is separately authorized."
+    },
+    {
+      "action": "PUBLISH_SOURCE",
+      "target": "Owned fork branch security/integration-sprints-20261101 and its dedicated security DRAFT",
+      "state": "ROOT_ONLY",
+      "boundary": "Root verifies base ancestry and coherent review freeze; no writer remote mutation. Review-pending source-preservation exception must remain explicit and exclude held payloads."
+    },
+    {
+      "action": "REQUEST_CODERABBIT",
+      "target": "Consolidated owned-fork security PR only",
+      "state": "PENDING",
+      "boundary": "Root only at final consolidated freeze after reconciling prior/automatic/in-flight/uncertain coverage; one included review, never per sprint."
+    },
+    {
+      "action": "MERGE",
+      "target": "Owned security PR",
+      "state": "PENDING",
+      "boundary": "Outside S00 writer scope; applicable current-head acceptance and review gates remain required."
+    },
+    {
+      "action": "MODIFY_INSTALLED_OCR_OR_DEFAULT_CLI",
+      "target": "Installed upstream binary, package wrapper and existing fork entry points",
+      "state": "NOT_AUTHORIZED",
+      "boundary": "No modification, automatic updater, installation or default behavior change."
+    },
+    {
+      "action": "ACTIVATE_SCANNER_OR_ENFORCEMENT",
+      "target": "Any target, including this fork",
+      "state": "NOT_AUTHORIZED",
+      "boundary": "No S01 implementation, scan, security gate, executable adapter or native product execution in S00."
+    },
+    {
+      "action": "PROVIDER_OR_MCP_FALLBACK",
+      "target": "Any new model/provider/service endpoint",
+      "state": "NOT_AUTHORIZED",
+      "boundary": "No provider calls, new account login, credentials, paid use or backend substitution."
+    },
+    {
+      "action": "NETWORK_FOR_RUNTIME",
+      "target": "Scanner/provider endpoints, package registries and databases",
+      "state": "NOT_AUTHORIZED",
+      "boundary": "Public source reads above do not authorize runtime egress or installation. Denied-egress enforcement is not implemented in S00."
+    },
+    {
+      "action": "READ_PROTECTED_CONTEXT",
+      "target": "Protected projects, unrelated private repositories, home credential stores, session history and agent sockets",
+      "state": "NOT_AUTHORIZED",
+      "boundary": "No discovery or fallback reads; unrelated held source is not part of this scope."
+    },
+    {
+      "action": "CHANGE_HOOKS_CI_SETTINGS_PROTECTIONS",
+      "target": "Repository/platform/runtime controls",
+      "state": "NOT_AUTHORIZED",
+      "boundary": "No activation, scheduling, workflow modification, weakened protections or rule-policy self-adoption."
+    },
+    {
+      "action": "SCAN_PRODUCTION",
+      "target": "Private production code, live services or active pentest targets",
+      "state": "NOT_AUTHORIZED",
+      "boundary": "No private-production scan, exploit, account validation or state mutation."
+    },
+    {
+      "action": "UPSTREAM_SUBMISSION",
+      "target": "alibaba/open-code-review",
+      "state": "NOT_AUTHORIZED",
+      "boundary": "The owned wrapper destination is unchanged; research about a possible contribution is not submission authority."
+    },
+    {
+      "action": "REPURPOSE_PR1",
+      "target": "TGambit65/open-code-review pull request 1 [ImgBot] Optimize images",
+      "state": "NOT_AUTHORIZED",
+      "boundary": "Unrelated existing non-draft remains untouched."
+    }
+  ],
+  "denied_and_uncertain_action_register": {
+    "scope": "This S00 writer action set only, not a clearance of historical unrelated holds.",
+    "denied_tool_actions_in_this_scope": [],
+    "uncertain_remote_mutations_in_this_scope": [],
+    "remote_mutation_attempts": 0,
+    "inherited_exact_holds": "Retained unchanged in private owner-controlled ledger; no cross-project payload replay.",
+    "uncertainty_rule": "Reconcile actual execution before any retry; silence and elapsed time are not authority. At most one retry requires materially new target-relevant evidence, known nonexecution and valid authority. No alternate bypass."
+  },
+  "external_policy": {
+    "id": "ocr-security-local-harness-baseline-20261101-v2",
+    "kind": "external-trusted-baseline-reference-not-candidate-policy",
+    "version": "2026-11-01-v2",
+    "owner": "repository owner; coordinator is delegated technical adoption recorder",
+    "adopted_at_utc": "2026-11-01T12:57:45Z",
+    "adoption_record_sha256": "2a126b74f4789ef97c23ca4bb973503549d2e3c78243c170f5160659e0ea63ea",
+    "adoption_record_location": "Owner-controlled coordination custody outside the candidate; not in the public payload",
+    "sources": [
+      {
+        "artifact": "security-task-checklist.json",
+        "sha256": "0bb2e481c58955abf92924dd01f5052a95a934bd7be0045b58297dcca8791359"
+      },
+      {
+        "artifact": "security-integration-plan.json",
+        "sha256": "4e20a5ca664ae0e447f8dafc00f9168cc74c7b760c90ee12c4ca396623ef304f"
+      }
+    ],
+    "adopted_compact_context": {
+      "shared_controls_sha256": "7e874d9153177703637a4ee5ec9d78845df20be24ffead639e546f933ed41f84",
+      "s00_packet_sha256": "1bb602cf9356f136d876d274b51e8f2fa1c2df2f5c9e8ee313108430a46f3c0a",
+      "manifest_sha256": "a24b14f2087fd7f090785a1df5c8f3600ffa1f3ec772be58f066406058b949a3",
+      "independent_semantic_review_sha256": "2dbc89c117f6cc78e8b186ceb46f7a75c701d683c5271a04f8df9ebad5a63dbd",
+      "qualification_limit": "Navigation/semantic preservation only; not product/runtime qualification."
+    },
+    "adoption_process": [
+      "Coordinator resolves the separately approved external source and owner; obtains exact bytes independently of the candidate.",
+      "Compare the externally recorded version, source digest and independent review evidence before adopting a new baseline.",
+      "Record the specific action, scope, actor, time and exact new baseline hash outside the candidate; retain the prior baseline.",
+      "Require separate original authority for data access, credentials, spending, activation, scanning or publication; policy adoption does not grant it.",
+      "Candidate policy, rules, configs, ignore files and suppressions are inert review data. Candidate edits cannot adopt themselves or reduce coverage."
+    ],
+    "runtime_rules": {
+      "status": "NOT_SELECTED_NOT_INSTALLED",
+      "reason": "S00 records the baseline contract, not effective OCR/scanner configuration.",
+      "prerequisite": "Independent approval and exact content hashes plus isolated effective-configuration qualification in the relevant later sprint."
+    },
+    "runtime_ignores_and_suppressions": {
+      "status": "NONE_ADOPTED",
+      "candidate_authority": false
+    },
+    "unavailable_baseline_behavior": "Refuse dependent execution and acceptance; retain the candidate as untrusted source. Never substitute this candidate copy."
+  },
+  "validation_plan": [
+    {
+      "task": "S00.V01",
+      "status": "NOT_RUN",
+      "requires": [
+        "S00.P verified remote preservation",
+        "Exact check authority"
+      ],
+      "check": "Reconcile current native identity and permitted version/help/schema evidence. Record exact argv, environment/isolation, tool/input/policy hashes, timestamp, actor, result and artifact location.",
+      "limits": "Source-described schema and historical help/version cannot substitute for an executed qualification check. No provider fallback or native product scan."
+    },
+    {
+      "task": "S00.V02",
+      "status": "NOT_RUN",
+      "requires": [
+        "S00.P verified remote preservation",
+        "Exact check authority"
+      ],
+      "check": "Read-only consistency of owned destination/base, sole writer/reviewer, external policy pins, six-path inventory, notices, provenance and rollback. Record unsupported or unresolved conditions.",
+      "limits": "No repository scripts, installation, CI/hook change, runtime scanner or production execution."
+    }
+  ],
+  "stage_state": {
+    "implementation_complete": true,
+    "independent_review_complete": false,
+    "remote_preservation_verified": false,
+    "validation_complete": false,
+    "sprint_qualification_accepted": false
+  },
+  "stage_state_note": "All selected S00 implementation/rollback artifacts authored and actual reviewer assigned. Exact complete source hashes and additive diff are sealed in the external S00.M freeze. Root records later review, preservation, validation and acceptance separately; none is inferred from authoring.",
+  "target_security_acceptance": {
+    "status": "NOT_ASSESSED",
+    "security_coverage_installed_by_s00": false
+  },
+  "rollback": "rollback.md"
+}

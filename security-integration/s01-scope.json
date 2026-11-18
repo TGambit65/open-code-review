@@ -1,0 +1,238 @@
+{
+  "schema_version": "1.0",
+  "kind": "inert-s01-source-scope",
+  "sprint": "S01",
+  "repository": {
+    "name": "TGambit65/open-code-review",
+    "id": 1434220736,
+    "predecessor_commit": "9aed8be496c1b6ba7d64acc8b8f2d8e64cf40546",
+    "predecessor_tree": "6ce8e022b671284d40946597c8517eea00b694d7",
+    "draft_pr": 2,
+    "branch": "security/integration-sprints-20261101"
+  },
+  "endpoint": "Immutable allowed inputs, narrow enforceable isolation, versioned evidence; no real scanner or model activation",
+  "new_paths": [
+    {
+      "path": "security-integration/S01-contract.md",
+      "mode": "100644",
+      "change_kind": "added"
+    },
+    {
+      "path": "security-integration/s01-scope.json",
+      "mode": "100644",
+      "change_kind": "added"
+    },
+    {
+      "path": "security-integration/s01/ocr_security/__init__.py",
+      "mode": "100644",
+      "change_kind": "added"
+    },
+    {
+      "path": "security-integration/s01/ocr_security/common.py",
+      "mode": "100644",
+      "change_kind": "added"
+    },
+    {
+      "path": "security-integration/s01/ocr_security/policy.py",
+      "mode": "100644",
+      "change_kind": "added"
+    },
+    {
+      "path": "security-integration/s01/ocr_security/snapshot.py",
+      "mode": "100644",
+      "change_kind": "added"
+    },
+    {
+      "path": "security-integration/s01/ocr_security/views.py",
+      "mode": "100644",
+      "change_kind": "added"
+    },
+    {
+      "path": "security-integration/s01/ocr_security/broker.py",
+      "mode": "100644",
+      "change_kind": "added"
+    },
+    {
+      "path": "security-integration/s01/ocr_security/seccomp.py",
+      "mode": "100644",
+      "change_kind": "added"
+    },
+    {
+      "path": "security-integration/s01/ocr_security/bootstrap.py",
+      "mode": "100644",
+      "change_kind": "added"
+    },
+    {
+      "path": "security-integration/s01/ocr_security/isolation.py",
+      "mode": "100644",
+      "change_kind": "added"
+    },
+    {
+      "path": "security-integration/s01/ocr_security/results.py",
+      "mode": "100644",
+      "change_kind": "added"
+    },
+    {
+      "path": "security-integration/s01/ocr_security/coverage.py",
+      "mode": "100644",
+      "change_kind": "added"
+    },
+    {
+      "path": "security-integration/s01/ocr_security/acceptance.py",
+      "mode": "100644",
+      "change_kind": "added"
+    },
+    {
+      "path": "security-integration/s01/ocr_security/rollback.py",
+      "mode": "100644",
+      "change_kind": "added"
+    },
+    {
+      "path": "security-integration/s01/schemas/result-v1.schema.json",
+      "mode": "100644",
+      "change_kind": "added"
+    },
+    {
+      "path": "security-integration/s01/schemas/sprint-qualification-v1.schema.json",
+      "mode": "100644",
+      "change_kind": "added"
+    },
+    {
+      "path": "security-integration/s01/schemas/target-acceptance-v1.schema.json",
+      "mode": "100644",
+      "change_kind": "added"
+    },
+    {
+      "path": "security-integration/s01/fixtures/recording_stub.c",
+      "mode": "100644",
+      "change_kind": "added"
+    },
+    {
+      "path": "security-integration/s01/fixtures/cases.json",
+      "mode": "100644",
+      "change_kind": "added"
+    },
+    {
+      "path": "security-integration/s01/tests/test_snapshot_views.py",
+      "mode": "100644",
+      "change_kind": "added"
+    },
+    {
+      "path": "security-integration/s01/tests/test_results_policy.py",
+      "mode": "100644",
+      "change_kind": "added"
+    },
+    {
+      "path": "security-integration/s01/tests/test_isolation.py",
+      "mode": "100644",
+      "change_kind": "added"
+    },
+    {
+      "path": "security-integration/s01/tests/test_rollback.py",
+      "mode": "100644",
+      "change_kind": "added"
+    },
+    {
+      "path": "security-integration/s01/VALIDATION.md",
+      "mode": "100644",
+      "change_kind": "added"
+    },
+    {
+      "path": "security-integration/s01/ROLLBACK.md",
+      "mode": "100644",
+      "change_kind": "added"
+    }
+  ],
+  "new_path_count": 26,
+  "inherited_s00_paths_unchanged": 7,
+  "tasks": {
+    "S01.01": [
+      "s01/ocr_security/snapshot.py",
+      "s01/ocr_security/policy.py"
+    ],
+    "S01.02": [
+      "s01/ocr_security/isolation.py",
+      "s01/ocr_security/seccomp.py",
+      "s01/ocr_security/bootstrap.py"
+    ],
+    "S01.03": [
+      "s01/ocr_security/isolation.py",
+      "s01/ocr_security/bootstrap.py"
+    ],
+    "S01.04": [
+      "s01/ocr_security/views.py"
+    ],
+    "S01.05": [
+      "s01/ocr_security/broker.py"
+    ],
+    "S01.06": [
+      "s01/ocr_security/views.py"
+    ],
+    "S01.07": [
+      "s01/ocr_security/results.py",
+      "s01/schemas/result-v1.schema.json"
+    ],
+    "S01.08": [
+      "s01/ocr_security/coverage.py"
+    ],
+    "S01.09": [
+      "s01/ocr_security/acceptance.py",
+      "s01/schemas/sprint-qualification-v1.schema.json",
+      "s01/schemas/target-acceptance-v1.schema.json"
+    ],
+    "S01.10": [
+      "s01/fixtures/recording_stub.c",
+      "s01/fixtures/cases.json",
+      "s01/tests/test_snapshot_views.py",
+      "s01/tests/test_isolation.py"
+    ],
+    "S01.11": [
+      "s01/tests/test_results_policy.py",
+      "s01/fixtures/cases.json"
+    ],
+    "S01.12": [
+      "s01/ocr_security/policy.py",
+      "s01/ocr_security/isolation.py"
+    ],
+    "S01.RB": [
+      "s01/ocr_security/rollback.py",
+      "s01/ROLLBACK.md",
+      "s01/tests/test_rollback.py"
+    ]
+  },
+  "selected_deferrals": [],
+  "authority_references": {
+    "policy_sha256": "51653fb23403f441afec8cb0fc2780a6f649a089d119b0cf79e66e9f9622bf16",
+    "adoption_sha256": "67ba0b9e8136a79e46f66d0c2fafd8dd1e372331c820486183ac70195cdbdb45",
+    "design_sha256": "8932be22dddfe7dff3316a42b683bad3ea3033f2a2e8292622c9d1452283c4c2",
+    "external_refs_not_candidate_copies": true
+  },
+  "routing": {
+    "writer_requested_model": "gpt-6-astra",
+    "writer_requested_effort": "xhigh",
+    "runtime_identity": "unexposed",
+    "one_writer": true,
+    "publisher_requester_merger": "root-coordinator"
+  },
+  "scope_limits": {
+    "snapshot_entries": 256,
+    "runtime_selected_entries": 16,
+    "runtime_overflow": "refuse_entire_run",
+    "all_real_adapters_disabled": true,
+    "model_providers_enabled": [],
+    "automatic_execution": false,
+    "runtime_authority_from_this_file": false
+  },
+  "stages": {
+    "implementation": "AUTHORED_AWAITING_FULL_SOURCE_REVIEW",
+    "independent_review": "PENDING",
+    "remote_preservation": "PENDING",
+    "applicable_validation": "NOT_RUN",
+    "acceptance": "HELD"
+  },
+  "validation_plan": "s01/VALIDATION.md; all V01-V04 require reviewed preservation and exact separate authority",
+  "rollback": "s01/ROLLBACK.md",
+  "tests_probes_or_compiler_checks_run": false,
+  "target_security_acceptance": "NOT_ASSESSED",
+  "evidence_contract": "External S01.M manifest and complete diff bind exact bytes. This candidate scope cannot approve itself or self-update authoritative task states."
+}

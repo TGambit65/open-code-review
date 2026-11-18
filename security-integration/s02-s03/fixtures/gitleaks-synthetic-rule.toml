@@ -1,0 +1,8 @@
+# SPDX-License-Identifier: Apache-2.0
+# Fictional seed, no real service or credential. Not adopted or executed.
+title = "Synthetic fixture only"
+[[rules]]
+id = "fixture-rule"
+description = "Fictional local seed"
+regex = '(OCR_SYNTHETIC_DO_NOT_USE_[A-Z]{8})'
+secretGroup = 1

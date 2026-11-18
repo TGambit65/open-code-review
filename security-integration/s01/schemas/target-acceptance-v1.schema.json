@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ocr-security:s01:target-acceptance-v1.schema.json",
+  "$comment": "Private evidence contract. Runtime stdlib validators additionally enforce authority, hashes, exact source identity and complete range accounting.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "kind": {
+      "const": "target-security-acceptance"
+    },
+    "snapshot_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "policy_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "target_security_acceptance": {
+      "const": "NOT_ASSESSED"
+    },
+    "reason": {
+      "const": "s01_is_harness_qualification_only"
+    },
+    "blockers": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "incomplete_assessment",
+          "unresolved_required_finding"
+        ]
+      }
+    },
+    "resolution_refs": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    },
+    "exception_refs": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "snapshot_id",
+    "policy_sha256",
+    "target_security_acceptance",
+    "reason",
+    "blockers",
+    "resolution_refs",
+    "exception_refs"
+  ]
+}

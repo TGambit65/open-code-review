@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Externally approved gate policy",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "enum": [
+        "1.0"
+      ]
+    },
+    "kind": {
+      "enum": [
+        "approved-gate-policy"
+      ]
+    },
+    "owner": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "repository_id": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "repository_name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "required_adapters": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "ocr",
+          "opengrep",
+          "gitleaks",
+          "osv"
+        ]
+      },
+      "maxItems": 4,
+      "minItems": 4,
+      "uniqueItems": true
+    },
+    "blocking_severities": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "Critical",
+          "High",
+          "Medium",
+          "Low",
+          "Info"
+        ]
+      },
+      "maxItems": 5,
+      "minItems": 3,
+      "uniqueItems": true
+    },
+    "exception_owners": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 256
+      },
+      "maxItems": 64,
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "maximum_exception_seconds": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2678400
+    },
+    "maximum_evidence_age_seconds": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 604800
+    },
+    "candidate_controls": {
+      "enum": [
+        "inert"
+      ]
+    },
+    "source_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "adapter_policy_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "required_datasets": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 256
+      },
+      "maxItems": 128,
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "history_scope_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "prior_history_sha256": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9a-f]{64}$",
+      "description": "Exact independently approved prior history digest; null only for an approved initial/no-prior-history policy."
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "owner",
+    "repository_id",
+    "repository_name",
+    "required_adapters",
+    "blocking_severities",
+    "exception_owners",
+    "maximum_exception_seconds",
+    "maximum_evidence_age_seconds",
+    "candidate_controls",
+    "source_sha256",
+    "adapter_policy_sha256",
+    "required_datasets",
+    "history_scope_sha256",
+    "prior_history_sha256"
+  ],
+  "$comment": "Documentation schema only. Runtime uses bounded local validators; no remote schema resolution or fetch."
+}

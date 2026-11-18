@@ -1,0 +1,4159 @@
+{
+  "schema_version": "1.0",
+  "kind": "recommendation-execution-traceability",
+  "original_contract_manifest_sha256": "a24b14f2087fd7f090785a1df5c8f3600ffa1f3ec772be58f066406058b949a3",
+  "qualification": "HELD",
+  "tasks": [
+    {
+      "id": "S00.F",
+      "title": "Freeze the complete sprint scope",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [],
+      "disposition": "recorded_prior_scope",
+      "source_artifacts": [
+        "security-integration/tool-lock.json",
+        "security-integration/ocr-capabilities.json"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s00"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "bc98253527020148778d8c1c3c5793e802ff0b7a8dfe982a028bee561032e37c"
+    },
+    {
+      "id": "S00.01",
+      "title": "Bind the owned destination and roles",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S00.F"
+      ],
+      "disposition": "recorded_prior_scope",
+      "source_artifacts": [
+        "security-integration/tool-lock.json",
+        "security-integration/ocr-capabilities.json"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s00"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "77995a43059717f988d2aea7f168cd2b0957bc4c2efed3a20b8e033fbe7b7545"
+    },
+    {
+      "id": "S00.02",
+      "title": "Pin the independent policy owner and controls",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S00.01",
+        "S00.F"
+      ],
+      "disposition": "recorded_prior_scope",
+      "source_artifacts": [
+        "security-integration/tool-lock.json",
+        "security-integration/ocr-capabilities.json"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s00"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "34259bf6c99812842c9a23c3ae2df3710c1961da01049fbdf7c6daf29ed6855d"
+    },
+    {
+      "id": "S00.03",
+      "title": "Record exact permission and hold boundaries",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S00.01",
+        "S00.F"
+      ],
+      "disposition": "recorded_prior_scope",
+      "source_artifacts": [
+        "security-integration/tool-lock.json",
+        "security-integration/ocr-capabilities.json"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s00"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "fdc2e7d5bf8e96eec9098f11eef2b945eea77775eb2614b50a71efae1fad2d53"
+    },
+    {
+      "id": "S00.04",
+      "title": "Reconcile the restored OCR identity",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S00.03",
+        "S00.F"
+      ],
+      "disposition": "recorded_prior_scope",
+      "source_artifacts": [
+        "security-integration/tool-lock.json",
+        "security-integration/ocr-capabilities.json"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s00"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "cde0f9a5606c9e9413a5e8e48ec411dd82c7180c893f473ff71f4d4e331494dc"
+    },
+    {
+      "id": "S00.04R",
+      "title": "Restore the approved native OCR only if needed",
+      "applicability": "conditional",
+      "condition": "Current approved OCR is absent/invalid and exact restoration action is separately authorized",
+      "original_dependencies": [
+        "S00.04",
+        "S00.F"
+      ],
+      "disposition": "recorded_prior_scope",
+      "source_artifacts": [
+        "security-integration/tool-lock.json",
+        "security-integration/ocr-capabilities.json"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s00"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "414df3fc9ef295265f4577ad34654728eb1906f7159ac0d972a185647583bcaa"
+    },
+    {
+      "id": "S00.05",
+      "title": "Define the supported native invocation boundary",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S00.04",
+        "S00.F"
+      ],
+      "disposition": "recorded_prior_scope",
+      "source_artifacts": [
+        "security-integration/tool-lock.json",
+        "security-integration/ocr-capabilities.json"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s00"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "fc9ed0b1a3341981a53dd4a858fb00d0fb6fb40d739fc81735c5d58fa7f4ce69"
+    },
+    {
+      "id": "S00.06",
+      "title": "Freeze the approved file and trust-boundary inventory",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S00.01",
+        "S00.03",
+        "S00.F"
+      ],
+      "disposition": "recorded_prior_scope",
+      "source_artifacts": [
+        "security-integration/tool-lock.json",
+        "security-integration/ocr-capabilities.json"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s00"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "d88a904f52a42eb9eaddc14745db33bfec2c12a45384bcf4f617b4e17b6ca82d"
+    },
+    {
+      "id": "S00.07",
+      "title": "Record component and rule license obligations",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S00.F"
+      ],
+      "disposition": "recorded_prior_scope",
+      "source_artifacts": [
+        "security-integration/tool-lock.json",
+        "security-integration/ocr-capabilities.json"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s00"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "a6f7b1fdcbadce034a21c74ec169438f7a0f9c20e022d8508202128966d53012"
+    },
+    {
+      "id": "S00.08",
+      "title": "Create the immutable tool and source lock",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S00.04",
+        "S00.07",
+        "S00.F"
+      ],
+      "disposition": "recorded_prior_scope",
+      "source_artifacts": [
+        "security-integration/tool-lock.json",
+        "security-integration/ocr-capabilities.json"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s00"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "3ca7ef6b6fea9f95b5cc5e8f2aefb0ec66cd8c36e0d7d0357c0871c94242abc5"
+    },
+    {
+      "id": "S00.RB",
+      "title": "Write the bounded rollback procedure",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S00.F"
+      ],
+      "disposition": "recorded_prior_scope",
+      "source_artifacts": [
+        "security-integration/tool-lock.json",
+        "security-integration/ocr-capabilities.json"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s00"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "5a30c7f000cd89c73cbfaba73e30adc750d37bde20617e65cb3f8c86c1accb7d"
+    },
+    {
+      "id": "S00.M",
+      "title": "Seal the full implementation endpoint",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S00.F",
+        "S00.01",
+        "S00.02",
+        "S00.03",
+        "S00.04",
+        "S00.05",
+        "S00.06",
+        "S00.07",
+        "S00.08",
+        "S00.RB"
+      ],
+      "disposition": "recorded_prior_scope",
+      "source_artifacts": [
+        "security-integration/tool-lock.json",
+        "security-integration/ocr-capabilities.json"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s00"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "f09c8d92f4fc3b9232ebf1904b9353b739b845612b46b898252f3faafad3d8a1"
+    },
+    {
+      "id": "S00.R",
+      "title": "Record independent full-diff review",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S00.M"
+      ],
+      "disposition": "recorded_prior_scope",
+      "source_artifacts": [
+        "security-integration/tool-lock.json",
+        "security-integration/ocr-capabilities.json"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s00"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "ed88a445926f268f0bceb123bc329edbd5e7a4e57be50c12d4f2f8f068d0cca2"
+    },
+    {
+      "id": "S00.C",
+      "title": "Resolve supported findings and seal review outcome",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S00.R"
+      ],
+      "disposition": "recorded_prior_scope",
+      "source_artifacts": [
+        "security-integration/tool-lock.json",
+        "security-integration/ocr-capabilities.json"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s00"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "6386cbeb9f44e3a923b0ce18b78eb74710e127ab4fb22c8a8c6d73888cfaaf7a"
+    },
+    {
+      "id": "S00.P",
+      "title": "Preserve eligible source immediately in the same draft",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S00.C"
+      ],
+      "disposition": "recorded_prior_scope",
+      "source_artifacts": [
+        "security-integration/tool-lock.json",
+        "security-integration/ocr-capabilities.json"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s00"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "470bc6ee7f40fe1ad7f2de49108619fc955fdf8f0a2e4ac39f6c08e282ba3764"
+    },
+    {
+      "id": "S00.V01",
+      "title": "Verify baseline identity and capability evidence",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S00.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "security-integration/tool-lock.json",
+        "security-integration/ocr-capabilities.json"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s00"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "0c00cac161de777609c871a823f17940cf80340f6452a7d7a4d7266e25de7285"
+    },
+    {
+      "id": "S00.V02",
+      "title": "Check authority, inventory and rollback consistency",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S00.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "security-integration/tool-lock.json",
+        "security-integration/ocr-capabilities.json"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s00"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "6521d815753b8d6593510576fe0b01eaea8e6625c49a0f6eccdb3da267c3c2f5"
+    },
+    {
+      "id": "S00.U",
+      "title": "Preserve validation results and reviewed corrections",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S00.P"
+      ],
+      "disposition": "recorded_prior_scope",
+      "source_artifacts": [
+        "security-integration/tool-lock.json",
+        "security-integration/ocr-capabilities.json"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s00"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "26e96920a1cf036ee2605d19070ff6fa1d5324235165fcdd566b844e97b07df0"
+    },
+    {
+      "id": "S00.A",
+      "title": "Accept the qualified sprint or retain an explicit hold",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S00.U",
+        "S00.V01",
+        "S00.V02"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "security-integration/tool-lock.json",
+        "security-integration/ocr-capabilities.json"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s00"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "8600fddfbef26e205c5af6b02adfc2d85a3300961b36a0a44435463991dcf8da"
+    },
+    {
+      "id": "S01.F",
+      "title": "Freeze the complete sprint scope",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S00.A"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "0eacd6a2c07bf075699bc33df90e9d6a80a8a6ba3fc98cacc16f47c370688643"
+    },
+    {
+      "id": "S01.01",
+      "title": "Implement immutable snapshot selection",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S01.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "7f96dea6828855983980825e547d541f1189162b2436db8a66c1817de0428161"
+    },
+    {
+      "id": "S01.02",
+      "title": "Enforce the minimum execution sandbox",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S01.01",
+        "S01.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "c40d630538157b58d9fd3b6baf5dd8c23350e6cbb7c4693c68e9ace7570c2d57"
+    },
+    {
+      "id": "S01.03",
+      "title": "Remove ambient credentials and socket access",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S01.02",
+        "S01.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "8c9e23af9ffb2fec295a0b996e5ecd3071d8832d428bdd1ace01303d6fb87ffb"
+    },
+    {
+      "id": "S01.04",
+      "title": "Materialize separate scanner and reviewer views",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S01.01",
+        "S01.03",
+        "S01.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "301759764366ae10be5e02da0f96f9ecb7ac75c05c92fbd32449bec9b2f3eac2"
+    },
+    {
+      "id": "S01.05",
+      "title": "Mediate every model-facing read",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S01.04",
+        "S01.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "ec80236d93bbd8366fc9032a8f6561b397971caf00070897ad9f1dfb08cd257f"
+    },
+    {
+      "id": "S01.06",
+      "title": "Bind transformations and omissions to evidence",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S01.05",
+        "S01.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "c412e15ba8700b9aec02408b7616d4516ecfe5679ed781c0aa462fa34a899596"
+    },
+    {
+      "id": "S01.07",
+      "title": "Define states and finding evidence schema",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S01.01",
+        "S01.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "74ce2d18ddd13789d08aaeb6642a9ed75c7946610d4f6393bc642285edca0666"
+    },
+    {
+      "id": "S01.08",
+      "title": "Key coverage by content and change identity",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S01.07",
+        "S01.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "742bcb18474c9883e70df51fb2f3385f528b55d59a78b3dd90d2439261df399f"
+    },
+    {
+      "id": "S01.09",
+      "title": "Separate qualification and target acceptance policies",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S01.07",
+        "S00.02",
+        "S01.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "297e1d2783d67d905d02a63252e19b445b99ec59cddb677f4d9763c154b26510"
+    },
+    {
+      "id": "S01.10",
+      "title": "Author containment and dual-view fixtures",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S01.03",
+        "S01.06",
+        "S01.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "4ca6b585b7cbd2aded6a270a91980e767be5f25c6623b4917efa82503bc04097"
+    },
+    {
+      "id": "S01.11",
+      "title": "Author coverage and failure-state fixtures",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S01.08",
+        "S01.09",
+        "S01.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "4a603d032edd8b37fa2d9d27e596a83e0b209790b37eaa0e24b8de800f500d71"
+    },
+    {
+      "id": "S01.12",
+      "title": "Separate trusted policy from candidate configuration",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S01.01",
+        "S00.02",
+        "S01.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "cd02b68454bb3dd3b483c17b5adf5c9b8fcda501dd29d883e7ee3354c4dab539"
+    },
+    {
+      "id": "S01.RB",
+      "title": "Write the bounded rollback procedure",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S01.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "44e7def5282e505ac24bc02fd5e388925f68f014a8a93f2388b94217ac2e1bcf"
+    },
+    {
+      "id": "S01.M",
+      "title": "Seal the full implementation endpoint",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S01.F",
+        "S01.01",
+        "S01.02",
+        "S01.03",
+        "S01.04",
+        "S01.05",
+        "S01.06",
+        "S01.07",
+        "S01.08",
+        "S01.09",
+        "S01.10",
+        "S01.11",
+        "S01.12",
+        "S01.RB"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "eb05ffcfac34941f6a4aea0977ec3437f3c5c8e35f4557ada8a306bce8f96311"
+    },
+    {
+      "id": "S01.R",
+      "title": "Record independent full-diff review",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S01.M"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "62b80f5bda18e510e9b124473a70b93b3909dc5c8f20f8cc4307065737c62a61"
+    },
+    {
+      "id": "S01.C",
+      "title": "Resolve supported findings and seal review outcome",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S01.R"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "ee0e58646a8590b44f0bf3b1455f16c90c06afc5538c1783d8d873f3a94d5a63"
+    },
+    {
+      "id": "S01.P",
+      "title": "Preserve eligible source immediately in the same draft",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S01.C"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "51da14c25500ce945d739d84e3cda41c72b16dc436bd9cd14f173ceeea845dd6"
+    },
+    {
+      "id": "S01.V01",
+      "title": "Prove sandbox and credential containment",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S01.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "b3fc5ac538581b08adeff04043e0f15e4ef153e1c597bb17fc04cccb7acb4d59"
+    },
+    {
+      "id": "S01.V02",
+      "title": "Prove original versus sanitized input separation",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S01.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "71955bdba5533def62b9c94093d31e23c5895149d05ae665b8388965f9e89ef2"
+    },
+    {
+      "id": "S01.V03",
+      "title": "Prove content coverage and failure semantics",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S01.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "0c7ba8d73211280ade4facd06b8082033aca1b2e55c16d9ef05a42788f9b6a62"
+    },
+    {
+      "id": "S01.V04",
+      "title": "Verify schema rollback without unsafe fallback",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S01.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "be018b6d98debc0a36ab35002026453e2712c76e25b81cb81e1f1b317ba55f97"
+    },
+    {
+      "id": "S01.U",
+      "title": "Preserve validation results and reviewed corrections",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S01.P"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "f3457df4c733500671f1a92fa306e98baf17cef53ccfdb647f3b2ad822be9e1f"
+    },
+    {
+      "id": "S01.A",
+      "title": "Accept the qualified sprint or retain an explicit hold",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S01.U",
+        "S01.V01",
+        "S01.V02",
+        "S01.V03",
+        "S01.V04"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "d22e70f0a703cd7ab7044cdb514f4c15ff446bcb4b2075c411c6cc13333dde6e"
+    },
+    {
+      "id": "S02.F",
+      "title": "Freeze the complete sprint scope",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S01.A"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "db0c51be17ce6b34b78dcd1afc544b795427e574b416f7b6d795cc84d37aad66"
+    },
+    {
+      "id": "S02.01",
+      "title": "Implement only verified native OCR delegation",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S02.F",
+        "S00.05"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "370afab6e6b31a9218f20392e50b630e848a408341aa5b90a9f677fbe079cc13"
+    },
+    {
+      "id": "S02.02",
+      "title": "Neutralize candidate and ambient configuration authority",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S02.01",
+        "S00.02",
+        "S02.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "9801f2878e27ab8ef3428cf8cc2ab1927890a62aa12c84ae51ad604ae00496e1"
+    },
+    {
+      "id": "S02.03",
+      "title": "Adapt bounded ToB and OWASP procedures",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S02.F",
+        "S00.07"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "6bbef56d5dea929ba06211f87e048d803a68f3acf9e37e28cc91b0128c3452f1"
+    },
+    {
+      "id": "S02.04",
+      "title": "Establish a genuinely independent reviewer context",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S02.03",
+        "S01.05",
+        "S02.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "34ab9c647e4bef6cac6f032564336b2efc9aaca21190840a534f73bc83b43bd3"
+    },
+    {
+      "id": "S02.05",
+      "title": "Reconcile whole-diff depth and skipped content",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S02.01",
+        "S02.04",
+        "S01.08",
+        "S02.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "97a156b6494b31f3e79a636f79efe04bb8d2e6658803851fda54af0811af7ac3"
+    },
+    {
+      "id": "S02.06",
+      "title": "Add security review of JSON values and policy content",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S02.02",
+        "S02.05",
+        "S02.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "3d0ef02869be88b40731a47f525c16100d060adeb26ae6b78339b661f9870117"
+    },
+    {
+      "id": "S02.07",
+      "title": "Author adversarial reasoning fixtures",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S02.04",
+        "S02.06",
+        "S02.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "1ace0b8d32652650eba96e1e8815eb9ed4bf735fad536bf353e915a733d41749"
+    },
+    {
+      "id": "S02.08",
+      "title": "Record inference and capability limits honestly",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S02.01",
+        "S02.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "2608796fbc265068e7b7ac00a0c7dbbe1390aeedb8ec2307bacda7e3d53c33ac"
+    },
+    {
+      "id": "S02.RB",
+      "title": "Write the bounded rollback procedure",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S02.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "62b179eecbe77409ac0e6f1f00606a87ca0b7c799eb4c36e5035dcb2d983c1c5"
+    },
+    {
+      "id": "S02.M",
+      "title": "Seal the full implementation endpoint",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S02.F",
+        "S02.01",
+        "S02.02",
+        "S02.03",
+        "S02.04",
+        "S02.05",
+        "S02.06",
+        "S02.07",
+        "S02.08",
+        "S02.RB"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "1de41a098ef25b963e671da9b51b8fed4814624ca7c49224271b13c8e924f1c8"
+    },
+    {
+      "id": "S02.R",
+      "title": "Record independent full-diff review",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S02.M"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "7233521ff452721905be1630177d292fdf01dadabc3f011cbdfe9111e8fa671b"
+    },
+    {
+      "id": "S02.C",
+      "title": "Resolve supported findings and seal review outcome",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S02.R"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "e8f60adfc12cfce86efc0c073900cd51e80b328c08c0fb06ca17a65b2ff17106"
+    },
+    {
+      "id": "S02.P",
+      "title": "Preserve eligible source immediately in the same draft",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S02.C"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "57f879ac9898fb269d9015d87125b5580e20a4219a9bc5b2c2174a9756dd9f22"
+    },
+    {
+      "id": "S02.V01",
+      "title": "Verify supported delegation and effective policy",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S02.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "9f14b173742dcd8497531f379400ab0950de6e434a926031b23c72de9b74af4c"
+    },
+    {
+      "id": "S02.V02",
+      "title": "Verify independent semantic review and JSON values",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S02.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "ee2a18f57257a2d6c1c45aa2da6904dd8a68f683a8b94e6c9306398526217ee9"
+    },
+    {
+      "id": "S02.V03",
+      "title": "Verify adversarial reasoning and bounded rollback",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S02.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "f32cea3298f9a25a0954db5af9d87d218cdadf84fab796019c51bd0f281da009"
+    },
+    {
+      "id": "S02.U",
+      "title": "Preserve validation results and reviewed corrections",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S02.P"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "4a1062784ef367021597f218b557263ca1124d4dd8757485d7e42ee723bf5737"
+    },
+    {
+      "id": "S02.A",
+      "title": "Accept the qualified sprint or retain an explicit hold",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S02.U",
+        "S02.V01",
+        "S02.V02",
+        "S02.V03"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "196bb1637bd814224ceec7dbf8c04235a49699ef2e023063b6d22aef03c50e89"
+    },
+    {
+      "id": "S03.F",
+      "title": "Freeze the complete sprint scope",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S01.A",
+        "S02.A"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/opengrep.py",
+        "security-integration/s02-s03/ocr_security_adapters/gitleaks.py",
+        "security-integration/s02-s03/ocr_security_adapters/osv.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "a86729d44a9c268f8085c899d7f4f1215eaaaf4e834817e1297babb4df3d451d"
+    },
+    {
+      "id": "S03.01",
+      "title": "Resolve baseline acquisition and license prerequisites",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S03.F",
+        "S00.07",
+        "S00.08"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/opengrep.py",
+        "security-integration/s02-s03/ocr_security_adapters/gitleaks.py",
+        "security-integration/s02-s03/ocr_security_adapters/osv.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "6001fd0d2434996eb2b4df3c27a63218880ed3579c59363c1f260f078267fdb8"
+    },
+    {
+      "id": "S03.01A",
+      "title": "Stage missing approved baseline assets",
+      "applicability": "conditional",
+      "condition": "A required approved baseline asset is missing locally and its exact acquisition is authorized",
+      "original_dependencies": [
+        "S03.01",
+        "S03.F"
+      ],
+      "disposition": "deferred_not_selected",
+      "source_artifacts": [
+        "security-integration/s02-s03/asset-prerequisites.json",
+        "security-integration/s02-s03/scope.json"
+      ],
+      "evidence_locations": [
+        "security-integration/s02-s03/task-map.json#S03.01A",
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "c97074a5be5905ddb7e2e0ac9781cfc92b583e71d5432da22995d1f26071f700"
+    },
+    {
+      "id": "S03.02",
+      "title": "Implement Opengrep with local approved rules",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S03.01",
+        "S02.02",
+        "S03.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/opengrep.py",
+        "security-integration/s02-s03/ocr_security_adapters/gitleaks.py",
+        "security-integration/s02-s03/ocr_security_adapters/osv.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "20d17851e0f3d345c85f523e178f9fe46fe2314c3adba8dd90a02dd52fee04d1"
+    },
+    {
+      "id": "S03.03",
+      "title": "Implement fully redacted Gitleaks CLI analysis",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S03.01",
+        "S01.04",
+        "S03.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/opengrep.py",
+        "security-integration/s02-s03/ocr_security_adapters/gitleaks.py",
+        "security-integration/s02-s03/ocr_security_adapters/osv.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "f15fb13b89923a830f089e810a30add802fcaac5be09c49663be102e51a024c1"
+    },
+    {
+      "id": "S03.04",
+      "title": "Implement explicit offline OSV analysis",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S03.01",
+        "S01.02",
+        "S03.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/opengrep.py",
+        "security-integration/s02-s03/ocr_security_adapters/gitleaks.py",
+        "security-integration/s02-s03/ocr_security_adapters/osv.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "68b1010c8e7f280c9637c5529674d0e38f4f00ac26252f3658b1629ea2aa5216"
+    },
+    {
+      "id": "S03.05",
+      "title": "Normalize detector output and coverage",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S03.02",
+        "S03.03",
+        "S03.04",
+        "S01.07",
+        "S03.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/opengrep.py",
+        "security-integration/s02-s03/ocr_security_adapters/gitleaks.py",
+        "security-integration/s02-s03/ocr_security_adapters/osv.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "11318508e576cf2a3b20d29ae78b6c4178e21329d9d3cb4b67f3884c4615c6d0"
+    },
+    {
+      "id": "S03.06",
+      "title": "Author baseline positive and negative cases",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S03.05",
+        "S03.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/opengrep.py",
+        "security-integration/s02-s03/ocr_security_adapters/gitleaks.py",
+        "security-integration/s02-s03/ocr_security_adapters/osv.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "f6cbbaa9167e4bcbaf19b7da98d6e71a96e9e407bc77a02e7ec22b3d1dcf860a"
+    },
+    {
+      "id": "S03.RB",
+      "title": "Write the bounded rollback procedure",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S03.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/opengrep.py",
+        "security-integration/s02-s03/ocr_security_adapters/gitleaks.py",
+        "security-integration/s02-s03/ocr_security_adapters/osv.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "a8d72d19c94792ca6b653f856dab6fc92142dda9f401b5e00f694c9e6360454a"
+    },
+    {
+      "id": "S03.M",
+      "title": "Seal the full implementation endpoint",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S03.F",
+        "S03.01",
+        "S03.02",
+        "S03.03",
+        "S03.04",
+        "S03.05",
+        "S03.06",
+        "S03.RB"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/opengrep.py",
+        "security-integration/s02-s03/ocr_security_adapters/gitleaks.py",
+        "security-integration/s02-s03/ocr_security_adapters/osv.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "4d44fad7d918e85bf3db89d32719fbdd0e2bf3f90a96c7697847225dfa8abe87"
+    },
+    {
+      "id": "S03.R",
+      "title": "Record independent full-diff review",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S03.M"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/opengrep.py",
+        "security-integration/s02-s03/ocr_security_adapters/gitleaks.py",
+        "security-integration/s02-s03/ocr_security_adapters/osv.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "410b68442098431edaeff4b4eead3752d4c8bbe95bba2f9ea4184ec5fd83a039"
+    },
+    {
+      "id": "S03.C",
+      "title": "Resolve supported findings and seal review outcome",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S03.R"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/opengrep.py",
+        "security-integration/s02-s03/ocr_security_adapters/gitleaks.py",
+        "security-integration/s02-s03/ocr_security_adapters/osv.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "4856cbea3311a5dc85fdee82967ef8b4a7c1dd7ffd2bbf99f24c403ab75b34c4"
+    },
+    {
+      "id": "S03.P",
+      "title": "Preserve eligible source immediately in the same draft",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S03.C"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/opengrep.py",
+        "security-integration/s02-s03/ocr_security_adapters/gitleaks.py",
+        "security-integration/s02-s03/ocr_security_adapters/osv.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "b341fc06a71e150483ac6cf6acdd31f5f30e3076021f7134143dd924b5a7c55c"
+    },
+    {
+      "id": "S03.V01",
+      "title": "Qualify Opengrep on seeded and safe fixtures",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S03.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/opengrep.py",
+        "security-integration/s02-s03/ocr_security_adapters/gitleaks.py",
+        "security-integration/s02-s03/ocr_security_adapters/osv.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "7cea84b3ba40b4f7883064651a0268825c6a5c4676e3ff9a9cd7f05b0cbc314b"
+    },
+    {
+      "id": "S03.V02",
+      "title": "Qualify Gitleaks without credential contact",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S03.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/opengrep.py",
+        "security-integration/s02-s03/ocr_security_adapters/gitleaks.py",
+        "security-integration/s02-s03/ocr_security_adapters/osv.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "824642284a83d5362fb9d3e13f62085f11f68fcd3b6055a3d221532a5cbdf5da"
+    },
+    {
+      "id": "S03.V03",
+      "title": "Qualify OSV with bounded offline databases",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S03.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/opengrep.py",
+        "security-integration/s02-s03/ocr_security_adapters/gitleaks.py",
+        "security-integration/s02-s03/ocr_security_adapters/osv.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "6cf4320b712a0e34fe35b24e1b9af15c253bd8eae5bd14b242af98b39487da61"
+    },
+    {
+      "id": "S03.V04",
+      "title": "Verify aggregate truthfulness and adapter rollback",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S03.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/opengrep.py",
+        "security-integration/s02-s03/ocr_security_adapters/gitleaks.py",
+        "security-integration/s02-s03/ocr_security_adapters/osv.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "edaf2c14eca92d5e75d635352db09d0af08effbc28b44842a6dcf95c221cb605"
+    },
+    {
+      "id": "S03.U",
+      "title": "Preserve validation results and reviewed corrections",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S03.P"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/opengrep.py",
+        "security-integration/s02-s03/ocr_security_adapters/gitleaks.py",
+        "security-integration/s02-s03/ocr_security_adapters/osv.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "56435d9a7add44648daa13a954de50f2b8b9783162488178aa68e4e0f0c8280b"
+    },
+    {
+      "id": "S03.A",
+      "title": "Accept the qualified sprint or retain an explicit hold",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S03.U",
+        "S03.V01",
+        "S03.V02",
+        "S03.V03",
+        "S03.V04"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/opengrep.py",
+        "security-integration/s02-s03/ocr_security_adapters/gitleaks.py",
+        "security-integration/s02-s03/ocr_security_adapters/osv.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "0d067e6527eb3f1a5c6382967eec486c6ceaa6d9b1f910357fa5366f18a1d461"
+    },
+    {
+      "id": "S04.F",
+      "title": "Freeze the complete sprint scope",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S03.A"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "0bb578cb76ee339b707011d87d0e529c3957c1e06c45a29d895a4ff58f723ef0"
+    },
+    {
+      "id": "S04.01",
+      "title": "Stage acquisition separately from analysis",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S04.F",
+        "S03.01"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "4aa299bed3112aa8744df0f505881ccc46768c981f71aa93f927bf6982c955f3"
+    },
+    {
+      "id": "S04.02",
+      "title": "Define dataset freshness and failure semantics",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S04.01",
+        "S04.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "f940c8bbe062305f0bac40f78af889ed637cf929ab77a1cf9a89f1f600a10c1c"
+    },
+    {
+      "id": "S04.03",
+      "title": "Automate the already-qualified offline profile",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S04.F",
+        "S01.A"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "c5f7c14f0e3bc782b4f93d8991712d5c05cdc66cc07c16b16797ddb84bfc0e2b"
+    },
+    {
+      "id": "S04.04",
+      "title": "Deduplicate without deleting independent evidence",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S03.05",
+        "S04.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "11c26e4099c1bea2112d4fa32c820ccdd3eeca405520279a047f01d861b5d38f"
+    },
+    {
+      "id": "S04.05",
+      "title": "Implement owned expiring suppressions and exceptions",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S04.04",
+        "S00.02",
+        "S01.09",
+        "S04.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "5bfc4e91ac1ef701953ddf5dcf496c8d41b7874f55c75af9081ee0c1a80ce04e"
+    },
+    {
+      "id": "S04.06",
+      "title": "Parse scanner output as bounded untrusted data",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S03.05",
+        "S04.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "a589646fde4e202ae150bdac5418c47f047fd32e2c1abc0b35ef05b6db07ea87"
+    },
+    {
+      "id": "S04.07",
+      "title": "Render inert secret-safe reports",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S04.06",
+        "S01.06",
+        "S04.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "6fd3dff5cb0172cce09c63b1d12649706f48389b2cde75fdcfd52037fbfd5fbe"
+    },
+    {
+      "id": "S04.08",
+      "title": "Emit the combined evidence reports",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S04.07",
+        "S04.05",
+        "S04.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "f19cc619eb9ba6e34757547bceb3eb4d9bebde99b2ffba8b92a21d875082d0bc"
+    },
+    {
+      "id": "S04.08S",
+      "title": "Implement optional supported SARIF interchange",
+      "applicability": "conditional",
+      "condition": "SARIF output is selected before S04 freeze and the receiving tool supports the verified schema",
+      "original_dependencies": [
+        "S04.08",
+        "S04.F"
+      ],
+      "disposition": "deferred_not_selected",
+      "source_artifacts": [
+        "security-integration/s04-s05/scope.json",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "security-integration/s04-s05/task-map.json#S04.08S",
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "64114b2363037caea11245c06e633a8898068d6fdefbd25f0698e5ce5dceff2f"
+    },
+    {
+      "id": "S04.09",
+      "title": "Implement fail-closed target acceptance",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S04.02",
+        "S04.05",
+        "S04.08",
+        "S04.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "dec05b65ef28a9a50cf20f883f1598b69442c7d42e601123e307168dafdc0c36"
+    },
+    {
+      "id": "S04.10",
+      "title": "Implement distinct harness qualification and regressions",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S04.09",
+        "S04.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "6fb6653183e38261cd29330ba3951490a3654a81197248a41f32b1b8b52095ba"
+    },
+    {
+      "id": "S04.RB",
+      "title": "Write the bounded rollback procedure",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S04.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "b9c578d38c7aa1a6aed65f1c9c4bcd4d07554a6a62d609c07ac4162f9cf20b7f"
+    },
+    {
+      "id": "S04.M",
+      "title": "Seal the full implementation endpoint",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S04.F",
+        "S04.01",
+        "S04.02",
+        "S04.03",
+        "S04.04",
+        "S04.05",
+        "S04.06",
+        "S04.07",
+        "S04.08",
+        "S04.09",
+        "S04.10",
+        "S04.RB"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "aa57b312e549d429a9eb74ca6b8ca86061d63c18b9028514cf050190b944382e"
+    },
+    {
+      "id": "S04.R",
+      "title": "Record independent full-diff review",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S04.M"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "13319dba803b5e3a2f481f88b82c798e9546e43c16e75b6891544ab9a6ec28de"
+    },
+    {
+      "id": "S04.C",
+      "title": "Resolve supported findings and seal review outcome",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S04.R"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "58372948cd411d0a723bdb31284a3d294556e47b0455a45d5ff362ac048ba5e9"
+    },
+    {
+      "id": "S04.P",
+      "title": "Preserve eligible source immediately in the same draft",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S04.C"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "d9b188f4f99dd3312e1c31ba42db9e37e6d2b0bace53da67f7b1c6aeb0316f76"
+    },
+    {
+      "id": "S04.V01",
+      "title": "Verify controlled updates and truthful stale rollback",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S04.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "21b40fe03e92f08dec8ae3799c3d32269c81d879261ffc3fed06b8cee8661df4"
+    },
+    {
+      "id": "S04.V02",
+      "title": "Verify deduplication and suppression authority",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S04.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "8536dad2340508e09e2205fff54cdd664b0c9e8e5d30abc103070b3ae018d5b6"
+    },
+    {
+      "id": "S04.V03",
+      "title": "Verify hostile reports stay inert and usable",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S04.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "41b6669695bc35e8d773f21cc9e41bf4462d080c123ed07ee2ba302aa977e589"
+    },
+    {
+      "id": "S04.V04",
+      "title": "Verify qualification cannot clear a vulnerable target",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S04.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "0dc1bc413d4eb1104cc77211d640d8fe5d5e4ecba3005bf1b6a7ce520f2a6207"
+    },
+    {
+      "id": "S04.U",
+      "title": "Preserve validation results and reviewed corrections",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S04.P"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "900ec7f4f2268578a88827a7f63f8c96d95a03fcaae232979fa8a9aff9749300"
+    },
+    {
+      "id": "S04.A",
+      "title": "Accept the qualified sprint or retain an explicit hold",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S04.U",
+        "S04.V01",
+        "S04.V02",
+        "S04.V03",
+        "S04.V04"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "3060b898e51122c9a8b846f931f53086b7c8b38283c0cec5b705f1ceb7ce51a4"
+    },
+    {
+      "id": "S05.F",
+      "title": "Freeze the complete sprint scope",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S04.A"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/workflow.py",
+        "security-integration/s04-s05/ocr_security_gate/review_gate.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "f91a2d24d0d32d5dfa79a64f354f883989d3ad77491fb10c53e390bdf8cf2d05"
+    },
+    {
+      "id": "S05.01",
+      "title": "Write the full-sprint operator workflow",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S05.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/workflow.py",
+        "security-integration/s04-s05/ocr_security_gate/review_gate.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "fe2b7c5dfc9be0b6a0fe2f7162a91b21969cc94dae9a7087ac2f3441b5a4809e"
+    },
+    {
+      "id": "S05.02",
+      "title": "Implement preservation and acceptance as separate outcomes",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S05.01",
+        "S05.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/workflow.py",
+        "security-integration/s04-s05/ocr_security_gate/review_gate.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "197961ecdf921b186f51b392b13628bb564fbe7c7f8f82273a669592027a9b9c"
+    },
+    {
+      "id": "S05.03",
+      "title": "Track whole-PR distinct paths and dependent batches",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S05.01",
+        "S05.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/workflow.py",
+        "security-integration/s04-s05/ocr_security_gate/review_gate.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "d30df094f81d72a90c8abf747371018f36248cb1a42d2298d71c78aee3f39571"
+    },
+    {
+      "id": "S05.04",
+      "title": "Track one consolidated CodeRabbit review",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S05.01",
+        "S05.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/workflow.py",
+        "security-integration/s04-s05/ocr_security_gate/review_gate.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "7b0c769eec1558f29339c8f41bb36d81d9b72b40ac67be26d3e78304f8aecf90"
+    },
+    {
+      "id": "S05.05",
+      "title": "Represent merge conflicts and exact action gates",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S05.04",
+        "S05.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/workflow.py",
+        "security-integration/s04-s05/ocr_security_gate/review_gate.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "914e125c20ba74f09b2a9ecc4e71698b893e471c6c3091a9ccfc0d2ba8488266"
+    },
+    {
+      "id": "S05.06",
+      "title": "Author coordinator event fixtures",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S05.02",
+        "S05.03",
+        "S05.05",
+        "S05.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/workflow.py",
+        "security-integration/s04-s05/ocr_security_gate/review_gate.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "2546dc1dd453b2f0014eb680f83a689bd935eb297e4276f071c754c6e709614f"
+    },
+    {
+      "id": "S05.RB",
+      "title": "Write the bounded rollback procedure",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S05.F"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/workflow.py",
+        "security-integration/s04-s05/ocr_security_gate/review_gate.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "e5821aaa89418253008583437d477605c5bdb55a346e9637b289ba8219d9a9e4"
+    },
+    {
+      "id": "S05.M",
+      "title": "Seal the full implementation endpoint",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S05.F",
+        "S05.01",
+        "S05.02",
+        "S05.03",
+        "S05.04",
+        "S05.05",
+        "S05.06",
+        "S05.RB"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/workflow.py",
+        "security-integration/s04-s05/ocr_security_gate/review_gate.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "d61f388ee4e5c10e64f721d438dc6ff4a09176a0c8f478435f8e2f7cc5b2c199"
+    },
+    {
+      "id": "S05.R",
+      "title": "Record independent full-diff review",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S05.M"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/workflow.py",
+        "security-integration/s04-s05/ocr_security_gate/review_gate.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "6206ec23230f43ac5d763d7d0e2c485ae5457feec990ea248b2981fc47e65748"
+    },
+    {
+      "id": "S05.C",
+      "title": "Resolve supported findings and seal review outcome",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S05.R"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/workflow.py",
+        "security-integration/s04-s05/ocr_security_gate/review_gate.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "b871343b2cf6285c4bcb9ee8bb92ded17a4504b5fec12c4fbcfbe2f936ac6df4"
+    },
+    {
+      "id": "S05.P",
+      "title": "Preserve eligible source immediately in the same draft",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S05.C"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/workflow.py",
+        "security-integration/s04-s05/ocr_security_gate/review_gate.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "bbbc7c4f56608c188063e69894e43a9ad7c24ca6b68b7e44e2bfa3489db20afe"
+    },
+    {
+      "id": "S05.V01",
+      "title": "Verify failure and uncertain-publication transitions",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S05.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/workflow.py",
+        "security-integration/s04-s05/ocr_security_gate/review_gate.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "be00099abb20a9d2702e46add05cd29c6ff34c464e9e8661a0d63966bda098fe"
+    },
+    {
+      "id": "S05.V02",
+      "title": "Verify batching and single-review transitions",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S05.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/workflow.py",
+        "security-integration/s04-s05/ocr_security_gate/review_gate.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "a769dbf8788a75538dc1df0b40071d18537ae186d7a10148a0161413c70953b3"
+    },
+    {
+      "id": "S05.V03",
+      "title": "Verify authority preservation and reversible workflow",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S05.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/workflow.py",
+        "security-integration/s04-s05/ocr_security_gate/review_gate.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "b334d0799862105c12ae63e9c800cc3f517c4da66d785edc9c2134297d1b52b8"
+    },
+    {
+      "id": "S05.U",
+      "title": "Preserve validation results and reviewed corrections",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S05.P"
+      ],
+      "disposition": "preserved_provisional_source",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/workflow.py",
+        "security-integration/s04-s05/ocr_security_gate/review_gate.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "23ec5dad2231458a9cf85cc9814ae2185ea92264913c76bfe7435f7ee1401cef"
+    },
+    {
+      "id": "S05.A",
+      "title": "Accept the qualified sprint or retain an explicit hold",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S05.U",
+        "S05.V01",
+        "S05.V02",
+        "S05.V03"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/workflow.py",
+        "security-integration/s04-s05/ocr_security_gate/review_gate.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "99921e122074777b1ebf1c207bd263a8d2a5f38d6dfe4a201a3a9b5ff73d8777"
+    },
+    {
+      "id": "S06.F",
+      "title": "Freeze the complete sprint scope",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S04.A",
+        "S05.A",
+        "S06.01",
+        "S06.02",
+        "S06.03"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "scope.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "eb5cfab1815ec20100d9665400fbee277d7bac6de83fbc01bb1591d746413763"
+    },
+    {
+      "id": "S06.01",
+      "title": "Decide Betterleaks and write its comparison protocol",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S05.A"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "decisions/betterleaks.json",
+        "protocols/betterleaks.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "0400e2d163ad2d896eddef02190994792ef9cb95f011f1fbdbca0ec277ad0367"
+    },
+    {
+      "id": "S06.02",
+      "title": "Decide Trivy against a demonstrated coverage gap",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S05.A"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "decisions/trivy.json",
+        "protocols/trivy.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "405f83a3fbc619e53101435a8803564b65666c28ccf2b5c47d0355752b888f11"
+    },
+    {
+      "id": "S06.03",
+      "title": "Decide AgentShield on sanitized selected configuration",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S05.A"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "decisions/agentshield.json",
+        "protocols/agentshield.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "e4564759e3dd4ed574ba54e910a3f39d795aca4bbaef259e0e99a380c46eb9c1"
+    },
+    {
+      "id": "S06.04",
+      "title": "Build the selected disabled Betterleaks challenger",
+      "applicability": "conditional",
+      "condition": "Betterleaks implementation selected and authorized before S06 freeze",
+      "original_dependencies": [
+        "S06.F",
+        "S06.01"
+      ],
+      "disposition": "deferred_not_selected",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "c5605fe5f88649d74ec1f07aa7e16ce56bca47093d833cccecea9e8a25a5fe9c"
+    },
+    {
+      "id": "S06.05",
+      "title": "Build the selected disabled Trivy adapter",
+      "applicability": "conditional",
+      "condition": "Trivy implementation selected and authorized before S06 freeze",
+      "original_dependencies": [
+        "S06.F",
+        "S06.02"
+      ],
+      "disposition": "deferred_not_selected",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "b62430ebd914536ecc5d2494d4d4e966de927f3e8cc1c7ef40acbaff8f2ee65e"
+    },
+    {
+      "id": "S06.06",
+      "title": "Build the selected disabled AgentShield adapter",
+      "applicability": "conditional",
+      "condition": "AgentShield implementation selected and authorized before S06 freeze",
+      "original_dependencies": [
+        "S06.F",
+        "S06.03"
+      ],
+      "disposition": "deferred_not_selected",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "ba7217a13fb403d683f61da37336c952a53b828d753d92e59c6ac584c5b651a0"
+    },
+    {
+      "id": "S06.07",
+      "title": "Complete the optional decision ledger",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S06.01",
+        "S06.02",
+        "S06.03",
+        "S06.F"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "decisions/optional-ledger.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "a710340ff7729cdee01c1f29ea18afa9f909cf9018e67e115527430d24cd209f"
+    },
+    {
+      "id": "S06.RB",
+      "title": "Write the bounded rollback procedure",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S06.F"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "ROLLBACK.md",
+        "ocr_security_integration/registry.py"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "a7d20e5df6c7962755e3c2b915af0ee7413815a717adf1dbeaaf04a604869b9f"
+    },
+    {
+      "id": "S06.M",
+      "title": "Seal the full implementation endpoint",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S06.F",
+        "S06.01",
+        "S06.02",
+        "S06.03",
+        "S06.07",
+        "S06.RB"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "f21dc9f1d64cc955667273914369dde04acea24548ae82a142f30a02efb08a64"
+    },
+    {
+      "id": "S06.R",
+      "title": "Record independent full-diff review",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S06.M"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "5ba7822cf061ef9cfd1ea77cbdfa9395fafaea53c99beeb08b92d9145323038d"
+    },
+    {
+      "id": "S06.C",
+      "title": "Resolve supported findings and seal review outcome",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S06.R"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "9d2602353f1e8fc2dd041272dc27923c488de923c363b486d6ae66e3545f789b"
+    },
+    {
+      "id": "S06.P",
+      "title": "Preserve eligible source immediately in the same draft",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S06.C"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "c0a8f736996935c66a0b84b88cf02445d5bda16e3d00c5f26bb9ddb6bf00e70b"
+    },
+    {
+      "id": "S06.QA",
+      "title": "Reconcile and stage missing approved optional assets",
+      "applicability": "conditional",
+      "condition": "A selected optional pilot needs an asset not already verified locally and that exact acquisition is separately authorized",
+      "original_dependencies": [
+        "S06.P",
+        "S06.07"
+      ],
+      "disposition": "deferred_not_selected",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "216977670ab53283b3f5eef190d4bee11bac3a4a29346670a12c961383add7d8"
+    },
+    {
+      "id": "S06.V01",
+      "title": "Verify optional dispositions without demanding a pilot",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S06.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "3c2435a89ce0c43143bebb9657f02a8377db167b1197f33f675c8e69ac7bf116"
+    },
+    {
+      "id": "S06.V02",
+      "title": "Run the selected authorized Betterleaks comparison",
+      "applicability": "conditional",
+      "condition": "Betterleaks selected in frozen scope and this comparison execution separately authorized",
+      "original_dependencies": [
+        "S06.P"
+      ],
+      "disposition": "deferred_not_selected",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "1eb63f98da37821904ec39dacfa8ffe46a528241ba6bd6cf8c14022d155e3498"
+    },
+    {
+      "id": "S06.V03",
+      "title": "Run selected authorized Trivy qualification",
+      "applicability": "conditional",
+      "condition": "Trivy selected in frozen scope and this qualification execution separately authorized",
+      "original_dependencies": [
+        "S06.P"
+      ],
+      "disposition": "deferred_not_selected",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "a17c97535a7e6d3d927c04d1fd318cb881a1ad8603cc3bfe16bf109a2938fa39"
+    },
+    {
+      "id": "S06.V04",
+      "title": "Run selected authorized AgentShield qualification",
+      "applicability": "conditional",
+      "condition": "AgentShield selected in frozen scope and this qualification execution separately authorized",
+      "original_dependencies": [
+        "S06.P"
+      ],
+      "disposition": "deferred_not_selected",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "c4cad60e43d06ff7cc353ac980c40503567140e01553bf5292008c74b7f6b742"
+    },
+    {
+      "id": "S06.V05",
+      "title": "Verify optional rollback and unchanged baseline",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S06.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "fa47d15a49773ea825b639b35f97b12b709e6da7ea0cb49b0481a0778fd560e1"
+    },
+    {
+      "id": "S06.U",
+      "title": "Preserve validation results and reviewed corrections",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S06.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "8faf5da5231794756bda453b2c45478424105cecb950372eea9abd3218f20d1a"
+    },
+    {
+      "id": "S06.A",
+      "title": "Accept the qualified sprint or retain an explicit hold",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S06.U",
+        "S06.V01",
+        "S06.V05"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "47632c89e35bd6523f84f871f84eca8b49cc5bed0dd65104e86861856a464ec2"
+    },
+    {
+      "id": "S07.F",
+      "title": "Freeze the complete sprint scope",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S05.A",
+        "S06.07",
+        "S06.P"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "scope.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "594e26bc3d3b6be7d23f02ba347099c52b17d560572243122aaec44ecb44452e"
+    },
+    {
+      "id": "S07.01",
+      "title": "Record Semgrep CE as an alternative only",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.F"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "decisions/semgrep.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "be58e94a67d66c6070ef06c6eca268f18cf24e655aa1626937e3e3b998cf91f2"
+    },
+    {
+      "id": "S07.02",
+      "title": "Record Bearer specialist prerequisites",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.F"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "decisions/bearer.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "1703b620d57d007642d630107984ddbc1341c02b90576be925612f21fd99f834"
+    },
+    {
+      "id": "S07.03",
+      "title": "Record CodeQL entitlement and execution gates",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.F"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "decisions/codeql.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "5e28f330d4343508cf48843bcb881408507e7b251cff0fd50c36195448bb0bf6"
+    },
+    {
+      "id": "S07.04",
+      "title": "Record Anthropic review Action as opt in only",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.F"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "decisions/anthropic_review.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "79fb739dc8e952a5dae36ce8dc286759c6f3e1ac205104ae02bf0120f0375020"
+    },
+    {
+      "id": "S07.05",
+      "title": "Record Snyk Agent Scan as opt in only",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.F"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "decisions/snyk_agent_scan.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "18ad118a1dd10330faec09517231b1d5ed22cafcdd3f3b47d9f6258bf537b0e1"
+    },
+    {
+      "id": "S07.06",
+      "title": "Record Strix as a separate future pentest",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.F"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "decisions/strix.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "5a9f926fc06e8db14683fb23addc836c85d0f25dcfdf369073b5225c1cd48c87"
+    },
+    {
+      "id": "S07.07",
+      "title": "Record Shannon as a separate future pentest",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.F"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "decisions/shannon.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "f04f4bc5732e38872dfcfc5ea18da563086abe289130b5f1a3910fab2952a3f6"
+    },
+    {
+      "id": "S07.08",
+      "title": "Finish disabled registration and operating documentation",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.F",
+        "S06.07"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "ocr_security_integration/registry.py",
+        "ocr_security_integration/entrypoint.py",
+        "RUNBOOK.md"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "6aaa81445d68a738553b134181773ddf247044d5472f18da8a7d4f741b78516c"
+    },
+    {
+      "id": "S07.09",
+      "title": "Close recommendation to execution traceability",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.01",
+        "S07.02",
+        "S07.03",
+        "S07.04",
+        "S07.05",
+        "S07.06",
+        "S07.07",
+        "S07.08",
+        "S07.F"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "traceability.json",
+        "ocr_security_integration/traceability.py"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "e3df620e9ebb53b3c6f5737c56073707552015901c6ec48db02a93b83387f0f6"
+    },
+    {
+      "id": "S07.10",
+      "title": "Author full-path qualification scenarios",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.09",
+        "S07.F"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "fixtures/scenarios.json",
+        "tests/test_full_path.py"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "02b1196cfd9bd9b3898e72b427db5bccbecd20836a482b41bcf78959fa0e1cff"
+    },
+    {
+      "id": "S07.RB",
+      "title": "Write the bounded rollback procedure",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.F"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "ROLLBACK.md",
+        "ocr_security_integration/registry.py"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "7c78d345e6f41290c604d45341b3c7b98331699a7fcbc0a99b53520610b34bb0"
+    },
+    {
+      "id": "S07.M",
+      "title": "Seal the full implementation endpoint",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.F",
+        "S07.01",
+        "S07.02",
+        "S07.03",
+        "S07.04",
+        "S07.05",
+        "S07.06",
+        "S07.07",
+        "S07.08",
+        "S07.09",
+        "S07.10",
+        "S07.RB"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "ocr_security_integration/entrypoint.py",
+        "ocr_security_integration/registry.py",
+        "RUNBOOK.md"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "12d4cec219e2bce763c4d4073cf39ff594ab76d56c7b7fd956363070b21362b1"
+    },
+    {
+      "id": "S07.R",
+      "title": "Record independent full-diff review",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.M"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "ocr_security_integration/entrypoint.py",
+        "ocr_security_integration/registry.py",
+        "RUNBOOK.md"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "1716242415c4a87fb0eb3fbfef5ccfa04c26dee3210340a2706dd37b6851538d"
+    },
+    {
+      "id": "S07.C",
+      "title": "Resolve supported findings and seal review outcome",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.R"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "ocr_security_integration/entrypoint.py",
+        "ocr_security_integration/registry.py",
+        "RUNBOOK.md"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "d93db44cc0d394f40ad6c692a72e198643b4ef0c6399762d647967ae148ecdc4"
+    },
+    {
+      "id": "S07.P",
+      "title": "Preserve eligible source immediately in the same draft",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.C"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "ocr_security_integration/entrypoint.py",
+        "ocr_security_integration/registry.py",
+        "RUNBOOK.md"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "7ddc14660e0190fdd51a94015cc4b6094db87ae3ffa8d6e82726b20ce2da4d61"
+    },
+    {
+      "id": "S07.V01",
+      "title": "Run authorized end-to-end synthetic qualification",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "ocr_security_integration/entrypoint.py",
+        "ocr_security_integration/registry.py",
+        "RUNBOOK.md"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "5713b21bfd187109f073c36630bfb225736a0fe7945072eb2870cbff9a052e31"
+    },
+    {
+      "id": "S07.V02",
+      "title": "Verify final reporting, runbook and rollback",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "ocr_security_integration/entrypoint.py",
+        "ocr_security_integration/registry.py",
+        "RUNBOOK.md"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "a3a3357d230032ad26ede3a43a5bfc9c8027ac3192ef57d49c2311a878134808"
+    },
+    {
+      "id": "S07.V03",
+      "title": "Obtain final independent evidence review",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.P",
+        "S07.V01",
+        "S07.V02"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "ocr_security_integration/entrypoint.py",
+        "ocr_security_integration/registry.py",
+        "RUNBOOK.md"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "76e3188f5bf400b2e08316923978022f1bc4a464073951be178fd2fb1ef91772"
+    },
+    {
+      "id": "S07.U",
+      "title": "Preserve validation results and reviewed corrections",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "ocr_security_integration/entrypoint.py",
+        "ocr_security_integration/registry.py",
+        "RUNBOOK.md"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "184c275dd6588625bf5f40d2cddde86a4675bcb79a3fc7f14a1ea4264eb34552"
+    },
+    {
+      "id": "S07.A",
+      "title": "Accept the qualified sprint or retain an explicit hold",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.U",
+        "S07.V01",
+        "S07.V02",
+        "S07.V03"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "ocr_security_integration/entrypoint.py",
+        "ocr_security_integration/registry.py",
+        "RUNBOOK.md"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "39904a03e7af60cb34866bfc35f6e8186934bf0b54344bdd13f15d823a479410"
+    },
+    {
+      "id": "B01",
+      "title": "Record the actual coherent batch boundaries",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S00.01"
+      ],
+      "disposition": "root_batch_gate_pending",
+      "source_artifacts": [
+        "security-integration/s04-s05/WORKFLOW.md"
+      ],
+      "evidence_locations": [
+        "RUNBOOK.md#root-batch-gates"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "60610cd14ff4b93f62c51b7a48aa78be39eef953c077f186c552dea8d2726120"
+    },
+    {
+      "id": "B02",
+      "title": "Freeze each completed consolidated batch",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "B01"
+      ],
+      "disposition": "root_batch_gate_pending",
+      "source_artifacts": [
+        "security-integration/s04-s05/WORKFLOW.md"
+      ],
+      "evidence_locations": [
+        "RUNBOOK.md#root-batch-gates"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "071b717fd473702e70cce2f3973aa3e4048d94a0043ba8ec8621ba5e0e6802c2"
+    },
+    {
+      "id": "B03",
+      "title": "Reconcile external review state at final freeze",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "B02"
+      ],
+      "disposition": "root_batch_gate_pending",
+      "source_artifacts": [
+        "security-integration/s04-s05/WORKFLOW.md"
+      ],
+      "evidence_locations": [
+        "RUNBOOK.md#root-batch-gates"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "07c04ca1b29ecfe35a0b578f5a406b22843f5caa0c74b35101b531e006fc0b50"
+    },
+    {
+      "id": "B04",
+      "title": "Obtain the single included CodeRabbit review",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "B03"
+      ],
+      "disposition": "root_batch_gate_pending",
+      "source_artifacts": [
+        "security-integration/s04-s05/WORKFLOW.md"
+      ],
+      "evidence_locations": [
+        "RUNBOOK.md#root-batch-gates"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "67ebbe912d68e1a10b6c3f0f56d00b079fc667c5af3b927f6240af52945b1d20"
+    },
+    {
+      "id": "B05",
+      "title": "Resolve external findings and current-head conflicts",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "B04"
+      ],
+      "disposition": "root_batch_gate_pending",
+      "source_artifacts": [
+        "security-integration/s04-s05/WORKFLOW.md"
+      ],
+      "evidence_locations": [
+        "RUNBOOK.md#root-batch-gates"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "33c0a76418fec1b9dc7b7f36ce0d955fdf593fe290da1aac6b11ea5a06c8ce07"
+    },
+    {
+      "id": "B06",
+      "title": "Merge only when every exact batch gate is satisfied",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "B05"
+      ],
+      "disposition": "root_batch_gate_pending",
+      "source_artifacts": [
+        "security-integration/s04-s05/WORKFLOW.md"
+      ],
+      "evidence_locations": [
+        "RUNBOOK.md#root-batch-gates"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "0bbcf54bec75c1a19a140a78c7bc3d6c9d91725f7f00cc9ee1ab0bf3405df15c"
+    },
+    {
+      "id": "B07",
+      "title": "Hand off the qualified integration and next approved work",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.A",
+        "B06"
+      ],
+      "disposition": "root_batch_gate_pending",
+      "source_artifacts": [
+        "security-integration/s04-s05/WORKFLOW.md"
+      ],
+      "evidence_locations": [
+        "RUNBOOK.md#root-batch-gates"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "31cc1b63ab4f7d411d11f1c5aa8940a4c3945d9ddff776fc4a37d005f21641a4"
+    }
+  ],
+  "recommendations": [
+    {
+      "id": "REC01",
+      "recommendation": "OCR local/manual orchestration, no invented native plugin interface",
+      "required_disposition": "Verified boundary before adapter coding",
+      "original_plan_mapping": "S00.2, S02.1",
+      "task_ids": [
+        "S00.04",
+        "S00.05",
+        "S02.01"
+      ],
+      "disposition": "Preserved provisional source and bounded offline evidence; actual native qualification and adoption prerequisites retained.",
+      "source_artifacts": [
+        "security-integration/ocr-capabilities.json",
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py",
+        "security-integration/tool-lock.json"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s00",
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "limitations": [
+        "A location or research pin is not passed execution, complete coverage or acceptance.",
+        "Unavailable/native/permission-dependent evidence remains explicit; candidate metadata cannot grant authority."
+      ]
+    },
+    {
+      "id": "REC02",
+      "recommendation": "Independent Trail of Bits and OWASP reasoning with license provenance",
+      "required_disposition": "Read-only adapted procedures, attributed, coverage-accounted",
+      "original_plan_mapping": "S00.4, S02.2\u2013S02.4",
+      "task_ids": [
+        "S00.07",
+        "S02.03",
+        "S02.04",
+        "S02.05"
+      ],
+      "disposition": "Preserved provisional source and bounded offline evidence; actual native qualification and adoption prerequisites retained.",
+      "source_artifacts": [
+        "security-integration/ocr-capabilities.json",
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py",
+        "security-integration/tool-lock.json"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s00",
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "limitations": [
+        "A location or research pin is not passed execution, complete coverage or acceptance.",
+        "Unavailable/native/permission-dependent evidence remains explicit; candidate metadata cannot grant authority."
+      ]
+    },
+    {
+      "id": "REC03",
+      "recommendation": "Original offline-scanner view versus sanitized model view",
+      "required_disposition": "Separate hashed/mapped views; all model reads mediated, no raw Git fallback",
+      "original_plan_mapping": "S01.1\u2013S01.2, S02.3",
+      "task_ids": [
+        "S01.01",
+        "S01.04",
+        "S01.05",
+        "S01.06",
+        "S01.V02",
+        "S02.04"
+      ],
+      "disposition": "Preserved provisional source and bounded offline evidence; actual native qualification and adoption prerequisites retained.",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py",
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01",
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "limitations": [
+        "A location or research pin is not passed execution, complete coverage or acceptance.",
+        "Unavailable/native/permission-dependent evidence remains explicit; candidate metadata cannot grant authority."
+      ]
+    },
+    {
+      "id": "REC04",
+      "recommendation": "Exit-zero partial scans, content ranges, change kinds, JSON values and context limits",
+      "required_disposition": "Key-only, truncated or missing content cannot count as full security coverage",
+      "original_plan_mapping": "S01.3\u2013S01.4, S02.1, S02.4, S04.5",
+      "task_ids": [
+        "S01.07",
+        "S01.08",
+        "S01.11",
+        "S02.01",
+        "S02.05",
+        "S02.06",
+        "S04.09",
+        "S04.V04"
+      ],
+      "disposition": "Preserved provisional source and bounded offline evidence; actual native qualification and adoption prerequisites retained.",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py",
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01",
+        "evidence/prior-stages.json#s02_s03",
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "limitations": [
+        "A location or research pin is not passed execution, complete coverage or acceptance.",
+        "Unavailable/native/permission-dependent evidence remains explicit; candidate metadata cannot grant authority."
+      ]
+    },
+    {
+      "id": "REC05",
+      "recommendation": "Opengrep local approved rules and head/release distinction",
+      "required_disposition": "No auto registry profile or assumed offline behavior",
+      "original_plan_mapping": "S03.1, S04.1\u2013S04.2",
+      "task_ids": [
+        "S03.02",
+        "S03.V01",
+        "S04.01",
+        "S04.03"
+      ],
+      "disposition": "Preserved provisional source and bounded offline evidence; actual native qualification and adoption prerequisites retained.",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/gitleaks.py",
+        "security-integration/s02-s03/ocr_security_adapters/opengrep.py",
+        "security-integration/s02-s03/ocr_security_adapters/osv.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03",
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "limitations": [
+        "A location or research pin is not passed execution, complete coverage or acceptance.",
+        "Unavailable/native/permission-dependent evidence remains explicit; candidate metadata cannot grant authority."
+      ]
+    },
+    {
+      "id": "REC06",
+      "recommendation": "Gitleaks CLI versus Action, full redaction",
+      "required_disposition": "CLI only, no raw-secret publication or live validation",
+      "original_plan_mapping": "S03.2",
+      "task_ids": [
+        "S03.03",
+        "S03.V02"
+      ],
+      "disposition": "Preserved provisional source and bounded offline evidence; actual native qualification and adoption prerequisites retained.",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/gitleaks.py",
+        "security-integration/s02-s03/ocr_security_adapters/opengrep.py",
+        "security-integration/s02-s03/ocr_security_adapters/osv.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "limitations": [
+        "A location or research pin is not passed execution, complete coverage or acceptance.",
+        "Unavailable/native/permission-dependent evidence remains explicit; candidate metadata cannot grant authority."
+      ]
+    },
+    {
+      "id": "REC07",
+      "recommendation": "OSV offline databases, freshness and no auto-fix",
+      "required_disposition": "Explicit offline qualification",
+      "original_plan_mapping": "S03.3, S04.1\u2013S04.2",
+      "task_ids": [
+        "S03.04",
+        "S03.V03",
+        "S04.01",
+        "S04.02"
+      ],
+      "disposition": "Preserved provisional source and bounded offline evidence; actual native qualification and adoption prerequisites retained.",
+      "source_artifacts": [
+        "security-integration/s02-s03/ocr_security_adapters/gitleaks.py",
+        "security-integration/s02-s03/ocr_security_adapters/opengrep.py",
+        "security-integration/s02-s03/ocr_security_adapters/osv.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s02_s03",
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "limitations": [
+        "A location or research pin is not passed execution, complete coverage or acceptance.",
+        "Unavailable/native/permission-dependent evidence remains explicit; candidate metadata cannot grant authority."
+      ]
+    },
+    {
+      "id": "REC08",
+      "recommendation": "Structured findings, deduplication and meaningful suppressions",
+      "required_disposition": "Retain provenance and uncertainty",
+      "original_plan_mapping": "S01.3, S03.4, S04.3\u2013S04.4",
+      "task_ids": [
+        "S01.07",
+        "S03.05",
+        "S04.04",
+        "S04.05",
+        "S04.08"
+      ],
+      "disposition": "Preserved provisional source and bounded offline evidence; actual native qualification and adoption prerequisites retained.",
+      "source_artifacts": [
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py",
+        "security-integration/s02-s03/ocr_security_adapters/gitleaks.py",
+        "security-integration/s02-s03/ocr_security_adapters/opengrep.py",
+        "security-integration/s02-s03/ocr_security_adapters/osv.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s01",
+        "evidence/prior-stages.json#s02_s03",
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "limitations": [
+        "A location or research pin is not passed execution, complete coverage or acceptance.",
+        "Unavailable/native/permission-dependent evidence remains explicit; candidate metadata cannot grant authority."
+      ]
+    },
+    {
+      "id": "REC09",
+      "recommendation": "Tool/update supply chain, data age, costs and no free-inference claim",
+      "required_disposition": "Pins, controlled acquisition, measured resources",
+      "original_plan_mapping": "S00.4, S02.5, S04.1\u2013S04.2",
+      "task_ids": [
+        "S00.07",
+        "S00.08",
+        "S02.08",
+        "S04.01",
+        "S04.02",
+        "S04.03"
+      ],
+      "disposition": "Preserved provisional source and bounded offline evidence; actual native qualification and adoption prerequisites retained.",
+      "source_artifacts": [
+        "security-integration/ocr-capabilities.json",
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py",
+        "security-integration/tool-lock.json"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s00",
+        "evidence/prior-stages.json#s02_s03",
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "limitations": [
+        "A location or research pin is not passed execution, complete coverage or acceptance.",
+        "Unavailable/native/permission-dependent evidence remains explicit; candidate metadata cannot grant authority."
+      ]
+    },
+    {
+      "id": "REC10",
+      "recommendation": "Candidate-controlled policy, rules, ignore layers and baseline suppression",
+      "required_disposition": "Independently approved external policy pinned for the run; candidate cannot weaken it",
+      "original_plan_mapping": "S00.1, S01.3, S02.1, S03.1\u2013S03.4, S04.3\u2013S04.5",
+      "task_ids": [
+        "S00.02",
+        "S01.09",
+        "S02.02",
+        "S02.V01",
+        "S03.05",
+        "S04.05",
+        "S04.09",
+        "S04.V02"
+      ],
+      "disposition": "Preserved provisional source and bounded offline evidence; actual native qualification and adoption prerequisites retained.",
+      "source_artifacts": [
+        "security-integration/ocr-capabilities.json",
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py",
+        "security-integration/s02-s03/ocr_security_adapters/gitleaks.py",
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/opengrep.py",
+        "security-integration/s02-s03/ocr_security_adapters/osv.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py",
+        "security-integration/tool-lock.json"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s00",
+        "evidence/prior-stages.json#s01",
+        "evidence/prior-stages.json#s02_s03",
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "limitations": [
+        "A location or research pin is not passed execution, complete coverage or acceptance.",
+        "Unavailable/native/permission-dependent evidence remains explicit; candidate metadata cannot grant authority."
+      ]
+    },
+    {
+      "id": "REC11",
+      "recommendation": "Hostile scanner findings and report content",
+      "required_disposition": "Schema-bounded inert data, contextual escaping and no executable/remote assets",
+      "original_plan_mapping": "S04.4\u2013S04.5",
+      "task_ids": [
+        "S04.06",
+        "S04.07",
+        "S04.08",
+        "S04.V03"
+      ],
+      "disposition": "Preserved provisional source and bounded offline evidence; actual native qualification and adoption prerequisites retained.",
+      "source_artifacts": [
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py"
+      ],
+      "evidence_locations": [
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "limitations": [
+        "A location or research pin is not passed execution, complete coverage or acceptance.",
+        "Unavailable/native/permission-dependent evidence remains explicit; candidate metadata cannot grant authority."
+      ]
+    },
+    {
+      "id": "REC12",
+      "recommendation": "Same draft preservation, sprint-level checks and single CodeRabbit batch",
+      "required_disposition": "Separate acceptance/preservation; root-only external actions",
+      "original_plan_mapping": "S05.1\u2013S05.5",
+      "task_ids": [
+        "S05.01",
+        "S05.02",
+        "S05.03",
+        "S05.04",
+        "S05.05",
+        "S05.06",
+        "B01",
+        "B03",
+        "B04"
+      ],
+      "disposition": "Preserved provisional source and bounded offline evidence; actual native qualification and adoption prerequisites retained.",
+      "source_artifacts": [
+        "security-integration/s04-s05/WORKFLOW.md",
+        "security-integration/s04-s05/ocr_security_gate/review_gate.py",
+        "security-integration/s04-s05/ocr_security_gate/workflow.py"
+      ],
+      "evidence_locations": [
+        "RUNBOOK.md#root-batch-gates",
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "limitations": [
+        "A location or research pin is not passed execution, complete coverage or acceptance.",
+        "Unavailable/native/permission-dependent evidence remains explicit; candidate metadata cannot grant authority."
+      ]
+    },
+    {
+      "id": "REC13",
+      "recommendation": "Betterleaks successor and stable/v2 flag trap",
+      "required_disposition": "Challenger, not automatic migration",
+      "original_plan_mapping": "S06.1, S06.4",
+      "task_ids": [
+        "S06.01",
+        "S06.04",
+        "S06.07",
+        "S06.V02",
+        "S06.QA"
+      ],
+      "disposition": "Explicitly deferred challenger/specialist with protocol; no selected implementation, acquisition or pilot.",
+      "source_artifacts": [
+        "decisions/betterleaks.json",
+        "decisions/catalog.json",
+        "decisions/optional-ledger.json",
+        "protocols/betterleaks.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "limitations": [
+        "A location or research pin is not passed execution, complete coverage or acceptance.",
+        "Unavailable/native/permission-dependent evidence remains explicit; candidate metadata cannot grant authority."
+      ]
+    },
+    {
+      "id": "REC14",
+      "recommendation": "Trivy breadth and incident/provenance/network controls",
+      "required_disposition": "Conditional gap-driven use",
+      "original_plan_mapping": "S06.2, S06.4",
+      "task_ids": [
+        "S06.02",
+        "S06.05",
+        "S06.07",
+        "S06.V03",
+        "S06.QA"
+      ],
+      "disposition": "Explicitly deferred challenger/specialist with protocol; no selected implementation, acquisition or pilot.",
+      "source_artifacts": [
+        "decisions/catalog.json",
+        "decisions/optional-ledger.json",
+        "decisions/trivy.json",
+        "protocols/trivy.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "limitations": [
+        "A location or research pin is not passed execution, complete coverage or acceptance.",
+        "Unavailable/native/permission-dependent evidence remains explicit; candidate metadata cannot grant authority."
+      ]
+    },
+    {
+      "id": "REC15",
+      "recommendation": "AgentShield config audit versus provider/deep/runtime modes",
+      "required_disposition": "Sanitized local-only default; other modes gated",
+      "original_plan_mapping": "S06.3\u2013S06.4",
+      "task_ids": [
+        "S06.03",
+        "S06.06",
+        "S06.07",
+        "S06.V04",
+        "S06.QA"
+      ],
+      "disposition": "Explicitly deferred challenger/specialist with protocol; no selected implementation, acquisition or pilot.",
+      "source_artifacts": [
+        "decisions/agentshield.json",
+        "decisions/catalog.json",
+        "decisions/optional-ledger.json",
+        "protocols/agentshield.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "limitations": [
+        "A location or research pin is not passed execution, complete coverage or acceptance.",
+        "Unavailable/native/permission-dependent evidence remains explicit; candidate metadata cannot grant authority."
+      ]
+    },
+    {
+      "id": "REC16",
+      "recommendation": "Semgrep CE as alternative, not duplicated baseline",
+      "required_disposition": "Adopt only if justified",
+      "original_plan_mapping": "S07.1",
+      "task_ids": [
+        "S07.01"
+      ],
+      "disposition": "Explicit alternative/deferred/future-project record; no adapter or execution adoption.",
+      "source_artifacts": [
+        "decisions/semgrep.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "limitations": [
+        "A location or research pin is not passed execution, complete coverage or acceptance.",
+        "Unavailable/native/permission-dependent evidence remains explicit; candidate metadata cannot grant authority."
+      ]
+    },
+    {
+      "id": "REC17",
+      "recommendation": "Bearer source-available licensing and network defaults",
+      "required_disposition": "Conditional specialist, terms/config resolved",
+      "original_plan_mapping": "S07.2",
+      "task_ids": [
+        "S07.02"
+      ],
+      "disposition": "Explicit alternative/deferred/future-project record; no adapter or execution adoption.",
+      "source_artifacts": [
+        "decisions/bearer.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "limitations": [
+        "A location or research pin is not passed execution, complete coverage or acceptance.",
+        "Unavailable/native/permission-dependent evidence remains explicit; candidate metadata cannot grant authority."
+      ]
+    },
+    {
+      "id": "REC18",
+      "recommendation": "CodeQL query license versus engine/private entitlement",
+      "required_disposition": "Entitlement and execution gates",
+      "original_plan_mapping": "S07.2",
+      "task_ids": [
+        "S07.03"
+      ],
+      "disposition": "Explicit alternative/deferred/future-project record; no adapter or execution adoption.",
+      "source_artifacts": [
+        "decisions/codeql.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "limitations": [
+        "A location or research pin is not passed execution, complete coverage or acceptance.",
+        "Unavailable/native/permission-dependent evidence remains explicit; candidate metadata cannot grant authority."
+      ]
+    },
+    {
+      "id": "REC19",
+      "recommendation": "Anthropic review Action API/filter/prompt-injection limits",
+      "required_disposition": "No activation without distinct approval",
+      "original_plan_mapping": "S07.3",
+      "task_ids": [
+        "S07.04"
+      ],
+      "disposition": "Explicit alternative/deferred/future-project record; no adapter or execution adoption.",
+      "source_artifacts": [
+        "decisions/anthropic_review.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "limitations": [
+        "A location or research pin is not passed execution, complete coverage or acceptance.",
+        "Unavailable/native/permission-dependent evidence remains explicit; candidate metadata cannot grant authority."
+      ]
+    },
+    {
+      "id": "REC20",
+      "recommendation": "Snyk agent/MCP analysis service and command/network contact",
+      "required_disposition": "Service/data/execution boundary unresolved by default",
+      "original_plan_mapping": "S07.3",
+      "task_ids": [
+        "S07.05"
+      ],
+      "disposition": "Explicit alternative/deferred/future-project record; no adapter or execution adoption.",
+      "source_artifacts": [
+        "decisions/snyk_agent_scan.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "limitations": [
+        "A location or research pin is not passed execution, complete coverage or acceptance.",
+        "Unavailable/native/permission-dependent evidence remains explicit; candidate metadata cannot grant authority."
+      ]
+    },
+    {
+      "id": "REC21",
+      "recommendation": "Strix and Shannon active exploitation/local-model caveats",
+      "required_disposition": "Separate authorized future pentest only",
+      "original_plan_mapping": "S07.4",
+      "task_ids": [
+        "S07.06",
+        "S07.07"
+      ],
+      "disposition": "Explicit alternative/deferred/future-project record; no adapter or execution adoption.",
+      "source_artifacts": [
+        "decisions/shannon.json",
+        "decisions/strix.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "limitations": [
+        "A location or research pin is not passed execution, complete coverage or acceptance.",
+        "Unavailable/native/permission-dependent evidence remains explicit; candidate metadata cannot grant authority."
+      ]
+    },
+    {
+      "id": "REC22",
+      "recommendation": "Synthetic positive/negative cases and whole-codebase coverage ledger",
+      "required_disposition": "Actual evidence, not rule counts or security scores",
+      "original_plan_mapping": "S01.4, S02.5, S03.5, S07.5\u2013S07.6",
+      "task_ids": [
+        "S01.10",
+        "S01.11",
+        "S02.07",
+        "S03.06",
+        "S07.10",
+        "S07.V01",
+        "S07.V03"
+      ],
+      "disposition": "Preserved fictional offline contracts plus authored combined scenarios; actual native whole-scope qualification remains held.",
+      "source_artifacts": [
+        "RUNBOOK.md",
+        "fixtures/scenarios.json",
+        "ocr_security_integration/entrypoint.py",
+        "ocr_security_integration/registry.py",
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py",
+        "security-integration/s02-s03/ocr_security_adapters/gitleaks.py",
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/opengrep.py",
+        "security-integration/s02-s03/ocr_security_adapters/osv.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py",
+        "tests/test_full_path.py"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json",
+        "evidence/prior-stages.json#s01",
+        "evidence/prior-stages.json#s02_s03"
+      ],
+      "limitations": [
+        "A location or research pin is not passed execution, complete coverage or acceptance.",
+        "Unavailable/native/permission-dependent evidence remains explicit; candidate metadata cannot grant authority."
+      ]
+    },
+    {
+      "id": "REC23",
+      "recommendation": "No runtime, legal, native or production certification",
+      "required_disposition": "Preserve limits; claims match performed checks",
+      "original_plan_mapping": "All acceptance records",
+      "task_ids": [
+        "S00.A",
+        "S01.A",
+        "S02.A",
+        "S03.A",
+        "S04.A",
+        "S05.A",
+        "S06.A",
+        "S07.A",
+        "B07"
+      ],
+      "disposition": "Five stages remain separate; no runtime/legal/native/application/production certification or target clearance inferred.",
+      "source_artifacts": [
+        "RUNBOOK.md",
+        "decisions/catalog.json",
+        "decisions/optional-ledger.json",
+        "ocr_security_integration/entrypoint.py",
+        "ocr_security_integration/registry.py",
+        "security-integration/ocr-capabilities.json",
+        "security-integration/s01/ocr_security/policy.py",
+        "security-integration/s01/ocr_security/snapshot.py",
+        "security-integration/s01/ocr_security/views.py",
+        "security-integration/s02-s03/ocr_security_adapters/gitleaks.py",
+        "security-integration/s02-s03/ocr_security_adapters/ocr.py",
+        "security-integration/s02-s03/ocr_security_adapters/opengrep.py",
+        "security-integration/s02-s03/ocr_security_adapters/osv.py",
+        "security-integration/s02-s03/ocr_security_adapters/reviewer.py",
+        "security-integration/s04-s05/WORKFLOW.md",
+        "security-integration/s04-s05/ocr_security_gate/evidence.py",
+        "security-integration/s04-s05/ocr_security_gate/gate.py",
+        "security-integration/s04-s05/ocr_security_gate/reports.py",
+        "security-integration/s04-s05/ocr_security_gate/review_gate.py",
+        "security-integration/s04-s05/ocr_security_gate/workflow.py",
+        "security-integration/tool-lock.json"
+      ],
+      "evidence_locations": [
+        "RUNBOOK.md#root-batch-gates",
+        "evidence/current-stage-state.json",
+        "evidence/prior-stages.json#s00",
+        "evidence/prior-stages.json#s01",
+        "evidence/prior-stages.json#s02_s03",
+        "evidence/prior-stages.json#s04_s05"
+      ],
+      "limitations": [
+        "A location or research pin is not passed execution, complete coverage or acceptance.",
+        "Unavailable/native/permission-dependent evidence remains explicit; candidate metadata cannot grant authority."
+      ]
+    }
+  ]
+}

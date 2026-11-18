@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ocr-security:s01:sprint-qualification-v1.schema.json",
+  "$comment": "Private evidence contract. Runtime stdlib validators additionally enforce authority, hashes, exact source identity and complete range accounting.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "kind": {
+      "const": "sprint-qualification"
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "repository": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "id": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "name",
+            "id"
+          ]
+        },
+        "base_commit": {
+          "type": "string",
+          "pattern": "^([0-9a-f]{40}|[0-9a-f]{64})$"
+        },
+        "head_commit": {
+          "type": "string",
+          "pattern": "^([0-9a-f]{40}|[0-9a-f]{64})$"
+        },
+        "frozen_diff_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "source_manifest_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "repository",
+        "base_commit",
+        "head_commit",
+        "frozen_diff_sha256",
+        "source_manifest_sha256"
+      ]
+    },
+    "policy_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "stage_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "implementation": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "independent_review": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "remote_preservation": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "applicable_validation": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "implementation",
+        "independent_review",
+        "remote_preservation",
+        "applicable_validation"
+      ]
+    },
+    "decision_ref_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "stages": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "implementation": {
+          "enum": [
+            "pending",
+            "complete",
+            "failed",
+            "held",
+            "not_assessed"
+          ]
+        },
+        "independent_review": {
+          "enum": [
+            "pending",
+            "complete",
+            "failed",
+            "held",
+            "not_assessed"
+          ]
+        },
+        "remote_preservation": {
+          "enum": [
+            "pending",
+            "complete",
+            "failed",
+            "held",
+            "not_assessed"
+          ]
+        },
+        "applicable_validation": {
+          "enum": [
+            "pending",
+            "complete",
+            "failed",
+            "held",
+            "not_assessed"
+          ]
+        },
+        "acceptance": {
+          "enum": [
+            "pending",
+            "complete",
+            "failed",
+            "held",
+            "not_assessed"
+          ]
+        }
+      },
+      "required": [
+        "implementation",
+        "independent_review",
+        "remote_preservation",
+        "applicable_validation",
+        "acceptance"
+      ]
+    },
+    "sprint_qualification": {
+      "const": "QUALIFIED_S01"
+    },
+    "target_security_acceptance": {
+      "const": "NOT_ASSESSED"
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "subject",
+    "policy_sha256",
+    "stage_refs",
+    "decision_ref_sha256",
+    "stages",
+    "sprint_qualification",
+    "target_security_acceptance"
+  ]
+}

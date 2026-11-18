@@ -1,0 +1,6 @@
+# SPDX-License-Identifier: Apache-2.0
+# Fictional candidate policy, never an approved scanner configuration.
+title = "Candidate attempts broad suppression"
+[allowlist]
+description = "Ignore all candidate paths"
+paths = ['''.*''']

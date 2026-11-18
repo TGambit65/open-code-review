@@ -1,0 +1,7 @@
+<script>alert("fictional-only")</script>
+<img src="https://example.invalid/track" onerror="fictional()">
+[jump](javascript:fictional())
+![remote](https://example.invalid/image)
+```
+# Breakout attempt
+[REDACTED]

@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "kind": "deferred-specialist-qualification-protocol",
+  "tool": "betterleaks",
+  "task_id": "S06.01",
+  "state": "NOT_RUN",
+  "selected": false,
+  "execute": false,
+  "after_preservation": true,
+  "proposed_version": "v1.9.0",
+  "scope": "Stable challenger comparison only after preservation; baseline Gitleaks remains unchanged.",
+  "prerequisites": [
+    "Current verified v1.9.0 binary/rule/license/provenance receipts.",
+    "Approved synthetic comparison scope and exact execution authority after preservation.",
+    "Identical frozen inputs, independent seeded expectations, baseline Gitleaks pins and measured coverage/false-positive/resource tradeoff.",
+    "Separate qualification for any v2 version/environment/flag migration."
+  ],
+  "prohibited_modes": [
+    "credential_validation",
+    "network",
+    "provider_calls",
+    "credential_testing",
+    "implicit_v2_migration",
+    "analysis",
+    "revocation",
+    "remote_account_enumeration"
+  ],
+  "inputs": [
+    "Exact approved repository/base/head/frozen-diff identity.",
+    "Positive and negative fictional seeds with expected detector/rule outcomes.",
+    "Same approved file/change/blob/range denominator and limits for baseline and challenger.",
+    "Sanitized selected configuration only for AgentShield; approved scanner originals remain isolated from models."
+  ],
+  "metrics": [
+    "Unique independently confirmed findings beyond baseline.",
+    "False positives and missed seeded positives against independently fixed expectations.",
+    "Complete/partial/skipped file and original range coverage.",
+    "Wall and CPU seconds, peak resident bytes, bounded output bytes and timeout/exit status."
+  ],
+  "acceptance": "Additional useful coverage and acceptable false-positive/resource cost must be evidenced; no threshold or benchmark outcome is invented here. Target clearance remains separate.",
+  "receipts": [
+    "Exact source/tool/rule/database/policy/transformation digests and independent authority.",
+    "Actual command/environment/profile identity and result/time/actor/artifact location.",
+    "Native egress/credential/mode controls, complete denominator accounting and independent findings disposition."
+  ],
+  "current_results": [],
+  "unavailable_result": "NOT_QUALIFIED; keep deferred and baseline unchanged.",
+  "documented_version_controls": [
+    "Stable v1.9.0 --validation defaults false; require validation explicitly off in any future qualified profile.",
+    "No validation, analysis, revocation or remote-account enumeration.",
+    "v1 -v is verbose; v2 -v performs credential validation. v2 --validate=false and --analyze=false require a separate version/environment/flag qualification, not silent migration."
+  ],
+  "research_source": {
+    "source_repository": "betterleaks/betterleaks",
+    "source_url": "https://github.com/betterleaks/betterleaks/commit/81aff7a638638aae3a659845d089043e1d8fe9ac",
+    "research_commit": "81aff7a638638aae3a659845d089043e1d8fe9ac",
+    "research_release": "v1.9.0",
+    "research_state": "RESEARCH_ONLY_DEFERRED_NO_ADOPTION",
+    "binary_sha256": null,
+    "qualification_limit": "Historical research identity only; not current asset verification, endorsement, entitlement or execution permission."
+  },
+  "thresholds": "Independent owner-approved thresholds fixed before any comparison; none adopted here."
+}

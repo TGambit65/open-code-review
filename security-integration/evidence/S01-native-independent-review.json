@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "kind": "S01-independent-native-failure-evidence-review",
+  "at": "2026-11-01T20:18:58.650644+00:00",
+  "reviewer_role": "independent implementation reviewer",
+  "reviewed_matrix_sha256": "63d631c158c56ff98fc2212d9b9464738197ebfcbf3c2502b69ad97d315cc45e",
+  "outer_outcome_sha256": "112e032bcd83be2d9d9ea17ebc15cd06b851e108f67464979469eb0c62b18084",
+  "inner_outcomes_sha256": "3cc63e019ea95eda704fd1bf2b29ac6c6576ee2865b0b2fa6124b7df3d3c957d",
+  "execution_set_sha256": "e3c62b2e9c06cf4090017845262668d50676d1f371725585a1b8e2412b55e0af",
+  "source_head": "b25b7439fbfef1732425a11f1efe050708a12402",
+  "source_manifest_sha256": "17c92db68f2f537f186196034948898b4ecbe973a6e5bd2ada03e77e4461fe2a",
+  "source_and_runtime_bindings_verified": true,
+  "source_unchanged": true,
+  "backend_attempts": 1,
+  "backend_exit_code": 1,
+  "backend_elapsed_ms": 15,
+  "outer_exit_code": 1,
+  "outer_elapsed_ms": 136,
+  "first_case": "record",
+  "first_case_outcome": "failed_required_setup",
+  "successful_fixture_executions_demonstrated": 0,
+  "successor_cases_unrun": [
+    "containment",
+    "memory",
+    "file",
+    "cpu",
+    "wall",
+    "flood",
+    "seventeen"
+  ],
+  "termination": "completed_as_recorded_no_uncertain_termination",
+  "evidence_complete": true,
+  "all_passed": false,
+  "diagnostic_assessment": {
+    "observed": "Required route-netlink socket creation during backend loopback setup returned Operation not permitted.",
+    "static_ordering": "Frozen bootstrap does not install the supplied filter; version-correlated upstream backend loopback setup precedes supplied seccomp installation. No S01 filter-before-setup defect is supported.",
+    "inference": "Consistent with an inherited/platform setup restriction. Exact kernel, filter, LSM, container or capability mechanism is not established.",
+    "limits": "No reproducible binary-to-upstream build attestation, backend syscall trace or additional probe; later setup and fixture behavior remain unproved.",
+    "primary_sources": [
+      "https://github.com/containers/bubblewrap/blob/v0.12.0/bubblewrap.c#L3207-L3208",
+      "https://github.com/containers/bubblewrap/blob/v0.12.0/bubblewrap.c#L3398-L3512",
+      "https://github.com/containers/bubblewrap/blob/v0.12.0/network.c#L150-L156"
+    ]
+  },
+  "validation_disposition": {
+    "S01.V01": "FAILED_REQUIRED_SETUP_NOT_QUALIFIED",
+    "S01.V02": "PARTIAL_STDLIB_PASSED_NATIVE_RECORDING_FAILED",
+    "S01.V03": "PRIOR_STDLIB_EVIDENCE_CORROBORATED",
+    "S01.V04": "PRIOR_STDLIB_EVIDENCE_CORROBORATED"
+  },
+  "publication_recommendation": "Root may preserve the exact sanitized failed/unrun matrix with this independent attestation under S01.U. Retain private evidence privately. Pending-review labels in the matrix are historical preparation-time status.",
+  "public_matrix_hygiene": "No private paths, coordination content, credentials, secret seed values or raw original bytes identified.",
+  "S01_A": "HELD",
+  "S02_F": "INELIGIBLE",
+  "target_security_acceptance": "NOT_ASSESSED",
+  "reviewer_reran_or_probed": false,
+  "product_correction_supported_by_this_failure": false,
+  "authorizes_retry_fallback_settings_change_or_other_execution": false
+}

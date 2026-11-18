@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "kind": "update-manifest-prerequisites",
+  "state": "NOT_ADOPTED",
+  "approved_set_sha256": null,
+  "previous_approved_set_sha256": null,
+  "assets": [],
+  "missing": [
+    "Current externally approved binary/rule/database identities and verification/provenance/license receipts.",
+    "Previous approved set identity if rollback is requested.",
+    "Exact dataset creation and expiry records."
+  ],
+  "analysis_can_acquire": false,
+  "execution_enabled": false,
+  "note": "This prerequisite record is intentionally not accepted by the approved-offline-update-set loader; no production pins are invented."
+}

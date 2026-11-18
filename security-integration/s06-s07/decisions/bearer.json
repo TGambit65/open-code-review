@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "kind": "proposed-alternative-disposition",
+  "tool": "bearer",
+  "task_id": "S07.02",
+  "decision": "defer",
+  "implementation_selected": false,
+  "registration_enabled": false,
+  "qualification": "NOT_QUALIFIED",
+  "execution_authorized": false,
+  "reason": [
+    "No distinct adopted and qualified scope for this candidate is supplied.",
+    "The stated tool-specific licensing, privacy, execution and cost prerequisites remain unresolved."
+  ],
+  "prohibited_modes": [
+    "default_rule_download",
+    "version_metadata",
+    "git_base_fetch",
+    "unapproved_hosted_service"
+  ],
+  "reopen_conditions": [
+    "Demonstrate supported-language privacy/data-flow coverage beyond baseline.",
+    "Documented API bypass needs both --disable-version-check and --disable-default-rules, with --external-rule-dir.",
+    "Default api.cycode.com metadata, rule downloads and differential Git-base fetch require separate controls.",
+    "Exact owner-approved scope, current artifact/license/source evidence and separate execution authority are required."
+  ],
+  "availability_state": "research_only_no_current_verified_asset_receipts_supplied_for_this_scope",
+  "asset_receipts": [],
+  "actual_measurements": [],
+  "evidence_sources": [
+    "security-integration/tool-lock.json#deferred_research_candidates",
+    "https://github.com/Bearer/bearer/commit/668f5df05042088125d83d197252b5a8e78422df",
+    "traceability.json#REC17"
+  ],
+  "adoption_authority": "none_supplied",
+  "maintenance": "Reassess on version/license/data/command/provider/network change; never auto-adopt.",
+  "research_provenance": {
+    "source_repository": "Bearer/bearer",
+    "source_url": "https://github.com/Bearer/bearer/commit/668f5df05042088125d83d197252b5a8e78422df",
+    "research_commit": "668f5df05042088125d83d197252b5a8e78422df",
+    "research_release": "v2.1.3",
+    "research_state": "RESEARCH_ONLY_DEFERRED_NO_ADOPTION",
+    "binary_sha256": null,
+    "qualification_limit": "Historical research identity only; not current asset verification, endorsement, entitlement or execution permission."
+  },
+  "license_observed": "Elastic License 2.0",
+  "license_limit": "CLI/default rules are source-available; hosted/managed substantial functionality is restricted. Resolve use-case terms before selection.",
+  "explicit_controls": [
+    "Demonstrate supported-language privacy/data-flow coverage beyond baseline.",
+    "Documented API bypass needs both --disable-version-check and --disable-default-rules, with --external-rule-dir.",
+    "Default api.cycode.com metadata, rule downloads and differential Git-base fetch require separate controls."
+  ],
+  "recommendation_id": "REC17"
+}

@@ -1,0 +1,159 @@
+{
+  "schema_version": "1.0",
+  "kind": "S01-sanitized-native-validation-matrix",
+  "at": "2026-11-01T20:14:18.733470+00:00",
+  "state": "NATIVE_QUALIFICATION_FAILED_SETUP_DENIED_SEVEN_UNRUN",
+  "repository": {
+    "name": "TGambit65/open-code-review",
+    "id": 1434220736
+  },
+  "tested_source_head": "b25b7439fbfef1732425a11f1efe050708a12402",
+  "tested_source_tree": "b4fcc9bbfab4bb4afc4a48679933d5e629b3ca60",
+  "source_manifest_sha256": "17c92db68f2f537f186196034948898b4ecbe973a6e5bd2ada03e77e4461fe2a",
+  "independent_source_review_sha256": "3a2e389e3ab09a6f8945d4c867ac88d0f3bb0cf9ba10136652ac23872b353b81",
+  "source_reverified_unchanged": true,
+  "stdlib": {
+    "tests_passed": 32,
+    "matrix_sha256": "349de722bab2405c809af76475b35daaefdd6dd6dfcd7f00ed7f2f247eac7afe",
+    "status": "PASSED_STDLIB_ONLY"
+  },
+  "compile": {
+    "status": "exit_zero",
+    "receipt_sha256": "49107d20268c228d99f0e2ec34352c0ee167da107c977504db5860fda18e70d2",
+    "artifact_sha256": "30da1add7c54902ef7f8fd48a9db468488783d948d2550bcc8ea7c712691a3c6",
+    "artifact_bytes": 10064,
+    "runtime_qualification": false
+  },
+  "prepare": {
+    "status": "exit_zero",
+    "receipt_sha256": "3a3aec189dfb0c3fd48949b9dcb1289fa40297ffa274e04373fedc0fdafe9c42",
+    "requests_sha256": "985a0aac4f7d49df4b4cbfff74032a07529397e1e8d4018c39dcfc283f79396c"
+  },
+  "native": {
+    "admission_sha256": "2e1dbfabddae69a51a1dbb7d95c336cc66a2154de69ca07b73b3925c08e2dd7f",
+    "execution_set_sha256": "e3c62b2e9c06cf4090017845262668d50676d1f371725585a1b8e2412b55e0af",
+    "outer_receipt_sha256": "112e032bcd83be2d9d9ea17ebc15cd06b851e108f67464979469eb0c62b18084",
+    "outer_exit_code": 1,
+    "outer_elapsed_ms": 136,
+    "inner_report_sha256": "3cc63e019ea95eda704fd1bf2b29ac6c6576ee2865b0b2fa6124b7df3d3c957d",
+    "evidence_complete": true,
+    "all_passed": false,
+    "backend_attempts": 1,
+    "successful_fixture_executions_demonstrated": 0,
+    "backend_exit_code": 1,
+    "backend_elapsed_ms": 15,
+    "termination": "process_completed_reaped",
+    "failure_class": "required_backend_setup_denied",
+    "sanitized_diagnostic": "During loopback setup, bwrap failed to create a NETLINK_ROUTE socket: Operation not permitted.",
+    "diagnostic_scope": "Exact observed setup failure; no attribution to a particular kernel/container/security setting is established.",
+    "record_stdout_bytes": 0,
+    "record_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "record_stderr_sha256": "31c2cb0dffdeb9049fa2269e24af62df15e4161d4f752a648faf9630259725fe",
+    "cases": [
+      {
+        "mode": "record",
+        "outcome": "failed",
+        "code": "process_failed",
+        "execution_state": "process_completed",
+        "executed_backend_invocation": true,
+        "snapshot_id": "ce13c2396731b0d9ac17e073d0d2b5e235ec940a4f508ae9cf82d072d52c0afb",
+        "case_sha256": "f234e5c59773be946d06d3d64daf49e99d069deb034f91b91c7ec25721750260",
+        "outcome_sha256": "fa6bf6b7407efdd62cd28f75f9ba80f88fae061e641e6778fc7b7a64038cf6d4"
+      },
+      {
+        "mode": "containment",
+        "outcome": "unrun",
+        "code": "prior_case_incomplete",
+        "execution_state": "not_started",
+        "executed_backend_invocation": false,
+        "snapshot_id": null,
+        "case_sha256": "8401b625462a2087a6e61ed4d7c2a42616cdfb8769a1bc6dcc34eed222031acb",
+        "outcome_sha256": "7c5cf001dcb3fd4a1ee6d5550a29446f2e3802f53d58b8a701df061db0f21fa3"
+      },
+      {
+        "mode": "memory",
+        "outcome": "unrun",
+        "code": "prior_case_incomplete",
+        "execution_state": "not_started",
+        "executed_backend_invocation": false,
+        "snapshot_id": null,
+        "case_sha256": "0a031c205ce7a6a3eda3a53ff649bc64349e801e2a9068bffb59a2d373a5876f",
+        "outcome_sha256": "1a7f52439179208ae7a2f502182484c5f3733c24a5aa56b7773e5f100ed34dfe"
+      },
+      {
+        "mode": "file",
+        "outcome": "unrun",
+        "code": "prior_case_incomplete",
+        "execution_state": "not_started",
+        "executed_backend_invocation": false,
+        "snapshot_id": null,
+        "case_sha256": "99dd83b5a59d05de408fc95827194526ce5f6bdca6ef421576bf84f7b2407816",
+        "outcome_sha256": "5634f958ed4bb1ea4d764b88618541d414c565489f7f6a925912cef0ad49762a"
+      },
+      {
+        "mode": "cpu",
+        "outcome": "unrun",
+        "code": "prior_case_incomplete",
+        "execution_state": "not_started",
+        "executed_backend_invocation": false,
+        "snapshot_id": null,
+        "case_sha256": "cdd9e8664fb724ce96098da62c905ef0443feda3f597db2d1fba61f307b58052",
+        "outcome_sha256": "0a19f738d34e6046be56057bd95f9a2623a29fc2f7995f337e1a267e8f1868e8"
+      },
+      {
+        "mode": "wall",
+        "outcome": "unrun",
+        "code": "prior_case_incomplete",
+        "execution_state": "not_started",
+        "executed_backend_invocation": false,
+        "snapshot_id": null,
+        "case_sha256": "0b40db6c6a78dd8aa5b46cd2051fad93f73d5105f3c4a5a8f3158d075eb93e4b",
+        "outcome_sha256": "ffbc2bd72aef93f69d19c35869408750a272f1205920e8ee238710860223a4ad"
+      },
+      {
+        "mode": "flood",
+        "outcome": "unrun",
+        "code": "prior_case_incomplete",
+        "execution_state": "not_started",
+        "executed_backend_invocation": false,
+        "snapshot_id": null,
+        "case_sha256": "e849604e88e8a27f810bd1ae23ac44c5ae5f694e6b8b6a6ce94ffa89ca2cc6d6",
+        "outcome_sha256": "a825ec9d6da1a20187aa6497d060f5ab0f6f3eae444bddf26c39c2b9dfc9b444"
+      },
+      {
+        "mode": "seventeen",
+        "outcome": "unrun",
+        "code": "prior_case_incomplete",
+        "execution_state": "not_started",
+        "executed_backend_invocation": false,
+        "snapshot_id": null,
+        "case_sha256": "325c7ee199cc9e850518a91a7240334473a5c549316b9cb6284c900914936bd4",
+        "outcome_sha256": "7d10ef065ba179ae6bff9aa602c9222dc4232412ae4d3deae5d52919cde05ab6"
+      }
+    ],
+    "retries": 0,
+    "escalations": 0,
+    "fallbacks": 0,
+    "settings_changes": 0
+  },
+  "validation_ids": {
+    "S01.V01": "FAILED_REQUIRED_SANDBOX_SETUP_NOT_QUALIFIED",
+    "S01.V02": "PARTIAL_STDLIB_PASSED_NATIVE_RECORDING_FAILED",
+    "S01.V03": "STDLIB_PASSED_SEPARATE_INDEPENDENT_EVIDENCE_REVIEW",
+    "S01.V04": "STDLIB_PASSED_SEPARATE_INDEPENDENT_EVIDENCE_REVIEW"
+  },
+  "five_stages": {
+    "implementation": "complete",
+    "independent_review": "complete_for_source",
+    "remote_preservation": "verified_for_source",
+    "applicable_validation": "incomplete_required_native_failure",
+    "acceptance": "held"
+  },
+  "source_corrections": "None supported solely by this observed setup denial; no source or policy edit made.",
+  "review_status": "Independent review of native evidence pending",
+  "S01_U": "Root may preserve independently reviewed failed/unrun outcomes; no pass required to preserve evidence.",
+  "S01_A": "HELD",
+  "S02_F": "INELIGIBLE_REQUIRES_S01_A",
+  "next_action": "Independent evidence review and root same-DRAFT failed/unrun evidence preservation. Any future native action requires separate exact authority and materially relevant reconciliation; no retry or host-security alteration is authorized.",
+  "target_security_acceptance": "NOT_ASSESSED"
+}

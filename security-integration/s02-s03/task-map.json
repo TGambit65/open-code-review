@@ -1,0 +1,351 @@
+{
+  "kind": "combined-task-source-map",
+  "original_task_count": 38,
+  "tasks": [
+    {
+      "id": "S02.F",
+      "state": "SOURCE_ONLY_SEQUENCE_AMENDED",
+      "artifacts": [
+        "scope.json",
+        "SEQUENCING-AMENDMENT.md"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S02.01",
+      "state": "PROVISIONAL_SOURCE_CORRECTED_INDEPENDENT_CYCLE2_PENDING",
+      "artifacts": [
+        "ocr_security_adapters/ocr.py",
+        "ocr_security_adapters/projection.py",
+        "ocr_security_adapters/boundary.py",
+        "tests/test_review_binding_regressions.py"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S02.02",
+      "state": "PROVISIONAL_SOURCE_CORRECTED_INDEPENDENT_CYCLE2_PENDING",
+      "artifacts": [
+        "ocr_security_adapters/effective_policy.py",
+        "ocr_security_adapters/layout.py",
+        "tests/test_review_binding_regressions.py",
+        "tests/test_semantic_fixtures.py"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S02.03",
+      "state": "AUTHORED_PROVISIONAL_NOT_REVIEWED_OR_QUALIFIED",
+      "artifacts": [
+        "reviewer/differential-review.md",
+        "reviewer/false-positive-challenge.md",
+        "reviewer/security-checklist.md",
+        "THIRD-PARTY-NOTICES.md"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S02.04",
+      "state": "PROVISIONAL_SOURCE_CORRECTED_INDEPENDENT_CYCLE2_PENDING",
+      "artifacts": [
+        "ocr_security_adapters/reviewer.py",
+        "tests/test_review_binding_regressions.py"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S02.05",
+      "state": "PROVISIONAL_SOURCE_CORRECTED_INDEPENDENT_CYCLE2_PENDING",
+      "artifacts": [
+        "ocr_security_adapters/reviewer.py",
+        "ocr_security_adapters/ocr.py",
+        "tests/test_review_binding_regressions.py"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S02.06",
+      "state": "PROVISIONAL_SOURCE_CORRECTED_INDEPENDENT_CYCLE2_PENDING",
+      "artifacts": [
+        "reviewer/security-checklist.md",
+        "tests/test_review_and_ocr.py",
+        "fixtures/semantic/authorization-before.json",
+        "fixtures/semantic/authorization-after.json",
+        "tests/test_semantic_fixtures.py"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S02.07",
+      "state": "PROVISIONAL_SOURCE_CORRECTED_INDEPENDENT_CYCLE2_PENDING",
+      "artifacts": [
+        "fixtures/cases.json",
+        "tests/test_review_and_ocr.py",
+        "fixtures/semantic/README.md",
+        "tests/test_semantic_fixtures.py"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S02.08",
+      "state": "AUTHORED_PROVISIONAL_NOT_REVIEWED_OR_QUALIFIED",
+      "artifacts": [
+        "ocr_security_adapters/reviewer.py",
+        "README.md"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S02.RB",
+      "state": "AUTHORED_PROVISIONAL_NOT_REVIEWED_OR_QUALIFIED",
+      "artifacts": [
+        "ROLLBACK.md",
+        "ocr_security_adapters/registry.py"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S02.M",
+      "state": "CORRECTED_COMPLETE_SOURCE_ENDPOINT_SEALED_CYCLE2_PENDING_UNTESTED",
+      "artifacts": [
+        "task-map.json"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S02.R",
+      "state": "NOT_STARTED_OR_HELD",
+      "artifacts": [
+        "VALIDATION.md"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S02.C",
+      "state": "NOT_STARTED_OR_HELD",
+      "artifacts": [
+        "VALIDATION.md"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S02.P",
+      "state": "NOT_STARTED_OR_HELD",
+      "artifacts": [
+        "VALIDATION.md"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S02.V01",
+      "state": "NOT_STARTED_OR_HELD",
+      "artifacts": [
+        "VALIDATION.md"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S02.V02",
+      "state": "NOT_STARTED_OR_HELD",
+      "artifacts": [
+        "VALIDATION.md"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S02.V03",
+      "state": "NOT_STARTED_OR_HELD",
+      "artifacts": [
+        "VALIDATION.md"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S02.U",
+      "state": "NOT_STARTED_OR_HELD",
+      "artifacts": [
+        "VALIDATION.md"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S02.A",
+      "state": "NOT_STARTED_OR_HELD",
+      "artifacts": [
+        "VALIDATION.md"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S03.F",
+      "state": "SOURCE_ONLY_SEQUENCE_AMENDED",
+      "artifacts": [
+        "scope.json",
+        "SEQUENCING-AMENDMENT.md"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S03.01",
+      "state": "AUTHORED_PROVISIONAL_NOT_REVIEWED_OR_QUALIFIED",
+      "artifacts": [
+        "asset-prerequisites.json",
+        "ocr_security_adapters/assets.py",
+        "THIRD-PARTY-NOTICES.md"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S03.01A",
+      "state": "DEFERRED_NO_ACQUISITION_AUTHORITY",
+      "artifacts": [
+        "asset-prerequisites.json"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S03.02",
+      "state": "PROVISIONAL_SOURCE_CORRECTED_INDEPENDENT_CYCLE2_PENDING",
+      "artifacts": [
+        "ocr_security_adapters/opengrep.py",
+        "tests/test_adapter_bindings.py"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S03.03",
+      "state": "PROVISIONAL_SOURCE_CORRECTED_INDEPENDENT_CYCLE2_PENDING",
+      "artifacts": [
+        "ocr_security_adapters/gitleaks.py",
+        "ocr_security_adapters/private_history.py",
+        "tests/test_adapter_bindings.py"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S03.04",
+      "state": "PROVISIONAL_SOURCE_CORRECTED_INDEPENDENT_CYCLE2_PENDING",
+      "artifacts": [
+        "ocr_security_adapters/osv.py",
+        "tests/test_adapter_bindings.py",
+        "tests/test_review_binding_regressions.py"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S03.05",
+      "state": "PROVISIONAL_SOURCE_CORRECTED_INDEPENDENT_CYCLE2_PENDING",
+      "artifacts": [
+        "ocr_security_adapters/normalization.py",
+        "ocr_security_adapters/boundary.py",
+        "tests/test_adapter_bindings.py"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S03.06",
+      "state": "PROVISIONAL_SOURCE_CORRECTED_INDEPENDENT_CYCLE2_PENDING",
+      "artifacts": [
+        "fixtures/cases.json",
+        "tests/test_baseline_adapters.py",
+        "tests/test_boundary_and_policy.py",
+        "fixtures/semantic/candidate-gitignore.txt",
+        "fixtures/semantic/candidate-gitleaksignore.txt",
+        "fixtures/semantic/candidate-gitleaks-policy.toml",
+        "tests/test_semantic_fixtures.py"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S03.RB",
+      "state": "AUTHORED_PROVISIONAL_NOT_REVIEWED_OR_QUALIFIED",
+      "artifacts": [
+        "ROLLBACK.md",
+        "ocr_security_adapters/registry.py"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S03.M",
+      "state": "CORRECTED_COMPLETE_SOURCE_ENDPOINT_SEALED_CYCLE2_PENDING_UNTESTED",
+      "artifacts": [
+        "task-map.json"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S03.R",
+      "state": "NOT_STARTED_OR_HELD",
+      "artifacts": [
+        "VALIDATION.md"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S03.C",
+      "state": "NOT_STARTED_OR_HELD",
+      "artifacts": [
+        "VALIDATION.md"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S03.P",
+      "state": "NOT_STARTED_OR_HELD",
+      "artifacts": [
+        "VALIDATION.md"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S03.V01",
+      "state": "NOT_STARTED_OR_HELD",
+      "artifacts": [
+        "VALIDATION.md"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S03.V02",
+      "state": "NOT_STARTED_OR_HELD",
+      "artifacts": [
+        "VALIDATION.md"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S03.V03",
+      "state": "NOT_STARTED_OR_HELD",
+      "artifacts": [
+        "VALIDATION.md"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S03.V04",
+      "state": "NOT_STARTED_OR_HELD",
+      "artifacts": [
+        "VALIDATION.md"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S03.U",
+      "state": "NOT_STARTED_OR_HELD",
+      "artifacts": [
+        "VALIDATION.md"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "S03.A",
+      "state": "NOT_STARTED_OR_HELD",
+      "artifacts": [
+        "VALIDATION.md"
+      ],
+      "accepted": false
+    }
+  ],
+  "no_native_execution": true,
+  "source_revision": "correction-1"
+}

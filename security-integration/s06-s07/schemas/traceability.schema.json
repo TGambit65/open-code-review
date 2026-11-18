@@ -1,0 +1,404 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Original recommendation and task accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "kind": {
+      "const": "recommendation-execution-traceability"
+    },
+    "original_contract_manifest_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "qualification": {
+      "const": "HELD"
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "enum": [
+              "S00.F",
+              "S00.01",
+              "S00.02",
+              "S00.03",
+              "S00.04",
+              "S00.04R",
+              "S00.05",
+              "S00.06",
+              "S00.07",
+              "S00.08",
+              "S00.RB",
+              "S00.M",
+              "S00.R",
+              "S00.C",
+              "S00.P",
+              "S00.V01",
+              "S00.V02",
+              "S00.U",
+              "S00.A",
+              "S01.F",
+              "S01.01",
+              "S01.02",
+              "S01.03",
+              "S01.04",
+              "S01.05",
+              "S01.06",
+              "S01.07",
+              "S01.08",
+              "S01.09",
+              "S01.10",
+              "S01.11",
+              "S01.12",
+              "S01.RB",
+              "S01.M",
+              "S01.R",
+              "S01.C",
+              "S01.P",
+              "S01.V01",
+              "S01.V02",
+              "S01.V03",
+              "S01.V04",
+              "S01.U",
+              "S01.A",
+              "S02.F",
+              "S02.01",
+              "S02.02",
+              "S02.03",
+              "S02.04",
+              "S02.05",
+              "S02.06",
+              "S02.07",
+              "S02.08",
+              "S02.RB",
+              "S02.M",
+              "S02.R",
+              "S02.C",
+              "S02.P",
+              "S02.V01",
+              "S02.V02",
+              "S02.V03",
+              "S02.U",
+              "S02.A",
+              "S03.F",
+              "S03.01",
+              "S03.01A",
+              "S03.02",
+              "S03.03",
+              "S03.04",
+              "S03.05",
+              "S03.06",
+              "S03.RB",
+              "S03.M",
+              "S03.R",
+              "S03.C",
+              "S03.P",
+              "S03.V01",
+              "S03.V02",
+              "S03.V03",
+              "S03.V04",
+              "S03.U",
+              "S03.A",
+              "S04.F",
+              "S04.01",
+              "S04.02",
+              "S04.03",
+              "S04.04",
+              "S04.05",
+              "S04.06",
+              "S04.07",
+              "S04.08",
+              "S04.08S",
+              "S04.09",
+              "S04.10",
+              "S04.RB",
+              "S04.M",
+              "S04.R",
+              "S04.C",
+              "S04.P",
+              "S04.V01",
+              "S04.V02",
+              "S04.V03",
+              "S04.V04",
+              "S04.U",
+              "S04.A",
+              "S05.F",
+              "S05.01",
+              "S05.02",
+              "S05.03",
+              "S05.04",
+              "S05.05",
+              "S05.06",
+              "S05.RB",
+              "S05.M",
+              "S05.R",
+              "S05.C",
+              "S05.P",
+              "S05.V01",
+              "S05.V02",
+              "S05.V03",
+              "S05.U",
+              "S05.A",
+              "S06.F",
+              "S06.01",
+              "S06.02",
+              "S06.03",
+              "S06.04",
+              "S06.05",
+              "S06.06",
+              "S06.07",
+              "S06.RB",
+              "S06.M",
+              "S06.R",
+              "S06.C",
+              "S06.P",
+              "S06.QA",
+              "S06.V01",
+              "S06.V02",
+              "S06.V03",
+              "S06.V04",
+              "S06.V05",
+              "S06.U",
+              "S06.A",
+              "S07.F",
+              "S07.01",
+              "S07.02",
+              "S07.03",
+              "S07.04",
+              "S07.05",
+              "S07.06",
+              "S07.07",
+              "S07.08",
+              "S07.09",
+              "S07.10",
+              "S07.RB",
+              "S07.M",
+              "S07.R",
+              "S07.C",
+              "S07.P",
+              "S07.V01",
+              "S07.V02",
+              "S07.V03",
+              "S07.U",
+              "S07.A",
+              "B01",
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B06",
+              "B07"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "applicability": {
+            "enum": [
+              "required",
+              "conditional"
+            ]
+          },
+          "condition": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "original_dependencies": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            },
+            "maxItems": 64,
+            "uniqueItems": true
+          },
+          "disposition": {
+            "enum": [
+              "preserved_provisional_source",
+              "source_authored",
+              "deferred_not_selected",
+              "qualification_held",
+              "root_batch_gate_pending",
+              "recorded_prior_scope"
+            ]
+          },
+          "source_artifacts": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            },
+            "maxItems": 32,
+            "uniqueItems": true
+          },
+          "evidence_locations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            },
+            "maxItems": 32,
+            "uniqueItems": true
+          },
+          "qualification": {
+            "const": "not_asserted_by_this_ledger"
+          },
+          "contract_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "applicability",
+          "condition",
+          "original_dependencies",
+          "disposition",
+          "source_artifacts",
+          "evidence_locations",
+          "qualification",
+          "contract_sha256"
+        ]
+      },
+      "minItems": 170,
+      "maxItems": 170
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "enum": [
+              "REC01",
+              "REC02",
+              "REC03",
+              "REC04",
+              "REC05",
+              "REC06",
+              "REC07",
+              "REC08",
+              "REC09",
+              "REC10",
+              "REC11",
+              "REC12",
+              "REC13",
+              "REC14",
+              "REC15",
+              "REC16",
+              "REC17",
+              "REC18",
+              "REC19",
+              "REC20",
+              "REC21",
+              "REC22",
+              "REC23"
+            ]
+          },
+          "recommendation": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "required_disposition": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "original_plan_mapping": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "task_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            },
+            "minItems": 1,
+            "maxItems": 64,
+            "uniqueItems": true
+          },
+          "disposition": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "source_artifacts": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            },
+            "minItems": 1,
+            "maxItems": 32,
+            "uniqueItems": true
+          },
+          "evidence_locations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            },
+            "minItems": 1,
+            "maxItems": 32,
+            "uniqueItems": true
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            },
+            "minItems": 1,
+            "maxItems": 32,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "id",
+          "recommendation",
+          "required_disposition",
+          "original_plan_mapping",
+          "task_ids",
+          "disposition",
+          "source_artifacts",
+          "evidence_locations",
+          "limitations"
+        ]
+      },
+      "minItems": 23,
+      "maxItems": 23
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "original_contract_manifest_sha256",
+    "qualification",
+    "tasks",
+    "recommendations"
+  ],
+  "$comment": "Local descriptive schema only. Runtime bounded validators do not fetch schemas, adopt policy or grant authority."
+}

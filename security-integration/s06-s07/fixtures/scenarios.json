@@ -1,0 +1,197 @@
+{
+  "schema_version": "1.0",
+  "kind": "authored-unrun-combined-qualification-scenarios",
+  "execution_performed": false,
+  "combined_entrypoint": "ocr_security_integration.entrypoint.evaluate_evidence",
+  "cases": [
+    {
+      "id": "safe-negative",
+      "category": "safe",
+      "expected_contract_result": "pass",
+      "requirement": "All four synthetic adapters bind the same snapshot, policy, sanitized transformation and independent fictional attestation.",
+      "source_test": "tests/test_full_path.py::test_safe_fixture_composes_ingestion_and_sanitized_public_boundary",
+      "status": "unrun",
+      "fixture_authority": "fictional_only",
+      "permitted_future_unit_scope": "Post-completion/review/preservation admitted Python in-memory contract checks only.",
+      "native_permissions": "Separately approved exact synthetic target/input, enforced offline profile, current verified assets, independent coverage and actual per-run receipts required; not granted here."
+    },
+    {
+      "id": "seeded-high",
+      "category": "positive",
+      "expected_contract_result": "with-findings",
+      "requirement": "A seeded High observation blocks the target while expected detector qualification remains a separate outcome.",
+      "source_test": "tests/test_full_path.py::test_seeded_high_is_not_a_passing_target",
+      "status": "unrun",
+      "fixture_authority": "fictional_only",
+      "permitted_future_unit_scope": "Post-completion/review/preservation admitted Python in-memory contract checks only.",
+      "native_permissions": "Separately approved exact synthetic target/input, enforced offline profile, current verified assets, independent coverage and actual per-run receipts required; not granted here."
+    },
+    {
+      "id": "exit-zero-no-review",
+      "category": "failure",
+      "expected_contract_result": "incomplete",
+      "requirement": "Exit zero without genuine independent current evidence cannot pass.",
+      "source_test": "tests/test_full_path.py::test_exit_zero_without_independent_evidence_is_incomplete",
+      "status": "unrun",
+      "fixture_authority": "fictional_only",
+      "permitted_future_unit_scope": "Post-completion/review/preservation admitted Python in-memory contract checks only.",
+      "native_permissions": "Separately approved exact synthetic target/input, enforced offline profile, current verified assets, independent coverage and actual per-run receipts required; not granted here."
+    },
+    {
+      "id": "missing-semantics",
+      "category": "coverage",
+      "expected_contract_result": "incomplete",
+      "requirement": "Complete native preview/rule selection is not separate full semantic review.",
+      "source_test": "tests/test_full_path.py::test_missing_semantic_review_native_exclusion_and_partial_are_incomplete",
+      "status": "unrun",
+      "fixture_authority": "fictional_only",
+      "permitted_future_unit_scope": "Post-completion/review/preservation admitted Python in-memory contract checks only.",
+      "native_permissions": "Separately approved exact synthetic target/input, enforced offline profile, current verified assets, independent coverage and actual per-run receipts required; not granted here."
+    },
+    {
+      "id": "native-exclusion",
+      "category": "coverage",
+      "expected_contract_result": "incomplete",
+      "requirement": "Every omitted/excluded file or original required range remains a gap.",
+      "source_test": "tests/test_full_path.py::test_missing_semantic_review_native_exclusion_and_partial_are_incomplete",
+      "status": "unrun",
+      "fixture_authority": "fictional_only",
+      "permitted_future_unit_scope": "Post-completion/review/preservation admitted Python in-memory contract checks only.",
+      "native_permissions": "Separately approved exact synthetic target/input, enforced offline profile, current verified assets, independent coverage and actual per-run receipts required; not granted here."
+    },
+    {
+      "id": "partial-output",
+      "category": "coverage",
+      "expected_contract_result": "incomplete",
+      "requirement": "Partial scan data cannot be reported as complete despite exit zero.",
+      "source_test": "tests/test_full_path.py::test_missing_semantic_review_native_exclusion_and_partial_are_incomplete",
+      "status": "unrun",
+      "fixture_authority": "fictional_only",
+      "permitted_future_unit_scope": "Post-completion/review/preservation admitted Python in-memory contract checks only.",
+      "native_permissions": "Separately approved exact synthetic target/input, enforced offline profile, current verified assets, independent coverage and actual per-run receipts required; not granted here."
+    },
+    {
+      "id": "expired-database",
+      "category": "failure",
+      "expected_contract_result": "incomplete",
+      "requirement": "Expired vulnerability data retains a stale/expired gap.",
+      "source_test": "tests/test_full_path.py::test_missing_semantic_review_native_exclusion_and_partial_are_incomplete",
+      "status": "unrun",
+      "fixture_authority": "fictional_only",
+      "permitted_future_unit_scope": "Post-completion/review/preservation admitted Python in-memory contract checks only.",
+      "native_permissions": "Separately approved exact synthetic target/input, enforced offline profile, current verified assets, independent coverage and actual per-run receipts required; not granted here."
+    },
+    {
+      "id": "malformed-output",
+      "category": "failure",
+      "expected_contract_result": "error",
+      "requirement": "Malformed output blocks acceptance and retains bounded digest-only custody.",
+      "source_test": "tests/test_full_path.py::test_malformed_scanner_retains_failure_without_raw_publication",
+      "status": "unrun",
+      "fixture_authority": "fictional_only",
+      "permitted_future_unit_scope": "Post-completion/review/preservation admitted Python in-memory contract checks only.",
+      "native_permissions": "Separately approved exact synthetic target/input, enforced offline profile, current verified assets, independent coverage and actual per-run receipts required; not granted here."
+    },
+    {
+      "id": "redaction",
+      "category": "privacy",
+      "expected_contract_result": "incomplete",
+      "requirement": "Original fictional secret stays private; sanitized excerpts retain original coverage limitations.",
+      "source_test": "tests/test_full_path.py::test_redacted_originals_never_reach_reports_or_status",
+      "status": "unrun",
+      "fixture_authority": "fictional_only",
+      "permitted_future_unit_scope": "Post-completion/review/preservation admitted Python in-memory contract checks only.",
+      "native_permissions": "Separately approved exact synthetic target/input, enforced offline profile, current verified assets, independent coverage and actual per-run receipts required; not granted here."
+    },
+    {
+      "id": "bundle-substitution",
+      "category": "privacy",
+      "expected_contract_result": "refused",
+      "requirement": "Another valid bundle with the same opaque ID cannot supply excerpts under the first decision.",
+      "source_test": "tests/test_full_path.py::test_changed_valid_bundle_cannot_replace_bound_views",
+      "status": "unrun",
+      "fixture_authority": "fictional_only",
+      "permitted_future_unit_scope": "Post-completion/review/preservation admitted Python in-memory contract checks only.",
+      "native_permissions": "Separately approved exact synthetic target/input, enforced offline profile, current verified assets, independent coverage and actual per-run receipts required; not granted here."
+    },
+    {
+      "id": "candidate-policy",
+      "category": "policy",
+      "expected_contract_result": "refused",
+      "requirement": "Candidate metadata cannot remove baseline adapters, weaken required severities or grant authority.",
+      "source_test": "tests/test_full_path.py::test_candidate_policy_cannot_drop_a_required_adapter",
+      "status": "unrun",
+      "fixture_authority": "fictional_only",
+      "permitted_future_unit_scope": "Post-completion/review/preservation admitted Python in-memory contract checks only.",
+      "native_permissions": "Separately approved exact synthetic target/input, enforced offline profile, current verified assets, independent coverage and actual per-run receipts required; not granted here."
+    },
+    {
+      "id": "report-parity",
+      "category": "report_usability",
+      "expected_contract_result": "identical_public_semantics",
+      "requirement": "JSON/Markdown/HTML contain the same inert public document; static string checks do not qualify a real renderer.",
+      "source_test": "tests/test_full_path.py::test_public_formats_have_semantic_parity_and_inert_markup",
+      "status": "unrun",
+      "fixture_authority": "fictional_only",
+      "permitted_future_unit_scope": "Post-completion/review/preservation admitted Python in-memory contract checks only.",
+      "native_permissions": "Separately approved exact synthetic target/input, enforced offline profile, current verified assets, independent coverage and actual per-run receipts required; not granted here."
+    },
+    {
+      "id": "disabled-rollback",
+      "category": "rollback",
+      "expected_contract_result": "not-run",
+      "requirement": "Disable integration only; retain standard OCR/evidence and an explicit missing-security-coverage notice.",
+      "source_test": "tests/test_full_path.py::test_no_evidence_and_rollback_do_not_invent_coverage",
+      "status": "unrun",
+      "fixture_authority": "fictional_only",
+      "permitted_future_unit_scope": "Post-completion/review/preservation admitted Python in-memory contract checks only.",
+      "native_permissions": "Separately approved exact synthetic target/input, enforced offline profile, current verified assets, independent coverage and actual per-run receipts required; not granted here."
+    },
+    {
+      "id": "optional-defer",
+      "category": "disposition",
+      "expected_contract_result": "NOT_QUALIFIED",
+      "requirement": "No selected optional adapter or pilot; all seven conditional task IDs remain accounted and unchecked.",
+      "source_test": "tests/test_dispositions_registry.py::test_seven_conditional_tasks_are_retained_not_selected",
+      "status": "unrun",
+      "fixture_authority": "fictional_only",
+      "permitted_future_unit_scope": "Post-completion/review/preservation admitted Python in-memory contract checks only.",
+      "native_permissions": "Separately approved exact synthetic target/input, enforced offline profile, current verified assets, independent coverage and actual per-run receipts required; not granted here."
+    },
+    {
+      "id": "final-evidence-binding",
+      "category": "qualification",
+      "expected_contract_result": "HELD",
+      "requirement": "Final independent evidence review binds exact earlier receipts after preservation/validation and never replaces the CodeRabbit gate.",
+      "source_test": "tests/test_qualification_traceability.py::test_final_review_requires_exact_complete_earlier_receipt_set",
+      "status": "unrun",
+      "fixture_authority": "fictional_only",
+      "permitted_future_unit_scope": "Post-completion/review/preservation admitted Python in-memory contract checks only.",
+      "native_permissions": "Separately approved exact synthetic target/input, enforced offline profile, current verified assets, independent coverage and actual per-run receipts required; not granted here."
+    },
+    {
+      "id": "complete-original-map",
+      "category": "traceability",
+      "expected_contract_result": "HELD",
+      "requirement": "All 170 original task IDs and REC01\u2013REC23 are mapped without treating locators as passed coverage.",
+      "source_test": "tests/test_qualification_traceability.py::test_all_170_tasks_and_23_recommendations_are_accounted_not_qualified",
+      "status": "unrun",
+      "fixture_authority": "fictional_only",
+      "permitted_future_unit_scope": "Post-completion/review/preservation admitted Python in-memory contract checks only.",
+      "native_permissions": "Separately approved exact synthetic target/input, enforced offline profile, current verified assets, independent coverage and actual per-run receipts required; not granted here."
+    }
+  ],
+  "future_actual_native_qualification": {
+    "state": "HELD",
+    "required": [
+      "Current S01 host/build/containment qualification.",
+      "Current S02/S03 native and sanitized semantic qualification.",
+      "Implemented independently qualified native orchestration and exact execution permission.",
+      "Complete repository/base/head/diff and file/change-kind/blob/original-range denominator.",
+      "Positive/negative true-positive/false-positive measurements plus CPU/wall/RSS/output/timeout observations.",
+      "Real sanitized report desktop/mobile/print readability and no-network/unsafe-rendering evidence.",
+      "Final different-context evidence review after current checks; separate root CodeRabbit batch gate."
+    ],
+    "target_clearance": "Separate S04 policy decision with evidenced High/Medium/Critical disposition; passing fixture qualification is not a clean target."
+  }
+}

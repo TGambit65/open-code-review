@@ -1,0 +1,456 @@
+{
+  "schema_version": "1.0",
+  "kind": "S00-post-preservation-validation-outcome-not-acceptance",
+  "started_at_utc": "2026-11-01T13:12:25.076845+00:00",
+  "completed_at_utc": "2026-11-01T13:12:25.296246+00:00",
+  "actor": "s00-foundation-validator-20261101",
+  "authority": "Root authorized only S00.V01/V02 after verified dedicated DRAFT preservation; no source edits during checks, no activation.",
+  "repository": "TGambit65/open-code-review",
+  "base_commit": "216dcf513593055a70165f793e96b52589d71b1b",
+  "preserved_head_commit": "179d1c45c260099155962c408882b71a28c105ad",
+  "preserved_head_tree": "24e09a712ffb17d356da468896c0d96c0cf1d9b0",
+  "draft_pr": "https://github.com/TGambit65/open-code-review/pull/2",
+  "branch": "security/integration-sprints-20261101",
+  "draft_verified": true,
+  "input_freeze": {
+    "manifest_sha256": "914a9682836dc38f1292db88b33564a83dc1847acfebc296cff5356191530a6c",
+    "full_additive_diff_sha256": "f48ee777cad11b4dd91171df3460e28b439a43208b53e17ec898db589efc8c61",
+    "original_input_files": [
+      {
+        "path": "security-integration/THIRD-PARTY-NOTICES.md",
+        "mode": "100644",
+        "change_kind": "added",
+        "base_blob": null,
+        "git_blob_sha1": "d87426e28a39fc09a2f6e528186baa38041b2b7d",
+        "sha256": "c562e4f75927fa88ba8ee85baed68d4572812d3d105c62dc5780e04418463d06",
+        "bytes": 7491,
+        "full_content_lines": 97
+      },
+      {
+        "path": "security-integration/authority-and-scope.md",
+        "mode": "100644",
+        "change_kind": "added",
+        "base_blob": null,
+        "git_blob_sha1": "029587a4a47fa42873e4fca8f116501434ba0e95",
+        "sha256": "64580ca5f7c321eec6f229010c8b5eb972e5746f13a70a8ec48723cc91322fbc",
+        "bytes": 12221,
+        "full_content_lines": 195
+      },
+      {
+        "path": "security-integration/ocr-capabilities.json",
+        "mode": "100644",
+        "change_kind": "added",
+        "base_blob": null,
+        "git_blob_sha1": "58ee952faa1a53703046d1ed2aadc5512c950d17",
+        "sha256": "60a25e66c0ac5380c9518fc323e6d06f5c1ad96a8537cc74e48e47e6da891b7b",
+        "bytes": 10753,
+        "full_content_lines": 256
+      },
+      {
+        "path": "security-integration/rollback.md",
+        "mode": "100644",
+        "change_kind": "added",
+        "base_blob": null,
+        "git_blob_sha1": "b973cc20461b2f1471ac2046c59ec96a444b29f2",
+        "sha256": "7bcdcc64dfbb7bc00919ad44818a86f417b0c86e2f1d5d92dd3975eae4d587fa",
+        "bytes": 4660,
+        "full_content_lines": 75
+      },
+      {
+        "path": "security-integration/scope.json",
+        "mode": "100644",
+        "change_kind": "added",
+        "base_blob": null,
+        "git_blob_sha1": "1f3eab7c0f9a5debd1e6294be8995c87ebeaae1d",
+        "sha256": "01488055752848d015f64ceed5e941011062a80f0bbd043087904ce39d4de729",
+        "bytes": 21551,
+        "full_content_lines": 526
+      },
+      {
+        "path": "security-integration/tool-lock.json",
+        "mode": "100644",
+        "change_kind": "added",
+        "base_blob": null,
+        "git_blob_sha1": "8190771cd303ba129e9c8ba6b883bf06e9087325",
+        "sha256": "c4a68fe6b04ba57bb000be386ba9d3e149f222a4b7a86a03245cda9926ba328f",
+        "bytes": 27692,
+        "full_content_lines": 514
+      }
+    ],
+    "transformed_target_input": {
+      "state": "NOT_APPLICABLE",
+      "reason": "No private target input or sanitizer; exact already-approved public inert projection only."
+    },
+    "scope_limit": "Six inert S00 baseline files only; not a full clone, product test suite or target-code security assessment."
+  },
+  "trusted_external_policy": {
+    "id": "ocr-security-local-harness-baseline-20261101-v2",
+    "sha256": "2a126b74f4789ef97c23ca4bb973503549d2e3c78243c170f5160659e0ea63ea",
+    "location": "Owner-controlled custody outside the candidate",
+    "candidate_may_adopt_or_weaken": false
+  },
+  "source_review": {
+    "status": "COMPLETE_CLEAN_FOR_EXACT_SIX_FILE_INPUT",
+    "clean_cycle": 1,
+    "reviewer_role": "s00-independent-reviewer-20261101",
+    "report_sha256": "643478fb2cc7ed82a2868859b58621b7624d42a9d61c7f801b350bca23337899",
+    "coverage_sha256": "70325884f42d681799cf642464e1878184ba80017fee3ec93dd2d5838d5f0874",
+    "full_content_files": 6,
+    "full_content_lines": 1663,
+    "skipped_files": 0,
+    "limit": "The original clean review covers only the exact original six-file input above. S00-E01 factual correction and this outcome receipt need current independent changed-content review; historical hashes are not rebound."
+  },
+  "tool": {
+    "native_release": "v1.13.3",
+    "source_commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
+    "binary_sha256": "843be0e56fdff0a5ca6f86c5866f942d6a372dff1c0ca19e7893d72495abf45c",
+    "binary_bytes": 56524962,
+    "version_stdout": "open-code-review v1.13.3 (375f64c) linux/amd64\nbuilt at: 2026-10-22T04:27:25Z\nhttps://github.com/alibaba/open-code-review",
+    "identity_before_and_after_matches": true,
+    "auto_updating_wrapper_used": false,
+    "rules": {
+      "origin": "Pinned native embedded generic JSON rule only, in isolated clean-home review projection",
+      "custom_project_global_rules_adopted": false,
+      "effective_rule": "Check JSON files for spelling errors in json-keys; ignore the content of json-values.",
+      "rule_stdout_sha256": "2e446f3c8235478c0e27226ab3e5ba06d0d9e3ff610a007c24acf6e68861bf4c",
+      "security_coverage_limit": "Generic key spelling is not JSON-value/security analysis; independent full-content review supplies the supplement."
+    },
+    "scanner_rules_or_databases": {
+      "state": "NOT_APPLICABLE",
+      "reason": "No scanner or database was used."
+    }
+  },
+  "execution_boundary": {
+    "private_locators": {
+      "PINNED_NATIVE": "Exact trusted absolute binary locator retained in raw external receipt; digest pinned above.",
+      "APPROVED_SIX_FILE_PROJECTION": "Existing root-approved private disposable Git projection containing exact six input files."
+    },
+    "synthetic_projection_base": "597f09d9864f31b8a4cdb6fe50f2e43dac8de175",
+    "synthetic_projection_is_actual_repository_history": false,
+    "projection_content_identical_to_preserved_input": true,
+    "fresh_environment": [
+      "Empty private HOME and XDG_CONFIG_HOME",
+      "No inherited credentials, provider variables or agent sockets",
+      "System/global Git config disabled; no real-repository settings changed",
+      "PATH limited to /usr/bin:/bin; stdin closed; no prompts"
+    ],
+    "resource_limits": {
+      "wall_seconds_per_command": 20,
+      "cpu_seconds_per_process": 10,
+      "stdout_stderr_file_bytes_each": 1048576,
+      "open_file_descriptors": 64
+    },
+    "limits": "Fresh empty HOME/XDG and no inherited credentials/environment; system/global Git config suppressed. Not a kernel egress sandbox, memory isolation proof or scanner execution qualification.",
+    "candidate_product_code_executed": false,
+    "native_capability_invocations": 7,
+    "commands": [
+      {
+        "id": "version",
+        "started_at_utc": "2026-11-01T13:12:25.135506+00:00",
+        "finished_at_utc": "2026-11-01T13:12:25.150144+00:00",
+        "exit_code": 0,
+        "timed_out": false,
+        "stdout_sha256": "bc329783a9573937008b1da255c83f1251ae68581f3fd5dcfe2ff6fa3fbf62f7",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_bytes": 122,
+        "stderr_bytes": 0,
+        "argv_with_private_locators_replaced": [
+          "PINNED_NATIVE",
+          "--version"
+        ]
+      },
+      {
+        "id": "help",
+        "started_at_utc": "2026-11-01T13:12:25.150382+00:00",
+        "finished_at_utc": "2026-11-01T13:12:25.158774+00:00",
+        "exit_code": 0,
+        "timed_out": false,
+        "stdout_sha256": "b3d395b69e0e076ec6fcc9ca7fca2a35e97b973f393befa1428cbf1fe53d00ec",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_bytes": 1076,
+        "stderr_bytes": 0,
+        "argv_with_private_locators_replaced": [
+          "PINNED_NATIVE",
+          "--help"
+        ]
+      },
+      {
+        "id": "delegate-help",
+        "started_at_utc": "2026-11-01T13:12:25.158944+00:00",
+        "finished_at_utc": "2026-11-01T13:12:25.167347+00:00",
+        "exit_code": 0,
+        "timed_out": false,
+        "stdout_sha256": "63b709fa01086c75fccb21958be00b83794c434969c1772e8bf0339b57be9613",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_bytes": 851,
+        "stderr_bytes": 0,
+        "argv_with_private_locators_replaced": [
+          "PINNED_NATIVE",
+          "delegate",
+          "--help"
+        ]
+      },
+      {
+        "id": "preview-help",
+        "started_at_utc": "2026-11-01T13:12:25.167505+00:00",
+        "finished_at_utc": "2026-11-01T13:12:25.175791+00:00",
+        "exit_code": 0,
+        "timed_out": false,
+        "stdout_sha256": "9f2cfbdab00c110748d507c9ab54467deb0a85f96e2385075408dff1818be64c",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_bytes": 1268,
+        "stderr_bytes": 0,
+        "argv_with_private_locators_replaced": [
+          "PINNED_NATIVE",
+          "delegate",
+          "preview",
+          "--help"
+        ]
+      },
+      {
+        "id": "rule-help",
+        "started_at_utc": "2026-11-01T13:12:25.175938+00:00",
+        "finished_at_utc": "2026-11-01T13:12:25.184423+00:00",
+        "exit_code": 0,
+        "timed_out": false,
+        "stdout_sha256": "f3ccc35eb315d0ed7176a31285ae7d2ed2f5a7839937836fb772e41f9cc18bb5",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_bytes": 1248,
+        "stderr_bytes": 0,
+        "argv_with_private_locators_replaced": [
+          "PINNED_NATIVE",
+          "delegate",
+          "rule",
+          "--help"
+        ]
+      },
+      {
+        "id": "preview-schema",
+        "started_at_utc": "2026-11-01T13:12:25.184640+00:00",
+        "finished_at_utc": "2026-11-01T13:12:25.217078+00:00",
+        "exit_code": 0,
+        "timed_out": false,
+        "stdout_sha256": "31a2958428599a9c094581b2b680fcfd98d602145c608a1255ecd644da0a5d74",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_bytes": 1291,
+        "stderr_bytes": 0,
+        "argv_with_private_locators_replaced": [
+          "PINNED_NATIVE",
+          "delegate",
+          "preview",
+          "--repo",
+          "APPROVED_SIX_FILE_PROJECTION",
+          "--format",
+          "json"
+        ]
+      },
+      {
+        "id": "rule-schema",
+        "started_at_utc": "2026-11-01T13:12:25.217311+00:00",
+        "finished_at_utc": "2026-11-01T13:12:25.233918+00:00",
+        "exit_code": 0,
+        "timed_out": false,
+        "stdout_sha256": "2e446f3c8235478c0e27226ab3e5ba06d0d9e3ff610a007c24acf6e68861bf4c",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_bytes": 415,
+        "stderr_bytes": 0,
+        "argv_with_private_locators_replaced": [
+          "PINNED_NATIVE",
+          "delegate",
+          "rule",
+          "--repo",
+          "APPROVED_SIX_FILE_PROJECTION",
+          "--format",
+          "json",
+          "--",
+          "security-integration/ocr-capabilities.json",
+          "security-integration/scope.json",
+          "security-integration/tool-lock.json"
+        ]
+      }
+    ]
+  },
+  "V01": {
+    "outcome": "PASS_WITH_EXPLICIT_SCOPE_LIMITS",
+    "executed": [
+      "Current direct-native SHA-256 and byte size before/after",
+      "--version",
+      "--help",
+      "delegate --help",
+      "delegate preview --help",
+      "delegate rule --help",
+      "delegate preview --format json on exact inert projection",
+      "delegate rule --format json on three JSON paths"
+    ],
+    "schema_observation": {
+      "schema_version": "1",
+      "mode": "workspace",
+      "total_paths": 6,
+      "selected_json_paths": 3,
+      "excluded_markdown_paths": 3,
+      "markdown_exclusion": "unsupported_ext",
+      "added_lines": 1663,
+      "deleted_lines": 0,
+      "all_required_fields_and_types_match_source": true,
+      "preview_denominator_reconciled_independently": true
+    },
+    "not_qualified": [
+      "Native extension API",
+      "Actual product/scanner execution",
+      "Effective isolation for future scanner inputs",
+      "Private target sanitization",
+      "Raw Git/source fallback",
+      "Provider/backend substitution",
+      "Signature/reproducible-build verification"
+    ]
+  },
+  "V02": {
+    "outcome": "PASS_WITH_EXPLICIT_SCOPE_LIMITS",
+    "checked": [
+      "Fresh PR2 draft/head/base and six-path remote readback",
+      "Preservation commit sole-parent ancestry and all original root tree object identities",
+      "All six exact remote blobs and bytes match independent source freeze",
+      "Distinct assigned roles, external policy/checklist/plan/compact-review pins",
+      "Allowed-path, suffix, source, license and deferred-component inventories",
+      "Rollback runbook consistency without executing rollback",
+      "Accepted source, projection and installed binary unchanged"
+    ],
+    "blocking_identity_authority_gaps": [],
+    "limits": [
+      "Partial source custody, not a full-codebase assessment",
+      "License provenance and unresolved holds, not legal clearance",
+      "No execution of source scripts, tests or rollback",
+      "Historical baseline status fields remain unchanged; this timestamped receipt records later actual outcomes",
+      "The 91 checks and seven native calls ran against original six-file hashes. Five later provenance-label corrections are separately enumerated below and were not rerun through native capability commands."
+    ]
+  },
+  "validation_check_summary": {
+    "passed": 91,
+    "failed": 0,
+    "receipt_schema": "Individual exact check IDs/outcomes/evidence are in hash-bound raw external receipt.",
+    "missing_or_skipped_required_bounded_checks": [],
+    "not_run_out_of_scope": [
+      "product test suites or builds",
+      "ocr review/scan",
+      "scanner or security enforcement",
+      "production/private target evaluation",
+      "installation/restoration",
+      "CI/hooks/settings changes",
+      "upstream submission",
+      "CodeRabbit request"
+    ]
+  },
+  "raw_receipt": {
+    "sha256": "e6bffa493d6a3b7cc13f64c3a698602377ffb39c068695fcf66cecd33ad6e1ab",
+    "validation_harness_sha256": "c0c600e8aa89b72b3e9f2aeca4327394b58b17eef4f136dee8081af37ce43474",
+    "artifact_location": "Owner-controlled external S00 validation evidence custody, keyed by this SHA-256; private paths omitted.",
+    "publication_transform": "Raw command locators and output artifact filesystem paths omitted/replaced by the two documented symbols. Raw stdout/stderr hashes retained; the exact unredacted local receipt stays private."
+  },
+  "evidence_scope": {
+    "new_outcome_artifact": "security-integration/evidence/S00-validation.json",
+    "purpose": "S00.U sanitized outcomes plus independently reviewed S00-E01 provenance correction; no adapter/runtime scope expansion.",
+    "original_six_product_files_modified_during_checks": false,
+    "post_validation_baseline_files_corrected": 5
+  },
+  "next_gate": "Different-context review of S00-E01 correction, complete corrected baseline and outcomes receipt; root preserves exact accepted correction/evidence; independent S00.A decision only after current review and verified remote preservation.",
+  "sprint_qualification": "NOT_YET_ACCEPTED",
+  "target_security_acceptance": "NOT_ASSESSED",
+  "security_coverage_installed": false,
+  "side_effects": {
+    "product_source_edits_during_checks": 0,
+    "scanner_executions": 0,
+    "provider_calls": 0,
+    "installations": 0,
+    "hooks_ci_settings_changes": 0,
+    "remote_mutations_by_validator": 0
+  },
+  "receipt_prepared_at_utc": "2026-11-01T13:21:22.273548+00:00",
+  "original_stage_state_at_validation_receipt_creation": {
+    "implementation_complete": true,
+    "independent_source_review_complete": true,
+    "source_preservation_verified": true,
+    "permitted_validation_checks_passed": true,
+    "validation_evidence_independent_review_complete": false,
+    "validation_evidence_preservation_verified": false,
+    "sprint_qualification_accepted": false
+  },
+  "post_validation_source_correction": {
+    "finding": "S00-E01",
+    "severity": "Medium/P2",
+    "authorized_scope": "Root authorized correction of source-history attribution only, preserving complete original validation receipts and without native check reruns.",
+    "fact": "The owned base commit/tree equal the upstream main observation; the three commits after v1.13.3 are existing upstream post-release commits, not fork-custom commits.",
+    "upstream_main_observation_at_utc": "2026-11-01T13:19:20Z",
+    "upstream_main_commit": "216dcf513593055a70165f793e96b52589d71b1b",
+    "upstream_main_tree": "6b033bd81da09095f4dfc1865fe50a1652ca5859",
+    "post_release_commit_shas": [
+      "9b0fab87539f5d305f7d5791c052100b69097588",
+      "cd8b55de72a4acb0126b1eaf2947b914058edd5e",
+      "216dcf513593055a70165f793e96b52589d71b1b"
+    ],
+    "primary_sources": [
+      "https://api.github.com/repos/alibaba/open-code-review/branches/main",
+      "https://github.com/alibaba/open-code-review/compare/375f64cd6f67a48a135da83cfcf59c52669a09cb...216dcf513593055a70165f793e96b52589d71b1b"
+    ],
+    "independently_captured_history_receipt_sha256": "9d1c014030561956d70a5358bcd0f9360d8578cc412de28638bb7ca47df131fe",
+    "author_primary_receipts": {
+      "upstream_main_sha256": "1e0882097f7721a600dbdbbbee68d9ce91b0eed4b7c833794711fc63d8997a98",
+      "pinned_comparison_sha256": "6c9ea2973f5344de87f23b30ec54e7fda9e6ab5422428d036ab757a9b6fc41cd"
+    },
+    "changed_files": [
+      {
+        "path": "security-integration/authority-and-scope.md",
+        "original_validated_sha256": "64580ca5f7c321eec6f229010c8b5eb972e5746f13a70a8ec48723cc91322fbc",
+        "corrected_sha256": "74d98aad3d5dab510447dc0637a6be110fec1ed2e957e400c86b56f2256a8acb",
+        "original_lines": 195,
+        "corrected_lines": 198,
+        "reason": "S00-E01 source-history attribution only: custom/fork-specific -> existing upstream post-release history."
+      },
+      {
+        "path": "security-integration/ocr-capabilities.json",
+        "original_validated_sha256": "60a25e66c0ac5380c9518fc323e6d06f5c1ad96a8537cc74e48e47e6da891b7b",
+        "corrected_sha256": "d971f16af17f9d2522ae54033df7277d27b5530082be3fbc9e3da8cdd3e5bea8",
+        "original_lines": 256,
+        "corrected_lines": 256,
+        "reason": "S00-E01 source-history attribution only: custom/fork-specific -> existing upstream post-release history."
+      },
+      {
+        "path": "security-integration/rollback.md",
+        "original_validated_sha256": "7bcdcc64dfbb7bc00919ad44818a86f417b0c86e2f1d5d92dd3975eae4d587fa",
+        "corrected_sha256": "519b716c1bc986c284f421e9a4cce3d74111850876909819894964fe554141c9",
+        "original_lines": 75,
+        "corrected_lines": 75,
+        "reason": "S00-E01 source-history attribution only: custom/fork-specific -> existing upstream post-release history."
+      },
+      {
+        "path": "security-integration/scope.json",
+        "original_validated_sha256": "01488055752848d015f64ceed5e941011062a80f0bbd043087904ce39d4de729",
+        "corrected_sha256": "16fb847251fa28872cdd63d91fd1ad3789e5c250de9b89acbcda9306a2236efb",
+        "original_lines": 526,
+        "corrected_lines": 526,
+        "reason": "S00-E01 source-history attribution only: custom/fork-specific -> existing upstream post-release history."
+      },
+      {
+        "path": "security-integration/tool-lock.json",
+        "original_validated_sha256": "c4a68fe6b04ba57bb000be386ba9d3e149f222a4b7a86a03245cda9926ba328f",
+        "corrected_sha256": "a707871d021c7479dea8a4d2f43567bafff602608590ad10c962c4df55e3f102",
+        "original_lines": 514,
+        "corrected_lines": 514,
+        "reason": "S00-E01 source-history attribution only: custom/fork-specific -> existing upstream post-release history."
+      }
+    ],
+    "unchanged_baseline_file": "security-integration/THIRD-PARTY-NOTICES.md",
+    "no_runtime_change": true,
+    "unchanged_controls": [
+      "External policy identity and authority",
+      "Native binary and source pin",
+      "Supported CLI/schema and all executed command arguments",
+      "Rule-layer custom terminology",
+      "Existing source/history preservation requirement",
+      "No activation, scanning or provider permission"
+    ],
+    "validation_reuse_rationale": "Only inert source-history attribution text and corresponding JSON key names changed after the completed checks. Existing binary, commands, source semantics and authority are unchanged. Root authorized independent static correction/evidence review without native reruns. The seven calls remain evidence for original hashes only, not execution on corrected bytes.",
+    "correction_review": "PENDING_DIFFERENT_CONTEXT_COMPLETE_CHANGED_CONTENT_REVIEW",
+    "corrected_source_preservation": "PENDING_ROOT_ONLY",
+    "native_invocations_after_correction": 0
+  }
+}

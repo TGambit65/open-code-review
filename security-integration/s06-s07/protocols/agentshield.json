@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "kind": "deferred-specialist-qualification-protocol",
+  "tool": "agentshield",
+  "task_id": "S06.03",
+  "state": "NOT_RUN",
+  "selected": false,
+  "execute": false,
+  "after_preservation": true,
+  "proposed_version": null,
+  "scope": "Local static analysis of explicitly selected sanitized configuration only, if separately selected later.",
+  "prerequisites": [
+    "Explicit sanitized configuration file/range inventory and transformation evidence.",
+    "Verified maintained version, license, source/assets and strictly local static profile.",
+    "Evidence that no prohibited mode or home discovery is reachable.",
+    "Separately authorized post-preservation synthetic qualification and measured useful coverage."
+  ],
+  "prohibited_modes": [
+    "opus",
+    "injection",
+    "deep",
+    "sandbox",
+    "repair",
+    "runtime_hooks",
+    "online_lookup",
+    "home_discovery",
+    "raw_content_model_path",
+    "provider_calls",
+    "fix"
+  ],
+  "inputs": [
+    "Exact approved repository/base/head/frozen-diff identity.",
+    "Positive and negative fictional seeds with expected detector/rule outcomes.",
+    "Same approved file/change/blob/range denominator and limits for baseline and challenger.",
+    "Sanitized selected configuration only for AgentShield; approved scanner originals remain isolated from models."
+  ],
+  "metrics": [
+    "Unique independently confirmed findings beyond baseline.",
+    "False positives and missed seeded positives against independently fixed expectations.",
+    "Complete/partial/skipped file and original range coverage.",
+    "Wall and CPU seconds, peak resident bytes, bounded output bytes and timeout/exit status."
+  ],
+  "acceptance": "Additional useful coverage and acceptable false-positive/resource cost must be evidenced; no threshold or benchmark outcome is invented here. Target clearance remains separate.",
+  "receipts": [
+    "Exact source/tool/rule/database/policy/transformation digests and independent authority.",
+    "Actual command/environment/profile identity and result/time/actor/artifact location.",
+    "Native egress/credential/mode controls, complete denominator accounting and independent findings disposition."
+  ],
+  "current_results": [],
+  "unavailable_result": "NOT_QUALIFIED; keep deferred and baseline unchanged.",
+  "documented_version_controls": [
+    "Only a future explicitly selected sanitized-config local static scope may be considered.",
+    "Prohibit --opus, --injection, --sandbox, --deep, --fix, runtime hooks and home discovery.",
+    "Documented Opus builder inserts discovered contents verbatim; Anthropic/OrcaRouter integration is not host delegation.",
+    "Report redaction does not establish privacy of model inputs."
+  ],
+  "research_source": {
+    "source_repository": "affaan-m/agentshield",
+    "source_url": "https://github.com/affaan-m/agentshield/blob/b0891303bdcd6037376a94263d45cfd2ff3dfb98/README.md",
+    "research_commit": "b0891303bdcd6037376a94263d45cfd2ff3dfb98",
+    "research_release": null,
+    "research_state": "RESEARCH_ONLY_DEFERRED_NO_ADOPTION",
+    "binary_sha256": null,
+    "qualification_limit": "Historical research identity only; not current asset verification, endorsement, entitlement or execution permission."
+  },
+  "thresholds": "Independent owner-approved thresholds fixed before any comparison; none adopted here."
+}

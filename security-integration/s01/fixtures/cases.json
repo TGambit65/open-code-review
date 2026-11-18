@@ -1,0 +1,202 @@
+{
+  "schema_version": "1.0",
+  "kind": "synthetic-fixture-cases",
+  "real_credentials": false,
+  "cases": [
+    {
+      "id": "primary",
+      "storage": "input-00.txt",
+      "logical_path": "SYNTHETIC_SECRET_ONLY_FILENAME_00.c",
+      "surface": "primary",
+      "change_kind": "added",
+      "side": "head",
+      "content": "int safe_primary = 0;\nSYNTHETIC_SECRET_ONLY_PRIMARY_000\nreturn safe_primary;\n",
+      "release_ranges": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "secret": "SYNTHETIC_SECRET_ONLY_PRIMARY_000"
+    },
+    {
+      "id": "secondary",
+      "storage": "input-01.txt",
+      "logical_path": "SYNTHETIC_SECRET_ONLY_FILENAME_01.c",
+      "surface": "secondary",
+      "change_kind": "modified",
+      "side": "head",
+      "content": "int safe_secondary = 1;\nSYNTHETIC_SECRET_ONLY_SECONDARY_000\nreturn safe_secondary;\n",
+      "release_ranges": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "secret": "SYNTHETIC_SECRET_ONLY_SECONDARY_000"
+    },
+    {
+      "id": "base",
+      "storage": "input-02.txt",
+      "logical_path": "SYNTHETIC_SECRET_ONLY_FILENAME_02.c",
+      "surface": "base",
+      "change_kind": "modified",
+      "side": "base",
+      "content": "int safe_base = 2;\nSYNTHETIC_SECRET_ONLY_BASE_000\nreturn safe_base;\n",
+      "release_ranges": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "secret": "SYNTHETIC_SECRET_ONLY_BASE_000"
+    },
+    {
+      "id": "deleted",
+      "storage": "input-03.txt",
+      "logical_path": "SYNTHETIC_SECRET_ONLY_FILENAME_03.c",
+      "surface": "deleted",
+      "change_kind": "staged_deleted",
+      "side": "base",
+      "content": "int safe_deleted = 3;\nSYNTHETIC_SECRET_ONLY_DELETED_000\nreturn safe_deleted;\n",
+      "release_ranges": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "secret": "SYNTHETIC_SECRET_ONLY_DELETED_000"
+    },
+    {
+      "id": "history",
+      "storage": "input-04.txt",
+      "logical_path": "SYNTHETIC_SECRET_ONLY_FILENAME_04.c",
+      "surface": "history",
+      "change_kind": "context",
+      "side": "base",
+      "content": "int safe_history = 4;\nSYNTHETIC_SECRET_ONLY_HISTORY_000\nreturn safe_history;\n",
+      "release_ranges": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "secret": "SYNTHETIC_SECRET_ONLY_HISTORY_000"
+    },
+    {
+      "id": "rules",
+      "storage": "input-05.txt",
+      "logical_path": "SYNTHETIC_SECRET_ONLY_FILENAME_05.c",
+      "surface": "rules",
+      "change_kind": "context",
+      "side": "context",
+      "content": "int safe_rules = 5;\nSYNTHETIC_SECRET_ONLY_RULES_000\nreturn safe_rules;\n",
+      "release_ranges": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "secret": "SYNTHETIC_SECRET_ONLY_RULES_000"
+    },
+    {
+      "id": "background",
+      "storage": "input-06.txt",
+      "logical_path": "SYNTHETIC_SECRET_ONLY_FILENAME_06.c",
+      "surface": "background",
+      "change_kind": "context",
+      "side": "context",
+      "content": "int safe_background = 6;\nSYNTHETIC_SECRET_ONLY_BACKGROUND_000\nreturn safe_background;\n",
+      "release_ranges": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "secret": "SYNTHETIC_SECRET_ONLY_BACKGROUND_000"
+    },
+    {
+      "id": "tool_error",
+      "storage": "input-07.txt",
+      "logical_path": "SYNTHETIC_SECRET_ONLY_FILENAME_07.c",
+      "surface": "tool_error",
+      "change_kind": "context",
+      "side": "error",
+      "content": "int safe_tool_error = 7;\nSYNTHETIC_SECRET_ONLY_TOOL_ERROR_000\nreturn safe_tool_error;\n",
+      "release_ranges": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "secret": "SYNTHETIC_SECRET_ONLY_TOOL_ERROR_000"
+    }
+  ],
+  "negative_cases": [
+    "parent_traversal",
+    "absolute_path",
+    "symlink_leaf",
+    "symlink_ancestor",
+    "hardlink",
+    "fifo",
+    "unapproved_root",
+    "changed_source_hash",
+    "duplicate_identity",
+    "missing_inventory",
+    "stale_release",
+    "unknown_secondary_read",
+    "unsafe_encoding",
+    "unreleased_content",
+    "duplicate_path_distinct_changes",
+    "truncated_output",
+    "malformed_output",
+    "stale_snapshot",
+    "missing_coverage",
+    "partial_ranges",
+    "candidate_policy",
+    "missing_policy",
+    "unapproved_exception",
+    "expired_authority",
+    "retained_failure_on_rollback",
+    "unsupported_old_schema",
+    "max_sixteen_inputs",
+    "seventeen_inputs_refused",
+    "cpu",
+    "memory",
+    "wall",
+    "file",
+    "output_flood"
+  ]
+}

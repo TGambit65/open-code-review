@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Independently issued integration stage receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "kind": {
+      "const": "independent-integration-stage-receipt"
+    },
+    "source_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "scope_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "stage": {
+      "enum": [
+        "implementation",
+        "independent_source_review",
+        "remote_preservation",
+        "offline_fixtures",
+        "native_baseline",
+        "sanitized_review",
+        "rendering",
+        "independent_evidence_review"
+      ]
+    },
+    "result": {
+      "enum": [
+        "passed",
+        "failed",
+        "blocked",
+        "partial",
+        "unrun"
+      ]
+    },
+    "actor": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048
+    },
+    "independence_receipt_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "artifact_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "artifact_location": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048
+    },
+    "issued_at": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048
+    },
+    "expires_at": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048
+    },
+    "authority_receipt_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "actual_action": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048
+    },
+    "input_receipts": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "implementation": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "independent_source_review": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "remote_preservation": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "offline_fixtures": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "native_baseline": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "sanitized_review": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "rendering": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "independent_evidence_review": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "maxProperties": 7
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "source_sha256",
+    "scope_sha256",
+    "stage",
+    "result",
+    "actor",
+    "independence_receipt_sha256",
+    "artifact_sha256",
+    "artifact_location",
+    "issued_at",
+    "expires_at",
+    "authority_receipt_sha256",
+    "actual_action",
+    "input_receipts"
+  ],
+  "$comment": "Local descriptive schema only. Runtime bounded validators do not fetch schemas, adopt policy or grant authority."
+}

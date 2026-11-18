@@ -1,0 +1,853 @@
+{
+  "kind": "S06-S07-original-task-map",
+  "original_task_count": 42,
+  "required": 35,
+  "conditional": 7,
+  "qualification_and_activation": "held",
+  "tasks": [
+    {
+      "id": "S06.F",
+      "title": "Freeze the complete sprint scope",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S04.A",
+        "S05.A",
+        "S06.01",
+        "S06.02",
+        "S06.03"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "scope.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "eb5cfab1815ec20100d9665400fbee277d7bac6de83fbc01bb1591d746413763"
+    },
+    {
+      "id": "S06.01",
+      "title": "Decide Betterleaks and write its comparison protocol",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S05.A"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "decisions/betterleaks.json",
+        "protocols/betterleaks.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "0400e2d163ad2d896eddef02190994792ef9cb95f011f1fbdbca0ec277ad0367"
+    },
+    {
+      "id": "S06.02",
+      "title": "Decide Trivy against a demonstrated coverage gap",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S05.A"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "decisions/trivy.json",
+        "protocols/trivy.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "405f83a3fbc619e53101435a8803564b65666c28ccf2b5c47d0355752b888f11"
+    },
+    {
+      "id": "S06.03",
+      "title": "Decide AgentShield on sanitized selected configuration",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S05.A"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "decisions/agentshield.json",
+        "protocols/agentshield.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "e4564759e3dd4ed574ba54e910a3f39d795aca4bbaef259e0e99a380c46eb9c1"
+    },
+    {
+      "id": "S06.04",
+      "title": "Build the selected disabled Betterleaks challenger",
+      "applicability": "conditional",
+      "condition": "Betterleaks implementation selected and authorized before S06 freeze",
+      "original_dependencies": [
+        "S06.F",
+        "S06.01"
+      ],
+      "disposition": "deferred_not_selected",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "c5605fe5f88649d74ec1f07aa7e16ce56bca47093d833cccecea9e8a25a5fe9c"
+    },
+    {
+      "id": "S06.05",
+      "title": "Build the selected disabled Trivy adapter",
+      "applicability": "conditional",
+      "condition": "Trivy implementation selected and authorized before S06 freeze",
+      "original_dependencies": [
+        "S06.F",
+        "S06.02"
+      ],
+      "disposition": "deferred_not_selected",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "b62430ebd914536ecc5d2494d4d4e966de927f3e8cc1c7ef40acbaff8f2ee65e"
+    },
+    {
+      "id": "S06.06",
+      "title": "Build the selected disabled AgentShield adapter",
+      "applicability": "conditional",
+      "condition": "AgentShield implementation selected and authorized before S06 freeze",
+      "original_dependencies": [
+        "S06.F",
+        "S06.03"
+      ],
+      "disposition": "deferred_not_selected",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "ba7217a13fb403d683f61da37336c952a53b828d753d92e59c6ac584c5b651a0"
+    },
+    {
+      "id": "S06.07",
+      "title": "Complete the optional decision ledger",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S06.01",
+        "S06.02",
+        "S06.03",
+        "S06.F"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "decisions/optional-ledger.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "a710340ff7729cdee01c1f29ea18afa9f909cf9018e67e115527430d24cd209f"
+    },
+    {
+      "id": "S06.RB",
+      "title": "Write the bounded rollback procedure",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S06.F"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "ROLLBACK.md",
+        "ocr_security_integration/registry.py"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "a7d20e5df6c7962755e3c2b915af0ee7413815a717adf1dbeaaf04a604869b9f"
+    },
+    {
+      "id": "S06.M",
+      "title": "Seal the full implementation endpoint",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S06.F",
+        "S06.01",
+        "S06.02",
+        "S06.03",
+        "S06.07",
+        "S06.RB"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "f21dc9f1d64cc955667273914369dde04acea24548ae82a142f30a02efb08a64"
+    },
+    {
+      "id": "S06.R",
+      "title": "Record independent full-diff review",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S06.M"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "5ba7822cf061ef9cfd1ea77cbdfa9395fafaea53c99beeb08b92d9145323038d"
+    },
+    {
+      "id": "S06.C",
+      "title": "Resolve supported findings and seal review outcome",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S06.R"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "9d2602353f1e8fc2dd041272dc27923c488de923c363b486d6ae66e3545f789b"
+    },
+    {
+      "id": "S06.P",
+      "title": "Preserve eligible source immediately in the same draft",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S06.C"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "c0a8f736996935c66a0b84b88cf02445d5bda16e3d00c5f26bb9ddb6bf00e70b"
+    },
+    {
+      "id": "S06.QA",
+      "title": "Reconcile and stage missing approved optional assets",
+      "applicability": "conditional",
+      "condition": "A selected optional pilot needs an asset not already verified locally and that exact acquisition is separately authorized",
+      "original_dependencies": [
+        "S06.P",
+        "S06.07"
+      ],
+      "disposition": "deferred_not_selected",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "216977670ab53283b3f5eef190d4bee11bac3a4a29346670a12c961383add7d8"
+    },
+    {
+      "id": "S06.V01",
+      "title": "Verify optional dispositions without demanding a pilot",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S06.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "3c2435a89ce0c43143bebb9657f02a8377db167b1197f33f675c8e69ac7bf116"
+    },
+    {
+      "id": "S06.V02",
+      "title": "Run the selected authorized Betterleaks comparison",
+      "applicability": "conditional",
+      "condition": "Betterleaks selected in frozen scope and this comparison execution separately authorized",
+      "original_dependencies": [
+        "S06.P"
+      ],
+      "disposition": "deferred_not_selected",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "1eb63f98da37821904ec39dacfa8ffe46a528241ba6bd6cf8c14022d155e3498"
+    },
+    {
+      "id": "S06.V03",
+      "title": "Run selected authorized Trivy qualification",
+      "applicability": "conditional",
+      "condition": "Trivy selected in frozen scope and this qualification execution separately authorized",
+      "original_dependencies": [
+        "S06.P"
+      ],
+      "disposition": "deferred_not_selected",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "a17c97535a7e6d3d927c04d1fd318cb881a1ad8603cc3bfe16bf109a2938fa39"
+    },
+    {
+      "id": "S06.V04",
+      "title": "Run selected authorized AgentShield qualification",
+      "applicability": "conditional",
+      "condition": "AgentShield selected in frozen scope and this qualification execution separately authorized",
+      "original_dependencies": [
+        "S06.P"
+      ],
+      "disposition": "deferred_not_selected",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "c4cad60e43d06ff7cc353ac980c40503567140e01553bf5292008c74b7f6b742"
+    },
+    {
+      "id": "S06.V05",
+      "title": "Verify optional rollback and unchanged baseline",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S06.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "fa47d15a49773ea825b639b35f97b12b709e6da7ea0cb49b0481a0778fd560e1"
+    },
+    {
+      "id": "S06.U",
+      "title": "Preserve validation results and reviewed corrections",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S06.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "8faf5da5231794756bda453b2c45478424105cecb950372eea9abd3218f20d1a"
+    },
+    {
+      "id": "S06.A",
+      "title": "Accept the qualified sprint or retain an explicit hold",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S06.U",
+        "S06.V01",
+        "S06.V05"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "decisions/optional-ledger.json",
+        "decisions/catalog.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "47632c89e35bd6523f84f871f84eca8b49cc5bed0dd65104e86861856a464ec2"
+    },
+    {
+      "id": "S07.F",
+      "title": "Freeze the complete sprint scope",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S05.A",
+        "S06.07",
+        "S06.P"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "scope.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "594e26bc3d3b6be7d23f02ba347099c52b17d560572243122aaec44ecb44452e"
+    },
+    {
+      "id": "S07.01",
+      "title": "Record Semgrep CE as an alternative only",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.F"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "decisions/semgrep.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "be58e94a67d66c6070ef06c6eca268f18cf24e655aa1626937e3e3b998cf91f2"
+    },
+    {
+      "id": "S07.02",
+      "title": "Record Bearer specialist prerequisites",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.F"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "decisions/bearer.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "1703b620d57d007642d630107984ddbc1341c02b90576be925612f21fd99f834"
+    },
+    {
+      "id": "S07.03",
+      "title": "Record CodeQL entitlement and execution gates",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.F"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "decisions/codeql.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "5e28f330d4343508cf48843bcb881408507e7b251cff0fd50c36195448bb0bf6"
+    },
+    {
+      "id": "S07.04",
+      "title": "Record Anthropic review Action as opt in only",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.F"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "decisions/anthropic_review.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "79fb739dc8e952a5dae36ce8dc286759c6f3e1ac205104ae02bf0120f0375020"
+    },
+    {
+      "id": "S07.05",
+      "title": "Record Snyk Agent Scan as opt in only",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.F"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "decisions/snyk_agent_scan.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "18ad118a1dd10330faec09517231b1d5ed22cafcdd3f3b47d9f6258bf537b0e1"
+    },
+    {
+      "id": "S07.06",
+      "title": "Record Strix as a separate future pentest",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.F"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "decisions/strix.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "5a9f926fc06e8db14683fb23addc836c85d0f25dcfdf369073b5225c1cd48c87"
+    },
+    {
+      "id": "S07.07",
+      "title": "Record Shannon as a separate future pentest",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.F"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "decisions/shannon.json"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "f04f4bc5732e38872dfcfc5ea18da563086abe289130b5f1a3910fab2952a3f6"
+    },
+    {
+      "id": "S07.08",
+      "title": "Finish disabled registration and operating documentation",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.F",
+        "S06.07"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "ocr_security_integration/registry.py",
+        "ocr_security_integration/entrypoint.py",
+        "RUNBOOK.md"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "6aaa81445d68a738553b134181773ddf247044d5472f18da8a7d4f741b78516c"
+    },
+    {
+      "id": "S07.09",
+      "title": "Close recommendation to execution traceability",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.01",
+        "S07.02",
+        "S07.03",
+        "S07.04",
+        "S07.05",
+        "S07.06",
+        "S07.07",
+        "S07.08",
+        "S07.F"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "traceability.json",
+        "ocr_security_integration/traceability.py"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "e3df620e9ebb53b3c6f5737c56073707552015901c6ec48db02a93b83387f0f6"
+    },
+    {
+      "id": "S07.10",
+      "title": "Author full-path qualification scenarios",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.09",
+        "S07.F"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "fixtures/scenarios.json",
+        "tests/test_full_path.py"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "02b1196cfd9bd9b3898e72b427db5bccbecd20836a482b41bcf78959fa0e1cff"
+    },
+    {
+      "id": "S07.RB",
+      "title": "Write the bounded rollback procedure",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.F"
+      ],
+      "disposition": "source_authored",
+      "source_artifacts": [
+        "ROLLBACK.md",
+        "ocr_security_integration/registry.py"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "7c78d345e6f41290c604d45341b3c7b98331699a7fcbc0a99b53520610b34bb0"
+    },
+    {
+      "id": "S07.M",
+      "title": "Seal the full implementation endpoint",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.F",
+        "S07.01",
+        "S07.02",
+        "S07.03",
+        "S07.04",
+        "S07.05",
+        "S07.06",
+        "S07.07",
+        "S07.08",
+        "S07.09",
+        "S07.10",
+        "S07.RB"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "ocr_security_integration/entrypoint.py",
+        "ocr_security_integration/registry.py",
+        "RUNBOOK.md"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "12d4cec219e2bce763c4d4073cf39ff594ab76d56c7b7fd956363070b21362b1"
+    },
+    {
+      "id": "S07.R",
+      "title": "Record independent full-diff review",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.M"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "ocr_security_integration/entrypoint.py",
+        "ocr_security_integration/registry.py",
+        "RUNBOOK.md"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "1716242415c4a87fb0eb3fbfef5ccfa04c26dee3210340a2706dd37b6851538d"
+    },
+    {
+      "id": "S07.C",
+      "title": "Resolve supported findings and seal review outcome",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.R"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "ocr_security_integration/entrypoint.py",
+        "ocr_security_integration/registry.py",
+        "RUNBOOK.md"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "d93db44cc0d394f40ad6c692a72e198643b4ef0c6399762d647967ae148ecdc4"
+    },
+    {
+      "id": "S07.P",
+      "title": "Preserve eligible source immediately in the same draft",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.C"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "ocr_security_integration/entrypoint.py",
+        "ocr_security_integration/registry.py",
+        "RUNBOOK.md"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "7ddc14660e0190fdd51a94015cc4b6094db87ae3ffa8d6e82726b20ce2da4d61"
+    },
+    {
+      "id": "S07.V01",
+      "title": "Run authorized end-to-end synthetic qualification",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "ocr_security_integration/entrypoint.py",
+        "ocr_security_integration/registry.py",
+        "RUNBOOK.md"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "5713b21bfd187109f073c36630bfb225736a0fe7945072eb2870cbff9a052e31"
+    },
+    {
+      "id": "S07.V02",
+      "title": "Verify final reporting, runbook and rollback",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "ocr_security_integration/entrypoint.py",
+        "ocr_security_integration/registry.py",
+        "RUNBOOK.md"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "a3a3357d230032ad26ede3a43a5bfc9c8027ac3192ef57d49c2311a878134808"
+    },
+    {
+      "id": "S07.V03",
+      "title": "Obtain final independent evidence review",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.P",
+        "S07.V01",
+        "S07.V02"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "ocr_security_integration/entrypoint.py",
+        "ocr_security_integration/registry.py",
+        "RUNBOOK.md"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "76e3188f5bf400b2e08316923978022f1bc4a464073951be178fd2fb1ef91772"
+    },
+    {
+      "id": "S07.U",
+      "title": "Preserve validation results and reviewed corrections",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.P"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "ocr_security_integration/entrypoint.py",
+        "ocr_security_integration/registry.py",
+        "RUNBOOK.md"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "184c275dd6588625bf5f40d2cddde86a4675bcb79a3fc7f14a1ea4264eb34552"
+    },
+    {
+      "id": "S07.A",
+      "title": "Accept the qualified sprint or retain an explicit hold",
+      "applicability": "required",
+      "condition": null,
+      "original_dependencies": [
+        "S07.U",
+        "S07.V01",
+        "S07.V02",
+        "S07.V03"
+      ],
+      "disposition": "qualification_held",
+      "source_artifacts": [
+        "ocr_security_integration/entrypoint.py",
+        "ocr_security_integration/registry.py",
+        "RUNBOOK.md"
+      ],
+      "evidence_locations": [
+        "evidence/current-stage-state.json"
+      ],
+      "qualification": "not_asserted_by_this_ledger",
+      "contract_sha256": "39904a03e7af60cb34866bfc35f6e8186934bf0b54344bdd13f15d823a479410"
+    }
+  ]
+}

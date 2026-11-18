@@ -1,0 +1,25 @@
+{
+  "results": [
+    {
+      "source": {
+        "path": "/input/item-0000/package-lock.json",
+        "type": "lockfile"
+      },
+      "packages": [
+        {
+          "package": {
+            "name": "synthetic-only",
+            "version": "1.0.0",
+            "ecosystem": "npm"
+          },
+          "vulnerabilities": [
+            {
+              "id": "SYNTHETIC-NOT-AN-ADVISORY"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "experimental_config": {}
+}

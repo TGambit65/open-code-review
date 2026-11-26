@@ -109,3 +109,20 @@ def render(records: tuple[dict[str, str], ...]) -> str:
     lines.append("Ready for human evidence (listed prerequisites only): " + (", ".join(ready) or "none") + ".")
     lines.append("Unmet prerequisite group: " + (", ".join(waiting) or "none") + ".")
     return "\n".join(lines) + "\n"
+
+
+def render_supported(records: tuple[dict[str, str], ...]) -> str:
+    """Opt in to a fixed private note about fictional declared metadata only."""
+    view = project_supported(records)
+    lines = [
+        f"Qualification: {view.qualification} "
+        "(fictional declared metadata only; no external evidence checked; no authority)."
+    ]
+    for row in view.stages:
+        unmet = ", ".join(row.unmet_prerequisites) or "none"
+        lines.append(
+            f"{row.stage}: declared: {row.reported_status}; "
+            f"prerequisite-supported status: {row.status}; "
+            f"direct unmet prerequisites: {unmet}."
+        )
+    return "\n".join(lines) + "\n"

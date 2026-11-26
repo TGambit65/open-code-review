@@ -4,7 +4,7 @@
 import json
 
 from ocr_security.common import Refusal, relative_path
-from ocr_security_gate.batching import batch_decision
+from ocr_security_gate.batching import MAXIMUM_PATHS, batch_decision
 
 _MAX_COHORTS = 64
 _MAX_PATH_ENTRIES = 10_000
@@ -26,7 +26,7 @@ def preview_checked(existing_paths, cohorts, *, final_boundary=None):
     return _preview(existing_paths, cohorts, final_boundary, check_all=True)
 
 
-def _preview(existing_paths, cohorts, final_boundary, *, check_all):
+def _bounded_existing_paths(existing_paths, cohorts):
     if type(cohorts) not in (list, tuple) or len(cohorts) > _MAX_COHORTS:
         raise Refusal("invalid_preview_cohorts")
     current = _paths(existing_paths)
@@ -38,6 +38,11 @@ def _preview(existing_paths, cohorts, final_boundary, *, check_all):
         if total_entries > _MAX_PATH_ENTRIES:
             raise Refusal("preview_path_budget_exceeded")
 
+    return current
+
+
+def _preview(existing_paths, cohorts, final_boundary, *, check_all):
+    current = _bounded_existing_paths(existing_paths, cohorts)
     # Enforce the combined count limit before normalizing any later cohort.
     if check_all:
         cohorts = tuple(_paths(cohort) for cohort in cohorts)
@@ -87,3 +92,58 @@ def preview_json(existing_paths, cohorts, *, final_boundary=None):
     """Return deterministic UTF-8 JSON for a human-owned, offline handoff."""
     result = preview(existing_paths, cohorts, final_boundary=final_boundary)
     return json.dumps(result, sort_keys=True, separators=(",", ":")).encode("utf-8") + b"\n"
+
+def preview_compatible_280(existing_paths, cohorts, *, final_boundary):
+    """Opt in to count-only planning for ordered, already-compatible cohorts."""
+    if type(final_boundary) is not str or final_boundary not in (
+        "final_scope", "dependency_hold", "no_eligible_work",
+    ):
+        raise Refusal("invalid_preview_final_boundary")
+    current = _bounded_existing_paths(existing_paths, cohorts)
+    # Validate all entries, even when the current count or an early group stops
+    # the count projection. None of these strings is used to access a file.
+    normalized = tuple(_paths(cohort) for cohort in cohorts)
+    initial = len(current)
+    accepted = []
+    stop = {
+        "cohort_index": None,
+        "reason": "hold_over_cap_existing_batch",
+        "projected_distinct_paths": initial,
+        "boundary_reason": None,
+    }
+    if initial <= MAXIMUM_PATHS:
+        for index, cohort in enumerate(normalized, 1):
+            new_paths = cohort - current
+            projected = len(current) + len(new_paths)
+            if projected > MAXIMUM_PATHS:
+                stop = {
+                    "cohort_index": index,
+                    "reason": "stop_before_overflow",
+                    "projected_distinct_paths": projected,
+                    "boundary_reason": None,
+                }
+                break
+            current.update(new_paths)
+            accepted.append({
+                "cohort_index": index,
+                "new_distinct_paths": len(new_paths),
+                "cumulative_distinct_paths": projected,
+            })
+        else:
+            stop = {
+                "cohort_index": None,
+                "reason": "at_cap" if len(current) == MAXIMUM_PATHS else "smaller_boundary",
+                "projected_distinct_paths": len(current),
+                "boundary_reason": final_boundary,
+            }
+    return {
+        "kind": "compatible-280-count-preview",
+        "starting_distinct_paths": initial,
+        "ending_distinct_paths": len(current),
+        "maximum_paths": MAXIMUM_PATHS,
+        "accepted_cohorts": accepted,
+        "stop": stop,
+        "padding_allowed": False,
+        "new_draft_created": False,
+        "requires_root": True,
+    }

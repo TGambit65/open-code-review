@@ -2,7 +2,7 @@
 import unittest
 
 import support
-from coherent_stack_preview import preview, preview_checked, preview_json
+from coherent_stack_preview import preview, preview_checked, preview_json, preview_compatible_280
 from ocr_security.common import Refusal
 
 
@@ -74,3 +74,48 @@ class CoherentStackPreviewTests(unittest.TestCase):
         }
         self.assertEqual(preview([], [], final_boundary="final_scope")["stop"], expected)
         self.assertEqual(preview_checked([], [], final_boundary="final_scope")["stop"], expected)
+
+    def test_compatible_280_does_not_change_historical_freeze(self):
+        existing = paths(0, 195)
+        groups = [paths(195, 210), paths(210, 240), paths(240, 280), paths(280, 281)]
+        planned = preview_compatible_280(existing, groups, final_boundary="final_scope")
+        self.assertEqual(planned["ending_distinct_paths"], 280)
+        self.assertEqual([x["cumulative_distinct_paths"] for x in planned["accepted_cohorts"]],
+                         [210, 240, 280])
+        self.assertEqual(planned["stop"], {"cohort_index": 4, "reason": "stop_before_overflow",
+                                          "projected_distinct_paths": 281, "boundary_reason": None})
+        self.assertEqual(preview(existing, groups)["ending_distinct_paths"], 210)
+        self.assertEqual(preview_checked(existing, groups), preview(existing, groups))
+        self.assertNotIn("fixture/", repr(planned))
+        self.assertFalse(planned["padding_allowed"])
+        self.assertFalse(planned["new_draft_created"])
+
+    def test_compatible_counts_union_no_split_no_padding(self):
+        dry = preview_compatible_280
+        groups = [["fixture/279.txt"] * 2, ["fixture/279.txt"], ["fixture/0.txt", "fixture/281.txt"]]
+        result = dry(paths(0, 279), groups, final_boundary="dependency_hold")
+        self.assertEqual([r["new_distinct_paths"] for r in result["accepted_cohorts"]], [1, 0])
+        self.assertEqual(result["stop"]["cohort_index"], 3)
+        self.assertEqual(result, dry(list(reversed(paths(0, 279))), [g[::-1] for g in groups],
+                                     final_boundary="dependency_hold"))
+        exact = dry(paths(0, 279), groups[:1], final_boundary="final_scope")
+        self.assertEqual(exact["stop"]["reason"], "at_cap")
+        self.assertEqual(exact["stop"]["boundary_reason"], "final_scope")
+        small = dry(paths(0, 4), [paths(4, 5)], final_boundary="dependency_hold")
+        self.assertEqual(small["stop"], {"cohort_index": None, "reason": "smaller_boundary",
+                                        "projected_distinct_paths": 5, "boundary_reason": "dependency_hold"})
+        over = dry(paths(0, 281), [paths(0, 1)], final_boundary="no_eligible_work")
+        self.assertEqual(over["stop"]["reason"], "hold_over_cap_existing_batch")
+        self.assertEqual(over["accepted_cohorts"], [])
+        self.assertEqual(over["ending_distinct_paths"], 281)
+
+    def test_compatible_requires_known_boundary_and_checks_entire_manifest(self):
+        dry = preview_compatible_280
+        with self.assertRaises(TypeError):
+            dry([], [])
+        with self.assertRaisesRegex(Refusal, "^invalid_preview_final_boundary$"):
+            dry([], [], final_boundary=None)
+        with self.assertRaisesRegex(Refusal, "^preview_path_budget_exceeded$"):
+            dry(paths(0, 280), [[None] * 9721], final_boundary="final_scope")
+        with self.assertRaises(Refusal):
+            dry(paths(0, 280), [paths(280, 281), [None]], final_boundary="final_scope")

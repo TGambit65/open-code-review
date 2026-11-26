@@ -2,7 +2,8 @@
 import unittest
 
 import support
-from coherent_stack_preview import preview, preview_json
+from coherent_stack_preview import preview, preview_checked, preview_json
+from ocr_security.common import Refusal
 
 
 def paths(start, stop):
@@ -42,3 +43,34 @@ class CoherentStackPreviewTests(unittest.TestCase):
         self.assertEqual(result["ending_distinct_paths"], 200)
         self.assertEqual(result["stop"]["reason"], "freeze_current_batch")
         self.assertEqual(result["stop"]["projected_distinct_paths"], 220)
+
+    def test_opt_in_checks_bounded_manifest_beyond_stop(self):
+        existing = paths(0, 200)
+        groups = [paths(199, 201), [None]]
+        ordinary = preview(existing, groups)
+        self.assertEqual(ordinary["stop"]["reason"], "freeze_current_batch")
+        self.assertEqual(ordinary["stop"]["cohort_index"], 1)
+        with self.assertRaises(Refusal):
+            preview_checked(existing, groups)
+        with self.assertRaisesRegex(Refusal, "^preview_path_budget_exceeded$"):
+            preview_checked(existing, [[None] * 9801])
+
+    def test_opt_in_preserves_decisions_for_valid_manifests(self):
+        for existing, groups in (
+            (paths(0, 5), [paths(3, 7), paths(7, 10)]),
+            (paths(0, 200), [paths(199, 201), paths(2, 5)]),
+            (paths(0, 198), [paths(190, 280), paths(279, 281)]),
+        ):
+            with self.subTest(count=len(existing)):
+                ordinary = preview(existing, groups, final_boundary="final_scope")
+                checked = preview_checked(existing, groups, final_boundary="final_scope")
+                self.assertEqual(ordinary, checked)
+                self.assertNotIn("fixture/", repr(checked))
+
+    def test_empty_proposal_can_document_the_final_boundary(self):
+        expected = {
+            "cohort_index": None, "reason": "document_smaller_boundary",
+            "projected_distinct_paths": 0, "boundary_reason": "final_scope",
+        }
+        self.assertEqual(preview([], [], final_boundary="final_scope")["stop"], expected)
+        self.assertEqual(preview_checked([], [], final_boundary="final_scope")["stop"], expected)

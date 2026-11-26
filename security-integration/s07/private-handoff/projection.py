@@ -38,6 +38,16 @@ class Handoff:
 
 def project(records: tuple[dict[str, str], ...]) -> Handoff:
     """Summarize only closed stage/result pairs; reject ambiguous input."""
+    by_stage = _reported_states(records)
+    return Handoff(tuple(
+        StageView(stage, by_stage.get(stage, "missing"), prerequisites, tuple(
+            prior for prior in prerequisites if by_stage.get(prior) != "complete"
+        ))
+        for stage, prerequisites in _STAGES
+    ))
+
+
+def _reported_states(records):
     if type(records) is not tuple or len(records) > len(_STAGES):
         raise ValueError("Expected a bounded tuple of fictional stage records.")
     by_stage: dict[str, str] = {}
@@ -52,12 +62,37 @@ def project(records: tuple[dict[str, str], ...]) -> Handoff:
         if type(result) is not str or result not in _DISPLAY:
             raise ValueError("Unknown stage result.")
         by_stage[stage] = _DISPLAY[result]
-    return Handoff(tuple(
-        StageView(stage, by_stage.get(stage, "missing"), prerequisites, tuple(
-            prior for prior in prerequisites if by_stage.get(prior) != "complete"
-        ))
-        for stage, prerequisites in _STAGES
-    ))
+    return by_stage
+
+
+@dataclass(frozen=True)
+class SupportedStageView(StageView):
+    reported_status: str
+
+
+@dataclass(frozen=True)
+class SupportedHandoff:
+    stages: tuple[SupportedStageView, ...]
+    qualification: str = "HELD"
+
+
+def project_supported(records: tuple[dict[str, str], ...]) -> SupportedHandoff:
+    """Opt in to a dependency-supported view; no external evidence is checked."""
+    by_stage = _reported_states(records)
+    # The fixed inventory lists each prerequisite before its dependents.
+    supported = set()
+    rows = []
+    for stage, prerequisites in _STAGES:
+        unmet = tuple(prior for prior in prerequisites if prior not in supported)
+        reported = by_stage.get(stage, "missing")
+        status = reported
+        if reported == "complete":
+            if unmet:
+                status = "blocked"
+            else:
+                supported.add(stage)
+        rows.append(SupportedStageView(stage, status, prerequisites, unmet, reported))
+    return SupportedHandoff(tuple(rows))
 
 
 def render(records: tuple[dict[str, str], ...]) -> str:

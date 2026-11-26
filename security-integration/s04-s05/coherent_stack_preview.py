@@ -18,6 +18,15 @@ def _paths(values):
 
 def preview(existing_paths, cohorts, *, final_boundary=None):
     """Apply the unchanged single-cohort policy within the current batch only."""
+    return _preview(existing_paths, cohorts, final_boundary, check_all=False)
+
+
+def preview_checked(existing_paths, cohorts, *, final_boundary=None):
+    """Opt in to validation of every path, including unevaluated cohorts."""
+    return _preview(existing_paths, cohorts, final_boundary, check_all=True)
+
+
+def _preview(existing_paths, cohorts, final_boundary, *, check_all):
     if type(cohorts) not in (list, tuple) or len(cohorts) > _MAX_COHORTS:
         raise Refusal("invalid_preview_cohorts")
     current = _paths(existing_paths)
@@ -29,14 +38,18 @@ def preview(existing_paths, cohorts, *, final_boundary=None):
         if total_entries > _MAX_PATH_ENTRIES:
             raise Refusal("preview_path_budget_exceeded")
 
+    # Enforce the combined count limit before normalizing any later cohort.
+    if check_all:
+        cohorts = tuple(_paths(cohort) for cohort in cohorts)
     initial = len(current)
     accepted = []
     # Validate the terminal reason via the existing policy. This is also the
     # terminal decision when no cohort remains, recomputed after accepted rows.
-    decision = batch_decision(sorted(current), (), False, final_boundary)
+    # The retained batch helper expects list-shaped path arguments.
+    decision = batch_decision(sorted(current), [], False, final_boundary)
     stopped_index = None
     for index, cohort in enumerate(cohorts, 1):
-        upcoming = _paths(cohort)
+        upcoming = cohort if check_all else _paths(cohort)
         decision = batch_decision(sorted(current), sorted(upcoming), True)
         if decision["decision"] != "preserve_then_continue_coherent_scope":
             stopped_index = index
@@ -48,7 +61,7 @@ def preview(existing_paths, cohorts, *, final_boundary=None):
             "cumulative_distinct_paths": len(current),
         })
     else:
-        decision = batch_decision(sorted(current), (), False, final_boundary)
+        decision = batch_decision(sorted(current), [], False, final_boundary)
 
     return {
         "kind": "coherent-stack-preview",

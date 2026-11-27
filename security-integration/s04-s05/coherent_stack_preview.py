@@ -147,3 +147,9 @@ def preview_compatible_280(existing_paths, cohorts, *, final_boundary):
         "new_draft_created": False,
         "requires_root": True,
     }
+
+
+def preview_compatible_280_json(existing_paths, cohorts, *, final_boundary):
+    """Serialize only the count-only advisory result; never include input paths."""
+    result = preview_compatible_280(existing_paths, cohorts, final_boundary=final_boundary)
+    return json.dumps(result, sort_keys=True, separators=(",", ":")).encode("utf-8") + b"\n"

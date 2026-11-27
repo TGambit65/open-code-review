@@ -11,3 +11,11 @@ Private additions only; to view the exact patch, run git diff --no-index -- /dev
 `project_supported(records)` is an opt-in private projection. Each row exposes both the caller's `reported_status` and the effective `status`. A reported completion is blocked unless every listed prerequisite has a supported completion of its own, so a contradictory report cannot satisfy a later dependency. The unmet list contains direct dependencies that lack support, not a duplicate transitive list. All results remain fictional, no external evidence is validated, and qualification always remains HELD. Existing `project` and `render` retain their caller-reported interpretation.
 
 `render_supported(records)` explicitly opts in to a different private examiner note. It displays the closed declared status and the status supported by the fixed fictional dependency list separately. Each line lists direct unmet prerequisites only, including dependencies whose own reported completions lack support. Headers always say HELD and no authority. The note provides neither a readiness queue nor recommendations to act, and does not check real evidence. The original renderer and both projections are unchanged. An isolated stdlib fixture freezes the pinned legacy bytes for two ordinary inputs and exercises opt-in contradiction, all/none, deterministic order and closed-field refusal. No real stage, scanner, provider, network, or qualification test is involved.
+
+For a private examiner who needs to distinguish the closed input tokens behind
+a normalized status, use `render_supported(records, include_result_token=True)`.
+This shows the validated input token (or `none supplied` for a missing record)
+without adding fields to the accepted record shape or changing the default
+renderer bytes. For example, `partial` and `failed` both project to `blocked`
+but are not interchangeable as descriptions of what was declared. No text,
+identity, digest or evidence is accepted or checked, and qualification is HELD.

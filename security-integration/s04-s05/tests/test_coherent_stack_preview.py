@@ -1,8 +1,11 @@
 # SPDX-License-Identifier: Apache-2.0
+import json
 import unittest
 
 import support
-from coherent_stack_preview import preview, preview_checked, preview_json, preview_compatible_280
+from coherent_stack_preview import (
+    preview, preview_checked, preview_json, preview_compatible_280, preview_compatible_280_json,
+)
 from ocr_security.common import Refusal
 
 
@@ -11,6 +14,20 @@ def paths(start, stop):
 
 
 class CoherentStackPreviewTests(unittest.TestCase):
+    def test_compatible_json_preserves_mode_and_projection_only(self):
+        existing = paths(0, 279)
+        first = [paths(278, 280) + paths(279, 280), paths(280, 281)]
+        second = [list(reversed(first[0])), first[1]]
+        result = preview_compatible_280(existing, first, final_boundary="dependency_hold")
+        wire = preview_compatible_280_json(existing, first, final_boundary="dependency_hold")
+        self.assertEqual(json.loads(wire), result)
+        self.assertEqual(wire, preview_compatible_280_json(
+            list(reversed(existing)), second, final_boundary="dependency_hold"))
+        self.assertEqual(result["stop"]["reason"], "stop_before_overflow")
+        self.assertIsNone(result["stop"]["boundary_reason"])
+        self.assertNotIn(b"fixture/", wire)
+        self.assertTrue(wire.endswith(b"\n"))
+
     def test_order_overlap_and_aggregate_only(self):
         current = paths(0, 5)
         groups = [paths(3, 7), paths(6, 10)]

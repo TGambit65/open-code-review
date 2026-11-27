@@ -25,3 +25,7 @@ over-cap stop does not reuse the final boundary description. Like
 beyond a stop. It returns only counts, group positions and fixed dispositions;
 it reads no paths and provides no authority. It does not change historical
 `preview`, `preview_checked` or `preview_json`.
+
+Use `preview_compatible_280_json` with the same arguments to serialize that exact
+advisory as stable sorted-key UTF-8 JSON, with one trailing newline. This
+serializer does not add a path inventory or change which planning mode ran.

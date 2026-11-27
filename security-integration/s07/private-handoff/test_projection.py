@@ -70,6 +70,26 @@ class ProjectionTest(unittest.TestCase):
             project_supported((records[0], records[0]))
 
 
+    def test_supported_note_opt_in_distinguishes_incomplete_result_tokens(self):
+        records = (
+            {"stage": "implementation", "result": "partial"},
+            {"stage": "remote_preservation", "result": "failed"},
+            {"stage": "rendering", "result": "unrun"},
+        )
+        default = render_supported(records)
+        detailed = render_supported(records, include_result_token=True)
+        self.assertNotIn("declared result token:", default)
+        self.assertEqual(detailed, render_supported(records[::-1], include_result_token=True))
+        self.assertIn("implementation: declared result token: partial; declared: blocked;", detailed)
+        self.assertIn("remote_preservation: declared result token: failed; declared: blocked;", detailed)
+        self.assertIn("rendering: declared result token: unrun; declared: unrun;", detailed)
+        self.assertIn("native_baseline: declared result token: none supplied; declared: missing;", detailed)
+        self.assertIn("Qualification: HELD", detailed)
+        self.assertLess(len(detailed.encode()), 4096)
+        with self.assertRaisesRegex(ValueError, "^Unknown stage result"):
+            render_supported(({"stage": "implementation", "result": "fictional free text"},),
+                             include_result_token=True)
+
     def test_supported_note_distinguishes_reported_and_supported(self):
         records = (
             {"stage": "offline_fixtures", "result": "passed"},

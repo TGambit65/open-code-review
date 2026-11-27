@@ -47,7 +47,7 @@ def project(records: tuple[dict[str, str], ...]) -> Handoff:
     ))
 
 
-def _reported_states(records):
+def _reported_states(records, *, result_tokens=None):
     if type(records) is not tuple or len(records) > len(_STAGES):
         raise ValueError("Expected a bounded tuple of fictional stage records.")
     by_stage: dict[str, str] = {}
@@ -62,6 +62,8 @@ def _reported_states(records):
         if type(result) is not str or result not in _DISPLAY:
             raise ValueError("Unknown stage result.")
         by_stage[stage] = _DISPLAY[result]
+        if result_tokens is not None:
+            result_tokens[stage] = result
     return by_stage
 
 
@@ -78,7 +80,10 @@ class SupportedHandoff:
 
 def project_supported(records: tuple[dict[str, str], ...]) -> SupportedHandoff:
     """Opt in to a dependency-supported view; no external evidence is checked."""
-    by_stage = _reported_states(records)
+    return _supported_view(_reported_states(records))
+
+
+def _supported_view(by_stage):
     # The fixed inventory lists each prerequisite before its dependents.
     supported = set()
     rows = []
@@ -111,17 +116,19 @@ def render(records: tuple[dict[str, str], ...]) -> str:
     return "\n".join(lines) + "\n"
 
 
-def render_supported(records: tuple[dict[str, str], ...]) -> str:
+def render_supported(records: tuple[dict[str, str], ...], *, include_result_token: bool = False) -> str:
     """Opt in to a fixed private note about fictional declared metadata only."""
-    view = project_supported(records)
+    result_tokens = {} if include_result_token else None
+    view = _supported_view(_reported_states(records, result_tokens=result_tokens))
     lines = [
         f"Qualification: {view.qualification} "
         "(fictional declared metadata only; no external evidence checked; no authority)."
     ]
     for row in view.stages:
         unmet = ", ".join(row.unmet_prerequisites) or "none"
+        supplied = f"declared result token: {result_tokens.get(row.stage, 'none supplied')}; " if result_tokens is not None else ""
         lines.append(
-            f"{row.stage}: declared: {row.reported_status}; "
+            f"{row.stage}: {supplied}declared: {row.reported_status}; "
             f"prerequisite-supported status: {row.status}; "
             f"direct unmet prerequisites: {unmet}."
         )
